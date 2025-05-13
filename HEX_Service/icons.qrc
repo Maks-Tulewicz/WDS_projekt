@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/angle.png</file>
+        <file>icons/antenna.png</file>
+        <file>icons/setting.png</file>
+    	<file>icons/motion-capture.png</file>
+    </qresource>
+</RCC>
