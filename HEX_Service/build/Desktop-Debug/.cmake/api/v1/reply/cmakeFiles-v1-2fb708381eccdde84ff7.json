@@ -293,6 +293,9 @@
 		},
 		{
 			"path" : "icons.qrc"
+		},
+		{
+			"path" : "translations.qrc"
 		}
 	],
 	"kind" : "cmakeFiles",

@@ -192,6 +192,30 @@ HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HEX_Service.dir/build.make CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.s
 .PHONY : HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.s
 
+HEX_Service_autogen/EWIEGA46WW/qrc_translations.o: HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp.o
+.PHONY : HEX_Service_autogen/EWIEGA46WW/qrc_translations.o
+
+# target to build an object file
+HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HEX_Service.dir/build.make CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp.o
+.PHONY : HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp.o
+
+HEX_Service_autogen/EWIEGA46WW/qrc_translations.i: HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp.i
+.PHONY : HEX_Service_autogen/EWIEGA46WW/qrc_translations.i
+
+# target to preprocess a source file
+HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HEX_Service.dir/build.make CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp.i
+.PHONY : HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp.i
+
+HEX_Service_autogen/EWIEGA46WW/qrc_translations.s: HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp.s
+.PHONY : HEX_Service_autogen/EWIEGA46WW/qrc_translations.s
+
+# target to generate assembly for a file
+HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HEX_Service.dir/build.make CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp.s
+.PHONY : HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp.s
+
 HEX_Service_autogen/mocs_compilation.o: HEX_Service_autogen/mocs_compilation.cpp.o
 .PHONY : HEX_Service_autogen/mocs_compilation.o
 
@@ -423,6 +447,9 @@ help:
 	@echo "... HEX_Service_autogen/EWIEGA46WW/qrc_icons.o"
 	@echo "... HEX_Service_autogen/EWIEGA46WW/qrc_icons.i"
 	@echo "... HEX_Service_autogen/EWIEGA46WW/qrc_icons.s"
+	@echo "... HEX_Service_autogen/EWIEGA46WW/qrc_translations.o"
+	@echo "... HEX_Service_autogen/EWIEGA46WW/qrc_translations.i"
+	@echo "... HEX_Service_autogen/EWIEGA46WW/qrc_translations.s"
 	@echo "... HEX_Service_autogen/mocs_compilation.o"
 	@echo "... HEX_Service_autogen/mocs_compilation.i"
 	@echo "... HEX_Service_autogen/mocs_compilation.s"

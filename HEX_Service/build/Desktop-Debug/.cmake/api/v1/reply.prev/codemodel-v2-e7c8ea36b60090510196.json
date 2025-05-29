@@ -18,7 +18,8 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -36,7 +37,8 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -45,7 +47,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "HEX_Service::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-HEX_Service-Debug-e9f1de876a1a3126f167.json",
+					"jsonFile" : "target-HEX_Service-Debug-071a9f2ea95ae17b4425.json",
 					"name" : "HEX_Service",
 					"projectIndex" : 0
 				},
@@ -66,8 +68,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "doc::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-doc-Debug-9027351bd1e564d76e07.json",
+					"jsonFile" : "target-doc-Debug-5a194526d2e9d7ce9879.json",
 					"name" : "doc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "update_translations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-update_translations-Debug-841b4eb2f4202a809ad6.json",
+					"name" : "update_translations",
 					"projectIndex" : 0
 				}
 			]

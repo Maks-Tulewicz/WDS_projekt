@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
   "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/data/servo_test_data.txt"
   "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons.qrc"
+  "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/translations.qrc"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake"
@@ -86,6 +87,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "servo_test_data.txt"
   "CMakeFiles/HEX_Service_autogen.dir/AutogenInfo.json"
   "CMakeFiles/HEX_Service_autogen.dir/AutoRcc_icons_EWIEGA46WW_Info.json"
+  "CMakeFiles/HEX_Service_autogen.dir/AutoRcc_translations_EWIEGA46WW_Info.json"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 

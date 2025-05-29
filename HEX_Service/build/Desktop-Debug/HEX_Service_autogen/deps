@@ -21,6 +21,7 @@ HEX_Service_autogen/timestamp: \
 	/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/sideview.h \
 	/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/topview.cpp \
 	/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/topview.h \
+	/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/translations.qrc \
 	/usr/include/asm-generic/errno-base.h \
 	/usr/include/asm-generic/errno.h \
 	/usr/include/assert.h \
@@ -364,6 +365,7 @@ HEX_Service_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qtimer.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/qtranslator.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \

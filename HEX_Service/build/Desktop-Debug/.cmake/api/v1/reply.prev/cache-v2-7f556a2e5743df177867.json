@@ -1495,11 +1495,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : ""
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/qmake6"
+			"value" : "/usr/bin/qmake"
 		},
 		{
 			"name" : "Qt5Charts_DIR",
@@ -1536,6 +1536,18 @@
 			],
 			"type" : "PATH",
 			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui"
+		},
+		{
+			"name" : "Qt5LinguistTools_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Qt5LinguistTools."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5LinguistTools"
 		},
 		{
 			"name" : "Qt5Widgets_DIR",

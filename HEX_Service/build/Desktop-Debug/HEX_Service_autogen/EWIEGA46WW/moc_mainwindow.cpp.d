@@ -324,6 +324,7 @@
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtimer.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtranslator.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \

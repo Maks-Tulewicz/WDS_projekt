@@ -1,0 +1,7 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/translations">
+        <file>translations/hex_service_pl.qm</file>
+        <file>translations/hex_service_en.qm</file>
+    </qresource>
+</RCC>

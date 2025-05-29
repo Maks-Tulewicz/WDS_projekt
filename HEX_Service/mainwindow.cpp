@@ -87,6 +87,14 @@ MainWindow::MainWindow(QWidget *parent)
     logToTerminal("System uruchomiony.\nGotowy do działania.");
     simulator->setSimulateErrors(ui->chkSimulateErrors->isChecked());
 
+
+    // ----- 7) Połączenie translatora -----
+    translator = new QTranslator(this);
+    connect(ui->languageComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &MainWindow::onLanguageChanged);
+    loadLanguage("pl");
+
+
 }
 
 MainWindow::~MainWindow()
@@ -200,4 +208,37 @@ void MainWindow::onReconnectClicked()
     });
 }
 
+void MainWindow::loadLanguage(const QString &language)
+{
+    // Usuń poprzednie tłumaczenie jeśli istnieje
+    qApp->removeTranslator(translator);
 
+    // Załaduj nowe tłumaczenie
+    if (translator->load(":/translations/hex_service_" + language)) {
+        qApp->installTranslator(translator);
+    }
+}
+
+void MainWindow::changeEvent(QEvent* event)
+{
+    if (event->type() == QEvent::LanguageChange) {
+        ui->retranslateUi(this);
+    }
+    QMainWindow::changeEvent(event);
+}
+
+void MainWindow::onLanguageChanged(int index)
+{
+    QString language = index == 0 ? "pl" : "en";
+    loadLanguage(language);
+
+    // Aktualizuj etykiety, które nie są automatycznie tłumaczone
+    ui->retranslateUi(this);
+
+    // Aktualizuj dynamiczne teksty
+    if (language == "pl") {
+        logToTerminal("Zmieniono język na Polski");
+    } else {
+        logToTerminal("Language changed to English");
+    }
+}

@@ -1,0 +1,24 @@
+{
+	"BUILD_DIR" : "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/HEX_Service_autogen",
+	"CMAKE_BINARY_DIR" : "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service",
+	"CMAKE_SOURCE_DIR" : "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service",
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/HEX_Service_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/translations/hex_service_en.qm",
+		"/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/translations/hex_service_pl.qm"
+	],
+	"LOCK_FILE" : "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles/HEX_Service_autogen.dir/AutoRcc_translations_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "translations" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_translations.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt5/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles/HEX_Service_autogen.dir/AutoRcc_translations_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/translations.qrc",
+	"VERBOSITY" : 0
+}

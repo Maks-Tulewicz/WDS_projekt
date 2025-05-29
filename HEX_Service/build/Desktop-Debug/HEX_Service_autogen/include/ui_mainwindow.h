@@ -85,7 +85,7 @@ public:
     QCheckBox *chkSimulateErrors;
     QSpacerItem *verticalSpacer;
     QLabel *languageLabel;
-    QComboBox *comboBox;
+    QComboBox *languageComboBox;
     QFrame *line_2;
     QWidget *widget_settings_right;
     QVBoxLayout *verticalLayout_6;
@@ -626,15 +626,15 @@ public:
 
         verticalLayout_3->addWidget(languageLabel);
 
-        comboBox = new QComboBox(widget_settings_left);
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setMinimumSize(QSize(0, 50));
-        comboBox->setStyleSheet(QString::fromUtf8("color: #65d5c6;\n"
+        languageComboBox = new QComboBox(widget_settings_left);
+        languageComboBox->addItem(QString());
+        languageComboBox->addItem(QString());
+        languageComboBox->setObjectName(QString::fromUtf8("languageComboBox"));
+        languageComboBox->setMinimumSize(QSize(0, 50));
+        languageComboBox->setStyleSheet(QString::fromUtf8("color: #65d5c6;\n"
 "background-color: #222;font-size: 16pt"));
 
-        verticalLayout_3->addWidget(comboBox);
+        verticalLayout_3->addWidget(languageComboBox);
 
 
         horizontalLayout_3->addWidget(widget_settings_left);
@@ -792,7 +792,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -844,8 +844,8 @@ public:
         btnReconnect->setText(QCoreApplication::translate("MainWindow", "Po\305\202\304\205cz Ponownie", nullptr));
         chkSimulateErrors->setText(QCoreApplication::translate("MainWindow", "Symuluj B\305\202\304\231dy", nullptr));
         languageLabel->setText(QCoreApplication::translate("MainWindow", "Zmiana j\304\231zyka", nullptr));
-        comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Polski", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "English", nullptr));
+        languageComboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Polski", nullptr));
+        languageComboBox->setItemText(1, QCoreApplication::translate("MainWindow", "English", nullptr));
 
 #if QT_CONFIG(accessibility)
         line_2->setAccessibleDescription(QCoreApplication::translate("MainWindow", "background-color: #65d5c6", nullptr));

@@ -12,7 +12,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt5 REQUIRED COMPONENTS Widgets Charts)
 find_package(Qt5Charts REQUIRED)
 
-
 # --- lista wszystkich plików źródłowych i nagłówków ---
 set(PROJECT_SOURCES
     main.cpp
@@ -30,6 +29,7 @@ set(PROJECT_SOURCES
     topview.cpp
     topview.h
     icons.qrc
+    translations.qrc
 )
 
 # --- tworzony cel wykonywalny ---
@@ -38,25 +38,14 @@ add_executable(HEX_Service
     fmqualityview.h
     fmqualityview.cpp
 )
+
 target_link_libraries(HEX_Service
   PRIVATE
     Qt5::Widgets
     Qt5::Charts
 )
+
 target_include_directories(HEX_Service PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
-
-# --- dołącz biblioteki Qt ---
-target_link_libraries(HEX_Service
-    PRIVATE
-      Qt5::Widgets
-      Qt5::Charts
-)
-
-# --- zapewnij, że kompilator znajdzie wszystkie nagłówki ---
-target_include_directories(HEX_Service
-    PRIVATE
-      ${CMAKE_CURRENT_SOURCE_DIR}
-)
 
 # --- kopiowanie pliku z danymi do katalogu build ---
 configure_file(
@@ -64,11 +53,6 @@ configure_file(
     ${CMAKE_BINARY_DIR}/servo_test_data.txt
     COPYONLY
 )
-
-# --- (opcjonalnie kopiuj też inne pliki z data/) ---
-# configure_file(data/servo_test_data_comm.txt
-#                ${CMAKE_BINARY_DIR}/servo_test_data_comm.txt
-#                COPYONLY)
 
 # --- wsparcie Doxygen — nie trzeba modyfikować ---
 find_package(Doxygen QUIET)

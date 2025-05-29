@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QComboBox>
 #include <QPlainTextEdit>
+#include <qtranslator.h>
 #include "servoanglemanager.h"
 #include "datasimulator.h"
 #include "sideview.h"
@@ -50,6 +51,7 @@ private slots:
     void logError(const QString &msg);
     void handleLogError(const QString &msg);
     void handleLogMessage(const QString &msg);
+    void onLanguageChanged(int index);
 
 private:
     Ui::MainWindow *ui;               ///< Wskaźnik na wygenerowany interfejs UI
@@ -61,6 +63,9 @@ private:
     void logToTerminal(const QString &message); ///< pomocnicza funkcja do logowania
     void onSimDisconnect();
     void onReconnectClicked();
+    void loadLanguage(const QString &language);
+    void changeEvent(QEvent* event) override;
+    QTranslator *translator;
 
 };
 

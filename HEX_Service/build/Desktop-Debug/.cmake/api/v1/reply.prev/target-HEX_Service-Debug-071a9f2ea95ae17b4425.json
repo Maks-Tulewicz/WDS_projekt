@@ -31,13 +31,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 36,
+				"line" : 57,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 41,
+				"line" : 64,
 				"parent" : 0
 			},
 			{
@@ -75,7 +75,7 @@
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 46,
+				"line" : 70,
 				"parent" : 0
 			}
 		]
@@ -172,8 +172,9 @@
 				9,
 				11,
 				13,
-				17,
-				20
+				20,
+				23,
+				24
 			]
 		}
 	],
@@ -244,8 +245,9 @@
 				9,
 				11,
 				13,
-				17,
-				20
+				20,
+				23,
+				24
 			]
 		},
 		{
@@ -258,8 +260,8 @@
 				10,
 				12,
 				14,
-				16,
-				18
+				19,
+				21
 			]
 		},
 		{
@@ -268,15 +270,21 @@
 			[
 				4,
 				15,
-				19
+				16,
+				17,
+				18,
+				22
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				21,
-				22
+				25,
+				26,
+				27,
+				28,
+				29
 			]
 		}
 	],
@@ -373,6 +381,23 @@
 		},
 		{
 			"backtrace" : 1,
+			"path" : "translations.qrc",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/hex_service_pl.qm",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/hex_service_en.qm",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
 			"path" : "fmqualityview.h",
 			"sourceGroupIndex" : 1
 		},
@@ -403,6 +428,25 @@
 		},
 		{
 			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/hex_service_pl.qm.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/hex_service_en.qm.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop-Debug/HEX_Service_autogen/timestamp.rule",
 			"sourceGroupIndex" : 3
@@ -411,6 +455,12 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop-Debug/HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp.rule",
 			"sourceGroupIndex" : 3
 		}
 	],

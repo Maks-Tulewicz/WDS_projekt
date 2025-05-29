@@ -37,7 +37,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 41,
+				"line" : 42,
 				"parent" : 0
 			},
 			{
@@ -75,7 +75,7 @@
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 46,
+				"line" : 48,
 				"parent" : 0
 			}
 		]
@@ -172,8 +172,9 @@
 				9,
 				11,
 				13,
-				17,
-				20
+				18,
+				21,
+				22
 			]
 		}
 	],
@@ -244,8 +245,9 @@
 				9,
 				11,
 				13,
-				17,
-				20
+				18,
+				21,
+				22
 			]
 		},
 		{
@@ -258,8 +260,8 @@
 				10,
 				12,
 				14,
-				16,
-				18
+				17,
+				19
 			]
 		},
 		{
@@ -268,15 +270,17 @@
 			[
 				4,
 				15,
-				19
+				16,
+				20
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				21,
-				22
+				23,
+				24,
+				25
 			]
 		}
 	],
@@ -373,6 +377,11 @@
 		},
 		{
 			"backtrace" : 1,
+			"path" : "translations.qrc",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
 			"path" : "fmqualityview.h",
 			"sourceGroupIndex" : 1
 		},
@@ -403,6 +412,13 @@
 		},
 		{
 			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop-Debug/HEX_Service_autogen/timestamp.rule",
 			"sourceGroupIndex" : 3
@@ -411,6 +427,12 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop-Debug/HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp.rule",
 			"sourceGroupIndex" : 3
 		}
 	],

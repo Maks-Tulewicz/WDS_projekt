@@ -267,11 +267,60 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5Charts/Qt5ChartsConfigVersion.cmake"
+			"path" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5LinguistTools/Qt5LinguistToolsConfigVersion.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5Charts/Qt5ChartsConfig.cmake"
+			"path" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5LinguistTools/Qt5LinguistToolsConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5LinguistTools/Qt5LinguistToolsMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake-3.28/Modules/CMakeParseArguments.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake-3.28/Modules/FindQt4.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake-3.28/Modules/CheckCXXSymbolExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake-3.28/Modules/MacroAddFileDependencies.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake-3.28/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake-3.28/Modules/CMakePushCheckState.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake-3.28/Modules/UseQt4.cmake"
 		},
 		{
 			"path" : "data/servo_test_data.txt"
@@ -293,6 +342,9 @@
 		},
 		{
 			"path" : "icons.qrc"
+		},
+		{
+			"path" : "translations.qrc"
 		}
 	],
 	"kind" : "cmakeFiles",
