@@ -48,7 +48,8 @@ private slots:
     void showSettings(); /**< Pokaż widok ustawień aplikacji. */
     void onLegSelectionChanged(int index); /**< Zmieniona aktywna noga w SideView. */
     void logError(const QString &msg);
-
+    void handleLogError(const QString &msg);
+    void handleLogMessage(const QString &msg);
 
 private:
     Ui::MainWindow *ui;               ///< Wskaźnik na wygenerowany interfejs UI
@@ -58,6 +59,8 @@ private:
     TopView *topView;                 ///< Widget widoku z góry całego robota
     QComboBox *comboBoxLegSide;       ///< Dropdown wyboru nogi w widoku bocznym
     void logToTerminal(const QString &message); ///< pomocnicza funkcja do logowania
+    void onSimDisconnect();
+    void onReconnectClicked();
 
 };
 

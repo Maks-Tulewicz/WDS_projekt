@@ -52,6 +52,13 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->chkSimulateErrors, &QCheckBox::stateChanged, this, [=](int){
         simulator->setSimulateErrors(ui->chkSimulateErrors->isChecked());
     });
+    connect(simulator, &DataSimulator::logError, this, &MainWindow::handleLogError);
+    connect(simulator, &DataSimulator::logMessage, this, &MainWindow::handleLogMessage);
+    connect(simulator, &DataSimulator::disconnectedDueToErrors, this, &MainWindow::onSimDisconnect);
+    connect(ui->btnReconnect, &QPushButton::clicked, this, &MainWindow::onReconnectClicked);
+
+
+
 
 
 
@@ -144,9 +151,30 @@ void MainWindow::updateServoGUI(const ServoFrame &frame)
 }
 
 void MainWindow::logToTerminal(const QString &message) {
-    ui->plainTextEdit->appendPlainText(message);
+    // ui->plainTextEdit->appendPlainText(message);
 }
 void MainWindow::logError(const QString &msg) {
     ui->plainTextEdit->appendPlainText("[ERROR] " + msg);
 }
+void MainWindow::handleLogError(const QString &msg) {
+    ui->plainTextEdit->appendHtml("<span style='color:red;'>" + msg + "</span>");
+}
+
+void MainWindow::handleLogMessage(const QString &msg) {
+    ui->plainTextEdit->appendPlainText(msg);
+}
+void MainWindow::onSimDisconnect()
+{
+    ui->plainTextEdit->appendPlainText("### Rozłączono z powodu zbyt wielu błędów CRC ###");
+    ui->btnReconnect->setEnabled(true);  // umożliwiamy ponowne połączenie
+}
+void MainWindow::onReconnectClicked()
+{
+    ui->plainTextEdit->clear();  // czyścimy terminal
+    simulator->resetSimulation();
+    simulator->startSimulation(1000);
+    simulator->setSimulateErrors(ui->chkSimulateErrors->isChecked());
+    ui->btnReconnect->setEnabled(false);  // znowu wyłączamy przycisk
+}
+
 

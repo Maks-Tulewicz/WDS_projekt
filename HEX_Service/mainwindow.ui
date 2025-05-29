@@ -887,6 +887,14 @@ qproperty-alignment: AlignCenter;
                <pointsize>10</pointsize>
               </font>
              </property>
+             <property name="styleSheet">
+              <string notr="true">
+color: #65d5c6;
+background-color: #222;
+border: 1px solid #444;
+border-radius: 3px;
+padding: 3px</string>
+             </property>
              <property name="readOnly">
               <bool>true</bool>
              </property>

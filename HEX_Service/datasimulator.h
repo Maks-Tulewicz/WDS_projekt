@@ -69,6 +69,10 @@ signals:
  */
     const ServoFrame* next();
     void logError(const QString &msg);
+    void logMessage(const QString &msg);
+    void disconnectedDueToErrors();
+
+
 
 
     /**
@@ -89,6 +93,8 @@ private:
     DataReader *reader;  ///< Odczyt danych z pliku
     int interval;        ///< Częstotliwość odczytu danych (ms)
     bool simulateErrors = false;  ///< Czy zasymulować błędy
+    int crcErrorCount = 0;
+
 
 };
 

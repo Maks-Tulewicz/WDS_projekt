@@ -671,6 +671,12 @@ public:
         font.setFamily(QString::fromUtf8("Courier 10 Pitch"));
         font.setPointSize(10);
         plainTextEdit->setFont(font);
+        plainTextEdit->setStyleSheet(QString::fromUtf8("\n"
+"color: #65d5c6;\n"
+"background-color: #222;\n"
+"border: 1px solid #444;\n"
+"border-radius: 3px;\n"
+"padding: 3px"));
         plainTextEdit->setReadOnly(true);
 
         verticalLayout_6->addWidget(plainTextEdit);
