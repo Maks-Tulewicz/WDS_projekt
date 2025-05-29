@@ -3,6 +3,8 @@
 #include"qrandom.h"
 #include <QtMath>
 #include "datareader.h"
+class MainWindow;
+
 
 DataSimulator::DataSimulator(QObject *parent)
     : QObject(parent),
@@ -48,14 +50,22 @@ void DataSimulator::onTimerTick()
         emit frameReady(*frame);
     }
 
-    // ————————————————————————————————————————
-    // symulacja jakości łącza FM
+    // Jakość połączenia
     static float angle = 0;
-    // qDegreesToRadians, qSin, qCos są w <QtMath>
     float rssi = -50 + 10 * qSin(qDegreesToRadians(angle));
     float per  = 10  + 5  * qCos(qDegreesToRadians(angle));
     angle = fmod(angle + 5, 360.0f);
 
+    // Błąd symulowany?
+    if (simulateErrors && (QRandomGenerator::global()->bounded(10) == 0)) {
+        emit logError("Zasymulowano błąd CRC!");
+        return;  // pomijamy ramkę
+    }
+
     emit qualitySample(rssi, per);
-    // ————————————————————————————————————————
 }
+
+void DataSimulator::setSimulateErrors(bool val) {
+    simulateErrors = val;
+}
+

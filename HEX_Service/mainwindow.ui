@@ -839,12 +839,15 @@ background-color: #222;font-size: 16pt</string>
          <widget class="Line" name="line_2">
           <property name="minimumSize">
            <size>
-            <width>10</width>
+            <width>8</width>
             <height>400</height>
            </size>
           </property>
           <property name="accessibleDescription">
            <string>background-color: #65d5c6</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: #65d5c6</string>
           </property>
           <property name="orientation">
            <enum>Qt::Vertical</enum>

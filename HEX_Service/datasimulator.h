@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QTimer>
+#include "qglobal.h"
 #include "datareader.h"
 
 /**
@@ -54,6 +55,8 @@ public:
      */
     void setInterval(int intervalMs);
 
+    void setSimulateErrors(bool val);
+
 signals:
     /**
      * @brief Sygnał emitujący ramkę danych do GUI.
@@ -65,6 +68,8 @@ signals:
  * @return Wskaźnik na aktualną ramkę lub nullptr, jeżeli nie załadowano danych.
  */
     const ServoFrame* next();
+    void logError(const QString &msg);
+
 
     /**
  * @brief Resetuje odczyt do pierwszej ramki.
@@ -83,6 +88,8 @@ private:
     QTimer *timer;       ///< Timer do odtwarzania danych
     DataReader *reader;  ///< Odczyt danych z pliku
     int interval;        ///< Częstotliwość odczytu danych (ms)
+    bool simulateErrors = false;  ///< Czy zasymulować błędy
+
 };
 
 #endif // DATASIMULATOR_H

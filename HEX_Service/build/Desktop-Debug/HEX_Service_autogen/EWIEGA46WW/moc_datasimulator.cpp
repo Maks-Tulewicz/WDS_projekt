@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_DataSimulator_t {
-    QByteArrayData data[12];
-    char stringdata0[107];
+    QByteArrayData data[14];
+    char stringdata0[120];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,16 +39,19 @@ QT_MOC_LITERAL(3, 26, 10), // "ServoFrame"
 QT_MOC_LITERAL(4, 37, 5), // "frame"
 QT_MOC_LITERAL(5, 43, 4), // "next"
 QT_MOC_LITERAL(6, 48, 17), // "const ServoFrame*"
-QT_MOC_LITERAL(7, 66, 5), // "reset"
-QT_MOC_LITERAL(8, 72, 13), // "qualitySample"
-QT_MOC_LITERAL(9, 86, 4), // "rssi"
-QT_MOC_LITERAL(10, 91, 3), // "per"
-QT_MOC_LITERAL(11, 95, 11) // "onTimerTick"
+QT_MOC_LITERAL(7, 66, 8), // "logError"
+QT_MOC_LITERAL(8, 75, 3), // "msg"
+QT_MOC_LITERAL(9, 79, 5), // "reset"
+QT_MOC_LITERAL(10, 85, 13), // "qualitySample"
+QT_MOC_LITERAL(11, 99, 4), // "rssi"
+QT_MOC_LITERAL(12, 104, 3), // "per"
+QT_MOC_LITERAL(13, 108, 11) // "onTimerTick"
 
     },
     "DataSimulator\0frameReady\0\0ServoFrame\0"
-    "frame\0next\0const ServoFrame*\0reset\0"
-    "qualitySample\0rssi\0per\0onTimerTick"
+    "frame\0next\0const ServoFrame*\0logError\0"
+    "msg\0reset\0qualitySample\0rssi\0per\0"
+    "onTimerTick"
 };
 #undef QT_MOC_LITERAL
 
@@ -58,27 +61,29 @@ static const uint qt_meta_data_DataSimulator[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       4,       // signalCount
+       5,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   39,    2, 0x06 /* Public */,
-       5,    0,   42,    2, 0x06 /* Public */,
-       7,    0,   43,    2, 0x06 /* Public */,
-       8,    2,   44,    2, 0x06 /* Public */,
+       1,    1,   44,    2, 0x06 /* Public */,
+       5,    0,   47,    2, 0x06 /* Public */,
+       7,    1,   48,    2, 0x06 /* Public */,
+       9,    0,   51,    2, 0x06 /* Public */,
+      10,    2,   52,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      11,    0,   49,    2, 0x08 /* Private */,
+      13,    0,   57,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
     0x80000000 | 6,
+    QMetaType::Void, QMetaType::QString,    8,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Float, QMetaType::Float,    9,   10,
+    QMetaType::Void, QMetaType::Float, QMetaType::Float,   11,   12,
 
  // slots: parameters
     QMetaType::Void,
@@ -95,9 +100,10 @@ void DataSimulator::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 0: _t->frameReady((*reinterpret_cast< const ServoFrame(*)>(_a[1]))); break;
         case 1: { const ServoFrame* _r = _t->next();
             if (_a[0]) *reinterpret_cast< const ServoFrame**>(_a[0]) = std::move(_r); }  break;
-        case 2: _t->reset(); break;
-        case 3: _t->qualitySample((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2]))); break;
-        case 4: _t->onTimerTick(); break;
+        case 2: _t->logError((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 3: _t->reset(); break;
+        case 4: _t->qualitySample((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2]))); break;
+        case 5: _t->onTimerTick(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -117,16 +123,23 @@ void DataSimulator::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
             }
         }
         {
+            using _t = void (DataSimulator::*)(const QString & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&DataSimulator::logError)) {
+                *result = 2;
+                return;
+            }
+        }
+        {
             using _t = void (DataSimulator::*)();
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&DataSimulator::reset)) {
-                *result = 2;
+                *result = 3;
                 return;
             }
         }
         {
             using _t = void (DataSimulator::*)(float , float );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&DataSimulator::qualitySample)) {
-                *result = 3;
+                *result = 4;
                 return;
             }
         }
@@ -162,13 +175,13 @@ int DataSimulator::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }
@@ -190,16 +203,23 @@ const ServoFrame * DataSimulator::next()
 }
 
 // SIGNAL 2
-void DataSimulator::reset()
+void DataSimulator::logError(const QString & _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 2, _a);
 }
 
 // SIGNAL 3
+void DataSimulator::reset()
+{
+    QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
+}
+
+// SIGNAL 4
 void DataSimulator::qualitySample(float _t1, float _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
-    QMetaObject::activate(this, &staticMetaObject, 3, _a);
+    QMetaObject::activate(this, &staticMetaObject, 4, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

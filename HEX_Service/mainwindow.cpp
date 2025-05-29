@@ -48,6 +48,12 @@ MainWindow::MainWindow(QWidget *parent)
     simulator = new DataSimulator(this);
     connect(simulator, &DataSimulator::frameReady,
             this,      &MainWindow::updateServoGUI);
+    connect(simulator, &DataSimulator::logError, this, &MainWindow::logError);
+    connect(ui->chkSimulateErrors, &QCheckBox::stateChanged, this, [=](int){
+        simulator->setSimulateErrors(ui->chkSimulateErrors->isChecked());
+    });
+
+
 
     // ----- 5) Podmień placeholder qualityView na wykres -----
     {
@@ -71,6 +77,9 @@ MainWindow::MainWindow(QWidget *parent)
     if (!simulator->loadData(QStringLiteral("servo_test_data.txt")))
         qWarning() << "Nie udało się załadować danych!";
     simulator->startSimulation(50);
+    logToTerminal("System uruchomiony.\nGotowy do działania.");
+    simulator->setSimulateErrors(ui->chkSimulateErrors->isChecked());
+
 }
 
 MainWindow::~MainWindow()
@@ -114,4 +123,30 @@ void MainWindow::updateServoGUI(const ServoFrame &frame)
     float knee  = frame.angles[legIdx*3 + 1];
     float ankle = frame.angles[legIdx*3 + 2];
     sideView->setJointAngles(knee, ankle);
+
+
+    QString frameText;
+    frameText += QString("Czas: %1 ms\n").arg(frame.timeMs);
+    frameText += "Kąty: [";
+    for (int i = 0; i < frame.angles.size(); ++i) {
+        frameText += QString::number(frame.angles[i], 'f', 1);
+        if (i < frame.angles.size() - 1)
+            frameText += ", ";
+    }
+    frameText += "]\n";
+    frameText += QString("Prędkość: %1 pkt/s\n").arg(frame.speed, 0, 'f', 1);
+    frameText += QString("Pakiety: %1\n").arg(frame.packetCount);
+    frameText += "---------------------------";
+
+    logToTerminal(frameText);
+
+
 }
+
+void MainWindow::logToTerminal(const QString &message) {
+    ui->plainTextEdit->appendPlainText(message);
+}
+void MainWindow::logError(const QString &msg) {
+    ui->plainTextEdit->appendPlainText("[ERROR] " + msg);
+}
+

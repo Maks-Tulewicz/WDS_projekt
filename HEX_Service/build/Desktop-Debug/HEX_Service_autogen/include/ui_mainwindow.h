@@ -641,7 +641,8 @@ public:
 
         line_2 = new QFrame(settingsWD);
         line_2->setObjectName(QString::fromUtf8("line_2"));
-        line_2->setMinimumSize(QSize(10, 400));
+        line_2->setMinimumSize(QSize(8, 400));
+        line_2->setStyleSheet(QString::fromUtf8("background-color: #65d5c6"));
         line_2->setFrameShape(QFrame::VLine);
         line_2->setFrameShadow(QFrame::Sunken);
 

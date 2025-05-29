@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QComboBox>
+#include <QPlainTextEdit>
 #include "servoanglemanager.h"
 #include "datasimulator.h"
 #include "sideview.h"
@@ -39,12 +40,15 @@ public:
     void updateServoGUI(const ServoFrame &frame);
 
 
+
 private slots:
     void showAnimations(); /**< Pokaż widok animacji. */
     void showServoAngles(); /**< Pokaż widok kątów serw. */
     void showConnection(); /**< Pokaż widok jakości połączenia FM. */
     void showSettings(); /**< Pokaż widok ustawień aplikacji. */
     void onLegSelectionChanged(int index); /**< Zmieniona aktywna noga w SideView. */
+    void logError(const QString &msg);
+
 
 private:
     Ui::MainWindow *ui;               ///< Wskaźnik na wygenerowany interfejs UI
@@ -53,6 +57,8 @@ private:
     SideView *sideView;               ///< Widget bocznego widoku nogi
     TopView *topView;                 ///< Widget widoku z góry całego robota
     QComboBox *comboBoxLegSide;       ///< Dropdown wyboru nogi w widoku bocznym
+    void logToTerminal(const QString &message); ///< pomocnicza funkcja do logowania
+
 };
 
 #endif // MAINWINDOW_H
