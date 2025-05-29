@@ -10,7 +10,10 @@ DataSimulator::DataSimulator(QObject *parent)
     : QObject(parent),
     timer(new QTimer(this)),
     reader(new DataReader(this)),
-    interval(1000)
+    interval(1000),
+    frameCounter(0),
+    angle(0.0f)
+
 {
     connect(timer, &QTimer::timeout, this, &DataSimulator::onTimerTick, Qt::UniqueConnection);
 }
@@ -35,16 +38,21 @@ void DataSimulator::pauseSimulation()
 }
 void DataSimulator::resetSimulation()
 {
-    reader->reset();
-    crcErrorCount = 0;
-    // Clear any pending timer events
+    // Zatrzymaj timer przed resetowaniem
     if (timer->isActive()) {
         timer->stop();
     }
-    // Give time for cleanup before potentially restarting
-    QTimer::singleShot(100, this, [this]() {
-        emit reset();
-    });
+
+    // Reset wszystkich liczników
+    frameCounter = 0;
+    angle = 0.0f;
+    crcErrorCount = 0;
+
+    // Reset czytnika
+    reader->reset();
+
+    // Wyślij sygnał resetu
+    emit reset();
 }
 
 void DataSimulator::setInterval(int intervalMs)
@@ -53,9 +61,10 @@ void DataSimulator::setInterval(int intervalMs)
     if (timer->isActive())
         timer->start(interval);
 }
+
+
 void DataSimulator::onTimerTick()
 {
-    static int frameCounter = 0;
     frameCounter++;
 
     const ServoFrame *frame = reader->next();
@@ -82,7 +91,6 @@ void DataSimulator::onTimerTick()
     }
 
     // Symulacja jakości połączenia
-    static float angle = 0;
     float rssi = -50 + 10 * qSin(qDegreesToRadians(angle));
     float per  = 10  + 5  * qCos(qDegreesToRadians(angle));
     angle = fmod(angle + 5, 360.0f);
@@ -100,9 +108,8 @@ void DataSimulator::onTimerTick()
             emit disconnectedDueToErrors();  // sygnał do GUI
         }
         return;
+    }
 }
-}
-
 
 void DataSimulator::setSimulateErrors(bool val) {
     simulateErrors = val;

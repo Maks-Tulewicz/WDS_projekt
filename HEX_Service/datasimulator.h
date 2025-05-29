@@ -94,6 +94,8 @@ private:
     int interval;        ///< Częstotliwość odczytu danych (ms)
     bool simulateErrors = false;  ///< Czy zasymulować błędy
     int crcErrorCount = 0;
+    int frameCounter;
+    float angle;
 
 
 };

@@ -181,15 +181,22 @@ void MainWindow::onSimDisconnect()
     ui->plainTextEdit->appendPlainText("### Rozłączono z powodu zbyt wielu błędów CRC ###");
     ui->btnReconnect->setEnabled(true);  // umożliwiamy ponowne połączenie
 }
+
+
 void MainWindow::onReconnectClicked()
 {
-    ui->btnReconnect->setEnabled(false);  // Disable immediately to prevent multiple clicks
+    ui->btnReconnect->setEnabled(false);
     ui->plainTextEdit->clear();
 
-    QTimer::singleShot(500, this, [this]() {  // Add 500ms delay for proper cleanup
+    simulator->pauseSimulation();  // Najpierw zatrzymaj symulację
+
+    QTimer::singleShot(1000, this, [this]() {  // Zwiększ opóźnienie do 1000ms
         simulator->resetSimulation();
-        simulator->startSimulation(1000);
-        simulator->setSimulateErrors(ui->chkSimulateErrors->isChecked());
+
+        QTimer::singleShot(500, this, [this]() {  // Dodaj opóźnienie między resetem a startem
+            simulator->startSimulation(50);  // Użyj oryginalnego interwału 50ms
+            simulator->setSimulateErrors(ui->chkSimulateErrors->isChecked());
+        });
     });
 }
 
