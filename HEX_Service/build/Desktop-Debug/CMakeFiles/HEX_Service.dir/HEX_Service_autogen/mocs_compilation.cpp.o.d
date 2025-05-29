@@ -401,6 +401,7 @@ CMakeFiles/HEX_Service.dir/HEX_Service_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qglyphrun.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrawfont.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontdatabase.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtranslator.h \
  /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/HEX_Service_autogen/EWIEGA46WW/../../../../servoanglemanager.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \

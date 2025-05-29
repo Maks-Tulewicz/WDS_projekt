@@ -326,6 +326,7 @@ CMakeFiles/HEX_Service.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qglyphrun.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrawfont.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontdatabase.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtranslator.h \
  /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/servoanglemanager.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
