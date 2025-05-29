@@ -12,13 +12,16 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
@@ -75,8 +78,19 @@ public:
     QLabel *grid_filler;
     QLabel *servo_5_1;
     QWidget *settingsWD;
+    QHBoxLayout *horizontalLayout_3;
+    QWidget *widget_settings_left;
     QVBoxLayout *verticalLayout_3;
-    QLabel *settingsLabel;
+    QPushButton *btnReconnect;
+    QCheckBox *chkSimulateErrors;
+    QSpacerItem *verticalSpacer;
+    QLabel *languageLabel;
+    QComboBox *comboBox;
+    QFrame *line_2;
+    QWidget *widget_settings_right;
+    QVBoxLayout *verticalLayout_6;
+    QLabel *terminalLabel;
+    QPlainTextEdit *plainTextEdit;
     QWidget *animationWD;
     QHBoxLayout *horizontalLayout_2;
     QWidget *left_widget;
@@ -574,13 +588,94 @@ public:
         stackedWidget->addWidget(servoAnglesWD);
         settingsWD = new QWidget();
         settingsWD->setObjectName(QString::fromUtf8("settingsWD"));
-        verticalLayout_3 = new QVBoxLayout(settingsWD);
+        horizontalLayout_3 = new QHBoxLayout(settingsWD);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        widget_settings_left = new QWidget(settingsWD);
+        widget_settings_left->setObjectName(QString::fromUtf8("widget_settings_left"));
+        widget_settings_left->setMinimumSize(QSize(400, 0));
+        verticalLayout_3 = new QVBoxLayout(widget_settings_left);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        settingsLabel = new QLabel(settingsWD);
-        settingsLabel->setObjectName(QString::fromUtf8("settingsLabel"));
-        settingsLabel->setAlignment(Qt::AlignCenter);
+        btnReconnect = new QPushButton(widget_settings_left);
+        btnReconnect->setObjectName(QString::fromUtf8("btnReconnect"));
+        btnReconnect->setMinimumSize(QSize(0, 50));
+        btnReconnect->setStyleSheet(QString::fromUtf8("color: #65d5c6;\n"
+"background-color: #222;font-size: 16pt"));
 
-        verticalLayout_3->addWidget(settingsLabel);
+        verticalLayout_3->addWidget(btnReconnect);
+
+        chkSimulateErrors = new QCheckBox(widget_settings_left);
+        chkSimulateErrors->setObjectName(QString::fromUtf8("chkSimulateErrors"));
+        chkSimulateErrors->setStyleSheet(QString::fromUtf8("color: #65d5c6;font-size: 12pt"));
+
+        verticalLayout_3->addWidget(chkSimulateErrors);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_3->addItem(verticalSpacer);
+
+        languageLabel = new QLabel(widget_settings_left);
+        languageLabel->setObjectName(QString::fromUtf8("languageLabel"));
+        languageLabel->setMaximumSize(QSize(16777215, 50));
+        languageLabel->setStyleSheet(QString::fromUtf8("font-size: 16pt;\n"
+"color: #F0822F;\n"
+"background-color: #2E2E2E;\n"
+"border: none;\n"
+"padding: 5px;\n"
+"qproperty-alignment: AlignCenter;\n"
+""));
+
+        verticalLayout_3->addWidget(languageLabel);
+
+        comboBox = new QComboBox(widget_settings_left);
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboBox->setMinimumSize(QSize(0, 50));
+        comboBox->setStyleSheet(QString::fromUtf8("color: #65d5c6;\n"
+"background-color: #222;font-size: 16pt"));
+
+        verticalLayout_3->addWidget(comboBox);
+
+
+        horizontalLayout_3->addWidget(widget_settings_left);
+
+        line_2 = new QFrame(settingsWD);
+        line_2->setObjectName(QString::fromUtf8("line_2"));
+        line_2->setMinimumSize(QSize(10, 400));
+        line_2->setFrameShape(QFrame::VLine);
+        line_2->setFrameShadow(QFrame::Sunken);
+
+        horizontalLayout_3->addWidget(line_2);
+
+        widget_settings_right = new QWidget(settingsWD);
+        widget_settings_right->setObjectName(QString::fromUtf8("widget_settings_right"));
+        verticalLayout_6 = new QVBoxLayout(widget_settings_right);
+        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+        terminalLabel = new QLabel(widget_settings_right);
+        terminalLabel->setObjectName(QString::fromUtf8("terminalLabel"));
+        terminalLabel->setStyleSheet(QString::fromUtf8("font-size: 16pt;\n"
+"color: #F0822F;\n"
+"background-color: #2E2E2E;\n"
+"border: none;\n"
+"padding: 5px;\n"
+"qproperty-alignment: AlignCenter;\n"
+""));
+
+        verticalLayout_6->addWidget(terminalLabel);
+
+        plainTextEdit = new QPlainTextEdit(widget_settings_right);
+        plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
+        plainTextEdit->setMaximumSize(QSize(16777215, 16777215));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Courier 10 Pitch"));
+        font.setPointSize(10);
+        plainTextEdit->setFont(font);
+        plainTextEdit->setReadOnly(true);
+
+        verticalLayout_6->addWidget(plainTextEdit);
+
+
+        horizontalLayout_3->addWidget(widget_settings_right);
 
         stackedWidget->addWidget(settingsWD);
         animationWD = new QWidget();
@@ -690,7 +785,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -739,7 +834,16 @@ public:
         kolano_name->setText(QCoreApplication::translate("MainWindow", "KOLANO65d5c6", nullptr));
         grid_filler->setText(QString());
         servo_5_1->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        settingsLabel->setText(QCoreApplication::translate("MainWindow", "SETTINGS", nullptr));
+        btnReconnect->setText(QCoreApplication::translate("MainWindow", "Po\305\202\304\205cz Ponownie", nullptr));
+        chkSimulateErrors->setText(QCoreApplication::translate("MainWindow", "Symuluj B\305\202\304\231dy", nullptr));
+        languageLabel->setText(QCoreApplication::translate("MainWindow", "Zmiana j\304\231zyka", nullptr));
+        comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Polski", nullptr));
+        comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "English", nullptr));
+
+#if QT_CONFIG(accessibility)
+        line_2->setAccessibleDescription(QCoreApplication::translate("MainWindow", "background-color: #65d5c6", nullptr));
+#endif // QT_CONFIG(accessibility)
+        terminalLabel->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Top View </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/top-view.png\" width=\"30\" height=\"30\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
 "<span style=\"vertical-align:middle;\">", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Side View  </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/robot-leg.png\" width=\"30\" height=\"30\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
