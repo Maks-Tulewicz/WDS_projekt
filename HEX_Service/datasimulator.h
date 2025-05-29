@@ -60,6 +60,18 @@ signals:
      * @param frame Ramka zawierająca dane o kątach serwomechanizmów.
      */
     void frameReady(const ServoFrame &frame);
+    /**
+ * @brief Zwraca następną ramkę (zawija w pętli).
+ * @return Wskaźnik na aktualną ramkę lub nullptr, jeżeli nie załadowano danych.
+ */
+    const ServoFrame* next();
+
+    /**
+ * @brief Resetuje odczyt do pierwszej ramki.
+ */
+    void reset();
+
+    void qualitySample(float rssi, float per);
 
 private slots:
     /**

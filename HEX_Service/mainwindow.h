@@ -3,11 +3,10 @@
 
 #include <QMainWindow>
 #include <QComboBox>
-#include "datasimulator.h"
-#include "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/sideview.h"
-#include"/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/topview.h"
 #include "servoanglemanager.h"
-
+#include "datasimulator.h"
+#include "sideview.h"
+#include "topview.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -18,9 +17,8 @@ QT_END_NAMESPACE
 /**
  * @brief Główne okno aplikacji sterującej hexapodem.
  *
- * Klasa odpowiada za wyświetlanie głównych widoków aplikacji
- * oraz obsługę przycisków nawigacyjnych. Użytkownik może przełączać się
- * pomiędzy widokiem połączenia FM, animacjami, ustawieniami i kątami serw.
+ * Klasa odpowiada za wyświetlanie głównych widoków aplikacji,
+ * obsługę nawigacji między ekranami oraz przetwarzanie i wyświetlanie danych.
  */
 class MainWindow : public QMainWindow
 {
@@ -29,55 +27,32 @@ class MainWindow : public QMainWindow
 public:
     /**
      * @brief Konstruktor głównego okna.
-     * @param parent Wskaźnik do obiektu rodzica (może być nullptr).
+     * @param parent Wskaźnik do obiektu rodzica (domyślnie nullptr).
      */
     explicit MainWindow(QWidget *parent = nullptr);
-
-    /**
-     * @brief Destruktor głównego okna.
-     */
     ~MainWindow();
 
     /**
-     * @brief Funkcja do aktualizacji GUI, kiedy dane o kątach serwomechanizmów są dostępne.
-     * @param frame Ramka z danymi o kątach serw.
-     */
+ * @brief Aktualizuje wszystkie QLabel-e kątów.
+ * @param frame  Struktura z czasem i wektorem kątów, prędkości i licznikiem pakietów.
+ */
     void updateServoGUI(const ServoFrame &frame);
 
+
 private slots:
-    /**
-     * @brief Przełącza widok na ekran z animacjami ruchów hexapoda.
-     */
-    void showAnimations();
-
-    /**
-     * @brief Przełącza widok na ekran z kątami serwomechanizmów.
-     */
-    void showServoAngles();
-
-    /**
-     * @brief Przełącza widok na ekran ustawień połączenia FM.
-     */
-    void showConnection();
-
-    /**
-     * @brief Przełącza widok na ekran ustawień aplikacji.
-     */
-    void showSettings();
-
-    /**
-     * @brief Slot zmieniający aktywną nogę na podstawie wyboru w QComboBox.
-     * @param index Indeks wybranej nogi.
-     */
-    void onLegSelectionChanged(int index);
+    void showAnimations(); /**< Pokaż widok animacji. */
+    void showServoAngles(); /**< Pokaż widok kątów serw. */
+    void showConnection(); /**< Pokaż widok jakości połączenia FM. */
+    void showSettings(); /**< Pokaż widok ustawień aplikacji. */
+    void onLegSelectionChanged(int index); /**< Zmieniona aktywna noga w SideView. */
 
 private:
-    Ui::MainWindow *ui; ///< Wskaźnik na wygenerowany interfejs użytkownika (z `.ui`)
-    DataSimulator *simulator;  ///< Instancja symulatora danych
-    SideView* sideView;  ///< Widget do wyświetlania jednej nogi w widoku z boku
-    QComboBox* comboBoxLegSide;  ///< ComboBox do wyboru nogi w widoku z boku
-    TopView* topView;
-
+    Ui::MainWindow *ui;               ///< Wskaźnik na wygenerowany interfejs UI
+    DataSimulator *simulator;         ///< Symulator strumienia danych
+    ServoAngleManager *servoManager;  ///< Manager aktualizacji QLabeli kątów
+    SideView *sideView;               ///< Widget bocznego widoku nogi
+    TopView *topView;                 ///< Widget widoku z góry całego robota
+    QComboBox *comboBoxLegSide;       ///< Dropdown wyboru nogi w widoku bocznym
 };
 
 #endif // MAINWINDOW_H

@@ -4,5 +4,11 @@
         <file>icons/antenna.png</file>
         <file>icons/setting.png</file>
     	<file>icons/motion-capture.png</file>
+    	<file>icons/robot-leg.png</file>
+    	<file>icons/robot-leg_ankle.png</file>
+    	<file>icons/robot-leg_knee.png</file>
+    	<file>icons/robot-leg_hip.png</file>
+	<file>icons/top_view.png</file>
+
     </qresource>
 </RCC>

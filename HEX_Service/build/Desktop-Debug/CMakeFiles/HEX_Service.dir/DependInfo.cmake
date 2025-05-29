@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/HEX_Service_autogen/mocs_compilation.cpp" "CMakeFiles/HEX_Service.dir/HEX_Service_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/HEX_Service.dir/HEX_Service_autogen/mocs_compilation.cpp.o.d"
   "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/datareader.cpp" "CMakeFiles/HEX_Service.dir/datareader.cpp.o" "gcc" "CMakeFiles/HEX_Service.dir/datareader.cpp.o.d"
   "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/datasimulator.cpp" "CMakeFiles/HEX_Service.dir/datasimulator.cpp.o" "gcc" "CMakeFiles/HEX_Service.dir/datasimulator.cpp.o.d"
+  "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/fmqualityview.cpp" "CMakeFiles/HEX_Service.dir/fmqualityview.cpp.o" "gcc" "CMakeFiles/HEX_Service.dir/fmqualityview.cpp.o.d"
   "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/main.cpp" "CMakeFiles/HEX_Service.dir/main.cpp.o" "gcc" "CMakeFiles/HEX_Service.dir/main.cpp.o.d"
   "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/mainwindow.cpp" "CMakeFiles/HEX_Service.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/HEX_Service.dir/mainwindow.cpp.o.d"
   "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/servoanglemanager.cpp" "CMakeFiles/HEX_Service.dir/servoanglemanager.cpp.o" "gcc" "CMakeFiles/HEX_Service.dir/servoanglemanager.cpp.o.d"

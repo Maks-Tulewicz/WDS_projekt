@@ -78,8 +78,13 @@ HEX_Service_autogen/timestamp: CMakeFiles/HEX_Service.dir/compiler_depend.ts
 
 HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp: /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons.qrc
 HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp: CMakeFiles/HEX_Service_autogen.dir/AutoRcc_icons_EWIEGA46WW_Info.json
+HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp: /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/robot-leg.png
+HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp: /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/robot-leg_ankle.png
+HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp: /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/robot-leg_hip.png
+HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp: /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/top_view.png
 HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp: /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/angle.png
 HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp: /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/setting.png
+HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp: /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/robot-leg_knee.png
 HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp: /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/motion-capture.png
 HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp: /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/antenna.png
 HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp: /usr/lib/qt5/bin/rcc
@@ -198,10 +203,24 @@ CMakeFiles/HEX_Service.dir/topview.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HEX_Service.dir/topview.cpp.s"
 	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/topview.cpp -o CMakeFiles/HEX_Service.dir/topview.cpp.s
 
+CMakeFiles/HEX_Service.dir/fmqualityview.cpp.o: CMakeFiles/HEX_Service.dir/flags.make
+CMakeFiles/HEX_Service.dir/fmqualityview.cpp.o: /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/fmqualityview.cpp
+CMakeFiles/HEX_Service.dir/fmqualityview.cpp.o: CMakeFiles/HEX_Service.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/HEX_Service.dir/fmqualityview.cpp.o"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HEX_Service.dir/fmqualityview.cpp.o -MF CMakeFiles/HEX_Service.dir/fmqualityview.cpp.o.d -o CMakeFiles/HEX_Service.dir/fmqualityview.cpp.o -c /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/fmqualityview.cpp
+
+CMakeFiles/HEX_Service.dir/fmqualityview.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HEX_Service.dir/fmqualityview.cpp.i"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/fmqualityview.cpp > CMakeFiles/HEX_Service.dir/fmqualityview.cpp.i
+
+CMakeFiles/HEX_Service.dir/fmqualityview.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HEX_Service.dir/fmqualityview.cpp.s"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/fmqualityview.cpp -o CMakeFiles/HEX_Service.dir/fmqualityview.cpp.s
+
 CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.o: CMakeFiles/HEX_Service.dir/flags.make
 CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.o: HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp
 CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.o: CMakeFiles/HEX_Service.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.o"
 	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.o -MF CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.o.d -o CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.o -c /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp
 
 CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.i: cmake_force
@@ -222,6 +241,7 @@ HEX_Service_OBJECTS = \
 "CMakeFiles/HEX_Service.dir/datasimulator.cpp.o" \
 "CMakeFiles/HEX_Service.dir/sideview.cpp.o" \
 "CMakeFiles/HEX_Service.dir/topview.cpp.o" \
+"CMakeFiles/HEX_Service.dir/fmqualityview.cpp.o" \
 "CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.o"
 
 # External object files for target HEX_Service
@@ -235,13 +255,15 @@ HEX_Service: CMakeFiles/HEX_Service.dir/datareader.cpp.o
 HEX_Service: CMakeFiles/HEX_Service.dir/datasimulator.cpp.o
 HEX_Service: CMakeFiles/HEX_Service.dir/sideview.cpp.o
 HEX_Service: CMakeFiles/HEX_Service.dir/topview.cpp.o
+HEX_Service: CMakeFiles/HEX_Service.dir/fmqualityview.cpp.o
 HEX_Service: CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_icons.cpp.o
 HEX_Service: CMakeFiles/HEX_Service.dir/build.make
+HEX_Service: /usr/lib/x86_64-linux-gnu/libQt5Charts.so.5.15.13
 HEX_Service: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.13
 HEX_Service: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.13
 HEX_Service: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.13
 HEX_Service: CMakeFiles/HEX_Service.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable HEX_Service"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable HEX_Service"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HEX_Service.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

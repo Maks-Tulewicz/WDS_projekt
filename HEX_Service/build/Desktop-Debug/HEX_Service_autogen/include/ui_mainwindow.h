@@ -23,8 +23,8 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/sideview.h"
-#include "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/topview.h"
+#include "sideview.h"
+#include "topview.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -83,13 +83,16 @@ public:
     QVBoxLayout *verticalLayout_4;
     QLabel *label;
     TopView *topView;
+    QFrame *workspace_devider;
     QWidget *right_widget;
     QVBoxLayout *verticalLayout;
+    QLabel *label_2;
     QComboBox *comboBoxLegSide;
     SideView *sideView;
     QWidget *fMconnectionWD;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *fmLabel;
+    QVBoxLayout *verticalLayout_5;
+    QWidget *qualityView;
+    QWidget *widget_2;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -276,6 +279,7 @@ public:
 "padding: 5px;\n"
 "qproperty-alignment: AlignCenter;\n"
 ""));
+        noga_4_name->setTextFormat(Qt::RichText);
 
         gridLayout->addWidget(noga_4_name, 4, 0, 1, 1);
 
@@ -288,6 +292,7 @@ public:
 "padding: 5px;\n"
 "qproperty-alignment: AlignCenter;\n"
 ""));
+        biodro_name->setTextFormat(Qt::RichText);
         biodro_name->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(biodro_name, 0, 1, 1, 1);
@@ -343,6 +348,8 @@ public:
 "padding: 5px;\n"
 "qproperty-alignment: AlignCenter;\n"
 ""));
+        noga_3_name->setFrameShadow(QFrame::Sunken);
+        noga_3_name->setTextFormat(Qt::RichText);
 
         gridLayout->addWidget(noga_3_name, 3, 0, 1, 1);
 
@@ -355,6 +362,7 @@ public:
 "padding: 5px;\n"
 "qproperty-alignment: AlignCenter;\n"
 ""));
+        noga_6_name->setTextFormat(Qt::RichText);
 
         gridLayout->addWidget(noga_6_name, 6, 0, 1, 1);
 
@@ -395,7 +403,9 @@ public:
 "padding: 5px;\n"
 "qproperty-alignment: AlignCenter;\n"
 ""));
+        noga_1_name->setTextFormat(Qt::RichText);
         noga_1_name->setScaledContents(true);
+        noga_1_name->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(noga_1_name, 1, 0, 1, 1);
 
@@ -450,6 +460,7 @@ public:
 "padding: 5px;\n"
 "qproperty-alignment: AlignCenter;\n"
 ""));
+        noga_2_name->setTextFormat(Qt::RichText);
 
         gridLayout->addWidget(noga_2_name, 2, 0, 1, 1);
 
@@ -476,6 +487,7 @@ public:
 "padding: 5px;\n"
 "qproperty-alignment: AlignCenter;\n"
 ""));
+        noga_5_name->setTextFormat(Qt::RichText);
 
         gridLayout->addWidget(noga_5_name, 5, 0, 1, 1);
 
@@ -502,6 +514,7 @@ public:
 "padding: 5px;\n"
 "qproperty-alignment: AlignCenter;\n"
 ""));
+        kostka_name->setTextFormat(Qt::RichText);
         kostka_name->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(kostka_name, 0, 3, 1, 1);
@@ -529,6 +542,7 @@ public:
 "padding: 5px;\n"
 "qproperty-alignment: AlignCenter;\n"
 ""));
+        kolano_name->setTextFormat(Qt::RichText);
         kolano_name->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(kolano_name, 0, 2, 1, 1);
@@ -579,6 +593,15 @@ public:
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         label = new QLabel(left_widget);
         label->setObjectName(QString::fromUtf8("label"));
+        label->setMaximumSize(QSize(16777215, 75));
+        label->setStyleSheet(QString::fromUtf8("font-size: 16pt;\n"
+"color: #F0822F;\n"
+"background-color: #2E2E2E;\n"
+"border: none;\n"
+"padding: 5px;\n"
+"qproperty-alignment: AlignCenter;\n"
+""));
+        label->setTextFormat(Qt::RichText);
 
         verticalLayout_4->addWidget(label);
 
@@ -590,10 +613,34 @@ public:
 
         horizontalLayout_2->addWidget(left_widget);
 
+        workspace_devider = new QFrame(animationWD);
+        workspace_devider->setObjectName(QString::fromUtf8("workspace_devider"));
+        workspace_devider->setMinimumSize(QSize(10, 450));
+        workspace_devider->setStyleSheet(QString::fromUtf8("background-color: #65d5c6"));
+        workspace_devider->setFrameShape(QFrame::VLine);
+        workspace_devider->setFrameShadow(QFrame::Sunken);
+
+        horizontalLayout_2->addWidget(workspace_devider);
+
         right_widget = new QWidget(animationWD);
         right_widget->setObjectName(QString::fromUtf8("right_widget"));
         verticalLayout = new QVBoxLayout(right_widget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        label_2 = new QLabel(right_widget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setMinimumSize(QSize(0, 40));
+        label_2->setMaximumSize(QSize(16777215, 45));
+        label_2->setStyleSheet(QString::fromUtf8("font-size: 16pt;\n"
+"color: #F0822F;\n"
+"background-color: #2E2E2E;\n"
+"border: none;\n"
+"padding: 5px;\n"
+"qproperty-alignment: AlignCenter;\n"
+""));
+        label_2->setTextFormat(Qt::RichText);
+
+        verticalLayout->addWidget(label_2);
+
         comboBoxLegSide = new QComboBox(right_widget);
         comboBoxLegSide->addItem(QString());
         comboBoxLegSide->addItem(QString());
@@ -619,13 +666,17 @@ public:
         stackedWidget->addWidget(animationWD);
         fMconnectionWD = new QWidget();
         fMconnectionWD->setObjectName(QString::fromUtf8("fMconnectionWD"));
-        horizontalLayout_3 = new QHBoxLayout(fMconnectionWD);
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        fmLabel = new QLabel(fMconnectionWD);
-        fmLabel->setObjectName(QString::fromUtf8("fmLabel"));
-        fmLabel->setAlignment(Qt::AlignCenter);
+        verticalLayout_5 = new QVBoxLayout(fMconnectionWD);
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        qualityView = new QWidget(fMconnectionWD);
+        qualityView->setObjectName(QString::fromUtf8("qualityView"));
 
-        horizontalLayout_3->addWidget(fmLabel);
+        verticalLayout_5->addWidget(qualityView);
+
+        widget_2 = new QWidget(fMconnectionWD);
+        widget_2->setObjectName(QString::fromUtf8("widget_2"));
+
+        verticalLayout_5->addWidget(widget_2);
 
         stackedWidget->addWidget(fMconnectionWD);
 
@@ -658,30 +709,41 @@ public:
         servo_3_0->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         servo_1_1->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         servo_5_0->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        noga_4_name->setText(QCoreApplication::translate("MainWindow", "Noga 4", nullptr));
-        biodro_name->setText(QCoreApplication::translate("MainWindow", "\"BIODRO\"", nullptr));
+        noga_4_name->setText(QCoreApplication::translate("MainWindow", "Noga 4</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/robot-leg.png\" width=\"40\" height=\"40\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
+"<span style=\"vertical-align:middle;\">", nullptr));
+        biodro_name->setText(QCoreApplication::translate("MainWindow", "BIODRO</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/robot-leg_hip.png\" width=\"40\" height=\"40\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
+"<span style=\"vertical-align:middle;\">", nullptr));
         servo_2_0->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         servo_0_1->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         servo_3_1->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        noga_3_name->setText(QCoreApplication::translate("MainWindow", "Noga 3", nullptr));
-        noga_6_name->setText(QCoreApplication::translate("MainWindow", "Noga 6", nullptr));
+        noga_3_name->setText(QCoreApplication::translate("MainWindow", "Noga 3</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/robot-leg.png\" width=\"40\" height=\"40\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
+"<span style=\"vertical-align:middle;\">", nullptr));
+        noga_6_name->setText(QCoreApplication::translate("MainWindow", "Noga 6</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/robot-leg.png\" width=\"40\" height=\"40\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
+"<span style=\"vertical-align:middle;\">", nullptr));
         servo_1_2->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         servo_0_0->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        noga_1_name->setText(QCoreApplication::translate("MainWindow", "Noga 1", nullptr));
+        noga_1_name->setText(QCoreApplication::translate("MainWindow", "Noga 1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/robot-leg.png\" width=\"40\" height=\"40\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
+"<span style=\"vertical-align:middle;\">", nullptr));
         servo_2_2->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         servo_4_2->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         servo_2_1->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        noga_2_name->setText(QCoreApplication::translate("MainWindow", "Noga 2", nullptr));
+        noga_2_name->setText(QCoreApplication::translate("MainWindow", "Noga 2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/robot-leg.png\" width=\"40\" height=\"40\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
+"<span style=\"vertical-align:middle;\">", nullptr));
         servo_1_0->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        noga_5_name->setText(QCoreApplication::translate("MainWindow", "Noga 5", nullptr));
+        noga_5_name->setText(QCoreApplication::translate("MainWindow", "Noga 5</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/robot-leg.png\" width=\"40\" height=\"40\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
+"<span style=\"vertical-align:middle;\">", nullptr));
         servo_5_2->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        kostka_name->setText(QCoreApplication::translate("MainWindow", "\"KOSTKA\"", nullptr));
+        kostka_name->setText(QCoreApplication::translate("MainWindow", "KOSTKA</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/robot-leg_ankle.png\" width=\"40\" height=\"40\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
+"<span style=\"vertical-align:middle;\">", nullptr));
         servo_4_0->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        kolano_name->setText(QCoreApplication::translate("MainWindow", "\"KOLANO\"", nullptr));
+        kolano_name->setText(QCoreApplication::translate("MainWindow", "KOLANO65d5c6", nullptr));
         grid_filler->setText(QString());
         servo_5_1->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         settingsLabel->setText(QCoreApplication::translate("MainWindow", "SETTINGS", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Top View", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Top View </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/top-view.png\" width=\"30\" height=\"30\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
+"<span style=\"vertical-align:middle;\">", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Side View  </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/robot-leg.png\" width=\"30\" height=\"30\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
+"<span style=\"vertical-align:middle;\">", nullptr));
         comboBoxLegSide->setItemText(0, QCoreApplication::translate("MainWindow", "1", nullptr));
         comboBoxLegSide->setItemText(1, QCoreApplication::translate("MainWindow", "2", nullptr));
         comboBoxLegSide->setItemText(2, QCoreApplication::translate("MainWindow", "3", nullptr));
@@ -689,7 +751,6 @@ public:
         comboBoxLegSide->setItemText(4, QCoreApplication::translate("MainWindow", "5", nullptr));
         comboBoxLegSide->setItemText(5, QCoreApplication::translate("MainWindow", "6", nullptr));
 
-        fmLabel->setText(QCoreApplication::translate("MainWindow", "FM COnnection", nullptr));
     } // retranslateUi
 
 };

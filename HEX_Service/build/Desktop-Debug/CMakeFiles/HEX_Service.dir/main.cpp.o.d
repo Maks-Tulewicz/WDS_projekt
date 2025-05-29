@@ -304,9 +304,14 @@ CMakeFiles/HEX_Service.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
- /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/datasimulator.h \
+ /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/servoanglemanager.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
+ /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/datasimulator.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtimer.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasictimer.h \
@@ -318,6 +323,15 @@ CMakeFiles/HEX_Service.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QTextStream \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QtGlobal \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
  /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/sideview.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
@@ -326,11 +340,6 @@ CMakeFiles/HEX_Service.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextoption.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h \
  /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/topview.h \
- /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/servoanglemanager.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h \

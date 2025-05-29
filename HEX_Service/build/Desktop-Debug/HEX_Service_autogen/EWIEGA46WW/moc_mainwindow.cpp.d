@@ -250,12 +250,15 @@
   /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QTextStream \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QVector \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QtGlobal \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
@@ -270,7 +273,9 @@
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainertools_impl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
@@ -302,6 +307,7 @@
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h \
@@ -315,6 +321,7 @@
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtimer.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \

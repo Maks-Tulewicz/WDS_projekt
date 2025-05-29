@@ -304,9 +304,14 @@ CMakeFiles/HEX_Service.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
- /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/datasimulator.h \
+ /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/servoanglemanager.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
+ /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/datasimulator.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtimer.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasictimer.h \
@@ -318,6 +323,15 @@ CMakeFiles/HEX_Service.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QTextStream \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QtGlobal \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
  /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/sideview.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
@@ -326,12 +340,7 @@ CMakeFiles/HEX_Service.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextoption.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h \
  /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/topview.h \
- /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/servoanglemanager.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
- /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/HEX_Service_autogen/include/./ui_mainwindow.h \
+ /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/HEX_Service_autogen/include/ui_mainwindow.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QIcon \
@@ -365,35 +374,62 @@ CMakeFiles/HEX_Service.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qstatusbar.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QRandomGenerator \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qrandom.h \
- /usr/include/c++/13/random /usr/include/c++/13/cmath /usr/include/math.h \
- /usr/include/x86_64-linux-gnu/bits/math-vector.h \
- /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
- /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
- /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
- /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
- /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/tr1/gamma.tcc \
- /usr/include/c++/13/tr1/special_function_util.h \
- /usr/include/c++/13/tr1/bessel_function.tcc \
- /usr/include/c++/13/tr1/beta_function.tcc \
- /usr/include/c++/13/tr1/ell_integral.tcc \
- /usr/include/c++/13/tr1/exp_integral.tcc \
- /usr/include/c++/13/tr1/hypergeometric.tcc \
- /usr/include/c++/13/tr1/legendre_function.tcc \
- /usr/include/c++/13/tr1/modified_bessel_func.tcc \
- /usr/include/c++/13/tr1/poly_hermite.tcc \
- /usr/include/c++/13/tr1/poly_laguerre.tcc \
- /usr/include/c++/13/tr1/riemann_zeta.tcc \
- /usr/include/c++/13/bits/random.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
- /usr/include/c++/13/bits/random.tcc \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h
+ /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/sideview.h \
+ /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/topview.h \
+ /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/fmqualityview.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/QChartView \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/qchartview.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/QAbstractAxis \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/qabstractaxis.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/QChartGlobal \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/qchartglobal.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QtGlobal \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QPen \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QFont \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/QAbstractSeries \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/qabstractseries.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/QChart \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/qchart.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/QLegend \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/qlegend.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsWidget \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicswidget.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicslayoutitem.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicsitem.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainterpath.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QBrush \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsView \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicsview.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainter.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qscrollarea.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicsscene.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/QSplineSeries \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/qsplineseries.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/qlineseries.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/QXYSeries \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/qxyseries.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QPointF \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/QLineSeries \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/qlineseries.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/QValueAxis \
+ /usr/include/x86_64-linux-gnu/qt5/QtCharts/qvalueaxis.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLayout \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QSizePolicy \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h

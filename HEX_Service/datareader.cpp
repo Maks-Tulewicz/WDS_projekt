@@ -1,7 +1,5 @@
-
 #include "datareader.h"
-#include <QTextStream>
-#include <QDebug>
+#include <QtGlobal> // qChecksum
 
 DataReader::DataReader(QObject *parent)
     : QObject(parent)
@@ -17,22 +15,39 @@ bool DataReader::loadFromFile(const QString &filePath)
 
     frames.clear();
     currentIndex = 0;
-
     QTextStream in(&file);
+
     while (!in.atEnd()) {
         QString line = in.readLine().trimmed();
-        if (line.isEmpty()) continue;
+        if (!line.startsWith('<') || !line.endsWith('>')) continue;
 
-        QStringList parts = line.split(";");
-        if (parts.size() != 19) continue; // 1 czas + 18 serw
-
-        ServoFrame frame;
-        frame.timeMs = parts[0].toInt();
-
-        for (int i = 1; i < parts.size(); ++i) {
-            frame.angles.append(parts[i].toFloat());
+        QString core = line.mid(1, line.length() - 2);
+        QStringList parts = core.split(';');
+        // 1 timestamp + 18 angles + speed + packets + crc = 22 elementy
+        if (parts.size() != 22) continue;
+        // Weryfikacja CRC: sum bytes mod 256
+        QByteArray raw = core.left(core.lastIndexOf(';')).toUtf8();
+        bool okCrc = false;
+        int crc = parts.last().toInt(&okCrc);
+        if (!okCrc) {
+            qWarning() << "CRC nie parsuje:" << parts.last();
+            continue;
+        }
+        uint8_t sum = 0;
+        for (auto b : raw)
+            sum = uint8_t(sum + static_cast<uint8_t>(b));
+        if (sum != static_cast<uint8_t>(crc)) {
+            qWarning() << "CRC niezgodne (obliczone=" << sum << "odebrane=" << crc << ")";
+            continue;
         }
 
+
+        ServoFrame frame;
+        frame.timeMs     = parts[0].toInt();
+        for (int i = 1; i <= 18; ++i)
+            frame.angles.append(parts[i].toFloat());
+        frame.speed       = parts[19].toFloat();
+        frame.packetCount = parts[20].toInt();
         frames.append(frame);
     }
 
@@ -43,10 +58,9 @@ bool DataReader::loadFromFile(const QString &filePath)
 const ServoFrame* DataReader::next()
 {
     if (frames.isEmpty()) return nullptr;
-
-    const ServoFrame* frame = &frames[currentIndex];
+    const ServoFrame* f = &frames[currentIndex];
     currentIndex = (currentIndex + 1) % frames.size();
-    return frame;
+    return f;
 }
 
 void DataReader::reset()

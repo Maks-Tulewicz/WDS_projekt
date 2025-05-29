@@ -8,8 +8,13 @@
 	"INCLUDE_DIR" : "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/HEX_Service_autogen/include",
 	"INPUTS" : 
 	[
+		"/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/robot-leg.png",
+		"/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/robot-leg_ankle.png",
+		"/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/robot-leg_hip.png",
+		"/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/top_view.png",
 		"/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/angle.png",
 		"/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/setting.png",
+		"/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/robot-leg_knee.png",
 		"/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/motion-capture.png",
 		"/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons/antenna.png"
 	],

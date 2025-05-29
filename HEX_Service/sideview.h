@@ -18,10 +18,19 @@ public:
     explicit SideView(QWidget *parent = nullptr);
 
 public slots:          // <-- PRZENIEŚ TU!
-    void setActiveLeg(int leg);       // slot
-
+    /**
+ * @brief Wybiera, którą nogę rysować.
+ * @param leg  Numer nogi (0–5).
+ */
+    void setActiveLeg(int leg);
 public:
+    /**
+ * @brief Ustawia kąty kolana i kostki dla aktywnej nogi.
+ * @param knee   Kąt kolana [°].
+ * @param ankle  Kąt kostki [°].
+ */
     void setJointAngles(float knee, float ankle);
+
 
 protected:
     void paintEvent(QPaintEvent *event) override;

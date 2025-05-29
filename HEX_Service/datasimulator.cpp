@@ -1,4 +1,8 @@
 #include "datasimulator.h"
+#include <QRandomGenerator>
+#include"qrandom.h"
+#include <QtMath>
+#include "datareader.h"
 
 DataSimulator::DataSimulator(QObject *parent)
     : QObject(parent),
@@ -40,6 +44,18 @@ void DataSimulator::setInterval(int intervalMs)
 void DataSimulator::onTimerTick()
 {
     const ServoFrame *frame = reader->next();
-    if (frame)
+    if (frame) {
         emit frameReady(*frame);
+    }
+
+    // ————————————————————————————————————————
+    // symulacja jakości łącza FM
+    static float angle = 0;
+    // qDegreesToRadians, qSin, qCos są w <QtMath>
+    float rssi = -50 + 10 * qSin(qDegreesToRadians(angle));
+    float per  = 10  + 5  * qCos(qDegreesToRadians(angle));
+    angle = fmod(angle + 5, 360.0f);
+
+    emit qualitySample(rssi, per);
+    // ————————————————————————————————————————
 }

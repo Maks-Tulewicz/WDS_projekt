@@ -9,6 +9,8 @@ HEX_Service_autogen/timestamp: \
 	/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/datareader.h \
 	/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/datasimulator.cpp \
 	/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/datasimulator.h \
+	/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/fmqualityview.cpp \
+	/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/fmqualityview.h \
 	/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/icons.qrc \
 	/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/main.cpp \
 	/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/mainwindow.cpp \
@@ -264,12 +266,39 @@ HEX_Service_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
 	/usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
 	/usr/include/x86_64-linux-gnu/gnu/stubs.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/QAbstractAxis \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/QAbstractSeries \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/QChart \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/QChartGlobal \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/QChartView \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/QLegend \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/QLineSeries \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/QSplineSeries \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/QValueAxis \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/QXYSeries \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/qabstractaxis.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/qabstractseries.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/qchart.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/qchartglobal.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/qchartview.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/qlegend.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/qlineseries.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/qsplineseries.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/qvalueaxis.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCharts/qxyseries.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/QFile \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/QList \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/QPointF \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/QTextStream \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/QVector \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/QtGlobal \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
@@ -284,7 +313,10 @@ HEX_Service_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainertools_impl.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
@@ -316,6 +348,7 @@ HEX_Service_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h \
@@ -329,16 +362,22 @@ HEX_Service_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qtimer.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtGui/QBrush \
+	/usr/include/x86_64-linux-gnu/qt5/QtGui/QFont \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter \
+	/usr/include/x86_64-linux-gnu/qt5/QtGui/QPen \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h \
@@ -348,6 +387,7 @@ HEX_Service_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qmatrix.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qpainter.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtGui/qpainterpath.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h \
@@ -359,21 +399,32 @@ HEX_Service_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qtextoption.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qvalidator.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QComboBox \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsView \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsWidget \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractitemdelegate.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractslider.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractspinbox.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcombobox.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicsitem.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicslayoutitem.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicsscene.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicsview.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicswidget.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qscrollarea.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qslider.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qstyle.h \
@@ -393,6 +444,8 @@ HEX_Service_autogen/timestamp: \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt5Charts/Qt5ChartsConfig.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt5Charts/Qt5ChartsConfigVersion.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake \
@@ -443,7 +496,6 @@ HEX_Service_autogen/timestamp: \
 	/usr/share/cmake-3.28/Modules/FindDoxygen.cmake \
 	/usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake \
 	/usr/share/cmake-3.28/Modules/FindPackageMessage.cmake \
-	/usr/share/cmake-3.28/Modules/GNUInstallDirs.cmake \
 	/usr/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake \
 	/usr/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake \
 	/usr/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake \

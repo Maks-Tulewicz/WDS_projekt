@@ -10,6 +10,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/HEX_Service.dir/datareader.cpp.o.d"
   "CMakeFiles/HEX_Service.dir/datasimulator.cpp.o"
   "CMakeFiles/HEX_Service.dir/datasimulator.cpp.o.d"
+  "CMakeFiles/HEX_Service.dir/fmqualityview.cpp.o"
+  "CMakeFiles/HEX_Service.dir/fmqualityview.cpp.o.d"
   "CMakeFiles/HEX_Service.dir/main.cpp.o"
   "CMakeFiles/HEX_Service.dir/main.cpp.o.d"
   "CMakeFiles/HEX_Service.dir/mainwindow.cpp.o"

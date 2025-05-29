@@ -2,9 +2,5 @@
 /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles/doc.dir
 /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles/edit_cache.dir
 /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
-/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles/list_install_components.dir
-/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles/install.dir
-/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles/install/local.dir
-/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles/install/strip.dir
 /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles/HEX_Service_autogen_timestamp_deps.dir
 /home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug/CMakeFiles/HEX_Service_autogen.dir
