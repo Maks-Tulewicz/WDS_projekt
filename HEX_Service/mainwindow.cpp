@@ -160,9 +160,22 @@ void MainWindow::handleLogError(const QString &msg) {
     ui->plainTextEdit->appendHtml("<span style='color:red;'>" + msg + "</span>");
 }
 
+
 void MainWindow::handleLogMessage(const QString &msg) {
-    ui->plainTextEdit->appendPlainText(msg);
+    // Limit the number of messages stored in plainTextEdit
+    static const int MAX_LINES = 1000;
+    QPlainTextEdit* editor = ui->plainTextEdit;
+
+    if (editor->document()->lineCount() > MAX_LINES) {
+        QTextCursor cursor(editor->document());
+        cursor.movePosition(QTextCursor::Start);
+        cursor.movePosition(QTextCursor::Down, QTextCursor::KeepAnchor,
+                            editor->document()->lineCount() - MAX_LINES);
+        cursor.removeSelectedText();
+    }
+    editor->appendPlainText(msg);
 }
+
 void MainWindow::onSimDisconnect()
 {
     ui->plainTextEdit->appendPlainText("### Rozłączono z powodu zbyt wielu błędów CRC ###");
@@ -170,11 +183,14 @@ void MainWindow::onSimDisconnect()
 }
 void MainWindow::onReconnectClicked()
 {
-    ui->plainTextEdit->clear();  // czyścimy terminal
-    simulator->resetSimulation();
-    simulator->startSimulation(1000);
-    simulator->setSimulateErrors(ui->chkSimulateErrors->isChecked());
-    ui->btnReconnect->setEnabled(false);  // znowu wyłączamy przycisk
+    ui->btnReconnect->setEnabled(false);  // Disable immediately to prevent multiple clicks
+    ui->plainTextEdit->clear();
+
+    QTimer::singleShot(500, this, [this]() {  // Add 500ms delay for proper cleanup
+        simulator->resetSimulation();
+        simulator->startSimulation(1000);
+        simulator->setSimulateErrors(ui->chkSimulateErrors->isChecked());
+    });
 }
 
 

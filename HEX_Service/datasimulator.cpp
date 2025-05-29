@@ -12,7 +12,7 @@ DataSimulator::DataSimulator(QObject *parent)
     reader(new DataReader(this)),
     interval(1000)
 {
-    connect(timer, &QTimer::timeout, this, &DataSimulator::onTimerTick);
+    connect(timer, &QTimer::timeout, this, &DataSimulator::onTimerTick, Qt::UniqueConnection);
 }
 
 bool DataSimulator::loadData(const QString &filePath)
@@ -22,6 +22,9 @@ bool DataSimulator::loadData(const QString &filePath)
 
 void DataSimulator::startSimulation(int intervalMs)
 {
+    if (timer->isActive()) {
+        timer->stop(); // zabezpieczenie
+    }
     interval = intervalMs;
     timer->start(interval);
 }
@@ -30,12 +33,18 @@ void DataSimulator::pauseSimulation()
 {
     timer->stop();
 }
-
 void DataSimulator::resetSimulation()
 {
     reader->reset();
     crcErrorCount = 0;
-
+    // Clear any pending timer events
+    if (timer->isActive()) {
+        timer->stop();
+    }
+    // Give time for cleanup before potentially restarting
+    QTimer::singleShot(100, this, [this]() {
+        emit reset();
+    });
 }
 
 void DataSimulator::setInterval(int intervalMs)
