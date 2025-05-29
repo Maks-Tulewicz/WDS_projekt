@@ -66,7 +66,8 @@ private:
     void loadLanguage(const QString &language);
     void changeEvent(QEvent* event) override;
     QTranslator *translator;
-
+    void setupLabels();
+    QString getTranslatedLabelWithIcon(const QString& text, const QString& iconPath, int width = 40, int height = 40);
 };
 
 #endif // MAINWINDOW_H

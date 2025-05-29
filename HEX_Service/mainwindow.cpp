@@ -11,6 +11,9 @@
 #include <QLayout>
 #include <QSizePolicy>
 #include <QDebug>
+#include <QTranslator>
+#include <QApplication>
+#include <QDirIterator>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -90,9 +93,21 @@ MainWindow::MainWindow(QWidget *parent)
 
     // ----- 7) Połączenie translatora -----
     translator = new QTranslator(this);
+
+    // Połączenie sygnału zmiany języka
     connect(ui->languageComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &MainWindow::onLanguageChanged);
-    loadLanguage("pl");
+
+    // Załaduj domyślny język
+    QString path = ":/translations/translations/hex_service_pl.qm"; // Poprawiona ścieżka
+    if (translator->load(path)) {
+        qDebug() << "Initial translation loaded successfully";
+        qApp->installTranslator(translator);
+    } else {
+        qDebug() << "Failed to load initial translation from" << path;
+    }
+
+    setupLabels();
 
 
 }
@@ -223,22 +238,61 @@ void MainWindow::changeEvent(QEvent* event)
 {
     if (event->type() == QEvent::LanguageChange) {
         ui->retranslateUi(this);
+        setupLabels();
     }
     QMainWindow::changeEvent(event);
 }
 
+
 void MainWindow::onLanguageChanged(int index)
 {
+    qDebug() << "Language change requested to index:" << index;
+
+    // Usuń poprzedni translator
+    qApp->removeTranslator(translator);
+
+    // Załaduj nowy język
     QString language = index == 0 ? "pl" : "en";
-    loadLanguage(language);
+    QString path = QString(":/translations/translations/hex_service_%1.qm").arg(language); // Poprawiona ścieżka
 
-    // Aktualizuj etykiety, które nie są automatycznie tłumaczone
-    ui->retranslateUi(this);
+    qDebug() << "Trying to load translation from:" << path;
 
-    // Aktualizuj dynamiczne teksty
-    if (language == "pl") {
-        logToTerminal("Zmieniono język na Polski");
+    if (translator->load(path)) {
+        qDebug() << "Translation loaded successfully";
+        qApp->installTranslator(translator);
     } else {
-        logToTerminal("Language changed to English");
+        qDebug() << "Failed to load translation from" << path;
     }
+
+    // Aktualizuj UI
+    ui->retranslateUi(this);
+    setupLabels();
+}
+
+
+void MainWindow::setupLabels()
+{
+    // Ustaw etykiety z ikonami
+    ui->noga_1_name->setText(getTranslatedLabelWithIcon(tr("Noga 1"), ":/icons/robot-leg.png"));
+    ui->noga_2_name->setText(getTranslatedLabelWithIcon(tr("Noga 2"), ":/icons/robot-leg.png"));
+    ui->noga_3_name->setText(getTranslatedLabelWithIcon(tr("Noga 3"), ":/icons/robot-leg.png"));
+    ui->noga_4_name->setText(getTranslatedLabelWithIcon(tr("Noga 4"), ":/icons/robot-leg.png"));
+    ui->noga_5_name->setText(getTranslatedLabelWithIcon(tr("Noga 5"), ":/icons/robot-leg.png"));
+    ui->noga_6_name->setText(getTranslatedLabelWithIcon(tr("Noga 6"), ":/icons/robot-leg.png"));
+
+    ui->biodro_name->setText(getTranslatedLabelWithIcon(tr("BIODRO"), ":/icons/robot-leg_hip.png"));
+    ui->kolano_name->setText(getTranslatedLabelWithIcon(tr("KOLANO"), ":/icons/robot-leg_knee.png"));
+    ui->kostka_name->setText(getTranslatedLabelWithIcon(tr("KOSTKA"), ":/icons/robot-leg_ankle.png"));
+
+    ui->label->setText(getTranslatedLabelWithIcon(tr("Top View"), ":/icons/top-view.png", 30, 30));
+    ui->label_2->setText(getTranslatedLabelWithIcon(tr("Side View"), ":/icons/robot-leg.png", 30, 30));
+}
+
+QString MainWindow::getTranslatedLabelWithIcon(const QString& text, const QString& iconPath, int width, int height)
+{
+    return QString("%1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\"%2\" width=\"%3\" height=\"%4\" style=\"vertical-align:middle; margin-right: 10px;\"><span style=\"vertical-align:middle;\">")
+        .arg(text)
+        .arg(iconPath)
+        .arg(width)
+        .arg(height);
 }

@@ -450,4 +450,11 @@ CMakeFiles/HEX_Service.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLayout \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QSizePolicy \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QTranslator \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtranslator.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QDirIterator \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdiriterator.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdir.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfileinfo.h

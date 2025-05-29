@@ -792,7 +792,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -838,7 +838,8 @@ public:
         kostka_name->setText(QCoreApplication::translate("MainWindow", "KOSTKA</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/robot-leg_ankle.png\" width=\"40\" height=\"40\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
 "<span style=\"vertical-align:middle;\">", nullptr));
         servo_4_0->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        kolano_name->setText(QCoreApplication::translate("MainWindow", "KOLANO65d5c6", nullptr));
+        kolano_name->setText(QCoreApplication::translate("MainWindow", "KOLANO</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/robot-leg_knee.png\" width=\"40\" height=\"40\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
+"<span style=\"vertical-align:middle;\">", nullptr));
         grid_filler->setText(QString());
         servo_5_1->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         btnReconnect->setText(QCoreApplication::translate("MainWindow", "Po\305\202\304\205cz Ponownie", nullptr));
@@ -851,7 +852,7 @@ public:
         line_2->setAccessibleDescription(QCoreApplication::translate("MainWindow", "background-color: #65d5c6", nullptr));
 #endif // QT_CONFIG(accessibility)
         terminalLabel->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Top View </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/top-view.png\" width=\"30\" height=\"30\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
+        label->setText(QCoreApplication::translate("MainWindow", "Top View </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/top_view.png\" width=\"60\" height=\"60\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
 "<span style=\"vertical-align:middle;\">", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Side View  </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\":/icons/robot-leg.png\" width=\"30\" height=\"30\" style=\"vertical-align:middle; margin-right: 10px;\">\n"
 "<span style=\"vertical-align:middle;\">", nullptr));
