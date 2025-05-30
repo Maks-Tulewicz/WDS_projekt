@@ -2,7 +2,7 @@
 #define SIDEVIEW_H
 
 #include <QWidget>
-#include <QPainter>  // Będzie używane do rysowania na widgetcie
+#include <QPainter>
 
 /**
  * @brief Klasa do wyświetlania jednej nogi robota w widoku z boku.
@@ -12,33 +12,40 @@
  */
 class SideView : public QWidget
 {
-    Q_OBJECT           // <-- musi być!
+    Q_OBJECT
 
 public:
+    /**
+     * @brief Konstruktor widoku bocznego
+     * @param parent Wskaźnik na widget rodzica
+     */
     explicit SideView(QWidget *parent = nullptr);
 
-public slots:          // <-- PRZENIEŚ TU!
+public slots:
     /**
- * @brief Wybiera, którą nogę rysować.
- * @param leg  Numer nogi (0–5).
- */
+     * @brief Wybiera, którą nogę rysować
+     * @param leg Numer nogi (0-5)
+     */
     void setActiveLeg(int leg);
-public:
+
     /**
- * @brief Ustawia kąty kolana i kostki dla aktywnej nogi.
- * @param knee   Kąt kolana [°].
- * @param ankle  Kąt kostki [°].
- */
+     * @brief Ustawia kąty kolana i kostki dla aktywnej nogi
+     * @param knee Kąt kolana [°]
+     * @param ankle Kąt kostki [°]
+     */
     void setJointAngles(float knee, float ankle);
 
-
 protected:
+    /**
+     * @brief Obsługuje zdarzenie rysowania widgetu
+     * @param event Obiekt zdarzenia
+     */
     void paintEvent(QPaintEvent *event) override;
 
 private:
-    int   activeLeg  = 0;
-    float kneeAngle  = 0.f;
-    float ankleAngle = 0.f;
+    int activeLeg = 0;      ///< Indeks aktualnie wyświetlanej nogi (0-5)
+    float kneeAngle = 0.f;  ///< Aktualny kąt kolana w stopniach
+    float ankleAngle = 0.f; ///< Aktualny kąt kostki w stopniach
 };
 
 #endif // SIDEVIEW_H

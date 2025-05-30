@@ -19,6 +19,11 @@ QT_CHARTS_USE_NAMESPACE
     Q_OBJECT
 
 public:
+    /**
+     * @brief Konstruktor widoku jakości
+     * @param parent Wskaźnik na widget rodzica
+     */
+
     explicit FmQualityView(QWidget *parent = nullptr);
 
 public slots:
@@ -30,13 +35,13 @@ public slots:
     void addMeasurement(float rssi, float per);
 
 private:
-    QSplineSeries*   rssiSeries;
-    QLineSeries*     perSeries;
-    QValueAxis*      axisX;
-    QValueAxis*      axisY1;
-    QValueAxis*      axisY2;
-    qreal            t = 0;            // czas w ms
-    const qreal      windowSize = 200; // szerokość okna czasowego
+    QSplineSeries *rssiSeries;  ///< Seria danych RSSI
+    QLineSeries *perSeries;     ///< Seria danych PER
+    QValueAxis *axisX;          ///< Oś czasu
+    QValueAxis *axisY1;         ///< Oś wartości RSSI
+    QValueAxis *axisY2;         ///< Oś wartości PER
+    qreal t = 0;               ///< Aktualny czas w milisekundach
+    const qreal windowSize = 200; ///< Szerokość okna wyświetlania w próbkach
 };
 
 #endif // FMQUALITYVIEW_H

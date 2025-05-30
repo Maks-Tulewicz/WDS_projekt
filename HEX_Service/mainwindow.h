@@ -43,31 +43,77 @@ public:
 
 
 private slots:
-    void showAnimations(); /**< Pokaż widok animacji. */
-    void showServoAngles(); /**< Pokaż widok kątów serw. */
-    void showConnection(); /**< Pokaż widok jakości połączenia FM. */
-    void showSettings(); /**< Pokaż widok ustawień aplikacji. */
-    void onLegSelectionChanged(int index); /**< Zmieniona aktywna noga w SideView. */
+    /** @brief Pokazuje widok animacji */
+    void showAnimations();
+
+    /** @brief Pokazuje widok kątów serw */
+    void showServoAngles();
+
+    /** @brief Pokazuje widok jakości połączenia FM */
+    void showConnection();
+
+    /** @brief Pokazuje widok ustawień aplikacji */
+    void showSettings();
+
+    /** @brief Zmieniona aktywna noga w SideView */
+    void onLegSelectionChanged(int index);
+
+    /** @brief Loguje komunikat błędu do systemu
+        @param msg Treść komunikatu błędu */
     void logError(const QString &msg);
+
+    /** @brief Obsługuje i formatuje komunikat błędu
+        @param msg Treść komunikatu błędu */
     void handleLogError(const QString &msg);
+
+    /** @brief Obsługuje i formatuje standardową wiadomość
+        @param msg Treść wiadomości */
     void handleLogMessage(const QString &msg);
+
+    /** @brief Obsługuje zmianę języka interfejsu
+        @param index Indeks wybranego języka */
     void onLanguageChanged(int index);
+
+
 
 private:
     Ui::MainWindow *ui;               ///< Wskaźnik na wygenerowany interfejs UI
     DataSimulator *simulator;         ///< Symulator strumienia danych
     ServoAngleManager *servoManager;  ///< Manager aktualizacji QLabeli kątów
-    SideView *sideView;               ///< Widget bocznego widoku nogi
-    TopView *topView;                 ///< Widget widoku z góry całego robota
-    QComboBox *comboBoxLegSide;       ///< Dropdown wyboru nogi w widoku bocznym
-    void logToTerminal(const QString &message); ///< pomocnicza funkcja do logowania
+    SideView *sideView;              ///< Widget bocznego widoku nogi
+    TopView *topView;                ///< Widget widoku z góry całego robota
+    QComboBox *comboBoxLegSide;      ///< Dropdown wyboru nogi w widoku bocznym
+    QTranslator *translator;          ///< Obiekt tłumacza interfejsu
+
+    /** @brief Pomocnicza funkcja do logowania w terminalu
+        @param message Treść wiadomości */
+    void logToTerminal(const QString &message);
+
+    /** @brief Obsługuje zdarzenie rozłączenia symulatora */
     void onSimDisconnect();
+
+    /** @brief Obsługuje zdarzenie ponownego połączenia */
     void onReconnectClicked();
+
+    /** @brief Wczytuje wybrany język interfejsu
+        @param language Kod języka */
     void loadLanguage(const QString &language);
+
+    /** @brief Obsługuje zdarzenia zmiany stanu
+        @param event Obiekt zdarzenia */
     void changeEvent(QEvent* event) override;
-    QTranslator *translator;
+
+    /** @brief Inicjalizuje etykiety interfejsu */
     void setupLabels();
-    QString getTranslatedLabelWithIcon(const QString& text, const QString& iconPath, int width = 40, int height = 40);
+
+    /** @brief Dodaje ikonę do etykiety tekstowej
+        @param text Tekst etykiety
+        @param iconPath Ścieżka do pliku ikony
+        @param width Szerokość ikony
+        @param height Wysokość ikony
+        @return Tekst HTML z ikoną */
+    QString getTranslatedLabelWithIcon(const QString& text, const QString& iconPath,
+                                       int width = 40, int height = 40);
 };
 
 #endif // MAINWINDOW_H

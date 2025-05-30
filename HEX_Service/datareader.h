@@ -23,9 +23,17 @@ class DataReader : public QObject {
     Q_OBJECT
 
 public:
+    /**
+     * @brief Konstruktor klasy DataReader
+     * @param parent Wskaźnik na obiekt rodzica
+     */
     explicit DataReader(QObject *parent = nullptr);
 
-    /// Wczytuje ramki w formacie <...;CRC> i weryfikuje CRC
+    /**
+     * @brief Wczytuje ramki w formacie <...;CRC> i weryfikuje CRC
+     * @param filePath Ścieżka do pliku
+     * @return true jeśli wczytanie się powiodło
+     */
     bool loadFromFile(const QString &filePath);
 
     /**
@@ -41,8 +49,8 @@ public:
 
 
 private:
-    QVector<ServoFrame> frames;
-    int currentIndex = 0;
+    QVector<ServoFrame> frames;    ///< Bufor przechowujący wczytane ramki danych
+    int currentIndex = 0;          ///< Indeks aktualnie przetwarzanej ramki
 };
 
 #endif // DATAREADER_H

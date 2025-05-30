@@ -55,6 +55,11 @@ public:
      */
     void setInterval(int intervalMs);
 
+    /**
+     * @brief Włącza/wyłącza symulację błędów transmisji.
+     * @param val true aby włączyć symulację błędów.
+     */
+
     void setSimulateErrors(bool val);
 
 signals:
@@ -64,22 +69,40 @@ signals:
      */
     void frameReady(const ServoFrame &frame);
     /**
- * @brief Zwraca następną ramkę (zawija w pętli).
- * @return Wskaźnik na aktualną ramkę lub nullptr, jeżeli nie załadowano danych.
- */
+    * @brief Zwraca następną ramkę (zawija w pętli).
+     * @return Wskaźnik na aktualną ramkę lub nullptr, jeżeli nie załadowano danych.
+     */
     const ServoFrame* next();
+
+    /**
+     * @brief Sygnał emitowany przy błędzie
+     * @param msg Komunikat błędu
+     */
     void logError(const QString &msg);
+
+    /**
+     * @brief Sygnał emitowany przy standardowej wiadomości
+     * @param msg Treść wiadomości
+     */
+
     void logMessage(const QString &msg);
+
+    /**
+     * @brief Sygnał emitowany przy rozłączeniu z powodu błędów
+     */
     void disconnectedDueToErrors();
 
-
+    /**
+    * @brief Resetuje odczyt do pierwszej ramki.
+    */
+    void reset();
 
 
     /**
- * @brief Resetuje odczyt do pierwszej ramki.
- */
-    void reset();
-
+     * @brief Sygnał emitowany z parametrami jakości połączenia.
+     * @param rssi Siła sygnału w dBm.
+     * @param per Współczynnik błędów pakietów w procentach.
+     */
     void qualitySample(float rssi, float per);
 
 private slots:
@@ -92,11 +115,10 @@ private:
     QTimer *timer;       ///< Timer do odtwarzania danych
     DataReader *reader;  ///< Odczyt danych z pliku
     int interval;        ///< Częstotliwość odczytu danych (ms)
-    bool simulateErrors = false;  ///< Czy zasymulować błędy
-    int crcErrorCount = 0;
-    int frameCounter;
-    float angle;
-
+    bool simulateErrors; ///< Czy zasymulować błędy
+    int crcErrorCount;   ///< Licznik błędów CRC
+    int frameCounter;    ///< Licznik ramek
+    float angle;         ///< Aktualny kąt
 
 };
 
