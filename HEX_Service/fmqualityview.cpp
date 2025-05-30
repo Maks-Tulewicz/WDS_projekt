@@ -17,7 +17,7 @@ FmQualityView::FmQualityView(QWidget *parent)
     setInteractive(true);
 
     auto *c = chart();
-    c->setTitle("FM Link Quality");
+  //  c->setTitle("FM Link Quality");
     c->setAnimationOptions(QChart::SeriesAnimations);
     c->setTheme(QChart::ChartThemeBlueCerulean);
 

@@ -105,8 +105,8 @@ public:
     SideView *sideView;
     QWidget *fMconnectionWD;
     QVBoxLayout *verticalLayout_5;
+    QLabel *titleFmLabel;
     QWidget *qualityView;
-    QWidget *widget_2;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -770,15 +770,23 @@ public:
         fMconnectionWD->setObjectName(QString::fromUtf8("fMconnectionWD"));
         verticalLayout_5 = new QVBoxLayout(fMconnectionWD);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        titleFmLabel = new QLabel(fMconnectionWD);
+        titleFmLabel->setObjectName(QString::fromUtf8("titleFmLabel"));
+        titleFmLabel->setMaximumSize(QSize(16777215, 60));
+        titleFmLabel->setStyleSheet(QString::fromUtf8("font-size: 16pt;\n"
+"color: #F0822F;\n"
+"background-color: #2E2E2E;\n"
+"border: none;\n"
+"padding: 5px;\n"
+"qproperty-alignment: AlignCenter;\n"
+""));
+
+        verticalLayout_5->addWidget(titleFmLabel);
+
         qualityView = new QWidget(fMconnectionWD);
         qualityView->setObjectName(QString::fromUtf8("qualityView"));
 
         verticalLayout_5->addWidget(qualityView);
-
-        widget_2 = new QWidget(fMconnectionWD);
-        widget_2->setObjectName(QString::fromUtf8("widget_2"));
-
-        verticalLayout_5->addWidget(widget_2);
 
         stackedWidget->addWidget(fMconnectionWD);
 
@@ -792,7 +800,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -863,6 +871,7 @@ public:
         comboBoxLegSide->setItemText(4, QCoreApplication::translate("MainWindow", "5", nullptr));
         comboBoxLegSide->setItemText(5, QCoreApplication::translate("MainWindow", "6", nullptr));
 
+        titleFmLabel->setText(QCoreApplication::translate("MainWindow", "JAKO\305\232\304\206 PO\305\201\304\204CZENIA I ILO\305\232\304\206 PRZES\305\201ANYCH PAKIET\303\223W", nullptr));
     } // retranslateUi
 
 };
