@@ -212,5 +212,10 @@
         <source>6</source>
         <translation>6</translation>
     </message>
+    <message>
+    <location filename="../mainwindow.ui"/>
+    <source>titleFmLabel</source>
+    <translation>Jakość Połączenia i Ilość Przesłanych Pakietów</translation>
+</message>
 </context>
 </TS>

@@ -212,5 +212,10 @@
         <source>6</source>
         <translation>6</translation>
     </message>
+    <message>
+    <location filename="../mainwindow.ui" line="1066"/>
+    <source>JAKOŚĆ POŁĄCZENIA I ILOŚĆ PRZESŁANYCH PAKIETÓW</source>
+    <translation>Connection Quality and Amount of Sent Data</translation>
+</message>
 </context>
 </TS>

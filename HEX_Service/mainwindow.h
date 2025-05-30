@@ -85,6 +85,8 @@ private:
     QComboBox *comboBoxLegSide;      ///< Dropdown wyboru nogi w widoku bocznym
     QTranslator *translator;          ///< Obiekt tłumacza interfejsu
 
+
+
     /** @brief Pomocnicza funkcja do logowania w terminalu
         @param message Treść wiadomości */
     void logToTerminal(const QString &message);
