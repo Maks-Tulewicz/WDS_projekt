@@ -284,7 +284,7 @@ void MainWindow::setupLabels()
     ui->kolano_name->setText(getTranslatedLabelWithIcon(tr("KOLANO"), ":/icons/robot-leg_knee.png"));
     ui->kostka_name->setText(getTranslatedLabelWithIcon(tr("KOSTKA"), ":/icons/robot-leg_ankle.png"));
 
-    ui->label->setText(getTranslatedLabelWithIcon(tr("Top View"), ":/icons/top-view.png", 30, 30));
+    ui->label->setText(getTranslatedLabelWithIcon(tr("Top View"), ":/icons/top_view.png", 60, 60));
     ui->label_2->setText(getTranslatedLabelWithIcon(tr("Side View"), ":/icons/robot-leg.png", 30, 30));
 }
 
