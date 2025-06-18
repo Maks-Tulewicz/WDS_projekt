@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['ui_5fmainwindow_0',['Ui_MainWindow',['../classUi__MainWindow.html',1,'']]]
+  ['servoanglemanager_0',['ServoAngleManager',['../classServoAngleManager.html',1,'']]],
+  ['servoframe_1',['ServoFrame',['../structServoFrame.html',1,'']]],
+  ['sideview_2',['SideView',['../classSideView.html',1,'']]]
 ];

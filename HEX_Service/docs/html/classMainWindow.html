@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classMainWindow.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +88,11 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classMainWindow-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">MainWindow Class Reference</div></div>
@@ -86,12 +107,12 @@ $(function() {
 Inheritance diagram for MainWindow:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMainWindow__inherit__graph.png" border="0" usemap="#aMainWindow_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for MainWindow:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMainWindow__coll__graph.png" border="0" usemap="#aMainWindow_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -99,48 +120,94 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a996c5a2b6f77944776856f08ec30858d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor głównego okna.  <br /></td></tr>
 <tr class="separator:a996c5a2b6f77944776856f08ec30858d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae98d00a93bc118200eeef9f9bba1dba7" id="r_ae98d00a93bc118200eeef9f9bba1dba7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a> ()</td></tr>
-<tr class="memdesc:ae98d00a93bc118200eeef9f9bba1dba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor głównego okna.  <br /></td></tr>
 <tr class="separator:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a271c033f4032fc7263825ee16d5d00df" id="r_a271c033f4032fc7263825ee16d5d00df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a271c033f4032fc7263825ee16d5d00df">updateServoGUI</a> (const <a class="el" href="structServoFrame.html">ServoFrame</a> &amp;frame)</td></tr>
-<tr class="memdesc:a271c033f4032fc7263825ee16d5d00df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja do aktualizacji GUI, kiedy dane o kątach serwomechanizmów są dostępne.  <br /></td></tr>
+<tr class="memdesc:a271c033f4032fc7263825ee16d5d00df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje wszystkie QLabel-e kątów.  <br /></td></tr>
 <tr class="separator:a271c033f4032fc7263825ee16d5d00df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Private Slots</h2></td></tr>
 <tr class="memitem:a545b4a364be0eb41c1f9840206abef59" id="r_a545b4a364be0eb41c1f9840206abef59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a545b4a364be0eb41c1f9840206abef59">showAnimations</a> ()</td></tr>
-<tr class="memdesc:a545b4a364be0eb41c1f9840206abef59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przełącza widok na ekran z animacjami ruchów hexapoda.  <br /></td></tr>
+<tr class="memdesc:a545b4a364be0eb41c1f9840206abef59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pokazuje widok animacji.  <br /></td></tr>
 <tr class="separator:a545b4a364be0eb41c1f9840206abef59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6ed722972212abec7e9b3b68c5ef215" id="r_ae6ed722972212abec7e9b3b68c5ef215"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ae6ed722972212abec7e9b3b68c5ef215">showServoAngles</a> ()</td></tr>
-<tr class="memdesc:ae6ed722972212abec7e9b3b68c5ef215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przełącza widok na ekran z kątami serwomechanizmów.  <br /></td></tr>
+<tr class="memdesc:ae6ed722972212abec7e9b3b68c5ef215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pokazuje widok kątów serw.  <br /></td></tr>
 <tr class="separator:ae6ed722972212abec7e9b3b68c5ef215"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2155d62980a8da6a07fcea9af00c969" id="r_af2155d62980a8da6a07fcea9af00c969"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#af2155d62980a8da6a07fcea9af00c969">showConnection</a> ()</td></tr>
-<tr class="memdesc:af2155d62980a8da6a07fcea9af00c969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przełącza widok na ekran ustawień połączenia FM.  <br /></td></tr>
+<tr class="memdesc:af2155d62980a8da6a07fcea9af00c969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pokazuje widok jakości połączenia FM.  <br /></td></tr>
 <tr class="separator:af2155d62980a8da6a07fcea9af00c969"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabfa36b35a25cafc7832c489f5bd30f2" id="r_aabfa36b35a25cafc7832c489f5bd30f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aabfa36b35a25cafc7832c489f5bd30f2">showSettings</a> ()</td></tr>
-<tr class="memdesc:aabfa36b35a25cafc7832c489f5bd30f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przełącza widok na ekran ustawień aplikacji.  <br /></td></tr>
+<tr class="memdesc:aabfa36b35a25cafc7832c489f5bd30f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pokazuje widok ustawień aplikacji.  <br /></td></tr>
 <tr class="separator:aabfa36b35a25cafc7832c489f5bd30f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30f79beabf8bb9fdc312d9906c1527bc" id="r_a30f79beabf8bb9fdc312d9906c1527bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a30f79beabf8bb9fdc312d9906c1527bc">onLegSelectionChanged</a> (int index)</td></tr>
-<tr class="memdesc:a30f79beabf8bb9fdc312d9906c1527bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot zmieniający aktywną nogę na podstawie wyboru w QComboBox.  <br /></td></tr>
+<tr class="memdesc:a30f79beabf8bb9fdc312d9906c1527bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmieniona aktywna noga w <a class="el" href="classSideView.html" title="Klasa do wyświetlania jednej nogi robota w widoku z boku.">SideView</a>.  <br /></td></tr>
 <tr class="separator:a30f79beabf8bb9fdc312d9906c1527bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c74e9cc95a9fa8497bd9b2335b5bb85" id="r_a1c74e9cc95a9fa8497bd9b2335b5bb85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a1c74e9cc95a9fa8497bd9b2335b5bb85">logError</a> (const QString &amp;msg)</td></tr>
+<tr class="memdesc:a1c74e9cc95a9fa8497bd9b2335b5bb85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loguje komunikat błędu do systemu.  <br /></td></tr>
+<tr class="separator:a1c74e9cc95a9fa8497bd9b2335b5bb85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34d226cc8cf1fd9b33dcbafda0ce09ac" id="r_a34d226cc8cf1fd9b33dcbafda0ce09ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a34d226cc8cf1fd9b33dcbafda0ce09ac">handleLogError</a> (const QString &amp;msg)</td></tr>
+<tr class="memdesc:a34d226cc8cf1fd9b33dcbafda0ce09ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje i formatuje komunikat błędu.  <br /></td></tr>
+<tr class="separator:a34d226cc8cf1fd9b33dcbafda0ce09ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5db55e29324c1f07c4284a0e7c01c95" id="r_ab5db55e29324c1f07c4284a0e7c01c95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ab5db55e29324c1f07c4284a0e7c01c95">handleLogMessage</a> (const QString &amp;msg)</td></tr>
+<tr class="memdesc:ab5db55e29324c1f07c4284a0e7c01c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje i formatuje standardową wiadomość  <br /></td></tr>
+<tr class="separator:ab5db55e29324c1f07c4284a0e7c01c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8a6d8ac7e6344219cefbe1f0af6271f" id="r_ab8a6d8ac7e6344219cefbe1f0af6271f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ab8a6d8ac7e6344219cefbe1f0af6271f">onLanguageChanged</a> (int index)</td></tr>
+<tr class="memdesc:ab8a6d8ac7e6344219cefbe1f0af6271f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zmianę języka interfejsu.  <br /></td></tr>
+<tr class="separator:ab8a6d8ac7e6344219cefbe1f0af6271f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a06bf6ff3b1e80b2da49221048caf1a83" id="r_a06bf6ff3b1e80b2da49221048caf1a83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a06bf6ff3b1e80b2da49221048caf1a83">logToTerminal</a> (const QString &amp;message)</td></tr>
+<tr class="memdesc:a06bf6ff3b1e80b2da49221048caf1a83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pomocnicza funkcja do logowania w terminalu.  <br /></td></tr>
+<tr class="separator:a06bf6ff3b1e80b2da49221048caf1a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ee1a79271e4c7afc5928f2876010559" id="r_a0ee1a79271e4c7afc5928f2876010559"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a0ee1a79271e4c7afc5928f2876010559">onSimDisconnect</a> ()</td></tr>
+<tr class="memdesc:a0ee1a79271e4c7afc5928f2876010559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zdarzenie rozłączenia symulatora.  <br /></td></tr>
+<tr class="separator:a0ee1a79271e4c7afc5928f2876010559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a962064e0a5474d210a24a6fba3f1ecf0" id="r_a962064e0a5474d210a24a6fba3f1ecf0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a962064e0a5474d210a24a6fba3f1ecf0">onReconnectClicked</a> ()</td></tr>
+<tr class="memdesc:a962064e0a5474d210a24a6fba3f1ecf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zdarzenie ponownego połączenia.  <br /></td></tr>
+<tr class="separator:a962064e0a5474d210a24a6fba3f1ecf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7b91cc6cd94e638b47480315125c94" id="r_a9a7b91cc6cd94e638b47480315125c94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a9a7b91cc6cd94e638b47480315125c94">loadLanguage</a> (const QString &amp;language)</td></tr>
+<tr class="memdesc:a9a7b91cc6cd94e638b47480315125c94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wczytuje wybrany język interfejsu.  <br /></td></tr>
+<tr class="separator:a9a7b91cc6cd94e638b47480315125c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a416ae2140ac1aa9f03a6279316abdcad" id="r_a416ae2140ac1aa9f03a6279316abdcad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a416ae2140ac1aa9f03a6279316abdcad">changeEvent</a> (QEvent *event) override</td></tr>
+<tr class="memdesc:a416ae2140ac1aa9f03a6279316abdcad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zdarzenia zmiany stanu.  <br /></td></tr>
+<tr class="separator:a416ae2140ac1aa9f03a6279316abdcad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32b3ba4bbaa9db982ddba01fe3793ef2" id="r_a32b3ba4bbaa9db982ddba01fe3793ef2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a32b3ba4bbaa9db982ddba01fe3793ef2">setupLabels</a> ()</td></tr>
+<tr class="memdesc:a32b3ba4bbaa9db982ddba01fe3793ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicjalizuje etykiety interfejsu.  <br /></td></tr>
+<tr class="separator:a32b3ba4bbaa9db982ddba01fe3793ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acda066cec7fb0cb9a5c085a9ff12fc20" id="r_acda066cec7fb0cb9a5c085a9ff12fc20"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#acda066cec7fb0cb9a5c085a9ff12fc20">getTranslatedLabelWithIcon</a> (const QString &amp;text, const QString &amp;iconPath, int width=40, int height=40)</td></tr>
+<tr class="memdesc:acda066cec7fb0cb9a5c085a9ff12fc20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dodaje ikonę do etykiety tekstowej.  <br /></td></tr>
+<tr class="separator:acda066cec7fb0cb9a5c085a9ff12fc20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a35466a70ed47252a0191168126a352a5" id="r_a35466a70ed47252a0191168126a352a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classUi_1_1MainWindow.html">Ui::MainWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a></td></tr>
-<tr class="memdesc:a35466a70ed47252a0191168126a352a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wskaźnik na wygenerowany interfejs użytkownika (z <code>.ui</code>)  <br /></td></tr>
+<tr class="memdesc:a35466a70ed47252a0191168126a352a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wskaźnik na wygenerowany interfejs UI.  <br /></td></tr>
 <tr class="separator:a35466a70ed47252a0191168126a352a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8c15a97671932e06940acd503033141" id="r_aa8c15a97671932e06940acd503033141"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDataSimulator.html">DataSimulator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aa8c15a97671932e06940acd503033141">simulator</a></td></tr>
-<tr class="memdesc:aa8c15a97671932e06940acd503033141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instancja symulatora danych.  <br /></td></tr>
+<tr class="memdesc:aa8c15a97671932e06940acd503033141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Symulator strumienia danych.  <br /></td></tr>
 <tr class="separator:aa8c15a97671932e06940acd503033141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c54c92a1e4ba8ec4879c35780360bba" id="r_a4c54c92a1e4ba8ec4879c35780360bba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classServoAngleManager.html">ServoAngleManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a4c54c92a1e4ba8ec4879c35780360bba">servoManager</a></td></tr>
+<tr class="memdesc:a4c54c92a1e4ba8ec4879c35780360bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manager aktualizacji QLabeli kątów.  <br /></td></tr>
+<tr class="separator:a4c54c92a1e4ba8ec4879c35780360bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6020d099942091ede4ce86183cfbfcb2" id="r_a6020d099942091ede4ce86183cfbfcb2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSideView.html">SideView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a6020d099942091ede4ce86183cfbfcb2">sideView</a></td></tr>
-<tr class="memdesc:a6020d099942091ede4ce86183cfbfcb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Widget do wyświetlania jednej nogi w widoku z boku.  <br /></td></tr>
+<tr class="memdesc:a6020d099942091ede4ce86183cfbfcb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Widget bocznego widoku nogi.  <br /></td></tr>
 <tr class="separator:a6020d099942091ede4ce86183cfbfcb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d9c9612e0c1a7d53b90aa7e9042103a" id="r_a4d9c9612e0c1a7d53b90aa7e9042103a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTopView.html">TopView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a4d9c9612e0c1a7d53b90aa7e9042103a">topView</a></td></tr>
+<tr class="memdesc:a4d9c9612e0c1a7d53b90aa7e9042103a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Widget widoku z góry całego robota.  <br /></td></tr>
+<tr class="separator:a4d9c9612e0c1a7d53b90aa7e9042103a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf9fb17498df917924c3a599872b1943" id="r_abf9fb17498df917924c3a599872b1943"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#abf9fb17498df917924c3a599872b1943">comboBoxLegSide</a></td></tr>
-<tr class="memdesc:abf9fb17498df917924c3a599872b1943"><td class="mdescLeft">&#160;</td><td class="mdescRight">ComboBox do wyboru nogi w widoku z boku.  <br /></td></tr>
+<tr class="memdesc:abf9fb17498df917924c3a599872b1943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dropdown wyboru nogi w widoku bocznym.  <br /></td></tr>
 <tr class="separator:abf9fb17498df917924c3a599872b1943"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a231e129ba6849637f29afc7852fffbcb" id="r_a231e129ba6849637f29afc7852fffbcb"><td class="memItemLeft" align="right" valign="top">QTranslator *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a231e129ba6849637f29afc7852fffbcb">translator</a></td></tr>
+<tr class="memdesc:a231e129ba6849637f29afc7852fffbcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obiekt tłumacza interfejsu.  <br /></td></tr>
+<tr class="separator:a231e129ba6849637f29afc7852fffbcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Główne okno aplikacji sterującej hexapodem. </p>
-<p>Klasa odpowiada za wyświetlanie głównych widoków aplikacji oraz obsługę przycisków nawigacyjnych. Użytkownik może przełączać się pomiędzy widokiem połączenia FM, animacjami, ustawieniami i kątami serw. </p>
+<p>Klasa odpowiada za wyświetlanie głównych widoków aplikacji, obsługę nawigacji między ekranami oraz przetwarzanie i wyświetlanie danych. </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00025">25</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a996c5a2b6f77944776856f08ec30858d" name="a996c5a2b6f77944776856f08ec30858d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a996c5a2b6f77944776856f08ec30858d">&#9670;&#160;</a></span>MainWindow()</h2>
@@ -169,11 +236,154 @@ Private Attributes</h2></td></tr>
 <p>Konstruktor głównego okna. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent</td><td>Wskaźnik do obiektu rodzica (może być nullptr). </td></tr>
+    <tr><td class="paramname">parent</td><td>Wskaźnik do obiektu rodzica (domyślnie nullptr). </td></tr>
   </table>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00018">18</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>    : QMainWindow(parent),</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>(<span class="keyword">new</span> <a class="code hl_class" href="classUi_1_1MainWindow.html">Ui::MainWindow</a>)</div>
+<div class="line"><span class="lineno">   21</span>{</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_function" href="classUi__MainWindow.html#acf4a0872c4c77d8f43a2ec66ed849b58">setupUi</a>(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>    <span class="comment">// ----- 1) Podstawowe połączenia przycisków z zakładkami -----</span></div>
+<div class="line"><span class="lineno">   25</span>    connect(<a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#ad84d6e3864862799e308308dfaf012fb">servoAnglesBT</a>, &amp;QPushButton::clicked,</div>
+<div class="line"><span class="lineno">   26</span>            <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classMainWindow.html#ae6ed722972212abec7e9b3b68c5ef215">MainWindow::showServoAngles</a>);</div>
+<div class="line"><span class="lineno">   27</span>    connect(<a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a0c6d944b4fa33d5a9c9db755c2e498b1">animationsBT</a>, &amp;QPushButton::clicked,</div>
+<div class="line"><span class="lineno">   28</span>            <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classMainWindow.html#a545b4a364be0eb41c1f9840206abef59">MainWindow::showAnimations</a>);</div>
+<div class="line"><span class="lineno">   29</span>    connect(<a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a345be6e3613ee1a369ee31a103a85016">fmServiceBT</a>, &amp;QPushButton::clicked,</div>
+<div class="line"><span class="lineno">   30</span>            <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classMainWindow.html#af2155d62980a8da6a07fcea9af00c969">MainWindow::showConnection</a>);</div>
+<div class="line"><span class="lineno">   31</span>    connect(<a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a89a91928cf907f298f342a5994dee330">settingsBT</a>, &amp;QPushButton::clicked,</div>
+<div class="line"><span class="lineno">   32</span>            <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classMainWindow.html#aabfa36b35a25cafc7832c489f5bd30f2">MainWindow::showSettings</a>);</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <span class="comment">// ----- 2) Inicjalizacja SideView/TopView/Combo -----</span></div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_variable" href="classMainWindow.html#a6020d099942091ede4ce86183cfbfcb2">sideView</a> = <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a91231e105995d699d534565fdec135bc">sideView</a>;</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_variable" href="classMainWindow.html#a4d9c9612e0c1a7d53b90aa7e9042103a">topView</a>  = <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a485803e10426a0be48e4887ed8dea6a5">topView</a>;</div>
+<div class="line"><span class="lineno">   37</span>    connect(<a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#ad25b84530a0492d304fbb368dc99dbe3">comboBoxLegSide</a>, QOverload&lt;int&gt;::of(&amp;QComboBox::currentIndexChanged),</div>
+<div class="line"><span class="lineno">   38</span>            <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classMainWindow.html#a30f79beabf8bb9fdc312d9906c1527bc">MainWindow::onLegSelectionChanged</a>);</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>    <span class="comment">// ----- 3) ServoAngleManager -----</span></div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="classMainWindow.html#a4c54c92a1e4ba8ec4879c35780360bba">servoManager</a> = <span class="keyword">new</span> <a class="code hl_class" href="classServoAngleManager.html">ServoAngleManager</a>(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> leg = 0; leg &lt; 6; ++leg) {</div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> joint = 0; joint &lt; 3; ++joint) {</div>
+<div class="line"><span class="lineno">   44</span>            <span class="keyword">auto</span> name = QString(<span class="stringliteral">&quot;servo_%1_%2&quot;</span>).arg(leg).arg(joint);</div>
+<div class="line"><span class="lineno">   45</span>            <span class="keywordflow">if</span> (<span class="keyword">auto</span> *lbl = findChild&lt;QLabel*&gt;(name))</div>
+<div class="line"><span class="lineno">   46</span>                <a class="code hl_variable" href="classMainWindow.html#a4c54c92a1e4ba8ec4879c35780360bba">servoManager</a>-&gt;<a class="code hl_function" href="classServoAngleManager.html#a8164bc2b8673fe1fa7cd5289b9cd4ffc">registerLabel</a>(leg, joint, lbl);</div>
+<div class="line"><span class="lineno">   47</span>        }</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <span class="comment">// ----- 4) DataSimulator -----</span></div>
+<div class="line"><span class="lineno">   51</span>    <a class="code hl_variable" href="classMainWindow.html#aa8c15a97671932e06940acd503033141">simulator</a> = <span class="keyword">new</span> <a class="code hl_class" href="classDataSimulator.html">DataSimulator</a>(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   52</span>    connect(<a class="code hl_variable" href="classMainWindow.html#aa8c15a97671932e06940acd503033141">simulator</a>, &amp;<a class="code hl_signal" href="classDataSimulator.html#a589133f38a782977dfcd22904dd53a45">DataSimulator::frameReady</a>,</div>
+<div class="line"><span class="lineno">   53</span>            <span class="keyword">this</span>,      &amp;<a class="code hl_function" href="classMainWindow.html#a271c033f4032fc7263825ee16d5d00df">MainWindow::updateServoGUI</a>);</div>
+<div class="line"><span class="lineno">   54</span>    connect(<a class="code hl_variable" href="classMainWindow.html#aa8c15a97671932e06940acd503033141">simulator</a>, &amp;<a class="code hl_signal" href="classDataSimulator.html#a86814e23967dc64166e9b7e96c833765">DataSimulator::logError</a>, <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classMainWindow.html#a1c74e9cc95a9fa8497bd9b2335b5bb85">MainWindow::logError</a>);</div>
+<div class="line"><span class="lineno">   55</span>    connect(<a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#abaa0f7e282a0fc3bad7b02d8fe5e6c1e">chkSimulateErrors</a>, &amp;QCheckBox::stateChanged, <span class="keyword">this</span>, [=](<span class="keywordtype">int</span>){</div>
+<div class="line"><span class="lineno">   56</span>        simulator-&gt;setSimulateErrors(ui-&gt;chkSimulateErrors-&gt;isChecked());</div>
+<div class="line"><span class="lineno">   57</span>    });</div>
+<div class="line"><span class="lineno">   58</span>    connect(<a class="code hl_variable" href="classMainWindow.html#aa8c15a97671932e06940acd503033141">simulator</a>, &amp;<a class="code hl_signal" href="classDataSimulator.html#a86814e23967dc64166e9b7e96c833765">DataSimulator::logError</a>, <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classMainWindow.html#a34d226cc8cf1fd9b33dcbafda0ce09ac">MainWindow::handleLogError</a>);</div>
+<div class="line"><span class="lineno">   59</span>    connect(<a class="code hl_variable" href="classMainWindow.html#aa8c15a97671932e06940acd503033141">simulator</a>, &amp;<a class="code hl_signal" href="classDataSimulator.html#a654d9c7b04d97b633161d893621a2af7">DataSimulator::logMessage</a>, <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classMainWindow.html#ab5db55e29324c1f07c4284a0e7c01c95">MainWindow::handleLogMessage</a>);</div>
+<div class="line"><span class="lineno">   60</span>    connect(<a class="code hl_variable" href="classMainWindow.html#aa8c15a97671932e06940acd503033141">simulator</a>, &amp;<a class="code hl_signal" href="classDataSimulator.html#a3a1ef3c6c377ffe5cda1c701242b13e3">DataSimulator::disconnectedDueToErrors</a>, <span class="keyword">this</span>, &amp;<a class="code hl_function" href="classMainWindow.html#a0ee1a79271e4c7afc5928f2876010559">MainWindow::onSimDisconnect</a>);</div>
+<div class="line"><span class="lineno">   61</span>    connect(<a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a5dd0f3b681594aa28fc0c1eca905f649">btnReconnect</a>, &amp;QPushButton::clicked, <span class="keyword">this</span>, &amp;<a class="code hl_function" href="classMainWindow.html#a962064e0a5474d210a24a6fba3f1ecf0">MainWindow::onReconnectClicked</a>);</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    <span class="comment">// ----- 5) Podmień placeholder qualityView na wykres -----</span></div>
+<div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>        QWidget *ph = <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#aa09b866451af5f5e0a321e3a0aef6980">qualityView</a>;</div>
+<div class="line"><span class="lineno">   71</span>        QLayout *lyt = ph-&gt;parentWidget()-&gt;layout();</div>
+<div class="line"><span class="lineno">   72</span>        lyt-&gt;removeWidget(ph);</div>
+<div class="line"><span class="lineno">   73</span>        <span class="keyword">delete</span> ph;</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keyword">auto</span> *qualityView = findChild&lt;FmQualityView*&gt;(<span class="stringliteral">&quot;qualityView&quot;</span>);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>        <span class="keyword">auto</span> *chart = <span class="keyword">new</span> <a class="code hl_class" href="classFmQualityView.html">FmQualityView</a>(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   78</span>        chart-&gt;setObjectName(<span class="stringliteral">&quot;qualityView&quot;</span>);</div>
+<div class="line"><span class="lineno">   79</span>        chart-&gt;setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);</div>
+<div class="line"><span class="lineno">   80</span>        lyt-&gt;addWidget(chart);</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>        connect(<a class="code hl_variable" href="classMainWindow.html#aa8c15a97671932e06940acd503033141">simulator</a>, &amp;<a class="code hl_signal" href="classDataSimulator.html#ab349bacdfe864197fb8901335f9ba2c6">DataSimulator::qualitySample</a>,</div>
+<div class="line"><span class="lineno">   83</span>                chart,     &amp;<a class="code hl_slot" href="classFmQualityView.html#af1ae6334bcb5175f587c4a88afd30840">FmQualityView::addMeasurement</a>);</div>
+<div class="line"><span class="lineno">   84</span>    }</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <span class="comment">// ----- 6) Start symulacji -----</span></div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classMainWindow.html#aa8c15a97671932e06940acd503033141">simulator</a>-&gt;<a class="code hl_function" href="classDataSimulator.html#aa1827f25f036fb988cf594d60e384d16">loadData</a>(QStringLiteral(<span class="stringliteral">&quot;servo_test_data.txt&quot;</span>)))</div>
+<div class="line"><span class="lineno">   88</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Nie udało się załadować danych!&quot;</span>;</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_variable" href="classMainWindow.html#aa8c15a97671932e06940acd503033141">simulator</a>-&gt;<a class="code hl_function" href="classDataSimulator.html#ad4f3a80942ef400cd58d2a023e1f5844">startSimulation</a>(50);</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_function" href="classMainWindow.html#a06bf6ff3b1e80b2da49221048caf1a83">logToTerminal</a>(<span class="stringliteral">&quot;System uruchomiony.\nGotowy do działania.&quot;</span>);</div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_variable" href="classMainWindow.html#aa8c15a97671932e06940acd503033141">simulator</a>-&gt;<a class="code hl_function" href="classDataSimulator.html#a90d382b074a56821479d98c9b1904050">setSimulateErrors</a>(<a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#abaa0f7e282a0fc3bad7b02d8fe5e6c1e">chkSimulateErrors</a>-&gt;isChecked());</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>    <span class="comment">// ----- 7) Połączenie translatora -----</span></div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_variable" href="classMainWindow.html#a231e129ba6849637f29afc7852fffbcb">translator</a> = <span class="keyword">new</span> QTranslator(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    <span class="comment">// Połączenie sygnału zmiany języka</span></div>
+<div class="line"><span class="lineno">   98</span>    connect(<a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a31087f4386e2f6ef1c5ec2762598ed2a">languageComboBox</a>, QOverload&lt;int&gt;::of(&amp;QComboBox::currentIndexChanged),</div>
+<div class="line"><span class="lineno">   99</span>            <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classMainWindow.html#ab8a6d8ac7e6344219cefbe1f0af6271f">MainWindow::onLanguageChanged</a>);</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    <span class="comment">// Załaduj domyślny język</span></div>
+<div class="line"><span class="lineno">  102</span>    QString path = <span class="stringliteral">&quot;:/translations/translations/hex_service_pl.qm&quot;</span>; <span class="comment">// Poprawiona ścieżka</span></div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMainWindow.html#a231e129ba6849637f29afc7852fffbcb">translator</a>-&gt;load(path)) {</div>
+<div class="line"><span class="lineno">  104</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Initial translation loaded successfully&quot;</span>;</div>
+<div class="line"><span class="lineno">  105</span>        qApp-&gt;installTranslator(<a class="code hl_variable" href="classMainWindow.html#a231e129ba6849637f29afc7852fffbcb">translator</a>);</div>
+<div class="line"><span class="lineno">  106</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  107</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Failed to load initial translation from&quot;</span> &lt;&lt; path;</div>
+<div class="line"><span class="lineno">  108</span>    }</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_function" href="classMainWindow.html#a32b3ba4bbaa9db982ddba01fe3793ef2">setupLabels</a>();</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>}</div>
+<div class="ttc" id="aclassDataSimulator_html"><div class="ttname"><a href="classDataSimulator.html">DataSimulator</a></div><div class="ttdoc">Klasa symulująca odtwarzanie danych z pliku z kątami.</div><div class="ttdef"><b>Definition</b> <a href="datasimulator_8h_source.html#l00016">datasimulator.h:16</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a3a1ef3c6c377ffe5cda1c701242b13e3"><div class="ttname"><a href="classDataSimulator.html#a3a1ef3c6c377ffe5cda1c701242b13e3">DataSimulator::disconnectedDueToErrors</a></div><div class="ttdeci">void disconnectedDueToErrors()</div><div class="ttdoc">Sygnał emitowany przy rozłączeniu z powodu błędów.</div><div class="ttdef"><b>Definition</b> <a href="moc__datasimulator_8cpp_source.html#l00242">moc_datasimulator.cpp:242</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a589133f38a782977dfcd22904dd53a45"><div class="ttname"><a href="classDataSimulator.html#a589133f38a782977dfcd22904dd53a45">DataSimulator::frameReady</a></div><div class="ttdeci">void frameReady(const ServoFrame &amp;frame)</div><div class="ttdoc">Sygnał emitujący ramkę danych do GUI.</div><div class="ttdef"><b>Definition</b> <a href="moc__datasimulator_8cpp_source.html#l00212">moc_datasimulator.cpp:212</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a654d9c7b04d97b633161d893621a2af7"><div class="ttname"><a href="classDataSimulator.html#a654d9c7b04d97b633161d893621a2af7">DataSimulator::logMessage</a></div><div class="ttdeci">void logMessage(const QString &amp;msg)</div><div class="ttdoc">Sygnał emitowany przy standardowej wiadomości.</div><div class="ttdef"><b>Definition</b> <a href="moc__datasimulator_8cpp_source.html#l00235">moc_datasimulator.cpp:235</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a86814e23967dc64166e9b7e96c833765"><div class="ttname"><a href="classDataSimulator.html#a86814e23967dc64166e9b7e96c833765">DataSimulator::logError</a></div><div class="ttdeci">void logError(const QString &amp;msg)</div><div class="ttdoc">Sygnał emitowany przy błędzie.</div><div class="ttdef"><b>Definition</b> <a href="moc__datasimulator_8cpp_source.html#l00228">moc_datasimulator.cpp:228</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a90d382b074a56821479d98c9b1904050"><div class="ttname"><a href="classDataSimulator.html#a90d382b074a56821479d98c9b1904050">DataSimulator::setSimulateErrors</a></div><div class="ttdeci">void setSimulateErrors(bool val)</div><div class="ttdoc">Włącza/wyłącza symulację błędów transmisji.</div><div class="ttdef"><b>Definition</b> <a href="datasimulator_8cpp_source.html#l00114">datasimulator.cpp:114</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_aa1827f25f036fb988cf594d60e384d16"><div class="ttname"><a href="classDataSimulator.html#aa1827f25f036fb988cf594d60e384d16">DataSimulator::loadData</a></div><div class="ttdeci">bool loadData(const QString &amp;filePath)</div><div class="ttdoc">Ładuje dane z pliku.</div><div class="ttdef"><b>Definition</b> <a href="datasimulator_8cpp_source.html#l00021">datasimulator.cpp:21</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_ab349bacdfe864197fb8901335f9ba2c6"><div class="ttname"><a href="classDataSimulator.html#ab349bacdfe864197fb8901335f9ba2c6">DataSimulator::qualitySample</a></div><div class="ttdeci">void qualitySample(float rssi, float per)</div><div class="ttdoc">Sygnał emitowany z parametrami jakości połączenia.</div><div class="ttdef"><b>Definition</b> <a href="moc__datasimulator_8cpp_source.html#l00254">moc_datasimulator.cpp:254</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_ad4f3a80942ef400cd58d2a023e1f5844"><div class="ttname"><a href="classDataSimulator.html#ad4f3a80942ef400cd58d2a023e1f5844">DataSimulator::startSimulation</a></div><div class="ttdeci">void startSimulation(int intervalMs=1000)</div><div class="ttdoc">Uruchamia symulację.</div><div class="ttdef"><b>Definition</b> <a href="datasimulator_8cpp_source.html#l00026">datasimulator.cpp:26</a></div></div>
+<div class="ttc" id="aclassFmQualityView_html"><div class="ttname"><a href="classFmQualityView.html">FmQualityView</a></div><div class="ttdoc">Widget do wizualizacji jakości łącza FM.</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00017">fmqualityview.h:18</a></div></div>
+<div class="ttc" id="aclassFmQualityView_html_af1ae6334bcb5175f587c4a88afd30840"><div class="ttname"><a href="classFmQualityView.html#af1ae6334bcb5175f587c4a88afd30840">FmQualityView::addMeasurement</a></div><div class="ttdeci">void addMeasurement(float rssi, float per)</div><div class="ttdoc">Dodaje nową próbkę pomiaru do wykresu.</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8cpp_source.html#l00064">fmqualityview.cpp:64</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_a06bf6ff3b1e80b2da49221048caf1a83"><div class="ttname"><a href="classMainWindow.html#a06bf6ff3b1e80b2da49221048caf1a83">MainWindow::logToTerminal</a></div><div class="ttdeci">void logToTerminal(const QString &amp;message)</div><div class="ttdoc">Pomocnicza funkcja do logowania w terminalu.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00176">mainwindow.cpp:176</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_a0ee1a79271e4c7afc5928f2876010559"><div class="ttname"><a href="classMainWindow.html#a0ee1a79271e4c7afc5928f2876010559">MainWindow::onSimDisconnect</a></div><div class="ttdeci">void onSimDisconnect()</div><div class="ttdoc">Obsługuje zdarzenie rozłączenia symulatora.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00202">mainwindow.cpp:202</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_a1c74e9cc95a9fa8497bd9b2335b5bb85"><div class="ttname"><a href="classMainWindow.html#a1c74e9cc95a9fa8497bd9b2335b5bb85">MainWindow::logError</a></div><div class="ttdeci">void logError(const QString &amp;msg)</div><div class="ttdoc">Loguje komunikat błędu do systemu.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00179">mainwindow.cpp:179</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_a231e129ba6849637f29afc7852fffbcb"><div class="ttname"><a href="classMainWindow.html#a231e129ba6849637f29afc7852fffbcb">MainWindow::translator</a></div><div class="ttdeci">QTranslator * translator</div><div class="ttdoc">Obiekt tłumacza interfejsu.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00086">mainwindow.h:86</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_a271c033f4032fc7263825ee16d5d00df"><div class="ttname"><a href="classMainWindow.html#a271c033f4032fc7263825ee16d5d00df">MainWindow::updateServoGUI</a></div><div class="ttdeci">void updateServoGUI(const ServoFrame &amp;frame)</div><div class="ttdoc">Aktualizuje wszystkie QLabel-e kątów.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00138">mainwindow.cpp:138</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_a30f79beabf8bb9fdc312d9906c1527bc"><div class="ttname"><a href="classMainWindow.html#a30f79beabf8bb9fdc312d9906c1527bc">MainWindow::onLegSelectionChanged</a></div><div class="ttdeci">void onLegSelectionChanged(int index)</div><div class="ttdoc">Zmieniona aktywna noga w SideView.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00133">mainwindow.cpp:133</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_a32b3ba4bbaa9db982ddba01fe3793ef2"><div class="ttname"><a href="classMainWindow.html#a32b3ba4bbaa9db982ddba01fe3793ef2">MainWindow::setupLabels</a></div><div class="ttdeci">void setupLabels()</div><div class="ttdoc">Inicjalizuje etykiety interfejsu.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00273">mainwindow.cpp:273</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_a34d226cc8cf1fd9b33dcbafda0ce09ac"><div class="ttname"><a href="classMainWindow.html#a34d226cc8cf1fd9b33dcbafda0ce09ac">MainWindow::handleLogError</a></div><div class="ttdeci">void handleLogError(const QString &amp;msg)</div><div class="ttdoc">Obsługuje i formatuje komunikat błędu.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00182">mainwindow.cpp:182</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_a35466a70ed47252a0191168126a352a5"><div class="ttname"><a href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">MainWindow::ui</a></div><div class="ttdeci">Ui::MainWindow * ui</div><div class="ttdoc">Wskaźnik na wygenerowany interfejs UI.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00080">mainwindow.h:80</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_a4c54c92a1e4ba8ec4879c35780360bba"><div class="ttname"><a href="classMainWindow.html#a4c54c92a1e4ba8ec4879c35780360bba">MainWindow::servoManager</a></div><div class="ttdeci">ServoAngleManager * servoManager</div><div class="ttdoc">Manager aktualizacji QLabeli kątów.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00082">mainwindow.h:82</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_a4d9c9612e0c1a7d53b90aa7e9042103a"><div class="ttname"><a href="classMainWindow.html#a4d9c9612e0c1a7d53b90aa7e9042103a">MainWindow::topView</a></div><div class="ttdeci">TopView * topView</div><div class="ttdoc">Widget widoku z góry całego robota.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00084">mainwindow.h:84</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_a545b4a364be0eb41c1f9840206abef59"><div class="ttname"><a href="classMainWindow.html#a545b4a364be0eb41c1f9840206abef59">MainWindow::showAnimations</a></div><div class="ttdeci">void showAnimations()</div><div class="ttdoc">Pokazuje widok animacji.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00123">mainwindow.cpp:123</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_a6020d099942091ede4ce86183cfbfcb2"><div class="ttname"><a href="classMainWindow.html#a6020d099942091ede4ce86183cfbfcb2">MainWindow::sideView</a></div><div class="ttdeci">SideView * sideView</div><div class="ttdoc">Widget bocznego widoku nogi.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00083">mainwindow.h:83</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_a962064e0a5474d210a24a6fba3f1ecf0"><div class="ttname"><a href="classMainWindow.html#a962064e0a5474d210a24a6fba3f1ecf0">MainWindow::onReconnectClicked</a></div><div class="ttdeci">void onReconnectClicked()</div><div class="ttdoc">Obsługuje zdarzenie ponownego połączenia.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00209">mainwindow.cpp:209</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_aa8c15a97671932e06940acd503033141"><div class="ttname"><a href="classMainWindow.html#aa8c15a97671932e06940acd503033141">MainWindow::simulator</a></div><div class="ttdeci">DataSimulator * simulator</div><div class="ttdoc">Symulator strumienia danych.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00081">mainwindow.h:81</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_aabfa36b35a25cafc7832c489f5bd30f2"><div class="ttname"><a href="classMainWindow.html#aabfa36b35a25cafc7832c489f5bd30f2">MainWindow::showSettings</a></div><div class="ttdeci">void showSettings()</div><div class="ttdoc">Pokazuje widok ustawień aplikacji.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00129">mainwindow.cpp:129</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_ab5db55e29324c1f07c4284a0e7c01c95"><div class="ttname"><a href="classMainWindow.html#ab5db55e29324c1f07c4284a0e7c01c95">MainWindow::handleLogMessage</a></div><div class="ttdeci">void handleLogMessage(const QString &amp;msg)</div><div class="ttdoc">Obsługuje i formatuje standardową wiadomość</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00187">mainwindow.cpp:187</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_ab8a6d8ac7e6344219cefbe1f0af6271f"><div class="ttname"><a href="classMainWindow.html#ab8a6d8ac7e6344219cefbe1f0af6271f">MainWindow::onLanguageChanged</a></div><div class="ttdeci">void onLanguageChanged(int index)</div><div class="ttdoc">Obsługuje zmianę języka interfejsu.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00247">mainwindow.cpp:247</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_ae6ed722972212abec7e9b3b68c5ef215"><div class="ttname"><a href="classMainWindow.html#ae6ed722972212abec7e9b3b68c5ef215">MainWindow::showServoAngles</a></div><div class="ttdeci">void showServoAngles()</div><div class="ttdoc">Pokazuje widok kątów serw.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00120">mainwindow.cpp:120</a></div></div>
+<div class="ttc" id="aclassMainWindow_html_af2155d62980a8da6a07fcea9af00c969"><div class="ttname"><a href="classMainWindow.html#af2155d62980a8da6a07fcea9af00c969">MainWindow::showConnection</a></div><div class="ttdeci">void showConnection()</div><div class="ttdoc">Pokazuje widok jakości połączenia FM.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00126">mainwindow.cpp:126</a></div></div>
+<div class="ttc" id="aclassServoAngleManager_html"><div class="ttname"><a href="classServoAngleManager.html">ServoAngleManager</a></div><div class="ttdoc">Klasa do zarządzania kątami serwomechanizmów.</div><div class="ttdef"><b>Definition</b> <a href="servoanglemanager_8h_source.html#l00013">servoanglemanager.h:14</a></div></div>
+<div class="ttc" id="aclassServoAngleManager_html_a8164bc2b8673fe1fa7cd5289b9cd4ffc"><div class="ttname"><a href="classServoAngleManager.html#a8164bc2b8673fe1fa7cd5289b9cd4ffc">ServoAngleManager::registerLabel</a></div><div class="ttdeci">void registerLabel(int leg, int joint, QLabel *label)</div><div class="ttdoc">Podpina widżet z GUI do danego serwa.</div><div class="ttdef"><b>Definition</b> <a href="servoanglemanager_8cpp_source.html#l00007">servoanglemanager.cpp:7</a></div></div>
+<div class="ttc" id="aclassUi_1_1MainWindow_html"><div class="ttname"><a href="classUi_1_1MainWindow.html">Ui::MainWindow</a></div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00880">ui_mainwindow.h:880</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_a0c6d944b4fa33d5a9c9db755c2e498b1"><div class="ttname"><a href="classUi__MainWindow.html#a0c6d944b4fa33d5a9c9db755c2e498b1">Ui_MainWindow::animationsBT</a></div><div class="ttdeci">QPushButton * animationsBT</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00043">ui_mainwindow.h:43</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_a31087f4386e2f6ef1c5ec2762598ed2a"><div class="ttname"><a href="classUi__MainWindow.html#a31087f4386e2f6ef1c5ec2762598ed2a">Ui_MainWindow::languageComboBox</a></div><div class="ttdeci">QComboBox * languageComboBox</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00088">ui_mainwindow.h:88</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_a345be6e3613ee1a369ee31a103a85016"><div class="ttname"><a href="classUi__MainWindow.html#a345be6e3613ee1a369ee31a103a85016">Ui_MainWindow::fmServiceBT</a></div><div class="ttdeci">QPushButton * fmServiceBT</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00044">ui_mainwindow.h:44</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_a485803e10426a0be48e4887ed8dea6a5"><div class="ttname"><a href="classUi__MainWindow.html#a485803e10426a0be48e4887ed8dea6a5">Ui_MainWindow::topView</a></div><div class="ttdeci">TopView * topView</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00099">ui_mainwindow.h:99</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_a5dd0f3b681594aa28fc0c1eca905f649"><div class="ttname"><a href="classUi__MainWindow.html#a5dd0f3b681594aa28fc0c1eca905f649">Ui_MainWindow::btnReconnect</a></div><div class="ttdeci">QPushButton * btnReconnect</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00084">ui_mainwindow.h:84</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_a89a91928cf907f298f342a5994dee330"><div class="ttname"><a href="classUi__MainWindow.html#a89a91928cf907f298f342a5994dee330">Ui_MainWindow::settingsBT</a></div><div class="ttdeci">QPushButton * settingsBT</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00045">ui_mainwindow.h:45</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_a91231e105995d699d534565fdec135bc"><div class="ttname"><a href="classUi__MainWindow.html#a91231e105995d699d534565fdec135bc">Ui_MainWindow::sideView</a></div><div class="ttdeci">SideView * sideView</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00105">ui_mainwindow.h:105</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_aa09b866451af5f5e0a321e3a0aef6980"><div class="ttname"><a href="classUi__MainWindow.html#aa09b866451af5f5e0a321e3a0aef6980">Ui_MainWindow::qualityView</a></div><div class="ttdeci">QWidget * qualityView</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00109">ui_mainwindow.h:109</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_abaa0f7e282a0fc3bad7b02d8fe5e6c1e"><div class="ttname"><a href="classUi__MainWindow.html#abaa0f7e282a0fc3bad7b02d8fe5e6c1e">Ui_MainWindow::chkSimulateErrors</a></div><div class="ttdeci">QCheckBox * chkSimulateErrors</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00085">ui_mainwindow.h:85</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_acf4a0872c4c77d8f43a2ec66ed849b58"><div class="ttname"><a href="classUi__MainWindow.html#acf4a0872c4c77d8f43a2ec66ed849b58">Ui_MainWindow::setupUi</a></div><div class="ttdeci">void setupUi(QMainWindow *MainWindow)</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00112">ui_mainwindow.h:112</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_ad25b84530a0492d304fbb368dc99dbe3"><div class="ttname"><a href="classUi__MainWindow.html#ad25b84530a0492d304fbb368dc99dbe3">Ui_MainWindow::comboBoxLegSide</a></div><div class="ttdeci">QComboBox * comboBoxLegSide</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00104">ui_mainwindow.h:104</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_ad84d6e3864862799e308308dfaf012fb"><div class="ttname"><a href="classUi__MainWindow.html#ad84d6e3864862799e308308dfaf012fb">Ui_MainWindow::servoAnglesBT</a></div><div class="ttdeci">QPushButton * servoAnglesBT</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00042">ui_mainwindow.h:42</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae98d00a93bc118200eeef9f9bba1dba7" name="ae98d00a93bc118200eeef9f9bba1dba7"></a>
@@ -191,11 +401,399 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Destruktor głównego okna. </p>
-
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00115">115</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  116</span>{</div>
+<div class="line"><span class="lineno">  117</span>    <span class="keyword">delete</span> <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>;</div>
+<div class="line"><span class="lineno">  118</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a416ae2140ac1aa9f03a6279316abdcad" name="a416ae2140ac1aa9f03a6279316abdcad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a416ae2140ac1aa9f03a6279316abdcad">&#9670;&#160;</a></span>changeEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::changeEvent </td>
+          <td>(</td>
+          <td class="paramtype">QEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zdarzenia zmiany stanu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Obiekt zdarzenia </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00237">237</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  238</span>{</div>
+<div class="line"><span class="lineno">  239</span>    <span class="keywordflow">if</span> (event-&gt;type() == QEvent::LanguageChange) {</div>
+<div class="line"><span class="lineno">  240</span>        <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_function" href="classUi__MainWindow.html#a097dd160c3534a204904cb374412c618">retranslateUi</a>(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  241</span>        <a class="code hl_function" href="classMainWindow.html#a32b3ba4bbaa9db982ddba01fe3793ef2">setupLabels</a>();</div>
+<div class="line"><span class="lineno">  242</span>    }</div>
+<div class="line"><span class="lineno">  243</span>    QMainWindow::changeEvent(event);</div>
+<div class="line"><span class="lineno">  244</span>}</div>
+<div class="ttc" id="aclassUi__MainWindow_html_a097dd160c3534a204904cb374412c618"><div class="ttname"><a href="classUi__MainWindow.html#a097dd160c3534a204904cb374412c618">Ui_MainWindow::retranslateUi</a></div><div class="ttdeci">void retranslateUi(QMainWindow *MainWindow)</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00809">ui_mainwindow.h:809</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acda066cec7fb0cb9a5c085a9ff12fc20" name="acda066cec7fb0cb9a5c085a9ff12fc20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acda066cec7fb0cb9a5c085a9ff12fc20">&#9670;&#160;</a></span>getTranslatedLabelWithIcon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString MainWindow::getTranslatedLabelWithIcon </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>iconPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em> = <code>40</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em> = <code>40</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dodaje ikonę do etykiety tekstowej. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>Tekst etykiety </td></tr>
+    <tr><td class="paramname">iconPath</td><td>Ścieżka do pliku ikony </td></tr>
+    <tr><td class="paramname">width</td><td>Szerokość ikony </td></tr>
+    <tr><td class="paramname">height</td><td>Wysokość ikony </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Tekst HTML z ikoną </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00291">291</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  292</span>{</div>
+<div class="line"><span class="lineno">  293</span>    <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;%1&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;img src=\&quot;%2\&quot; width=\&quot;%3\&quot; height=\&quot;%4\&quot; style=\&quot;vertical-align:middle; margin-right: 10px;\&quot;&gt;&lt;span style=\&quot;vertical-align:middle;\&quot;&gt;&quot;</span>)</div>
+<div class="line"><span class="lineno">  294</span>        .arg(text)</div>
+<div class="line"><span class="lineno">  295</span>        .arg(iconPath)</div>
+<div class="line"><span class="lineno">  296</span>        .arg(width)</div>
+<div class="line"><span class="lineno">  297</span>        .arg(height);</div>
+<div class="line"><span class="lineno">  298</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a34d226cc8cf1fd9b33dcbafda0ce09ac" name="a34d226cc8cf1fd9b33dcbafda0ce09ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34d226cc8cf1fd9b33dcbafda0ce09ac">&#9670;&#160;</a></span>handleLogError</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::handleLogError </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje i formatuje komunikat błędu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Treść komunikatu błędu </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00182">182</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  182</span>                                                  {</div>
+<div class="line"><span class="lineno">  183</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a6e290c2eca03b98b6f379c71910c0ed6">plainTextEdit</a>-&gt;appendHtml(<span class="stringliteral">&quot;&lt;span style=&#39;color:red;&#39;&gt;&quot;</span> + msg + <span class="stringliteral">&quot;&lt;/span&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">  184</span>}</div>
+<div class="ttc" id="aclassUi__MainWindow_html_a6e290c2eca03b98b6f379c71910c0ed6"><div class="ttname"><a href="classUi__MainWindow.html#a6e290c2eca03b98b6f379c71910c0ed6">Ui_MainWindow::plainTextEdit</a></div><div class="ttdeci">QPlainTextEdit * plainTextEdit</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00093">ui_mainwindow.h:93</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab5db55e29324c1f07c4284a0e7c01c95" name="ab5db55e29324c1f07c4284a0e7c01c95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5db55e29324c1f07c4284a0e7c01c95">&#9670;&#160;</a></span>handleLogMessage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::handleLogMessage </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje i formatuje standardową wiadomość </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Treść wiadomości </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00187">187</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  187</span>                                                    {</div>
+<div class="line"><span class="lineno">  188</span>    <span class="comment">// Limit the number of messages stored in plainTextEdit</span></div>
+<div class="line"><span class="lineno">  189</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> MAX_LINES = 1000;</div>
+<div class="line"><span class="lineno">  190</span>    QPlainTextEdit* editor = <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a6e290c2eca03b98b6f379c71910c0ed6">plainTextEdit</a>;</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">if</span> (editor-&gt;document()-&gt;lineCount() &gt; MAX_LINES) {</div>
+<div class="line"><span class="lineno">  193</span>        QTextCursor cursor(editor-&gt;document());</div>
+<div class="line"><span class="lineno">  194</span>        cursor.movePosition(QTextCursor::Start);</div>
+<div class="line"><span class="lineno">  195</span>        cursor.movePosition(QTextCursor::Down, QTextCursor::KeepAnchor,</div>
+<div class="line"><span class="lineno">  196</span>                            editor-&gt;document()-&gt;lineCount() - MAX_LINES);</div>
+<div class="line"><span class="lineno">  197</span>        cursor.removeSelectedText();</div>
+<div class="line"><span class="lineno">  198</span>    }</div>
+<div class="line"><span class="lineno">  199</span>    editor-&gt;appendPlainText(msg);</div>
+<div class="line"><span class="lineno">  200</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9a7b91cc6cd94e638b47480315125c94" name="a9a7b91cc6cd94e638b47480315125c94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a7b91cc6cd94e638b47480315125c94">&#9670;&#160;</a></span>loadLanguage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::loadLanguage </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>language</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wczytuje wybrany język interfejsu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">language</td><td>Kod języka </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00226">226</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  227</span>{</div>
+<div class="line"><span class="lineno">  228</span>    <span class="comment">// Usuń poprzednie tłumaczenie jeśli istnieje</span></div>
+<div class="line"><span class="lineno">  229</span>    qApp-&gt;removeTranslator(<a class="code hl_variable" href="classMainWindow.html#a231e129ba6849637f29afc7852fffbcb">translator</a>);</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>    <span class="comment">// Załaduj nowe tłumaczenie</span></div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMainWindow.html#a231e129ba6849637f29afc7852fffbcb">translator</a>-&gt;load(<span class="stringliteral">&quot;:/translations/hex_service_&quot;</span> + language)) {</div>
+<div class="line"><span class="lineno">  233</span>        qApp-&gt;installTranslator(<a class="code hl_variable" href="classMainWindow.html#a231e129ba6849637f29afc7852fffbcb">translator</a>);</div>
+<div class="line"><span class="lineno">  234</span>    }</div>
+<div class="line"><span class="lineno">  235</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1c74e9cc95a9fa8497bd9b2335b5bb85" name="a1c74e9cc95a9fa8497bd9b2335b5bb85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c74e9cc95a9fa8497bd9b2335b5bb85">&#9670;&#160;</a></span>logError</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::logError </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loguje komunikat błędu do systemu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Treść komunikatu błędu </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00179">179</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  179</span>                                            {</div>
+<div class="line"><span class="lineno">  180</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a6e290c2eca03b98b6f379c71910c0ed6">plainTextEdit</a>-&gt;appendPlainText(<span class="stringliteral">&quot;[ERROR] &quot;</span> + msg);</div>
+<div class="line"><span class="lineno">  181</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a06bf6ff3b1e80b2da49221048caf1a83" name="a06bf6ff3b1e80b2da49221048caf1a83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06bf6ff3b1e80b2da49221048caf1a83">&#9670;&#160;</a></span>logToTerminal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::logToTerminal </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pomocnicza funkcja do logowania w terminalu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Treść wiadomości </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00176">176</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>                                                     {</div>
+<div class="line"><span class="lineno">  177</span>    <span class="comment">// ui-&gt;plainTextEdit-&gt;appendPlainText(message);</span></div>
+<div class="line"><span class="lineno">  178</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab8a6d8ac7e6344219cefbe1f0af6271f" name="ab8a6d8ac7e6344219cefbe1f0af6271f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8a6d8ac7e6344219cefbe1f0af6271f">&#9670;&#160;</a></span>onLanguageChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::onLanguageChanged </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zmianę języka interfejsu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Indeks wybranego języka </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00247">247</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  248</span>{</div>
+<div class="line"><span class="lineno">  249</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Language change requested to index:&quot;</span> &lt;&lt; index;</div>
+<div class="line"><span class="lineno">  250</span> </div>
+<div class="line"><span class="lineno">  251</span>    <span class="comment">// Usuń poprzedni translator</span></div>
+<div class="line"><span class="lineno">  252</span>    qApp-&gt;removeTranslator(<a class="code hl_variable" href="classMainWindow.html#a231e129ba6849637f29afc7852fffbcb">translator</a>);</div>
+<div class="line"><span class="lineno">  253</span> </div>
+<div class="line"><span class="lineno">  254</span>    <span class="comment">// Załaduj nowy język</span></div>
+<div class="line"><span class="lineno">  255</span>    QString language = index == 0 ? <span class="stringliteral">&quot;pl&quot;</span> : <span class="stringliteral">&quot;en&quot;</span>;</div>
+<div class="line"><span class="lineno">  256</span>    QString path = QString(<span class="stringliteral">&quot;:/translations/translations/hex_service_%1.qm&quot;</span>).arg(language); <span class="comment">// Poprawiona ścieżka</span></div>
+<div class="line"><span class="lineno">  257</span> </div>
+<div class="line"><span class="lineno">  258</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Trying to load translation from:&quot;</span> &lt;&lt; path;</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMainWindow.html#a231e129ba6849637f29afc7852fffbcb">translator</a>-&gt;load(path)) {</div>
+<div class="line"><span class="lineno">  261</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Translation loaded successfully&quot;</span>;</div>
+<div class="line"><span class="lineno">  262</span>        qApp-&gt;installTranslator(<a class="code hl_variable" href="classMainWindow.html#a231e129ba6849637f29afc7852fffbcb">translator</a>);</div>
+<div class="line"><span class="lineno">  263</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  264</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Failed to load translation from&quot;</span> &lt;&lt; path;</div>
+<div class="line"><span class="lineno">  265</span>    }</div>
+<div class="line"><span class="lineno">  266</span> </div>
+<div class="line"><span class="lineno">  267</span>    <span class="comment">// Aktualizuj UI</span></div>
+<div class="line"><span class="lineno">  268</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_function" href="classUi__MainWindow.html#a097dd160c3534a204904cb374412c618">retranslateUi</a>(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  269</span>    <a class="code hl_function" href="classMainWindow.html#a32b3ba4bbaa9db982ddba01fe3793ef2">setupLabels</a>();</div>
+<div class="line"><span class="lineno">  270</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a30f79beabf8bb9fdc312d9906c1527bc" name="a30f79beabf8bb9fdc312d9906c1527bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a30f79beabf8bb9fdc312d9906c1527bc">&#9670;&#160;</a></span>onLegSelectionChanged</h2>
 
@@ -220,14 +818,150 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Slot zmieniający aktywną nogę na podstawie wyboru w QComboBox. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">index</td><td>Indeks wybranej nogi. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Zmieniona aktywna noga w <a class="el" href="classSideView.html" title="Klasa do wyświetlania jednej nogi robota w widoku z boku.">SideView</a>. </p>
 
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00133">133</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>{</div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_variable" href="classMainWindow.html#a6020d099942091ede4ce86183cfbfcb2">sideView</a>-&gt;<a class="code hl_slot" href="classSideView.html#a26adcc66bd5a474a6d3752ff8d9e9de1">setActiveLeg</a>(index);</div>
+<div class="line"><span class="lineno">  136</span>}</div>
+<div class="ttc" id="aclassSideView_html_a26adcc66bd5a474a6d3752ff8d9e9de1"><div class="ttname"><a href="classSideView.html#a26adcc66bd5a474a6d3752ff8d9e9de1">SideView::setActiveLeg</a></div><div class="ttdeci">void setActiveLeg(int leg)</div><div class="ttdoc">Wybiera, którą nogę rysować</div><div class="ttdef"><b>Definition</b> <a href="sideview_8cpp_source.html#l00014">sideview.cpp:14</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a962064e0a5474d210a24a6fba3f1ecf0" name="a962064e0a5474d210a24a6fba3f1ecf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a962064e0a5474d210a24a6fba3f1ecf0">&#9670;&#160;</a></span>onReconnectClicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::onReconnectClicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zdarzenie ponownego połączenia. </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00209">209</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  210</span>{</div>
+<div class="line"><span class="lineno">  211</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a5dd0f3b681594aa28fc0c1eca905f649">btnReconnect</a>-&gt;setEnabled(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  212</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a6e290c2eca03b98b6f379c71910c0ed6">plainTextEdit</a>-&gt;clear();</div>
+<div class="line"><span class="lineno">  213</span> </div>
+<div class="line"><span class="lineno">  214</span>    <a class="code hl_variable" href="classMainWindow.html#aa8c15a97671932e06940acd503033141">simulator</a>-&gt;<a class="code hl_function" href="classDataSimulator.html#ac0872ead237e22ffc9beb0dc935a07a8">pauseSimulation</a>();  <span class="comment">// Najpierw zatrzymaj symulację</span></div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>    QTimer::singleShot(1000, <span class="keyword">this</span>, [<span class="keyword">this</span>]() {  <span class="comment">// Zwiększ opóźnienie do 1000ms</span></div>
+<div class="line"><span class="lineno">  217</span>        <a class="code hl_variable" href="classMainWindow.html#aa8c15a97671932e06940acd503033141">simulator</a>-&gt;<a class="code hl_function" href="classDataSimulator.html#a3a0a8a156f8e8ab1fbd37dd796de7386">resetSimulation</a>();</div>
+<div class="line"><span class="lineno">  218</span> </div>
+<div class="line"><span class="lineno">  219</span>        QTimer::singleShot(500, <span class="keyword">this</span>, [<span class="keyword">this</span>]() {  <span class="comment">// Dodaj opóźnienie między resetem a startem</span></div>
+<div class="line"><span class="lineno">  220</span>            <a class="code hl_variable" href="classMainWindow.html#aa8c15a97671932e06940acd503033141">simulator</a>-&gt;<a class="code hl_function" href="classDataSimulator.html#ad4f3a80942ef400cd58d2a023e1f5844">startSimulation</a>(50);  <span class="comment">// Użyj oryginalnego interwału 50ms</span></div>
+<div class="line"><span class="lineno">  221</span>            <a class="code hl_variable" href="classMainWindow.html#aa8c15a97671932e06940acd503033141">simulator</a>-&gt;<a class="code hl_function" href="classDataSimulator.html#a90d382b074a56821479d98c9b1904050">setSimulateErrors</a>(<a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#abaa0f7e282a0fc3bad7b02d8fe5e6c1e">chkSimulateErrors</a>-&gt;isChecked());</div>
+<div class="line"><span class="lineno">  222</span>        });</div>
+<div class="line"><span class="lineno">  223</span>    });</div>
+<div class="line"><span class="lineno">  224</span>}</div>
+<div class="ttc" id="aclassDataSimulator_html_a3a0a8a156f8e8ab1fbd37dd796de7386"><div class="ttname"><a href="classDataSimulator.html#a3a0a8a156f8e8ab1fbd37dd796de7386">DataSimulator::resetSimulation</a></div><div class="ttdeci">void resetSimulation()</div><div class="ttdoc">Resetuje symulację do początku. Powraca do początkowych danych w pliku i ponownie uruchamia symulację...</div><div class="ttdef"><b>Definition</b> <a href="datasimulator_8cpp_source.html#l00039">datasimulator.cpp:39</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_ac0872ead237e22ffc9beb0dc935a07a8"><div class="ttname"><a href="classDataSimulator.html#ac0872ead237e22ffc9beb0dc935a07a8">DataSimulator::pauseSimulation</a></div><div class="ttdeci">void pauseSimulation()</div><div class="ttdoc">Pauzuje symulację. Zatrzymuje odczyt danych z pliku i wstrzymuje animację.</div><div class="ttdef"><b>Definition</b> <a href="datasimulator_8cpp_source.html#l00035">datasimulator.cpp:35</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0ee1a79271e4c7afc5928f2876010559" name="a0ee1a79271e4c7afc5928f2876010559"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ee1a79271e4c7afc5928f2876010559">&#9670;&#160;</a></span>onSimDisconnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::onSimDisconnect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zdarzenie rozłączenia symulatora. </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00202">202</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  203</span>{</div>
+<div class="line"><span class="lineno">  204</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a6e290c2eca03b98b6f379c71910c0ed6">plainTextEdit</a>-&gt;appendPlainText(<span class="stringliteral">&quot;### Rozłączono z powodu zbyt wielu błędów CRC ###&quot;</span>);</div>
+<div class="line"><span class="lineno">  205</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a5dd0f3b681594aa28fc0c1eca905f649">btnReconnect</a>-&gt;setEnabled(<span class="keyword">true</span>);  <span class="comment">// umożliwiamy ponowne połączenie</span></div>
+<div class="line"><span class="lineno">  206</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a32b3ba4bbaa9db982ddba01fe3793ef2" name="a32b3ba4bbaa9db982ddba01fe3793ef2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32b3ba4bbaa9db982ddba01fe3793ef2">&#9670;&#160;</a></span>setupLabels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::setupLabels </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inicjalizuje etykiety interfejsu. </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00273">273</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  274</span>{</div>
+<div class="line"><span class="lineno">  275</span>    <span class="comment">// Ustaw etykiety z ikonami</span></div>
+<div class="line"><span class="lineno">  276</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a9b1d3edec3d74c4ba060dc1879b56df2">noga_1_name</a>-&gt;setText(<a class="code hl_function" href="classMainWindow.html#acda066cec7fb0cb9a5c085a9ff12fc20">getTranslatedLabelWithIcon</a>(tr(<span class="stringliteral">&quot;Noga 1&quot;</span>), <span class="stringliteral">&quot;:/icons/robot-leg.png&quot;</span>));</div>
+<div class="line"><span class="lineno">  277</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#add2ef990954e7c3f170870d8bb39291c">noga_2_name</a>-&gt;setText(<a class="code hl_function" href="classMainWindow.html#acda066cec7fb0cb9a5c085a9ff12fc20">getTranslatedLabelWithIcon</a>(tr(<span class="stringliteral">&quot;Noga 2&quot;</span>), <span class="stringliteral">&quot;:/icons/robot-leg.png&quot;</span>));</div>
+<div class="line"><span class="lineno">  278</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a2a82b5e19f66463067baa3a2d25b11c3">noga_3_name</a>-&gt;setText(<a class="code hl_function" href="classMainWindow.html#acda066cec7fb0cb9a5c085a9ff12fc20">getTranslatedLabelWithIcon</a>(tr(<span class="stringliteral">&quot;Noga 3&quot;</span>), <span class="stringliteral">&quot;:/icons/robot-leg.png&quot;</span>));</div>
+<div class="line"><span class="lineno">  279</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a141e6c32419046ac9a34c1f28cd2d0ae">noga_4_name</a>-&gt;setText(<a class="code hl_function" href="classMainWindow.html#acda066cec7fb0cb9a5c085a9ff12fc20">getTranslatedLabelWithIcon</a>(tr(<span class="stringliteral">&quot;Noga 4&quot;</span>), <span class="stringliteral">&quot;:/icons/robot-leg.png&quot;</span>));</div>
+<div class="line"><span class="lineno">  280</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a687a2b6dc7989a630b970e4f497358af">noga_5_name</a>-&gt;setText(<a class="code hl_function" href="classMainWindow.html#acda066cec7fb0cb9a5c085a9ff12fc20">getTranslatedLabelWithIcon</a>(tr(<span class="stringliteral">&quot;Noga 5&quot;</span>), <span class="stringliteral">&quot;:/icons/robot-leg.png&quot;</span>));</div>
+<div class="line"><span class="lineno">  281</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a0b03002f3c039e3b68dac78ae5bcfd8d">noga_6_name</a>-&gt;setText(<a class="code hl_function" href="classMainWindow.html#acda066cec7fb0cb9a5c085a9ff12fc20">getTranslatedLabelWithIcon</a>(tr(<span class="stringliteral">&quot;Noga 6&quot;</span>), <span class="stringliteral">&quot;:/icons/robot-leg.png&quot;</span>));</div>
+<div class="line"><span class="lineno">  282</span> </div>
+<div class="line"><span class="lineno">  283</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#abfcdda271b56bb1d8cf7370f06825223">biodro_name</a>-&gt;setText(<a class="code hl_function" href="classMainWindow.html#acda066cec7fb0cb9a5c085a9ff12fc20">getTranslatedLabelWithIcon</a>(tr(<span class="stringliteral">&quot;BIODRO&quot;</span>), <span class="stringliteral">&quot;:/icons/robot-leg_hip.png&quot;</span>));</div>
+<div class="line"><span class="lineno">  284</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#ada9a0136deba835ef68ec26ef26ea421">kolano_name</a>-&gt;setText(<a class="code hl_function" href="classMainWindow.html#acda066cec7fb0cb9a5c085a9ff12fc20">getTranslatedLabelWithIcon</a>(tr(<span class="stringliteral">&quot;KOLANO&quot;</span>), <span class="stringliteral">&quot;:/icons/robot-leg_knee.png&quot;</span>));</div>
+<div class="line"><span class="lineno">  285</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a925a6a56762f034bb55630c53c9443a7">kostka_name</a>-&gt;setText(<a class="code hl_function" href="classMainWindow.html#acda066cec7fb0cb9a5c085a9ff12fc20">getTranslatedLabelWithIcon</a>(tr(<span class="stringliteral">&quot;KOSTKA&quot;</span>), <span class="stringliteral">&quot;:/icons/robot-leg_ankle.png&quot;</span>));</div>
+<div class="line"><span class="lineno">  286</span> </div>
+<div class="line"><span class="lineno">  287</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#ad9c89133780f28e6efa2ec17ceb9cff5">label</a>-&gt;setText(<a class="code hl_function" href="classMainWindow.html#acda066cec7fb0cb9a5c085a9ff12fc20">getTranslatedLabelWithIcon</a>(tr(<span class="stringliteral">&quot;Top View&quot;</span>), <span class="stringliteral">&quot;:/icons/top_view.png&quot;</span>, 60, 60));</div>
+<div class="line"><span class="lineno">  288</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a2e2516d755e4dd53fc905dabddf2738a">label_2</a>-&gt;setText(<a class="code hl_function" href="classMainWindow.html#acda066cec7fb0cb9a5c085a9ff12fc20">getTranslatedLabelWithIcon</a>(tr(<span class="stringliteral">&quot;Side View&quot;</span>), <span class="stringliteral">&quot;:/icons/robot-leg.png&quot;</span>, 30, 30));</div>
+<div class="line"><span class="lineno">  289</span>}</div>
+<div class="ttc" id="aclassMainWindow_html_acda066cec7fb0cb9a5c085a9ff12fc20"><div class="ttname"><a href="classMainWindow.html#acda066cec7fb0cb9a5c085a9ff12fc20">MainWindow::getTranslatedLabelWithIcon</a></div><div class="ttdeci">QString getTranslatedLabelWithIcon(const QString &amp;text, const QString &amp;iconPath, int width=40, int height=40)</div><div class="ttdoc">Dodaje ikonę do etykiety tekstowej.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00291">mainwindow.cpp:291</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_a0b03002f3c039e3b68dac78ae5bcfd8d"><div class="ttname"><a href="classUi__MainWindow.html#a0b03002f3c039e3b68dac78ae5bcfd8d">Ui_MainWindow::noga_6_name</a></div><div class="ttdeci">QLabel * noga_6_name</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00064">ui_mainwindow.h:64</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_a141e6c32419046ac9a34c1f28cd2d0ae"><div class="ttname"><a href="classUi__MainWindow.html#a141e6c32419046ac9a34c1f28cd2d0ae">Ui_MainWindow::noga_4_name</a></div><div class="ttdeci">QLabel * noga_4_name</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00058">ui_mainwindow.h:58</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_a2a82b5e19f66463067baa3a2d25b11c3"><div class="ttname"><a href="classUi__MainWindow.html#a2a82b5e19f66463067baa3a2d25b11c3">Ui_MainWindow::noga_3_name</a></div><div class="ttdeci">QLabel * noga_3_name</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00063">ui_mainwindow.h:63</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_a2e2516d755e4dd53fc905dabddf2738a"><div class="ttname"><a href="classUi__MainWindow.html#a2e2516d755e4dd53fc905dabddf2738a">Ui_MainWindow::label_2</a></div><div class="ttdeci">QLabel * label_2</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00103">ui_mainwindow.h:103</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_a687a2b6dc7989a630b970e4f497358af"><div class="ttname"><a href="classUi__MainWindow.html#a687a2b6dc7989a630b970e4f497358af">Ui_MainWindow::noga_5_name</a></div><div class="ttdeci">QLabel * noga_5_name</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00073">ui_mainwindow.h:73</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_a925a6a56762f034bb55630c53c9443a7"><div class="ttname"><a href="classUi__MainWindow.html#a925a6a56762f034bb55630c53c9443a7">Ui_MainWindow::kostka_name</a></div><div class="ttdeci">QLabel * kostka_name</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00075">ui_mainwindow.h:75</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_a9b1d3edec3d74c4ba060dc1879b56df2"><div class="ttname"><a href="classUi__MainWindow.html#a9b1d3edec3d74c4ba060dc1879b56df2">Ui_MainWindow::noga_1_name</a></div><div class="ttdeci">QLabel * noga_1_name</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00067">ui_mainwindow.h:67</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_abfcdda271b56bb1d8cf7370f06825223"><div class="ttname"><a href="classUi__MainWindow.html#abfcdda271b56bb1d8cf7370f06825223">Ui_MainWindow::biodro_name</a></div><div class="ttdeci">QLabel * biodro_name</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00059">ui_mainwindow.h:59</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_ad9c89133780f28e6efa2ec17ceb9cff5"><div class="ttname"><a href="classUi__MainWindow.html#ad9c89133780f28e6efa2ec17ceb9cff5">Ui_MainWindow::label</a></div><div class="ttdeci">QLabel * label</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00098">ui_mainwindow.h:98</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_ada9a0136deba835ef68ec26ef26ea421"><div class="ttname"><a href="classUi__MainWindow.html#ada9a0136deba835ef68ec26ef26ea421">Ui_MainWindow::kolano_name</a></div><div class="ttdeci">QLabel * kolano_name</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00077">ui_mainwindow.h:77</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_add2ef990954e7c3f170870d8bb39291c"><div class="ttname"><a href="classUi__MainWindow.html#add2ef990954e7c3f170870d8bb39291c">Ui_MainWindow::noga_2_name</a></div><div class="ttdeci">QLabel * noga_2_name</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00071">ui_mainwindow.h:71</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a545b4a364be0eb41c1f9840206abef59" name="a545b4a364be0eb41c1f9840206abef59"></a>
@@ -253,8 +987,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Przełącza widok na ekran z animacjami ruchów hexapoda. </p>
+<p>Pokazuje widok animacji. </p>
 
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00123">123</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>                                {</div>
+<div class="line"><span class="lineno">  124</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a8d440a6df1de0bc57afcdda7476d8f19">stackedWidget</a>-&gt;setCurrentWidget(<a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a0305a85e47b99fd4209ba192a160bb91">animationWD</a>);</div>
+<div class="line"><span class="lineno">  125</span>}</div>
+<div class="ttc" id="aclassUi__MainWindow_html_a0305a85e47b99fd4209ba192a160bb91"><div class="ttname"><a href="classUi__MainWindow.html#a0305a85e47b99fd4209ba192a160bb91">Ui_MainWindow::animationWD</a></div><div class="ttdeci">QWidget * animationWD</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00094">ui_mainwindow.h:94</a></div></div>
+<div class="ttc" id="aclassUi__MainWindow_html_a8d440a6df1de0bc57afcdda7476d8f19"><div class="ttname"><a href="classUi__MainWindow.html#a8d440a6df1de0bc57afcdda7476d8f19">Ui_MainWindow::stackedWidget</a></div><div class="ttdeci">QStackedWidget * stackedWidget</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00047">ui_mainwindow.h:47</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af2155d62980a8da6a07fcea9af00c969" name="af2155d62980a8da6a07fcea9af00c969"></a>
@@ -280,8 +1021,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Przełącza widok na ekran ustawień połączenia FM. </p>
+<p>Pokazuje widok jakości połączenia FM. </p>
 
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00126">126</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>                                {</div>
+<div class="line"><span class="lineno">  127</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a8d440a6df1de0bc57afcdda7476d8f19">stackedWidget</a>-&gt;setCurrentWidget(<a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a1f3885b000b8bc17341e55d908a8835d">fMconnectionWD</a>);</div>
+<div class="line"><span class="lineno">  128</span>}</div>
+<div class="ttc" id="aclassUi__MainWindow_html_a1f3885b000b8bc17341e55d908a8835d"><div class="ttname"><a href="classUi__MainWindow.html#a1f3885b000b8bc17341e55d908a8835d">Ui_MainWindow::fMconnectionWD</a></div><div class="ttdeci">QWidget * fMconnectionWD</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00106">ui_mainwindow.h:106</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae6ed722972212abec7e9b3b68c5ef215" name="ae6ed722972212abec7e9b3b68c5ef215"></a>
@@ -307,8 +1054,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Przełącza widok na ekran z kątami serwomechanizmów. </p>
+<p>Pokazuje widok kątów serw. </p>
 
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00120">120</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>                                 {</div>
+<div class="line"><span class="lineno">  121</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a8d440a6df1de0bc57afcdda7476d8f19">stackedWidget</a>-&gt;setCurrentWidget(<a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a2bdd8056180649d054112359ec4fd5b7">servoAnglesWD</a>);</div>
+<div class="line"><span class="lineno">  122</span>}</div>
+<div class="ttc" id="aclassUi__MainWindow_html_a2bdd8056180649d054112359ec4fd5b7"><div class="ttname"><a href="classUi__MainWindow.html#a2bdd8056180649d054112359ec4fd5b7">Ui_MainWindow::servoAnglesWD</a></div><div class="ttdeci">QWidget * servoAnglesWD</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00048">ui_mainwindow.h:48</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aabfa36b35a25cafc7832c489f5bd30f2" name="aabfa36b35a25cafc7832c489f5bd30f2"></a>
@@ -334,8 +1087,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Przełącza widok na ekran ustawień aplikacji. </p>
+<p>Pokazuje widok ustawień aplikacji. </p>
 
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00129">129</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>                              {</div>
+<div class="line"><span class="lineno">  130</span>    <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a8d440a6df1de0bc57afcdda7476d8f19">stackedWidget</a>-&gt;setCurrentWidget(<a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#a7c48532de3835de5c657ca1284dcfcf7">settingsWD</a>);</div>
+<div class="line"><span class="lineno">  131</span>}</div>
+<div class="ttc" id="aclassUi__MainWindow_html_a7c48532de3835de5c657ca1284dcfcf7"><div class="ttname"><a href="classUi__MainWindow.html#a7c48532de3835de5c657ca1284dcfcf7">Ui_MainWindow::settingsWD</a></div><div class="ttdeci">QWidget * settingsWD</div><div class="ttdef"><b>Definition</b> <a href="ui__mainwindow_8h_source.html#l00080">ui_mainwindow.h:80</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a271c033f4032fc7263825ee16d5d00df" name="a271c033f4032fc7263825ee16d5d00df"></a>
@@ -354,14 +1113,58 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Funkcja do aktualizacji GUI, kiedy dane o kątach serwomechanizmów są dostępne. </p>
+<p>Aktualizuje wszystkie QLabel-e kątów. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">frame</td><td>Ramka z danymi o kątach serw. </td></tr>
+    <tr><td class="paramname">frame</td><td>Struktura z czasem i wektorem kątów, prędkości i licznikiem pakietów. </td></tr>
   </table>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00138">138</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>{</div>
+<div class="line"><span class="lineno">  140</span>    <span class="comment">// 1) Aktualizacja tabelki QLabel</span></div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>.size(); ++i) {</div>
+<div class="line"><span class="lineno">  142</span>        <span class="keyword">auto</span> name = QString(<span class="stringliteral">&quot;servo_%1_%2&quot;</span>).arg(i/3).arg(i%3);</div>
+<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> *lbl = findChild&lt;QLabel*&gt;(name))</div>
+<div class="line"><span class="lineno">  144</span>            lbl-&gt;setText(QString::number(frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>[i], <span class="charliteral">&#39;f&#39;</span>, 1) + u8<span class="stringliteral">&quot;°&quot;</span>);</div>
+<div class="line"><span class="lineno">  145</span>    }</div>
+<div class="line"><span class="lineno">  146</span>    <span class="comment">// 2) TopView</span></div>
+<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> leg = 0; leg &lt; 6; ++leg) {</div>
+<div class="line"><span class="lineno">  148</span>        <span class="keywordtype">float</span> hip = frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>[leg*3 + 0];</div>
+<div class="line"><span class="lineno">  149</span>        <a class="code hl_variable" href="classMainWindow.html#a4d9c9612e0c1a7d53b90aa7e9042103a">topView</a>-&gt;<a class="code hl_function" href="classTopView.html#ae59005e45d5ee8f409dca9a639d9462f">setHipAngle</a>(leg, hip - 90.0f);</div>
+<div class="line"><span class="lineno">  150</span>    }</div>
+<div class="line"><span class="lineno">  151</span>    <span class="comment">// 3) SideView</span></div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordtype">int</span> legIdx = <a class="code hl_variable" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code hl_variable" href="classUi__MainWindow.html#ad25b84530a0492d304fbb368dc99dbe3">comboBoxLegSide</a>-&gt;currentIndex();</div>
+<div class="line"><span class="lineno">  153</span>    <span class="keywordtype">float</span> knee  = frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>[legIdx*3 + 1];</div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordtype">float</span> ankle = frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>[legIdx*3 + 2];</div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_variable" href="classMainWindow.html#a6020d099942091ede4ce86183cfbfcb2">sideView</a>-&gt;<a class="code hl_slot" href="classSideView.html#a076854ad6805568755987811f7629003">setJointAngles</a>(knee, ankle);</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    QString frameText;</div>
+<div class="line"><span class="lineno">  159</span>    frameText += QString(<span class="stringliteral">&quot;Czas: %1 ms\n&quot;</span>).arg(frame.<a class="code hl_variable" href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">timeMs</a>);</div>
+<div class="line"><span class="lineno">  160</span>    frameText += <span class="stringliteral">&quot;Kąty: [&quot;</span>;</div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>.size(); ++i) {</div>
+<div class="line"><span class="lineno">  162</span>        frameText += QString::number(frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>[i], <span class="charliteral">&#39;f&#39;</span>, 1);</div>
+<div class="line"><span class="lineno">  163</span>        <span class="keywordflow">if</span> (i &lt; frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>.size() - 1)</div>
+<div class="line"><span class="lineno">  164</span>            frameText += <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><span class="lineno">  165</span>    }</div>
+<div class="line"><span class="lineno">  166</span>    frameText += <span class="stringliteral">&quot;]\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  167</span>    frameText += QString(<span class="stringliteral">&quot;Prędkość: %1 pkt/s\n&quot;</span>).arg(frame.<a class="code hl_variable" href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">speed</a>, 0, <span class="charliteral">&#39;f&#39;</span>, 1);</div>
+<div class="line"><span class="lineno">  168</span>    frameText += QString(<span class="stringliteral">&quot;Pakiety: %1\n&quot;</span>).arg(frame.<a class="code hl_variable" href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">packetCount</a>);</div>
+<div class="line"><span class="lineno">  169</span>    frameText += <span class="stringliteral">&quot;---------------------------&quot;</span>;</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>    <a class="code hl_function" href="classMainWindow.html#a06bf6ff3b1e80b2da49221048caf1a83">logToTerminal</a>(frameText);</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>}</div>
+<div class="ttc" id="aclassSideView_html_a076854ad6805568755987811f7629003"><div class="ttname"><a href="classSideView.html#a076854ad6805568755987811f7629003">SideView::setJointAngles</a></div><div class="ttdeci">void setJointAngles(float knee, float ankle)</div><div class="ttdoc">Ustawia kąty kolana i kostki dla aktywnej nogi.</div><div class="ttdef"><b>Definition</b> <a href="sideview_8cpp_source.html#l00069">sideview.cpp:69</a></div></div>
+<div class="ttc" id="aclassTopView_html_ae59005e45d5ee8f409dca9a639d9462f"><div class="ttname"><a href="classTopView.html#ae59005e45d5ee8f409dca9a639d9462f">TopView::setHipAngle</a></div><div class="ttdeci">void setHipAngle(int legIndex, float angleDeg)</div><div class="ttdoc">Ustawia kąt biodra dla danej nogi.</div><div class="ttdef"><b>Definition</b> <a href="topview_8cpp_source.html#l00017">topview.cpp:17</a></div></div>
+<div class="ttc" id="astructServoFrame_html_a9e3f24998bd527d51ad3adff5c695901"><div class="ttname"><a href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">ServoFrame::speed</a></div><div class="ttdeci">float speed</div><div class="ttdoc">Prędkość transmisji.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00018">datareader.h:18</a></div></div>
+<div class="ttc" id="astructServoFrame_html_ab81dd8d7c2efd68078a6abef4d1794f4"><div class="ttname"><a href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">ServoFrame::angles</a></div><div class="ttdeci">QVector&lt; float &gt; angles</div><div class="ttdoc">18 kątów nóg</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00017">datareader.h:17</a></div></div>
+<div class="ttc" id="astructServoFrame_html_ac3ff952b169f223496dcd8e3c8b2b08d"><div class="ttname"><a href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">ServoFrame::packetCount</a></div><div class="ttdeci">int packetCount</div><div class="ttdoc">Liczba przesłanych pakietów.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00019">datareader.h:19</a></div></div>
+<div class="ttc" id="astructServoFrame_html_ad3ed851e57d10a3ea98ee0c7efb15c81"><div class="ttname"><a href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">ServoFrame::timeMs</a></div><div class="ttdeci">int timeMs</div><div class="ttdoc">Czas w ms.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00016">datareader.h:16</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -385,7 +1188,35 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>ComboBox do wyboru nogi w widoku z boku. </p>
+<p>Dropdown wyboru nogi w widoku bocznym. </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00085">85</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+
+</div>
+</div>
+<a id="a4c54c92a1e4ba8ec4879c35780360bba" name="a4c54c92a1e4ba8ec4879c35780360bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c54c92a1e4ba8ec4879c35780360bba">&#9670;&#160;</a></span>servoManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classServoAngleManager.html">ServoAngleManager</a>* MainWindow::servoManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Manager aktualizacji QLabeli kątów. </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00082">82</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -409,7 +1240,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Widget do wyświetlania jednej nogi w widoku z boku. </p>
+<p>Widget bocznego widoku nogi. </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00083">83</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -433,7 +1266,61 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Instancja symulatora danych. </p>
+<p>Symulator strumienia danych. </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00081">81</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+
+</div>
+</div>
+<a id="a4d9c9612e0c1a7d53b90aa7e9042103a" name="a4d9c9612e0c1a7d53b90aa7e9042103a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d9c9612e0c1a7d53b90aa7e9042103a">&#9670;&#160;</a></span>topView</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTopView.html">TopView</a>* MainWindow::topView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Widget widoku z góry całego robota. </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00084">84</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+
+</div>
+</div>
+<a id="a231e129ba6849637f29afc7852fffbcb" name="a231e129ba6849637f29afc7852fffbcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a231e129ba6849637f29afc7852fffbcb">&#9670;&#160;</a></span>translator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTranslator* MainWindow::translator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obiekt tłumacza interfejsu. </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00086">86</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -457,18 +1344,24 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Wskaźnik na wygenerowany interfejs użytkownika (z <code>.ui</code>) </p>
+<p>Wskaźnik na wygenerowany interfejs UI. </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00080">80</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
-<li><a class="el" href="mainwindow_8cpp.html">mainwindow.cpp</a></li>
+<li><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classMainWindow.html">MainWindow</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

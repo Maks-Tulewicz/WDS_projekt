@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classUi_1_1MainWindow.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +88,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="namespaceUi.html">Ui</a></li><li class="navelem"><a class="el" href="classUi_1_1MainWindow.html">MainWindow</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="classUi_1_1MainWindow-members.html">List of all members</a>  </div>
@@ -84,12 +100,12 @@ $(function() {
 Inheritance diagram for Ui::MainWindow:</div>
 <div class="dyncontent">
 <div class="center"><img src="classUi_1_1MainWindow__inherit__graph.png" border="0" usemap="#aUi_1_1MainWindow_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for Ui::MainWindow:</div>
 <div class="dyncontent">
 <div class="center"><img src="classUi_1_1MainWindow__coll__graph.png" border="0" usemap="#aUi_1_1MainWindow_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -129,98 +145,139 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ab676f235c393f334b7c07935d4007925 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a525ed3c5fe0784ac502ee222fba4e205 inherit pub_attribs_classUi__MainWindow" id="r_a525ed3c5fe0784ac502ee222fba4e205"><td class="memItemLeft" align="right" valign="top">QGridLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a525ed3c5fe0784ac502ee222fba4e205">gridLayout</a></td></tr>
 <tr class="separator:a525ed3c5fe0784ac502ee222fba4e205 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a617604fa8d466123bdfff521daaa27a7 inherit pub_attribs_classUi__MainWindow" id="r_a617604fa8d466123bdfff521daaa27a7"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a617604fa8d466123bdfff521daaa27a7">servo_4_2</a></td></tr>
-<tr class="separator:a617604fa8d466123bdfff521daaa27a7 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a925a6a56762f034bb55630c53c9443a7 inherit pub_attribs_classUi__MainWindow" id="r_a925a6a56762f034bb55630c53c9443a7"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a925a6a56762f034bb55630c53c9443a7">kostka_name</a></td></tr>
-<tr class="separator:a925a6a56762f034bb55630c53c9443a7 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6306d56cce46c1732751a3187a639bfc inherit pub_attribs_classUi__MainWindow" id="r_a6306d56cce46c1732751a3187a639bfc"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a6306d56cce46c1732751a3187a639bfc">servo_4_1</a></td></tr>
 <tr class="separator:a6306d56cce46c1732751a3187a639bfc inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0faa4c6754dddd618d6a482e557746d7 inherit pub_attribs_classUi__MainWindow" id="r_a0faa4c6754dddd618d6a482e557746d7"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a0faa4c6754dddd618d6a482e557746d7">servo_2_2</a></td></tr>
-<tr class="separator:a0faa4c6754dddd618d6a482e557746d7 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6408acf5d7897ca90d8bb5f41bf30e1 inherit pub_attribs_classUi__MainWindow" id="r_aa6408acf5d7897ca90d8bb5f41bf30e1"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#aa6408acf5d7897ca90d8bb5f41bf30e1">servo_2_0</a></td></tr>
-<tr class="separator:aa6408acf5d7897ca90d8bb5f41bf30e1 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a462491a609c7de846f7628f6520f8eab inherit pub_attribs_classUi__MainWindow" id="r_a462491a609c7de846f7628f6520f8eab"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a462491a609c7de846f7628f6520f8eab">servo_1_1</a></td></tr>
-<tr class="separator:a462491a609c7de846f7628f6520f8eab inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4214b2f7aee7913078132c1d181b1a4 inherit pub_attribs_classUi__MainWindow" id="r_ab4214b2f7aee7913078132c1d181b1a4"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#ab4214b2f7aee7913078132c1d181b1a4">grid_filler</a></td></tr>
-<tr class="separator:ab4214b2f7aee7913078132c1d181b1a4 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1eb02b2e60fe29b3a15ab44a501d226 inherit pub_attribs_classUi__MainWindow" id="r_ac1eb02b2e60fe29b3a15ab44a501d226"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#ac1eb02b2e60fe29b3a15ab44a501d226">servo_4_0</a></td></tr>
-<tr class="separator:ac1eb02b2e60fe29b3a15ab44a501d226 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a141e6c32419046ac9a34c1f28cd2d0ae inherit pub_attribs_classUi__MainWindow" id="r_a141e6c32419046ac9a34c1f28cd2d0ae"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a141e6c32419046ac9a34c1f28cd2d0ae">noga_4_name</a></td></tr>
-<tr class="separator:a141e6c32419046ac9a34c1f28cd2d0ae inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c3349ae3d4e9793eaa99923657c30a9 inherit pub_attribs_classUi__MainWindow" id="r_a9c3349ae3d4e9793eaa99923657c30a9"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a9c3349ae3d4e9793eaa99923657c30a9">servo_0_2</a></td></tr>
 <tr class="separator:a9c3349ae3d4e9793eaa99923657c30a9 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b1d3edec3d74c4ba060dc1879b56df2 inherit pub_attribs_classUi__MainWindow" id="r_a9b1d3edec3d74c4ba060dc1879b56df2"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a9b1d3edec3d74c4ba060dc1879b56df2">noga_1_name</a></td></tr>
-<tr class="separator:a9b1d3edec3d74c4ba060dc1879b56df2 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e585b6b5d3278de2a34281d5fabaa3f inherit pub_attribs_classUi__MainWindow" id="r_a4e585b6b5d3278de2a34281d5fabaa3f"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a4e585b6b5d3278de2a34281d5fabaa3f">servo_0_0</a></td></tr>
-<tr class="separator:a4e585b6b5d3278de2a34281d5fabaa3f inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada9a0136deba835ef68ec26ef26ea421 inherit pub_attribs_classUi__MainWindow" id="r_ada9a0136deba835ef68ec26ef26ea421"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#ada9a0136deba835ef68ec26ef26ea421">kolano_name</a></td></tr>
-<tr class="separator:ada9a0136deba835ef68ec26ef26ea421 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add2ef990954e7c3f170870d8bb39291c inherit pub_attribs_classUi__MainWindow" id="r_add2ef990954e7c3f170870d8bb39291c"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#add2ef990954e7c3f170870d8bb39291c">noga_2_name</a></td></tr>
-<tr class="separator:add2ef990954e7c3f170870d8bb39291c inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb2bfbc67d8507936e0c6242000919a8 inherit pub_attribs_classUi__MainWindow" id="r_adb2bfbc67d8507936e0c6242000919a8"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#adb2bfbc67d8507936e0c6242000919a8">servo_3_2</a></td></tr>
 <tr class="separator:adb2bfbc67d8507936e0c6242000919a8 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a6e6570abaf952eeb9a3f14a4cdad30 inherit pub_attribs_classUi__MainWindow" id="r_a2a6e6570abaf952eeb9a3f14a4cdad30"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a2a6e6570abaf952eeb9a3f14a4cdad30">servo_1_0</a></td></tr>
-<tr class="separator:a2a6e6570abaf952eeb9a3f14a4cdad30 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add2c81a505af529f580d1fd8d54c8be2 inherit pub_attribs_classUi__MainWindow" id="r_add2c81a505af529f580d1fd8d54c8be2"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#add2c81a505af529f580d1fd8d54c8be2">servo_2_1</a></td></tr>
-<tr class="separator:add2c81a505af529f580d1fd8d54c8be2 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60cb0a7d0d6ce1f860ecd368f3a7c558 inherit pub_attribs_classUi__MainWindow" id="r_a60cb0a7d0d6ce1f860ecd368f3a7c558"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a60cb0a7d0d6ce1f860ecd368f3a7c558">servo_3_0</a></td></tr>
 <tr class="separator:a60cb0a7d0d6ce1f860ecd368f3a7c558 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a82b5e19f66463067baa3a2d25b11c3 inherit pub_attribs_classUi__MainWindow" id="r_a2a82b5e19f66463067baa3a2d25b11c3"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a2a82b5e19f66463067baa3a2d25b11c3">noga_3_name</a></td></tr>
-<tr class="separator:a2a82b5e19f66463067baa3a2d25b11c3 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ef080057b54088d17f312f7bc8ebebb inherit pub_attribs_classUi__MainWindow" id="r_a4ef080057b54088d17f312f7bc8ebebb"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a4ef080057b54088d17f312f7bc8ebebb">servo_3_1</a></td></tr>
-<tr class="separator:a4ef080057b54088d17f312f7bc8ebebb inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b43b57451648d4601d3ea45c320286d inherit pub_attribs_classUi__MainWindow" id="r_a3b43b57451648d4601d3ea45c320286d"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a3b43b57451648d4601d3ea45c320286d">servo_1_2</a></td></tr>
-<tr class="separator:a3b43b57451648d4601d3ea45c320286d inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a687a2b6dc7989a630b970e4f497358af inherit pub_attribs_classUi__MainWindow" id="r_a687a2b6dc7989a630b970e4f497358af"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a687a2b6dc7989a630b970e4f497358af">noga_5_name</a></td></tr>
-<tr class="separator:a687a2b6dc7989a630b970e4f497358af inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfcdda271b56bb1d8cf7370f06825223 inherit pub_attribs_classUi__MainWindow" id="r_abfcdda271b56bb1d8cf7370f06825223"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#abfcdda271b56bb1d8cf7370f06825223">biodro_name</a></td></tr>
-<tr class="separator:abfcdda271b56bb1d8cf7370f06825223 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd3ff52646b3a6bfc2accb53ba04d08b inherit pub_attribs_classUi__MainWindow" id="r_acd3ff52646b3a6bfc2accb53ba04d08b"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#acd3ff52646b3a6bfc2accb53ba04d08b">servo_0_1</a></td></tr>
-<tr class="separator:acd3ff52646b3a6bfc2accb53ba04d08b inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b03002f3c039e3b68dac78ae5bcfd8d inherit pub_attribs_classUi__MainWindow" id="r_a0b03002f3c039e3b68dac78ae5bcfd8d"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a0b03002f3c039e3b68dac78ae5bcfd8d">noga_6_name</a></td></tr>
-<tr class="separator:a0b03002f3c039e3b68dac78ae5bcfd8d inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a462491a609c7de846f7628f6520f8eab inherit pub_attribs_classUi__MainWindow" id="r_a462491a609c7de846f7628f6520f8eab"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a462491a609c7de846f7628f6520f8eab">servo_1_1</a></td></tr>
+<tr class="separator:a462491a609c7de846f7628f6520f8eab inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa902b08cb20cf061bcc2ba0bd954030d inherit pub_attribs_classUi__MainWindow" id="r_aa902b08cb20cf061bcc2ba0bd954030d"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#aa902b08cb20cf061bcc2ba0bd954030d">servo_5_0</a></td></tr>
 <tr class="separator:aa902b08cb20cf061bcc2ba0bd954030d inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cffe0ac5fae0d91e622fc3ed09ac878 inherit pub_attribs_classUi__MainWindow" id="r_a5cffe0ac5fae0d91e622fc3ed09ac878"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a5cffe0ac5fae0d91e622fc3ed09ac878">servo_5_1</a></td></tr>
-<tr class="separator:a5cffe0ac5fae0d91e622fc3ed09ac878 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a141e6c32419046ac9a34c1f28cd2d0ae inherit pub_attribs_classUi__MainWindow" id="r_a141e6c32419046ac9a34c1f28cd2d0ae"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a141e6c32419046ac9a34c1f28cd2d0ae">noga_4_name</a></td></tr>
+<tr class="separator:a141e6c32419046ac9a34c1f28cd2d0ae inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfcdda271b56bb1d8cf7370f06825223 inherit pub_attribs_classUi__MainWindow" id="r_abfcdda271b56bb1d8cf7370f06825223"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#abfcdda271b56bb1d8cf7370f06825223">biodro_name</a></td></tr>
+<tr class="separator:abfcdda271b56bb1d8cf7370f06825223 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6408acf5d7897ca90d8bb5f41bf30e1 inherit pub_attribs_classUi__MainWindow" id="r_aa6408acf5d7897ca90d8bb5f41bf30e1"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#aa6408acf5d7897ca90d8bb5f41bf30e1">servo_2_0</a></td></tr>
+<tr class="separator:aa6408acf5d7897ca90d8bb5f41bf30e1 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd3ff52646b3a6bfc2accb53ba04d08b inherit pub_attribs_classUi__MainWindow" id="r_acd3ff52646b3a6bfc2accb53ba04d08b"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#acd3ff52646b3a6bfc2accb53ba04d08b">servo_0_1</a></td></tr>
+<tr class="separator:acd3ff52646b3a6bfc2accb53ba04d08b inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ef080057b54088d17f312f7bc8ebebb inherit pub_attribs_classUi__MainWindow" id="r_a4ef080057b54088d17f312f7bc8ebebb"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a4ef080057b54088d17f312f7bc8ebebb">servo_3_1</a></td></tr>
+<tr class="separator:a4ef080057b54088d17f312f7bc8ebebb inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a82b5e19f66463067baa3a2d25b11c3 inherit pub_attribs_classUi__MainWindow" id="r_a2a82b5e19f66463067baa3a2d25b11c3"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a2a82b5e19f66463067baa3a2d25b11c3">noga_3_name</a></td></tr>
+<tr class="separator:a2a82b5e19f66463067baa3a2d25b11c3 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b03002f3c039e3b68dac78ae5bcfd8d inherit pub_attribs_classUi__MainWindow" id="r_a0b03002f3c039e3b68dac78ae5bcfd8d"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a0b03002f3c039e3b68dac78ae5bcfd8d">noga_6_name</a></td></tr>
+<tr class="separator:a0b03002f3c039e3b68dac78ae5bcfd8d inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b43b57451648d4601d3ea45c320286d inherit pub_attribs_classUi__MainWindow" id="r_a3b43b57451648d4601d3ea45c320286d"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a3b43b57451648d4601d3ea45c320286d">servo_1_2</a></td></tr>
+<tr class="separator:a3b43b57451648d4601d3ea45c320286d inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e585b6b5d3278de2a34281d5fabaa3f inherit pub_attribs_classUi__MainWindow" id="r_a4e585b6b5d3278de2a34281d5fabaa3f"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a4e585b6b5d3278de2a34281d5fabaa3f">servo_0_0</a></td></tr>
+<tr class="separator:a4e585b6b5d3278de2a34281d5fabaa3f inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b1d3edec3d74c4ba060dc1879b56df2 inherit pub_attribs_classUi__MainWindow" id="r_a9b1d3edec3d74c4ba060dc1879b56df2"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a9b1d3edec3d74c4ba060dc1879b56df2">noga_1_name</a></td></tr>
+<tr class="separator:a9b1d3edec3d74c4ba060dc1879b56df2 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0faa4c6754dddd618d6a482e557746d7 inherit pub_attribs_classUi__MainWindow" id="r_a0faa4c6754dddd618d6a482e557746d7"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a0faa4c6754dddd618d6a482e557746d7">servo_2_2</a></td></tr>
+<tr class="separator:a0faa4c6754dddd618d6a482e557746d7 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a617604fa8d466123bdfff521daaa27a7 inherit pub_attribs_classUi__MainWindow" id="r_a617604fa8d466123bdfff521daaa27a7"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a617604fa8d466123bdfff521daaa27a7">servo_4_2</a></td></tr>
+<tr class="separator:a617604fa8d466123bdfff521daaa27a7 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add2c81a505af529f580d1fd8d54c8be2 inherit pub_attribs_classUi__MainWindow" id="r_add2c81a505af529f580d1fd8d54c8be2"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#add2c81a505af529f580d1fd8d54c8be2">servo_2_1</a></td></tr>
+<tr class="separator:add2c81a505af529f580d1fd8d54c8be2 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add2ef990954e7c3f170870d8bb39291c inherit pub_attribs_classUi__MainWindow" id="r_add2ef990954e7c3f170870d8bb39291c"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#add2ef990954e7c3f170870d8bb39291c">noga_2_name</a></td></tr>
+<tr class="separator:add2ef990954e7c3f170870d8bb39291c inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a6e6570abaf952eeb9a3f14a4cdad30 inherit pub_attribs_classUi__MainWindow" id="r_a2a6e6570abaf952eeb9a3f14a4cdad30"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a2a6e6570abaf952eeb9a3f14a4cdad30">servo_1_0</a></td></tr>
+<tr class="separator:a2a6e6570abaf952eeb9a3f14a4cdad30 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a687a2b6dc7989a630b970e4f497358af inherit pub_attribs_classUi__MainWindow" id="r_a687a2b6dc7989a630b970e4f497358af"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a687a2b6dc7989a630b970e4f497358af">noga_5_name</a></td></tr>
+<tr class="separator:a687a2b6dc7989a630b970e4f497358af inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21d79d80f1d33b787fe4f2f30db0d48f inherit pub_attribs_classUi__MainWindow" id="r_a21d79d80f1d33b787fe4f2f30db0d48f"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a21d79d80f1d33b787fe4f2f30db0d48f">servo_5_2</a></td></tr>
 <tr class="separator:a21d79d80f1d33b787fe4f2f30db0d48f inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a925a6a56762f034bb55630c53c9443a7 inherit pub_attribs_classUi__MainWindow" id="r_a925a6a56762f034bb55630c53c9443a7"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a925a6a56762f034bb55630c53c9443a7">kostka_name</a></td></tr>
+<tr class="separator:a925a6a56762f034bb55630c53c9443a7 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1eb02b2e60fe29b3a15ab44a501d226 inherit pub_attribs_classUi__MainWindow" id="r_ac1eb02b2e60fe29b3a15ab44a501d226"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#ac1eb02b2e60fe29b3a15ab44a501d226">servo_4_0</a></td></tr>
+<tr class="separator:ac1eb02b2e60fe29b3a15ab44a501d226 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada9a0136deba835ef68ec26ef26ea421 inherit pub_attribs_classUi__MainWindow" id="r_ada9a0136deba835ef68ec26ef26ea421"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#ada9a0136deba835ef68ec26ef26ea421">kolano_name</a></td></tr>
+<tr class="separator:ada9a0136deba835ef68ec26ef26ea421 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4214b2f7aee7913078132c1d181b1a4 inherit pub_attribs_classUi__MainWindow" id="r_ab4214b2f7aee7913078132c1d181b1a4"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#ab4214b2f7aee7913078132c1d181b1a4">grid_filler</a></td></tr>
+<tr class="separator:ab4214b2f7aee7913078132c1d181b1a4 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cffe0ac5fae0d91e622fc3ed09ac878 inherit pub_attribs_classUi__MainWindow" id="r_a5cffe0ac5fae0d91e622fc3ed09ac878"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a5cffe0ac5fae0d91e622fc3ed09ac878">servo_5_1</a></td></tr>
+<tr class="separator:a5cffe0ac5fae0d91e622fc3ed09ac878 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c48532de3835de5c657ca1284dcfcf7 inherit pub_attribs_classUi__MainWindow" id="r_a7c48532de3835de5c657ca1284dcfcf7"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a7c48532de3835de5c657ca1284dcfcf7">settingsWD</a></td></tr>
 <tr class="separator:a7c48532de3835de5c657ca1284dcfcf7 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03ce63974cc69b067c91bbf285cceca8 inherit pub_attribs_classUi__MainWindow" id="r_a03ce63974cc69b067c91bbf285cceca8"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a03ce63974cc69b067c91bbf285cceca8">horizontalLayout_3</a></td></tr>
+<tr class="separator:a03ce63974cc69b067c91bbf285cceca8 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a407e92131ba5e66f28c336a110051939 inherit pub_attribs_classUi__MainWindow" id="r_a407e92131ba5e66f28c336a110051939"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a407e92131ba5e66f28c336a110051939">widget_settings_left</a></td></tr>
+<tr class="separator:a407e92131ba5e66f28c336a110051939 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38b8a4b887f3b58e2a49e7905ae6f1f0 inherit pub_attribs_classUi__MainWindow" id="r_a38b8a4b887f3b58e2a49e7905ae6f1f0"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a38b8a4b887f3b58e2a49e7905ae6f1f0">verticalLayout_3</a></td></tr>
 <tr class="separator:a38b8a4b887f3b58e2a49e7905ae6f1f0 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d8c7b2eb745aa4934604d7bcc86ccab inherit pub_attribs_classUi__MainWindow" id="r_a3d8c7b2eb745aa4934604d7bcc86ccab"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a3d8c7b2eb745aa4934604d7bcc86ccab">settingsLabel</a></td></tr>
-<tr class="separator:a3d8c7b2eb745aa4934604d7bcc86ccab inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dd0f3b681594aa28fc0c1eca905f649 inherit pub_attribs_classUi__MainWindow" id="r_a5dd0f3b681594aa28fc0c1eca905f649"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a5dd0f3b681594aa28fc0c1eca905f649">btnReconnect</a></td></tr>
+<tr class="separator:a5dd0f3b681594aa28fc0c1eca905f649 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaa0f7e282a0fc3bad7b02d8fe5e6c1e inherit pub_attribs_classUi__MainWindow" id="r_abaa0f7e282a0fc3bad7b02d8fe5e6c1e"><td class="memItemLeft" align="right" valign="top">QCheckBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#abaa0f7e282a0fc3bad7b02d8fe5e6c1e">chkSimulateErrors</a></td></tr>
+<tr class="separator:abaa0f7e282a0fc3bad7b02d8fe5e6c1e inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8384329c3663ff274e926a12024aab52 inherit pub_attribs_classUi__MainWindow" id="r_a8384329c3663ff274e926a12024aab52"><td class="memItemLeft" align="right" valign="top">QSpacerItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a8384329c3663ff274e926a12024aab52">verticalSpacer</a></td></tr>
+<tr class="separator:a8384329c3663ff274e926a12024aab52 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa16817d2f44a8a09be71de06433a4cfa inherit pub_attribs_classUi__MainWindow" id="r_aa16817d2f44a8a09be71de06433a4cfa"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#aa16817d2f44a8a09be71de06433a4cfa">languageLabel</a></td></tr>
+<tr class="separator:aa16817d2f44a8a09be71de06433a4cfa inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31087f4386e2f6ef1c5ec2762598ed2a inherit pub_attribs_classUi__MainWindow" id="r_a31087f4386e2f6ef1c5ec2762598ed2a"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a31087f4386e2f6ef1c5ec2762598ed2a">languageComboBox</a></td></tr>
+<tr class="separator:a31087f4386e2f6ef1c5ec2762598ed2a inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17207206e55a605ecc14a3534b7e575f inherit pub_attribs_classUi__MainWindow" id="r_a17207206e55a605ecc14a3534b7e575f"><td class="memItemLeft" align="right" valign="top">QFrame *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a17207206e55a605ecc14a3534b7e575f">line_2</a></td></tr>
+<tr class="separator:a17207206e55a605ecc14a3534b7e575f inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8d3f67e75d7e9e5ee8316c28494e33a inherit pub_attribs_classUi__MainWindow" id="r_ac8d3f67e75d7e9e5ee8316c28494e33a"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#ac8d3f67e75d7e9e5ee8316c28494e33a">widget_settings_right</a></td></tr>
+<tr class="separator:ac8d3f67e75d7e9e5ee8316c28494e33a inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93c190b085c63a667c535ba0bbcfec7c inherit pub_attribs_classUi__MainWindow" id="r_a93c190b085c63a667c535ba0bbcfec7c"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a93c190b085c63a667c535ba0bbcfec7c">verticalLayout_6</a></td></tr>
+<tr class="separator:a93c190b085c63a667c535ba0bbcfec7c inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2401d68c27216ec754366987da820e07 inherit pub_attribs_classUi__MainWindow" id="r_a2401d68c27216ec754366987da820e07"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a2401d68c27216ec754366987da820e07">terminalLabel</a></td></tr>
+<tr class="separator:a2401d68c27216ec754366987da820e07 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e290c2eca03b98b6f379c71910c0ed6 inherit pub_attribs_classUi__MainWindow" id="r_a6e290c2eca03b98b6f379c71910c0ed6"><td class="memItemLeft" align="right" valign="top">QPlainTextEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a6e290c2eca03b98b6f379c71910c0ed6">plainTextEdit</a></td></tr>
+<tr class="separator:a6e290c2eca03b98b6f379c71910c0ed6 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0305a85e47b99fd4209ba192a160bb91 inherit pub_attribs_classUi__MainWindow" id="r_a0305a85e47b99fd4209ba192a160bb91"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a0305a85e47b99fd4209ba192a160bb91">animationWD</a></td></tr>
 <tr class="separator:a0305a85e47b99fd4209ba192a160bb91 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80867018070156432923d0266cc9fe25 inherit pub_attribs_classUi__MainWindow" id="r_a80867018070156432923d0266cc9fe25"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a80867018070156432923d0266cc9fe25">horizontalLayout_2</a></td></tr>
 <tr class="separator:a80867018070156432923d0266cc9fe25 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b5a03030191f515b2cff464fe66e10a inherit pub_attribs_classUi__MainWindow" id="r_a7b5a03030191f515b2cff464fe66e10a"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a7b5a03030191f515b2cff464fe66e10a">left_widget</a></td></tr>
 <tr class="separator:a7b5a03030191f515b2cff464fe66e10a inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f40fc110b15410c00837a446d57bdbe inherit pub_attribs_classUi__MainWindow" id="r_a6f40fc110b15410c00837a446d57bdbe"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a6f40fc110b15410c00837a446d57bdbe">verticalLayout_4</a></td></tr>
+<tr class="separator:a6f40fc110b15410c00837a446d57bdbe inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9c89133780f28e6efa2ec17ceb9cff5 inherit pub_attribs_classUi__MainWindow" id="r_ad9c89133780f28e6efa2ec17ceb9cff5"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#ad9c89133780f28e6efa2ec17ceb9cff5">label</a></td></tr>
+<tr class="separator:ad9c89133780f28e6efa2ec17ceb9cff5 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a485803e10426a0be48e4887ed8dea6a5 inherit pub_attribs_classUi__MainWindow" id="r_a485803e10426a0be48e4887ed8dea6a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTopView.html">TopView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a485803e10426a0be48e4887ed8dea6a5">topView</a></td></tr>
+<tr class="separator:a485803e10426a0be48e4887ed8dea6a5 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d5950867becc417ac4a6255aa98610d inherit pub_attribs_classUi__MainWindow" id="r_a3d5950867becc417ac4a6255aa98610d"><td class="memItemLeft" align="right" valign="top">QFrame *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a3d5950867becc417ac4a6255aa98610d">workspace_devider</a></td></tr>
+<tr class="separator:a3d5950867becc417ac4a6255aa98610d inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dcd8779d3b2737faa24fc990ae82370 inherit pub_attribs_classUi__MainWindow" id="r_a8dcd8779d3b2737faa24fc990ae82370"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a8dcd8779d3b2737faa24fc990ae82370">right_widget</a></td></tr>
 <tr class="separator:a8dcd8779d3b2737faa24fc990ae82370 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecd96a04789fcfec3f98d80390ad8184 inherit pub_attribs_classUi__MainWindow" id="r_aecd96a04789fcfec3f98d80390ad8184"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#aecd96a04789fcfec3f98d80390ad8184">verticalLayout</a></td></tr>
 <tr class="separator:aecd96a04789fcfec3f98d80390ad8184 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e2516d755e4dd53fc905dabddf2738a inherit pub_attribs_classUi__MainWindow" id="r_a2e2516d755e4dd53fc905dabddf2738a"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a2e2516d755e4dd53fc905dabddf2738a">label_2</a></td></tr>
+<tr class="separator:a2e2516d755e4dd53fc905dabddf2738a inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad25b84530a0492d304fbb368dc99dbe3 inherit pub_attribs_classUi__MainWindow" id="r_ad25b84530a0492d304fbb368dc99dbe3"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#ad25b84530a0492d304fbb368dc99dbe3">comboBoxLegSide</a></td></tr>
 <tr class="separator:ad25b84530a0492d304fbb368dc99dbe3 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f9e593838e825ed545a4b2762c550b1 inherit pub_attribs_classUi__MainWindow" id="r_a3f9e593838e825ed545a4b2762c550b1"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a3f9e593838e825ed545a4b2762c550b1">sideView</a></td></tr>
-<tr class="separator:a3f9e593838e825ed545a4b2762c550b1 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91231e105995d699d534565fdec135bc inherit pub_attribs_classUi__MainWindow" id="r_a91231e105995d699d534565fdec135bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSideView.html">SideView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a91231e105995d699d534565fdec135bc">sideView</a></td></tr>
+<tr class="separator:a91231e105995d699d534565fdec135bc inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f3885b000b8bc17341e55d908a8835d inherit pub_attribs_classUi__MainWindow" id="r_a1f3885b000b8bc17341e55d908a8835d"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a1f3885b000b8bc17341e55d908a8835d">fMconnectionWD</a></td></tr>
 <tr class="separator:a1f3885b000b8bc17341e55d908a8835d inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03ce63974cc69b067c91bbf285cceca8 inherit pub_attribs_classUi__MainWindow" id="r_a03ce63974cc69b067c91bbf285cceca8"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a03ce63974cc69b067c91bbf285cceca8">horizontalLayout_3</a></td></tr>
-<tr class="separator:a03ce63974cc69b067c91bbf285cceca8 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fa5947a8e3b400f2c99d0d89043759a inherit pub_attribs_classUi__MainWindow" id="r_a1fa5947a8e3b400f2c99d0d89043759a"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a1fa5947a8e3b400f2c99d0d89043759a">fmLabel</a></td></tr>
-<tr class="separator:a1fa5947a8e3b400f2c99d0d89043759a inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcc20a3d5058037a00cdc6122f231848 inherit pub_attribs_classUi__MainWindow" id="r_afcc20a3d5058037a00cdc6122f231848"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#afcc20a3d5058037a00cdc6122f231848">verticalLayout_5</a></td></tr>
+<tr class="separator:afcc20a3d5058037a00cdc6122f231848 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff928912d9cbe2cb3465147e8ed0a071 inherit pub_attribs_classUi__MainWindow" id="r_aff928912d9cbe2cb3465147e8ed0a071"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#aff928912d9cbe2cb3465147e8ed0a071">titleFmLabel</a></td></tr>
+<tr class="separator:aff928912d9cbe2cb3465147e8ed0a071 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa09b866451af5f5e0a321e3a0aef6980 inherit pub_attribs_classUi__MainWindow" id="r_aa09b866451af5f5e0a321e3a0aef6980"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#aa09b866451af5f5e0a321e3a0aef6980">qualityView</a></td></tr>
+<tr class="separator:aa09b866451af5f5e0a321e3a0aef6980 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1687cceb1e2787aa1f83e50433943a91 inherit pub_attribs_classUi__MainWindow" id="r_a1687cceb1e2787aa1f83e50433943a91"><td class="memItemLeft" align="right" valign="top">QStatusBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUi__MainWindow.html#a1687cceb1e2787aa1f83e50433943a91">statusbar</a></td></tr>
 <tr class="separator:a1687cceb1e2787aa1f83e50433943a91 inherit pub_attribs_classUi__MainWindow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="ui__mainwindow_8h_source.html#l00880">880</a> of file <a class="el" href="ui__mainwindow_8h_source.html">ui_mainwindow.h</a>.</p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>build/Desktop-Debug/HEX_Service_autogen/include/<a class="el" href="ui__mainwindow_8h_source.html">ui_mainwindow.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceUi.html">Ui</a></li><li class="navelem"><a class="el" href="classUi_1_1MainWindow.html">MainWindow</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

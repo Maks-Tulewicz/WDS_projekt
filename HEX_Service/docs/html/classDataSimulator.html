@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classDataSimulator.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +88,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -87,18 +107,36 @@ $(function() {
 Inheritance diagram for DataSimulator:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDataSimulator__inherit__graph.png" border="0" usemap="#aDataSimulator_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for DataSimulator:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDataSimulator__coll__graph.png" border="0" usemap="#aDataSimulator_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:a589133f38a782977dfcd22904dd53a45" id="r_a589133f38a782977dfcd22904dd53a45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSimulator.html#a589133f38a782977dfcd22904dd53a45">frameReady</a> (const <a class="el" href="structServoFrame.html">ServoFrame</a> &amp;frame)</td></tr>
 <tr class="memdesc:a589133f38a782977dfcd22904dd53a45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sygnał emitujący ramkę danych do GUI.  <br /></td></tr>
 <tr class="separator:a589133f38a782977dfcd22904dd53a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bbc2427db0e8fae09c5d0fd34e76822" id="r_a5bbc2427db0e8fae09c5d0fd34e76822"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structServoFrame.html">ServoFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSimulator.html#a5bbc2427db0e8fae09c5d0fd34e76822">next</a> ()</td></tr>
+<tr class="memdesc:a5bbc2427db0e8fae09c5d0fd34e76822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca następną ramkę (zawija w pętli).  <br /></td></tr>
+<tr class="separator:a5bbc2427db0e8fae09c5d0fd34e76822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86814e23967dc64166e9b7e96c833765" id="r_a86814e23967dc64166e9b7e96c833765"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSimulator.html#a86814e23967dc64166e9b7e96c833765">logError</a> (const QString &amp;msg)</td></tr>
+<tr class="memdesc:a86814e23967dc64166e9b7e96c833765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sygnał emitowany przy błędzie.  <br /></td></tr>
+<tr class="separator:a86814e23967dc64166e9b7e96c833765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a654d9c7b04d97b633161d893621a2af7" id="r_a654d9c7b04d97b633161d893621a2af7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSimulator.html#a654d9c7b04d97b633161d893621a2af7">logMessage</a> (const QString &amp;msg)</td></tr>
+<tr class="memdesc:a654d9c7b04d97b633161d893621a2af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sygnał emitowany przy standardowej wiadomości.  <br /></td></tr>
+<tr class="separator:a654d9c7b04d97b633161d893621a2af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a1ef3c6c377ffe5cda1c701242b13e3" id="r_a3a1ef3c6c377ffe5cda1c701242b13e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSimulator.html#a3a1ef3c6c377ffe5cda1c701242b13e3">disconnectedDueToErrors</a> ()</td></tr>
+<tr class="memdesc:a3a1ef3c6c377ffe5cda1c701242b13e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sygnał emitowany przy rozłączeniu z powodu błędów.  <br /></td></tr>
+<tr class="separator:a3a1ef3c6c377ffe5cda1c701242b13e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02793a0a482697494d2bc8bbba889e8a" id="r_a02793a0a482697494d2bc8bbba889e8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSimulator.html#a02793a0a482697494d2bc8bbba889e8a">reset</a> ()</td></tr>
+<tr class="memdesc:a02793a0a482697494d2bc8bbba889e8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resetuje odczyt do pierwszej ramki.  <br /></td></tr>
+<tr class="separator:a02793a0a482697494d2bc8bbba889e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab349bacdfe864197fb8901335f9ba2c6" id="r_ab349bacdfe864197fb8901335f9ba2c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSimulator.html#ab349bacdfe864197fb8901335f9ba2c6">qualitySample</a> (float rssi, float per)</td></tr>
+<tr class="memdesc:ab349bacdfe864197fb8901335f9ba2c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sygnał emitowany z parametrami jakości połączenia.  <br /></td></tr>
+<tr class="separator:ab349bacdfe864197fb8901335f9ba2c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -120,6 +158,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6916c3958eb860ef706fbfde4987f685" id="r_a6916c3958eb860ef706fbfde4987f685"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSimulator.html#a6916c3958eb860ef706fbfde4987f685">setInterval</a> (int intervalMs)</td></tr>
 <tr class="memdesc:a6916c3958eb860ef706fbfde4987f685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia częstotliwość symulacji.  <br /></td></tr>
 <tr class="separator:a6916c3958eb860ef706fbfde4987f685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90d382b074a56821479d98c9b1904050" id="r_a90d382b074a56821479d98c9b1904050"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSimulator.html#a90d382b074a56821479d98c9b1904050">setSimulateErrors</a> (bool val)</td></tr>
+<tr class="memdesc:a90d382b074a56821479d98c9b1904050"><td class="mdescLeft">&#160;</td><td class="mdescRight">Włącza/wyłącza symulację błędów transmisji.  <br /></td></tr>
+<tr class="separator:a90d382b074a56821479d98c9b1904050"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Private Slots</h2></td></tr>
@@ -138,10 +179,24 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a797b6f9bc6b20da7c52f188ba8068e42" id="r_a797b6f9bc6b20da7c52f188ba8068e42"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSimulator.html#a797b6f9bc6b20da7c52f188ba8068e42">interval</a></td></tr>
 <tr class="memdesc:a797b6f9bc6b20da7c52f188ba8068e42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Częstotliwość odczytu danych (ms)  <br /></td></tr>
 <tr class="separator:a797b6f9bc6b20da7c52f188ba8068e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86285e8e763f28cba19e5c9b1e78fe4d" id="r_a86285e8e763f28cba19e5c9b1e78fe4d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSimulator.html#a86285e8e763f28cba19e5c9b1e78fe4d">simulateErrors</a></td></tr>
+<tr class="memdesc:a86285e8e763f28cba19e5c9b1e78fe4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Czy zasymulować błędy.  <br /></td></tr>
+<tr class="separator:a86285e8e763f28cba19e5c9b1e78fe4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1abfcbd14a2c9f24db6fa892d095bc5" id="r_af1abfcbd14a2c9f24db6fa892d095bc5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSimulator.html#af1abfcbd14a2c9f24db6fa892d095bc5">crcErrorCount</a></td></tr>
+<tr class="memdesc:af1abfcbd14a2c9f24db6fa892d095bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Licznik błędów CRC.  <br /></td></tr>
+<tr class="separator:af1abfcbd14a2c9f24db6fa892d095bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac73ed8fd3157ba4ac3dcd3abd60185e7" id="r_ac73ed8fd3157ba4ac3dcd3abd60185e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSimulator.html#ac73ed8fd3157ba4ac3dcd3abd60185e7">frameCounter</a></td></tr>
+<tr class="memdesc:ac73ed8fd3157ba4ac3dcd3abd60185e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Licznik ramek.  <br /></td></tr>
+<tr class="separator:ac73ed8fd3157ba4ac3dcd3abd60185e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a362bfaffac5e57168f0270698182c084" id="r_a362bfaffac5e57168f0270698182c084"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSimulator.html#a362bfaffac5e57168f0270698182c084">angle</a></td></tr>
+<tr class="memdesc:a362bfaffac5e57168f0270698182c084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualny kąt.  <br /></td></tr>
+<tr class="separator:a362bfaffac5e57168f0270698182c084"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Klasa symulująca odtwarzanie danych z pliku z kątami. </p>
-<p>Klasa ta zarządza procesem odczytu danych z pliku przy użyciu klasy <a class="el" href="classDataReader.html" title="Klasa do wczytywania danych z pliku tekstowego.">DataReader</a> oraz emituje dane w postaci ramki (<code><a class="el" href="structServoFrame.html" title="Struktura reprezentująca pojedynczy krok w animacji serwomechanizmów.">ServoFrame</a></code>) do interfejsu użytkownika. Może uruchamiać, pauzować oraz resetować symulację, a także kontrolować częstotliwość odczytu. </p>
+<p>Klasa ta zarządza procesem odczytu danych z pliku przy użyciu klasy <a class="el" href="classDataReader.html">DataReader</a> oraz emituje dane w postaci ramki (<code><a class="el" href="structServoFrame.html" title="Pojedyncza ramka danych z hexapoda.">ServoFrame</a></code>) do interfejsu użytkownika. Może uruchamiać, pauzować oraz resetować symulację, a także kontrolować częstotliwość odczytu. </p>
+
+<p class="definition">Definition at line <a class="el" href="datasimulator_8h_source.html#l00016">16</a> of file <a class="el" href="datasimulator_8h_source.html">datasimulator.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab9bd1963dcfcd8db5247fa925411428a" name="ab9bd1963dcfcd8db5247fa925411428a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9bd1963dcfcd8db5247fa925411428a">&#9670;&#160;</a></span>DataSimulator()</h2>
@@ -175,9 +230,60 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="datasimulator_8cpp_source.html#l00009">9</a> of file <a class="el" href="datasimulator_8cpp_source.html">datasimulator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>    : QObject(parent),</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_variable" href="classDataSimulator.html#a0127fabf374b7a98eaa1031c9a497b94">timer</a>(<span class="keyword">new</span> QTimer(<span class="keyword">this</span>)),</div>
+<div class="line"><span class="lineno">   12</span>    <a class="code hl_variable" href="classDataSimulator.html#a12dc3fbb1b60501104ff97f88d157e58">reader</a>(<span class="keyword">new</span> <a class="code hl_class" href="classDataReader.html">DataReader</a>(<span class="keyword">this</span>)),</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="classDataSimulator.html#a797b6f9bc6b20da7c52f188ba8068e42">interval</a>(1000),</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_variable" href="classDataSimulator.html#ac73ed8fd3157ba4ac3dcd3abd60185e7">frameCounter</a>(0),</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_variable" href="classDataSimulator.html#a362bfaffac5e57168f0270698182c084">angle</a>(0.0f)</div>
+<div class="line"><span class="lineno">   16</span> </div>
+<div class="line"><span class="lineno">   17</span>{</div>
+<div class="line"><span class="lineno">   18</span>    connect(<a class="code hl_variable" href="classDataSimulator.html#a0127fabf374b7a98eaa1031c9a497b94">timer</a>, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classDataSimulator.html#a3d8ebf21315906fae7a75d962adfc6a3">DataSimulator::onTimerTick</a>, Qt::UniqueConnection);</div>
+<div class="line"><span class="lineno">   19</span>}</div>
+<div class="ttc" id="aclassDataReader_html"><div class="ttname"><a href="classDataReader.html">DataReader</a></div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00022">datareader.h:22</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a0127fabf374b7a98eaa1031c9a497b94"><div class="ttname"><a href="classDataSimulator.html#a0127fabf374b7a98eaa1031c9a497b94">DataSimulator::timer</a></div><div class="ttdeci">QTimer * timer</div><div class="ttdoc">Timer do odtwarzania danych.</div><div class="ttdef"><b>Definition</b> <a href="datasimulator_8h_source.html#l00115">datasimulator.h:115</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a12dc3fbb1b60501104ff97f88d157e58"><div class="ttname"><a href="classDataSimulator.html#a12dc3fbb1b60501104ff97f88d157e58">DataSimulator::reader</a></div><div class="ttdeci">DataReader * reader</div><div class="ttdoc">Odczyt danych z pliku.</div><div class="ttdef"><b>Definition</b> <a href="datasimulator_8h_source.html#l00116">datasimulator.h:116</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a362bfaffac5e57168f0270698182c084"><div class="ttname"><a href="classDataSimulator.html#a362bfaffac5e57168f0270698182c084">DataSimulator::angle</a></div><div class="ttdeci">float angle</div><div class="ttdoc">Aktualny kąt.</div><div class="ttdef"><b>Definition</b> <a href="datasimulator_8h_source.html#l00121">datasimulator.h:121</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a3d8ebf21315906fae7a75d962adfc6a3"><div class="ttname"><a href="classDataSimulator.html#a3d8ebf21315906fae7a75d962adfc6a3">DataSimulator::onTimerTick</a></div><div class="ttdeci">void onTimerTick()</div><div class="ttdoc">Funkcja obsługująca odczyt danych co timer (co interval ms).</div><div class="ttdef"><b>Definition</b> <a href="datasimulator_8cpp_source.html#l00066">datasimulator.cpp:66</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a797b6f9bc6b20da7c52f188ba8068e42"><div class="ttname"><a href="classDataSimulator.html#a797b6f9bc6b20da7c52f188ba8068e42">DataSimulator::interval</a></div><div class="ttdeci">int interval</div><div class="ttdoc">Częstotliwość odczytu danych (ms)</div><div class="ttdef"><b>Definition</b> <a href="datasimulator_8h_source.html#l00117">datasimulator.h:117</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_ac73ed8fd3157ba4ac3dcd3abd60185e7"><div class="ttname"><a href="classDataSimulator.html#ac73ed8fd3157ba4ac3dcd3abd60185e7">DataSimulator::frameCounter</a></div><div class="ttdeci">int frameCounter</div><div class="ttdoc">Licznik ramek.</div><div class="ttdef"><b>Definition</b> <a href="datasimulator_8h_source.html#l00120">datasimulator.h:120</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3a1ef3c6c377ffe5cda1c701242b13e3" name="a3a1ef3c6c377ffe5cda1c701242b13e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a1ef3c6c377ffe5cda1c701242b13e3">&#9670;&#160;</a></span>disconnectedDueToErrors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataSimulator::disconnectedDueToErrors </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sygnał emitowany przy rozłączeniu z powodu błędów. </p>
+
+<p class="definition">Definition at line <a class="el" href="moc__datasimulator_8cpp_source.html#l00242">242</a> of file <a class="el" href="moc__datasimulator_8cpp_source.html">moc_datasimulator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  243</span>{</div>
+<div class="line"><span class="lineno">  244</span>    QMetaObject::activate(<span class="keyword">this</span>, &amp;staticMetaObject, 4, <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  245</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a589133f38a782977dfcd22904dd53a45" name="a589133f38a782977dfcd22904dd53a45"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a589133f38a782977dfcd22904dd53a45">&#9670;&#160;</a></span>frameReady</h2>
 
@@ -210,6 +316,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="moc__datasimulator_8cpp_source.html#l00212">212</a> of file <a class="el" href="moc__datasimulator_8cpp_source.html">moc_datasimulator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  213</span>{</div>
+<div class="line"><span class="lineno">  214</span>    <span class="keywordtype">void</span> *_a[] = { <span class="keyword">nullptr</span>, <span class="keyword">const_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(std::addressof(_t1))) };</div>
+<div class="line"><span class="lineno">  215</span>    QMetaObject::activate(<span class="keyword">this</span>, &amp;staticMetaObject, 0, _a);</div>
+<div class="line"><span class="lineno">  216</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa1827f25f036fb988cf594d60e384d16" name="aa1827f25f036fb988cf594d60e384d16"></a>
@@ -237,6 +349,129 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true, jeśli dane zostały poprawnie załadowane; false w przeciwnym razie. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="datasimulator_8cpp_source.html#l00021">21</a> of file <a class="el" href="datasimulator_8cpp_source.html">datasimulator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classDataSimulator.html#a12dc3fbb1b60501104ff97f88d157e58">reader</a>-&gt;<a class="code hl_function" href="classDataReader.html#ae90700be1801c10fae55ac4de0616dcc">loadFromFile</a>(filePath);</div>
+<div class="line"><span class="lineno">   24</span>}</div>
+<div class="ttc" id="aclassDataReader_html_ae90700be1801c10fae55ac4de0616dcc"><div class="ttname"><a href="classDataReader.html#ae90700be1801c10fae55ac4de0616dcc">DataReader::loadFromFile</a></div><div class="ttdeci">bool loadFromFile(const QString &amp;filePath)</div><div class="ttdoc">Wczytuje ramki w formacie &lt;...;CRC&gt; i weryfikuje CRC.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00008">datareader.cpp:8</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a86814e23967dc64166e9b7e96c833765" name="a86814e23967dc64166e9b7e96c833765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86814e23967dc64166e9b7e96c833765">&#9670;&#160;</a></span>logError</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataSimulator::logError </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sygnał emitowany przy błędzie. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Komunikat błędu </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="moc__datasimulator_8cpp_source.html#l00228">228</a> of file <a class="el" href="moc__datasimulator_8cpp_source.html">moc_datasimulator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  229</span>{</div>
+<div class="line"><span class="lineno">  230</span>    <span class="keywordtype">void</span> *_a[] = { <span class="keyword">nullptr</span>, <span class="keyword">const_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(std::addressof(_t1))) };</div>
+<div class="line"><span class="lineno">  231</span>    QMetaObject::activate(<span class="keyword">this</span>, &amp;staticMetaObject, 2, _a);</div>
+<div class="line"><span class="lineno">  232</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a654d9c7b04d97b633161d893621a2af7" name="a654d9c7b04d97b633161d893621a2af7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a654d9c7b04d97b633161d893621a2af7">&#9670;&#160;</a></span>logMessage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataSimulator::logMessage </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sygnał emitowany przy standardowej wiadomości. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Treść wiadomości </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="moc__datasimulator_8cpp_source.html#l00235">235</a> of file <a class="el" href="moc__datasimulator_8cpp_source.html">moc_datasimulator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  236</span>{</div>
+<div class="line"><span class="lineno">  237</span>    <span class="keywordtype">void</span> *_a[] = { <span class="keyword">nullptr</span>, <span class="keyword">const_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(std::addressof(_t1))) };</div>
+<div class="line"><span class="lineno">  238</span>    QMetaObject::activate(<span class="keyword">this</span>, &amp;staticMetaObject, 3, _a);</div>
+<div class="line"><span class="lineno">  239</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5bbc2427db0e8fae09c5d0fd34e76822" name="a5bbc2427db0e8fae09c5d0fd34e76822"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bbc2427db0e8fae09c5d0fd34e76822">&#9670;&#160;</a></span>next</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structServoFrame.html">ServoFrame</a> * DataSimulator::next </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zwraca następną ramkę (zawija w pętli). </p>
+<dl class="section return"><dt>Returns</dt><dd>Wskaźnik na aktualną ramkę lub nullptr, jeżeli nie załadowano danych. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="moc__datasimulator_8cpp_source.html#l00219">219</a> of file <a class="el" href="moc__datasimulator_8cpp_source.html">moc_datasimulator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  220</span>{</div>
+<div class="line"><span class="lineno">  221</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a>* _t0{};</div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordtype">void</span> *_a[] = { <span class="keyword">const_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(std::addressof(_t0))) };</div>
+<div class="line"><span class="lineno">  223</span>    QMetaObject::activate(<span class="keyword">this</span>, &amp;staticMetaObject, 1, _a);</div>
+<div class="line"><span class="lineno">  224</span>    <span class="keywordflow">return</span> _t0;</div>
+<div class="line"><span class="lineno">  225</span>}</div>
+<div class="ttc" id="astructServoFrame_html"><div class="ttname"><a href="structServoFrame.html">ServoFrame</a></div><div class="ttdoc">Pojedyncza ramka danych z hexapoda.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00015">datareader.h:15</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3d8ebf21315906fae7a75d962adfc6a3" name="a3d8ebf21315906fae7a75d962adfc6a3"></a>
@@ -264,6 +499,67 @@ Private Attributes</h2></td></tr>
 
 <p>Funkcja obsługująca odczyt danych co <code>timer</code> (co <code>interval</code> ms). </p>
 
+<p class="definition">Definition at line <a class="el" href="datasimulator_8cpp_source.html#l00066">66</a> of file <a class="el" href="datasimulator_8cpp_source.html">datasimulator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>{</div>
+<div class="line"><span class="lineno">   68</span>    <a class="code hl_variable" href="classDataSimulator.html#ac73ed8fd3157ba4ac3dcd3abd60185e7">frameCounter</a>++;</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a> *frame = <a class="code hl_variable" href="classDataSimulator.html#a12dc3fbb1b60501104ff97f88d157e58">reader</a>-&gt;<a class="code hl_function" href="classDataReader.html#a404003dfbe7d988e49bccdea9784c90a">next</a>();</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span> (frame) {</div>
+<div class="line"><span class="lineno">   72</span>        <span class="comment">// Emitujemy tylko co 10. ramkę do terminala</span></div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classDataSimulator.html#ac73ed8fd3157ba4ac3dcd3abd60185e7">frameCounter</a> % 10 == 0) {</div>
+<div class="line"><span class="lineno">   74</span>            QStringList log;</div>
+<div class="line"><span class="lineno">   75</span>            log &lt;&lt; QString(<span class="stringliteral">&quot;▶ Ramka #%1 | Czas: %2 ms&quot;</span>).arg(<a class="code hl_variable" href="classDataSimulator.html#ac73ed8fd3157ba4ac3dcd3abd60185e7">frameCounter</a>).arg(frame-&gt;<a class="code hl_variable" href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">timeMs</a>);</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; frame-&gt;<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>.size(); ++i) {</div>
+<div class="line"><span class="lineno">   78</span>                log &lt;&lt; QString(<span class="stringliteral">&quot;  Noga %1, staw %2: %3°&quot;</span>)</div>
+<div class="line"><span class="lineno">   79</span>                           .arg(i / 3 + 1)</div>
+<div class="line"><span class="lineno">   80</span>                           .arg(i % 3)</div>
+<div class="line"><span class="lineno">   81</span>                           .arg(frame-&gt;<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>[i], 0, <span class="charliteral">&#39;f&#39;</span>, 1);</div>
+<div class="line"><span class="lineno">   82</span>            }</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>            log &lt;&lt; QString(<span class="stringliteral">&quot;  Szybkość: %1&quot;</span>).arg(frame-&gt;<a class="code hl_variable" href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">speed</a>, 0, <span class="charliteral">&#39;f&#39;</span>, 2);</div>
+<div class="line"><span class="lineno">   85</span>            log &lt;&lt; QString(<span class="stringliteral">&quot;  Pakiety: %1&quot;</span>).arg(frame-&gt;<a class="code hl_variable" href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">packetCount</a>);</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>            emit <a class="code hl_signal" href="classDataSimulator.html#a654d9c7b04d97b633161d893621a2af7">logMessage</a>(log.join(<span class="charliteral">&#39;\n&#39;</span>));</div>
+<div class="line"><span class="lineno">   88</span>        }</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>        emit <a class="code hl_signal" href="classDataSimulator.html#a589133f38a782977dfcd22904dd53a45">frameReady</a>(*frame);</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    <span class="comment">// Symulacja jakości połączenia</span></div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordtype">float</span> rssi = -50 + 10 * qSin(qDegreesToRadians(<a class="code hl_variable" href="classDataSimulator.html#a362bfaffac5e57168f0270698182c084">angle</a>));</div>
+<div class="line"><span class="lineno">   95</span>    <span class="keywordtype">float</span> per  = 10  + 5  * qCos(qDegreesToRadians(<a class="code hl_variable" href="classDataSimulator.html#a362bfaffac5e57168f0270698182c084">angle</a>));</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_variable" href="classDataSimulator.html#a362bfaffac5e57168f0270698182c084">angle</a> = fmod(<a class="code hl_variable" href="classDataSimulator.html#a362bfaffac5e57168f0270698182c084">angle</a> + 5, 360.0f);</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    emit <a class="code hl_signal" href="classDataSimulator.html#ab349bacdfe864197fb8901335f9ba2c6">qualitySample</a>(rssi, per);</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <span class="comment">// Symulacja błędu (po jakości)</span></div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classDataSimulator.html#a86285e8e763f28cba19e5c9b1e78fe4d">simulateErrors</a> &amp;&amp; (QRandomGenerator::global()-&gt;bounded(10) == 0)) {</div>
+<div class="line"><span class="lineno">  102</span>        <a class="code hl_variable" href="classDataSimulator.html#af1abfcbd14a2c9f24db6fa892d095bc5">crcErrorCount</a>++;</div>
+<div class="line"><span class="lineno">  103</span>        emit <a class="code hl_signal" href="classDataSimulator.html#a86814e23967dc64166e9b7e96c833765">logError</a>(QString(<span class="stringliteral">&quot;Zasymulowano błąd CRC! [%1/20]&quot;</span>).arg(<a class="code hl_variable" href="classDataSimulator.html#af1abfcbd14a2c9f24db6fa892d095bc5">crcErrorCount</a>));</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classDataSimulator.html#af1abfcbd14a2c9f24db6fa892d095bc5">crcErrorCount</a> &gt;= 20) {</div>
+<div class="line"><span class="lineno">  106</span>            emit <a class="code hl_signal" href="classDataSimulator.html#a86814e23967dc64166e9b7e96c833765">logError</a>(<span class="stringliteral">&quot;❌ Zbyt wiele błędów CRC – symulacja została zatrzymana!&quot;</span>);</div>
+<div class="line"><span class="lineno">  107</span>            <a class="code hl_function" href="classDataSimulator.html#ac0872ead237e22ffc9beb0dc935a07a8">pauseSimulation</a>();  <span class="comment">// zatrzymujemy timer</span></div>
+<div class="line"><span class="lineno">  108</span>            emit <a class="code hl_signal" href="classDataSimulator.html#a3a1ef3c6c377ffe5cda1c701242b13e3">disconnectedDueToErrors</a>();  <span class="comment">// sygnał do GUI</span></div>
+<div class="line"><span class="lineno">  109</span>        }</div>
+<div class="line"><span class="lineno">  110</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  111</span>    }</div>
+<div class="line"><span class="lineno">  112</span>}</div>
+<div class="ttc" id="aclassDataReader_html_a404003dfbe7d988e49bccdea9784c90a"><div class="ttname"><a href="classDataReader.html#a404003dfbe7d988e49bccdea9784c90a">DataReader::next</a></div><div class="ttdeci">const ServoFrame * next()</div><div class="ttdoc">Zwraca następną ramkę (zawija w pętli).</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00058">datareader.cpp:58</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a3a1ef3c6c377ffe5cda1c701242b13e3"><div class="ttname"><a href="classDataSimulator.html#a3a1ef3c6c377ffe5cda1c701242b13e3">DataSimulator::disconnectedDueToErrors</a></div><div class="ttdeci">void disconnectedDueToErrors()</div><div class="ttdoc">Sygnał emitowany przy rozłączeniu z powodu błędów.</div><div class="ttdef"><b>Definition</b> <a href="moc__datasimulator_8cpp_source.html#l00242">moc_datasimulator.cpp:242</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a589133f38a782977dfcd22904dd53a45"><div class="ttname"><a href="classDataSimulator.html#a589133f38a782977dfcd22904dd53a45">DataSimulator::frameReady</a></div><div class="ttdeci">void frameReady(const ServoFrame &amp;frame)</div><div class="ttdoc">Sygnał emitujący ramkę danych do GUI.</div><div class="ttdef"><b>Definition</b> <a href="moc__datasimulator_8cpp_source.html#l00212">moc_datasimulator.cpp:212</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a654d9c7b04d97b633161d893621a2af7"><div class="ttname"><a href="classDataSimulator.html#a654d9c7b04d97b633161d893621a2af7">DataSimulator::logMessage</a></div><div class="ttdeci">void logMessage(const QString &amp;msg)</div><div class="ttdoc">Sygnał emitowany przy standardowej wiadomości.</div><div class="ttdef"><b>Definition</b> <a href="moc__datasimulator_8cpp_source.html#l00235">moc_datasimulator.cpp:235</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a86285e8e763f28cba19e5c9b1e78fe4d"><div class="ttname"><a href="classDataSimulator.html#a86285e8e763f28cba19e5c9b1e78fe4d">DataSimulator::simulateErrors</a></div><div class="ttdeci">bool simulateErrors</div><div class="ttdoc">Czy zasymulować błędy.</div><div class="ttdef"><b>Definition</b> <a href="datasimulator_8h_source.html#l00118">datasimulator.h:118</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a86814e23967dc64166e9b7e96c833765"><div class="ttname"><a href="classDataSimulator.html#a86814e23967dc64166e9b7e96c833765">DataSimulator::logError</a></div><div class="ttdeci">void logError(const QString &amp;msg)</div><div class="ttdoc">Sygnał emitowany przy błędzie.</div><div class="ttdef"><b>Definition</b> <a href="moc__datasimulator_8cpp_source.html#l00228">moc_datasimulator.cpp:228</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_ab349bacdfe864197fb8901335f9ba2c6"><div class="ttname"><a href="classDataSimulator.html#ab349bacdfe864197fb8901335f9ba2c6">DataSimulator::qualitySample</a></div><div class="ttdeci">void qualitySample(float rssi, float per)</div><div class="ttdoc">Sygnał emitowany z parametrami jakości połączenia.</div><div class="ttdef"><b>Definition</b> <a href="moc__datasimulator_8cpp_source.html#l00254">moc_datasimulator.cpp:254</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_ac0872ead237e22ffc9beb0dc935a07a8"><div class="ttname"><a href="classDataSimulator.html#ac0872ead237e22ffc9beb0dc935a07a8">DataSimulator::pauseSimulation</a></div><div class="ttdeci">void pauseSimulation()</div><div class="ttdoc">Pauzuje symulację. Zatrzymuje odczyt danych z pliku i wstrzymuje animację.</div><div class="ttdef"><b>Definition</b> <a href="datasimulator_8cpp_source.html#l00035">datasimulator.cpp:35</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_af1abfcbd14a2c9f24db6fa892d095bc5"><div class="ttname"><a href="classDataSimulator.html#af1abfcbd14a2c9f24db6fa892d095bc5">DataSimulator::crcErrorCount</a></div><div class="ttdeci">int crcErrorCount</div><div class="ttdoc">Licznik błędów CRC.</div><div class="ttdef"><b>Definition</b> <a href="datasimulator_8h_source.html#l00119">datasimulator.h:119</a></div></div>
+<div class="ttc" id="astructServoFrame_html_a9e3f24998bd527d51ad3adff5c695901"><div class="ttname"><a href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">ServoFrame::speed</a></div><div class="ttdeci">float speed</div><div class="ttdoc">Prędkość transmisji.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00018">datareader.h:18</a></div></div>
+<div class="ttc" id="astructServoFrame_html_ab81dd8d7c2efd68078a6abef4d1794f4"><div class="ttname"><a href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">ServoFrame::angles</a></div><div class="ttdeci">QVector&lt; float &gt; angles</div><div class="ttdoc">18 kątów nóg</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00017">datareader.h:17</a></div></div>
+<div class="ttc" id="astructServoFrame_html_ac3ff952b169f223496dcd8e3c8b2b08d"><div class="ttname"><a href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">ServoFrame::packetCount</a></div><div class="ttdeci">int packetCount</div><div class="ttdoc">Liczba przesłanych pakietów.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00019">datareader.h:19</a></div></div>
+<div class="ttc" id="astructServoFrame_html_ad3ed851e57d10a3ea98ee0c7efb15c81"><div class="ttname"><a href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">ServoFrame::timeMs</a></div><div class="ttdeci">int timeMs</div><div class="ttdoc">Czas w ms.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00016">datareader.h:16</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac0872ead237e22ffc9beb0dc935a07a8" name="ac0872ead237e22ffc9beb0dc935a07a8"></a>
@@ -283,6 +579,94 @@ Private Attributes</h2></td></tr>
 
 <p>Pauzuje symulację. Zatrzymuje odczyt danych z pliku i wstrzymuje animację. </p>
 
+<p class="definition">Definition at line <a class="el" href="datasimulator_8cpp_source.html#l00035">35</a> of file <a class="el" href="datasimulator_8cpp_source.html">datasimulator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>{</div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_variable" href="classDataSimulator.html#a0127fabf374b7a98eaa1031c9a497b94">timer</a>-&gt;stop();</div>
+<div class="line"><span class="lineno">   38</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab349bacdfe864197fb8901335f9ba2c6" name="ab349bacdfe864197fb8901335f9ba2c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab349bacdfe864197fb8901335f9ba2c6">&#9670;&#160;</a></span>qualitySample</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataSimulator::qualitySample </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rssi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>per</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sygnał emitowany z parametrami jakości połączenia. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rssi</td><td>Siła sygnału w dBm. </td></tr>
+    <tr><td class="paramname">per</td><td>Współczynnik błędów pakietów w procentach. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="moc__datasimulator_8cpp_source.html#l00254">254</a> of file <a class="el" href="moc__datasimulator_8cpp_source.html">moc_datasimulator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  255</span>{</div>
+<div class="line"><span class="lineno">  256</span>    <span class="keywordtype">void</span> *_a[] = { <span class="keyword">nullptr</span>, <span class="keyword">const_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(std::addressof(_t1))), <span class="keyword">const_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(std::addressof(_t2))) };</div>
+<div class="line"><span class="lineno">  257</span>    QMetaObject::activate(<span class="keyword">this</span>, &amp;staticMetaObject, 6, _a);</div>
+<div class="line"><span class="lineno">  258</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a02793a0a482697494d2bc8bbba889e8a" name="a02793a0a482697494d2bc8bbba889e8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02793a0a482697494d2bc8bbba889e8a">&#9670;&#160;</a></span>reset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataSimulator::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resetuje odczyt do pierwszej ramki. </p>
+
+<p class="definition">Definition at line <a class="el" href="moc__datasimulator_8cpp_source.html#l00248">248</a> of file <a class="el" href="moc__datasimulator_8cpp_source.html">moc_datasimulator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  249</span>{</div>
+<div class="line"><span class="lineno">  250</span>    QMetaObject::activate(<span class="keyword">this</span>, &amp;staticMetaObject, 5, <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  251</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3a0a8a156f8e8ab1fbd37dd796de7386" name="a3a0a8a156f8e8ab1fbd37dd796de7386"></a>
@@ -302,6 +686,27 @@ Private Attributes</h2></td></tr>
 
 <p>Resetuje symulację do początku. Powraca do początkowych danych w pliku i ponownie uruchamia symulację. </p>
 
+<p class="definition">Definition at line <a class="el" href="datasimulator_8cpp_source.html#l00039">39</a> of file <a class="el" href="datasimulator_8cpp_source.html">datasimulator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{</div>
+<div class="line"><span class="lineno">   41</span>    <span class="comment">// Zatrzymaj timer przed resetowaniem</span></div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classDataSimulator.html#a0127fabf374b7a98eaa1031c9a497b94">timer</a>-&gt;isActive()) {</div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_variable" href="classDataSimulator.html#a0127fabf374b7a98eaa1031c9a497b94">timer</a>-&gt;stop();</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    <span class="comment">// Reset wszystkich liczników</span></div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_variable" href="classDataSimulator.html#ac73ed8fd3157ba4ac3dcd3abd60185e7">frameCounter</a> = 0;</div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_variable" href="classDataSimulator.html#a362bfaffac5e57168f0270698182c084">angle</a> = 0.0f;</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="classDataSimulator.html#af1abfcbd14a2c9f24db6fa892d095bc5">crcErrorCount</a> = 0;</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    <span class="comment">// Reset czytnika</span></div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_variable" href="classDataSimulator.html#a12dc3fbb1b60501104ff97f88d157e58">reader</a>-&gt;<a class="code hl_function" href="classDataReader.html#a998814f9ba73f3773bb3007047ecbcaa">reset</a>();</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    <span class="comment">// Wyślij sygnał resetu</span></div>
+<div class="line"><span class="lineno">   55</span>    emit <a class="code hl_signal" href="classDataSimulator.html#a02793a0a482697494d2bc8bbba889e8a">reset</a>();</div>
+<div class="line"><span class="lineno">   56</span>}</div>
+<div class="ttc" id="aclassDataReader_html_a998814f9ba73f3773bb3007047ecbcaa"><div class="ttname"><a href="classDataReader.html#a998814f9ba73f3773bb3007047ecbcaa">DataReader::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Resetuje odczyt do pierwszej ramki.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00066">datareader.cpp:66</a></div></div>
+<div class="ttc" id="aclassDataSimulator_html_a02793a0a482697494d2bc8bbba889e8a"><div class="ttname"><a href="classDataSimulator.html#a02793a0a482697494d2bc8bbba889e8a">DataSimulator::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Resetuje odczyt do pierwszej ramki.</div><div class="ttdef"><b>Definition</b> <a href="moc__datasimulator_8cpp_source.html#l00248">moc_datasimulator.cpp:248</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6916c3958eb860ef706fbfde4987f685" name="a6916c3958eb860ef706fbfde4987f685"></a>
@@ -328,6 +733,44 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="datasimulator_8cpp_source.html#l00058">58</a> of file <a class="el" href="datasimulator_8cpp_source.html">datasimulator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{</div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_variable" href="classDataSimulator.html#a797b6f9bc6b20da7c52f188ba8068e42">interval</a> = intervalMs;</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classDataSimulator.html#a0127fabf374b7a98eaa1031c9a497b94">timer</a>-&gt;isActive())</div>
+<div class="line"><span class="lineno">   62</span>        <a class="code hl_variable" href="classDataSimulator.html#a0127fabf374b7a98eaa1031c9a497b94">timer</a>-&gt;start(<a class="code hl_variable" href="classDataSimulator.html#a797b6f9bc6b20da7c52f188ba8068e42">interval</a>);</div>
+<div class="line"><span class="lineno">   63</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a90d382b074a56821479d98c9b1904050" name="a90d382b074a56821479d98c9b1904050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90d382b074a56821479d98c9b1904050">&#9670;&#160;</a></span>setSimulateErrors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataSimulator::setSimulateErrors </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Włącza/wyłącza symulację błędów transmisji. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>true aby włączyć symulację błędów. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="datasimulator_8cpp_source.html#l00114">114</a> of file <a class="el" href="datasimulator_8cpp_source.html">datasimulator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>                                              {</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_variable" href="classDataSimulator.html#a86285e8e763f28cba19e5c9b1e78fe4d">simulateErrors</a> = val;</div>
+<div class="line"><span class="lineno">  116</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad4f3a80942ef400cd58d2a023e1f5844" name="ad4f3a80942ef400cd58d2a023e1f5844"></a>
@@ -354,9 +797,96 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="datasimulator_8cpp_source.html#l00026">26</a> of file <a class="el" href="datasimulator_8cpp_source.html">datasimulator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classDataSimulator.html#a0127fabf374b7a98eaa1031c9a497b94">timer</a>-&gt;isActive()) {</div>
+<div class="line"><span class="lineno">   29</span>        <a class="code hl_variable" href="classDataSimulator.html#a0127fabf374b7a98eaa1031c9a497b94">timer</a>-&gt;stop(); <span class="comment">// zabezpieczenie</span></div>
+<div class="line"><span class="lineno">   30</span>    }</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="classDataSimulator.html#a797b6f9bc6b20da7c52f188ba8068e42">interval</a> = intervalMs;</div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_variable" href="classDataSimulator.html#a0127fabf374b7a98eaa1031c9a497b94">timer</a>-&gt;start(<a class="code hl_variable" href="classDataSimulator.html#a797b6f9bc6b20da7c52f188ba8068e42">interval</a>);</div>
+<div class="line"><span class="lineno">   33</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a362bfaffac5e57168f0270698182c084" name="a362bfaffac5e57168f0270698182c084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a362bfaffac5e57168f0270698182c084">&#9670;&#160;</a></span>angle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float DataSimulator::angle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualny kąt. </p>
+
+<p class="definition">Definition at line <a class="el" href="datasimulator_8h_source.html#l00121">121</a> of file <a class="el" href="datasimulator_8h_source.html">datasimulator.h</a>.</p>
+
+</div>
+</div>
+<a id="af1abfcbd14a2c9f24db6fa892d095bc5" name="af1abfcbd14a2c9f24db6fa892d095bc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1abfcbd14a2c9f24db6fa892d095bc5">&#9670;&#160;</a></span>crcErrorCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DataSimulator::crcErrorCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Licznik błędów CRC. </p>
+
+<p class="definition">Definition at line <a class="el" href="datasimulator_8h_source.html#l00119">119</a> of file <a class="el" href="datasimulator_8h_source.html">datasimulator.h</a>.</p>
+
+</div>
+</div>
+<a id="ac73ed8fd3157ba4ac3dcd3abd60185e7" name="ac73ed8fd3157ba4ac3dcd3abd60185e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac73ed8fd3157ba4ac3dcd3abd60185e7">&#9670;&#160;</a></span>frameCounter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DataSimulator::frameCounter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Licznik ramek. </p>
+
+<p class="definition">Definition at line <a class="el" href="datasimulator_8h_source.html#l00120">120</a> of file <a class="el" href="datasimulator_8h_source.html">datasimulator.h</a>.</p>
+
+</div>
+</div>
 <a id="a797b6f9bc6b20da7c52f188ba8068e42" name="a797b6f9bc6b20da7c52f188ba8068e42"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a797b6f9bc6b20da7c52f188ba8068e42">&#9670;&#160;</a></span>interval</h2>
 
@@ -378,6 +908,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Częstotliwość odczytu danych (ms) </p>
+
+<p class="definition">Definition at line <a class="el" href="datasimulator_8h_source.html#l00117">117</a> of file <a class="el" href="datasimulator_8h_source.html">datasimulator.h</a>.</p>
 
 </div>
 </div>
@@ -403,6 +935,34 @@ Private Attributes</h2></td></tr>
 
 <p>Odczyt danych z pliku. </p>
 
+<p class="definition">Definition at line <a class="el" href="datasimulator_8h_source.html#l00116">116</a> of file <a class="el" href="datasimulator_8h_source.html">datasimulator.h</a>.</p>
+
+</div>
+</div>
+<a id="a86285e8e763f28cba19e5c9b1e78fe4d" name="a86285e8e763f28cba19e5c9b1e78fe4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86285e8e763f28cba19e5c9b1e78fe4d">&#9670;&#160;</a></span>simulateErrors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DataSimulator::simulateErrors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Czy zasymulować błędy. </p>
+
+<p class="definition">Definition at line <a class="el" href="datasimulator_8h_source.html#l00118">118</a> of file <a class="el" href="datasimulator_8h_source.html">datasimulator.h</a>.</p>
+
 </div>
 </div>
 <a id="a0127fabf374b7a98eaa1031c9a497b94" name="a0127fabf374b7a98eaa1031c9a497b94"></a>
@@ -427,17 +987,23 @@ Private Attributes</h2></td></tr>
 
 <p>Timer do odtwarzania danych. </p>
 
+<p class="definition">Definition at line <a class="el" href="datasimulator_8h_source.html#l00115">115</a> of file <a class="el" href="datasimulator_8h_source.html">datasimulator.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="datasimulator_8h_source.html">datasimulator.h</a></li>
 <li>build/Desktop-Debug/HEX_Service_autogen/EWIEGA46WW/<a class="el" href="moc__datasimulator_8cpp_source.html">moc_datasimulator.cpp</a></li>
-<li><a class="el" href="datasimulator_8cpp.html">datasimulator.cpp</a></li>
+<li><a class="el" href="datasimulator_8cpp_source.html">datasimulator.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classDataSimulator.html">DataSimulator</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

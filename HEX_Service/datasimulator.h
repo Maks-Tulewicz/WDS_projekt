@@ -62,6 +62,11 @@ public:
 
     void setSimulateErrors(bool val);
 
+
+    bool loadDataFromSerial(const QString &devicePath);
+
+    void setSerialDevice(QIODevice* device);
+
 signals:
     /**
      * @brief Sygnał emitujący ramkę danych do GUI.

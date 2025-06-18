@@ -21,6 +21,7 @@ DataSimulator::DataSimulator(QObject *parent)
 bool DataSimulator::loadData(const QString &filePath)
 {
     return reader->loadFromFile(filePath);
+
 }
 
 void DataSimulator::startSimulation(int intervalMs)
@@ -114,4 +115,19 @@ void DataSimulator::onTimerTick()
 void DataSimulator::setSimulateErrors(bool val) {
     simulateErrors = val;
 }
+bool DataSimulator::loadDataFromSerial(const QString &devicePath)
+{
+    QFile *dev = new QFile(devicePath, this);
+    if (!dev->open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qWarning() << "Nie można otworzyć portu" << devicePath;
+        return false;
+    }
+    return reader->loadFromDevice(dev);
+}
+
+void DataSimulator::setSerialDevice(QIODevice* device) {
+    reader->setSerialDevice(device);
+    connect(reader, &DataReader::newFrameReady, this, &DataSimulator::frameReady);
+}
+
 

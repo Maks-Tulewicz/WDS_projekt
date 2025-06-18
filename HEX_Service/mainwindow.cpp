@@ -84,11 +84,17 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
     // ----- 6) Start symulacji -----
-    if (!simulator->loadData(QStringLiteral("servo_test_data.txt")))
-        qWarning() << "Nie udało się załadować danych!";
-    simulator->startSimulation(50);
-    logToTerminal("System uruchomiony.\nGotowy do działania.");
-    simulator->setSimulateErrors(ui->chkSimulateErrors->isChecked());
+    // if (!simulator->loadData(QStringLiteral("servo_test_data.txt")))
+    //     qWarning() << "Nie udało się załadować danych!";
+    // simulator->startSimulation(50);
+    // logToTerminal("System uruchomiony.\nGotowy do działania.");
+    // simulator->setSimulateErrors(ui->chkSimulateErrors->isChecked());
+
+    QFile *dev = new QFile("/dev/pts/5", this);
+    if (dev->open(QIODevice::ReadOnly | QIODevice::Text)) {
+        simulator->setSerialDevice(dev);
+    }
+
 
 
     // ----- 7) Połączenie translatora -----

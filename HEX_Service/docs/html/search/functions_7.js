@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['qcleanupresources_5ficons_0',['qCleanupResources_icons',['../qrc__icons_8cpp.html#adf4b7bcaad8a7e6715bed7d18cb3c7a8',1,'qrc_icons.cpp']]],
-  ['qinitresources_5ficons_1',['qInitResources_icons',['../qrc__icons_8cpp.html#a3336ed988b568652de57af71d07f3f26',1,'qrc_icons.cpp']]],
-  ['qregisterresourcedata_2',['qRegisterResourceData',['../qrc__icons_8cpp.html#a2ce5a6cde5b318dc75442940471e05f7',1,'qrc_icons.cpp']]],
-  ['qunregisterresourcedata_3',['qUnregisterResourceData',['../qrc__icons_8cpp.html#a54b96c9f44d004fc0ea13bb581f97a71',1,'qrc_icons.cpp']]]
+  ['main_0',['main',['../CMakeCXXCompilerId_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCXXCompilerId.cpp'],['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main.cpp']]],
+  ['mainwindow_1',['MainWindow',['../classMainWindow.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow']]]
 ];

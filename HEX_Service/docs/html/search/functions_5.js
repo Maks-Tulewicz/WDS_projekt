@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['onlegselectionchanged_0',['onLegSelectionChanged',['../classMainWindow.html#a30f79beabf8bb9fdc312d9906c1527bc',1,'MainWindow']]],
-  ['ontimertick_1',['onTimerTick',['../classDataSimulator.html#a3d8ebf21315906fae7a75d962adfc6a3',1,'DataSimulator']]]
+  ['handlelogerror_0',['handleLogError',['../classMainWindow.html#a34d226cc8cf1fd9b33dcbafda0ce09ac',1,'MainWindow']]],
+  ['handlelogmessage_1',['handleLogMessage',['../classMainWindow.html#ab5db55e29324c1f07c4284a0e7c01c95',1,'MainWindow']]]
 ];
