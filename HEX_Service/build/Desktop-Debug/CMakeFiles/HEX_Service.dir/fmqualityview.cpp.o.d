@@ -348,4 +348,8 @@ CMakeFiles/HEX_Service.dir/fmqualityview.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCharts/qvalueaxis.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPen \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainter.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainter.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlocale.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h

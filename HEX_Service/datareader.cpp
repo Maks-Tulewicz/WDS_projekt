@@ -1,5 +1,3 @@
-// ZAMIEŃ CAŁĄ ZAWARTOŚĆ datareader.cpp NA TEN KOD:
-
 #include "datareader.h"
 #include <QtGlobal>
 #include <QSerialPort>
@@ -14,7 +12,7 @@ bool DataReader::loadFromFile(const QString &filePath)
 {
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qWarning() << "Nie udało się otworzyć pliku:" << filePath;
+        qWarning() << "Failed to open file:" << filePath;
         return false;
     }
 
@@ -28,30 +26,38 @@ bool DataReader::loadFromFile(const QString &filePath)
 
         QString core = line.mid(1, line.length() - 2);
         QStringList parts = core.split(';');
-        // 1 timestamp + 18 angles + speed + packets + crc = 22 elementy
-        if (parts.size() != 22) continue;
-        // Weryfikacja CRC: sum bytes mod 256
+        if (parts.size() != 24) {
+            qWarning() << "Wrong number of parts:" << parts.size() << "(expected 24)";
+            continue;
+        }
+
+        // CRC verification: sum of bytes mod 256
         QByteArray raw = core.left(core.lastIndexOf(';')).toUtf8();
         bool okCrc = false;
-        int crc = parts.last().toInt(&okCrc);
+        int crc = parts[23].toInt(&okCrc);
         if (!okCrc) {
-            qWarning() << "CRC nie parsuje:" << parts.last();
+            qWarning() << "CRC parsing failed:" << parts[23];
             continue;
         }
         uint8_t sum = 0;
         for (auto b : raw)
             sum = uint8_t(sum + static_cast<uint8_t>(b));
         if (sum != static_cast<uint8_t>(crc)) {
-            qWarning() << "CRC niezgodne (obliczone=" << sum << "odebrane=" << crc << ")";
+            qWarning() << "CRC mismatch (calculated=" << sum << "received=" << crc << ")";
             continue;
         }
 
         ServoFrame frame;
-        frame.timeMs     = parts[0].toInt();
+        frame.timeMs = parts[0].toInt();
         for (int i = 1; i <= 18; ++i)
             frame.angles.append(parts[i].toFloat());
-        frame.speed       = parts[19].toFloat();
+        frame.speed = parts[19].toFloat();
         frame.packetCount = parts[20].toInt();
+
+        // Parse FM data
+        frame.rssi = parts[21].toFloat();  // RSSI in dBm
+        frame.per = parts[22].toFloat();   // PER in %
+
         frames.append(frame);
     }
 
@@ -83,11 +89,11 @@ bool DataReader::loadFromDevice(QIODevice* device)
 
         QString core = line.mid(1, line.length() - 2);
         QStringList parts = core.split(';');
-        if (parts.size() != 22) continue;
+        if (parts.size() != 24) continue;
 
         QByteArray raw = core.left(core.lastIndexOf(';')).toUtf8();
         bool okCrc = false;
-        int crc = parts.last().toInt(&okCrc);
+        int crc = parts[23].toInt(&okCrc);
         if (!okCrc) continue;
 
         uint8_t sum = 0;
@@ -96,11 +102,16 @@ bool DataReader::loadFromDevice(QIODevice* device)
         if (sum != static_cast<uint8_t>(crc)) continue;
 
         ServoFrame frame;
-        frame.timeMs     = parts[0].toInt();
+        frame.timeMs = parts[0].toInt();
         for (int i = 1; i <= 18; ++i)
             frame.angles.append(parts[i].toFloat());
-        frame.speed       = parts[19].toFloat();
+        frame.speed = parts[19].toFloat();
         frame.packetCount = parts[20].toInt();
+
+        // Parse FM data
+        frame.rssi = parts[21].toFloat();
+        frame.per = parts[22].toFloat();
+
         frames.append(frame);
     }
 
@@ -109,87 +120,87 @@ bool DataReader::loadFromDevice(QIODevice* device)
 
 void DataReader::setSerialDevice(QIODevice* device)
 {
-    qDebug() << "🔧 DataReader::setSerialDevice() called with device:" << device;
+    qDebug() << "DataReader::setSerialDevice() called with device:" << device;
 
     if (serial) {
-        qDebug() << "🔌 Disconnecting previous device";
+        qDebug() << "Disconnecting previous device";
         disconnect(serial, nullptr, this, nullptr);
     }
     serial = device;
 
     if (!device) {
-        qWarning() << "❌ Device is nullptr!";
+        qWarning() << "Device is nullptr!";
         return;
     }
 
-    // Konfiguracja portu szeregowego (jeśli to QSerialPort)
+    // Configure serial port (if it's QSerialPort)
     if (QSerialPort* serialPort = qobject_cast<QSerialPort*>(device)) {
-        qDebug() << "📡 Configuring QSerialPort";
+        qDebug() << "Configuring QSerialPort";
         serialPort->setBaudRate(QSerialPort::Baud115200);
         serialPort->setDataBits(QSerialPort::Data8);
         serialPort->setParity(QSerialPort::NoParity);
         serialPort->setStopBits(QSerialPort::OneStop);
         serialPort->setFlowControl(QSerialPort::NoFlowControl);
     } else {
-        qDebug() << "📁 Device is QFile, not QSerialPort";
+        qDebug() << "Device is QFile, not QSerialPort";
     }
 
-    // Sprawdź czy urządzenie jest otwarte
+    // Check if device is open
     if (!device->isOpen()) {
-        qWarning() << "❌ Device is not open!";
+        qWarning() << "Device is not open!";
         return;
     }
 
-    qDebug() << "✅ Device is open, checking readability...";
+    qDebug() << "Device is open, checking readability...";
     qDebug() << "   - isReadable():" << device->isReadable();
     qDebug() << "   - bytesAvailable():" << device->bytesAvailable();
 
     buffer.clear();
 
-    // Połącz sygnał readyRead
+    // Connect readyRead signal
     connect(serial, &QIODevice::readyRead, this, &DataReader::handleSerialData, Qt::DirectConnection);
-    qDebug() << "🔗 Connected readyRead signal";
+    qDebug() << "Connected readyRead signal";
 
-    // Dla QFile - sprawdź czy są już dane dostępne
+    // For QFile - check if data is already available
     if (device->bytesAvailable() > 0) {
-        qDebug() << "📦 Data already available, calling handleSerialData()";
+        qDebug() << "Data already available, calling handleSerialData()";
         QTimer::singleShot(100, this, &DataReader::handleSerialData);
     }
 
-    // Dodaj timer do periodycznego sprawdzania (workaround dla QFile)
+    // Add timer for periodic checking (workaround for QFile)
     QTimer *checkTimer = new QTimer(this);
     connect(checkTimer, &QTimer::timeout, this, [this]() {
         if (serial && serial->bytesAvailable() > 0) {
-            qDebug() << "⏰ Timer detected data, calling handleSerialData()";
+            qDebug() << "Timer detected data, calling handleSerialData()";
             handleSerialData();
         }
     });
-    checkTimer->start(100); // Sprawdzaj co 100ms
+    checkTimer->start(100); // Check every 100ms
 }
 
 void DataReader::handleSerialData()
 {
-    qDebug() << "🚨 handleSerialData() CALLED!";
+    qDebug() << "handleSerialData() CALLED!";
 
     if (!serial) {
-        qWarning() << "❌ Serial device is nullptr in handleSerialData()";
+        qWarning() << "Serial device is nullptr in handleSerialData()";
         return;
     }
 
     QByteArray newData = serial->readAll();
-    qDebug() << "📡 Read" << newData.size() << "bytes from device";
+    qDebug() << "Read" << newData.size() << "bytes from device";
 
     if (newData.isEmpty()) {
-        qDebug() << "⚠️ No data read from device";
+        qDebug() << "No data read from device";
         return;
     }
 
-    // Pokaż pierwsze 100 znaków danych
+    // Show first 100 characters of data
     QString dataPreview = QString::fromUtf8(newData.left(100));
-    qDebug() << "📋 Data preview:" << dataPreview;
+    qDebug() << "Data preview:" << dataPreview;
 
     buffer += QString::fromUtf8(newData);
-    qDebug() << "📊 Buffer size after append:" << buffer.size();
+    qDebug() << "Buffer size after append:" << buffer.size();
 
     int frameCount = 0;
     while (true) {
@@ -201,50 +212,50 @@ void DataReader::handleSerialData()
         buffer.remove(0, end + 1);
         frameCount++;
 
-        qDebug() << "🔍 Processing frame #" << frameCount;
+        qDebug() << "Processing frame #" << frameCount;
         qDebug() << "   Content:" << frameStr.left(50) + "...";
 
         QStringList parts = frameStr.split(';');
-        if (parts.size() != 22) {
-            qWarning() << "❌ Wrong number of parts:" << parts.size() << "(expected 22)";
+        if (parts.size() != 24) {
+            qWarning() << "Wrong number of parts:" << parts.size() << "(expected 24)";
             qDebug() << "   Parts:" << parts;
             continue;
         }
 
-        // Oblicz CRC z części bez ostatniego elementu (który jest CRC)
+        // Calculate CRC from parts without last element (which is CRC)
         QByteArray raw = frameStr.left(frameStr.lastIndexOf(';')).toUtf8();
         bool okCrc = false;
-        int receivedCrc = parts.last().toInt(&okCrc);
+        int receivedCrc = parts[23].toInt(&okCrc);
 
         if (!okCrc) {
-            qWarning() << "❌ CRC cannot be parsed:" << parts.last();
+            qWarning() << "CRC cannot be parsed:" << parts[23];
             continue;
         }
 
-        // Oblicz CRC
+        // Calculate CRC
         uint8_t sum = 0;
         for (auto b : raw) {
             sum = uint8_t(sum + static_cast<uint8_t>(b));
         }
         uint8_t calculatedCrc = sum;
 
-        // Debug info dla każdej ramki
-        qDebug() << "🔍 CRC Debug:";
+        // Debug info for each frame
+        qDebug() << "CRC Debug:";
         qDebug() << "   Raw data length:" << raw.size() << "bytes";
         qDebug() << "   Calculated CRC:" << calculatedCrc;
         qDebug() << "   Received CRC:" << receivedCrc;
-        qDebug() << "   Match:" << (calculatedCrc == receivedCrc ? "✅ YES" : "❌ NO");
+        qDebug() << "   Match:" << (calculatedCrc == receivedCrc ? "YES" : "NO");
 
         if (calculatedCrc != static_cast<uint8_t>(receivedCrc)) {
-            qWarning() << "❌ CRC mismatch! Calculated:" << calculatedCrc
+            qWarning() << "CRC mismatch! Calculated:" << calculatedCrc
                        << "Received:" << receivedCrc
                        << "Frame:" << frameStr.left(30) + "...";
-            // TYMCZASOWO KONTYNUUJ MIMO BŁĘDU CRC
-            qDebug() << "⚠️ CONTINUING DESPITE CRC ERROR (temporary debug mode)";
-            // continue;  // <-- zakomentowane tymczasowo
+            // TEMPORARILY CONTINUE DESPITE CRC ERROR
+            qDebug() << "CONTINUING DESPITE CRC ERROR (temporary debug mode)";
+            // continue;  // commented out temporarily
         }
 
-        // CRC OK (lub ignorowany) - utwórz ramkę
+        // CRC OK (or ignored) - create frame
         ServoFrame frame;
         frame.timeMs = parts[0].toInt();
         for (int i = 1; i <= 18; ++i)
@@ -252,16 +263,21 @@ void DataReader::handleSerialData()
         frame.speed = parts[19].toFloat();
         frame.packetCount = parts[20].toInt();
 
-        qDebug() << "✅ Frame created successfully - emitting newFrameReady";
+        // Parse FM data
+        frame.rssi = parts[21].toFloat();
+        frame.per = parts[22].toFloat();
+
+        qDebug() << "Frame created successfully - emitting newFrameReady";
         qDebug() << "   TimeMs:" << frame.timeMs;
         qDebug() << "   First 3 angles:" << frame.angles[0] << frame.angles[1] << frame.angles[2];
         qDebug() << "   Speed:" << frame.speed;
         qDebug() << "   PacketCount:" << frame.packetCount;
+        qDebug() << "   FM: RSSI:" << frame.rssi << "dBm, PER:" << frame.per << "%";
 
         emit newFrameReady(frame);
-        qDebug() << "📤 Signal newFrameReady emitted!";
+        qDebug() << "Signal newFrameReady emitted!";
     }
 
-    qDebug() << "📊 Processed" << frameCount << "frames in this iteration";
-    qDebug() << "📊 Remaining buffer size:" << buffer.size();
+    qDebug() << "Processed" << frameCount << "frames in this iteration";
+    qDebug() << "Remaining buffer size:" << buffer.size();
 }

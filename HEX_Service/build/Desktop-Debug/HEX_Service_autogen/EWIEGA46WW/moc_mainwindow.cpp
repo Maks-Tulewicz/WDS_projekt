@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[13];
-    char stringdata0[162];
+    QByteArrayData data[15];
+    char stringdata0[197];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,9 +33,9 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 14), // "showAnimations"
-QT_MOC_LITERAL(2, 26, 0), // ""
-QT_MOC_LITERAL(3, 27, 15), // "showServoAngles"
+QT_MOC_LITERAL(1, 11, 15), // "showServoAngles"
+QT_MOC_LITERAL(2, 27, 0), // ""
+QT_MOC_LITERAL(3, 28, 14), // "showAnimations"
 QT_MOC_LITERAL(4, 43, 14), // "showConnection"
 QT_MOC_LITERAL(5, 58, 12), // "showSettings"
 QT_MOC_LITERAL(6, 71, 21), // "onLegSelectionChanged"
@@ -44,14 +44,17 @@ QT_MOC_LITERAL(8, 99, 8), // "logError"
 QT_MOC_LITERAL(9, 108, 3), // "msg"
 QT_MOC_LITERAL(10, 112, 14), // "handleLogError"
 QT_MOC_LITERAL(11, 127, 16), // "handleLogMessage"
-QT_MOC_LITERAL(12, 144, 17) // "onLanguageChanged"
+QT_MOC_LITERAL(12, 144, 17), // "onLanguageChanged"
+QT_MOC_LITERAL(13, 162, 15), // "onSimDisconnect"
+QT_MOC_LITERAL(14, 178, 18) // "onReconnectClicked"
 
     },
-    "MainWindow\0showAnimations\0\0showServoAngles\0"
+    "MainWindow\0showServoAngles\0\0showAnimations\0"
     "showConnection\0showSettings\0"
     "onLegSelectionChanged\0index\0logError\0"
     "msg\0handleLogError\0handleLogMessage\0"
-    "onLanguageChanged"
+    "onLanguageChanged\0onSimDisconnect\0"
+    "onReconnectClicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -61,7 +64,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -69,15 +72,17 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   59,    2, 0x08 /* Private */,
-       3,    0,   60,    2, 0x08 /* Private */,
-       4,    0,   61,    2, 0x08 /* Private */,
-       5,    0,   62,    2, 0x08 /* Private */,
-       6,    1,   63,    2, 0x08 /* Private */,
-       8,    1,   66,    2, 0x08 /* Private */,
-      10,    1,   69,    2, 0x08 /* Private */,
-      11,    1,   72,    2, 0x08 /* Private */,
-      12,    1,   75,    2, 0x08 /* Private */,
+       1,    0,   69,    2, 0x08 /* Private */,
+       3,    0,   70,    2, 0x08 /* Private */,
+       4,    0,   71,    2, 0x08 /* Private */,
+       5,    0,   72,    2, 0x08 /* Private */,
+       6,    1,   73,    2, 0x08 /* Private */,
+       8,    1,   76,    2, 0x08 /* Private */,
+      10,    1,   79,    2, 0x08 /* Private */,
+      11,    1,   82,    2, 0x08 /* Private */,
+      12,    1,   85,    2, 0x08 /* Private */,
+      13,    0,   88,    2, 0x08 /* Private */,
+      14,    0,   89,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -89,6 +94,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::QString,    9,
     QMetaType::Void, QMetaType::QString,    9,
     QMetaType::Void, QMetaType::Int,    7,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -99,8 +106,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->showAnimations(); break;
-        case 1: _t->showServoAngles(); break;
+        case 0: _t->showServoAngles(); break;
+        case 1: _t->showAnimations(); break;
         case 2: _t->showConnection(); break;
         case 3: _t->showSettings(); break;
         case 4: _t->onLegSelectionChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
@@ -108,6 +115,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 6: _t->handleLogError((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 7: _t->handleLogMessage((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 8: _t->onLanguageChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 9: _t->onSimDisconnect(); break;
+        case 10: _t->onReconnectClicked(); break;
         default: ;
         }
     }
@@ -142,13 +151,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 11)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 11;
     }
     return _id;
 }

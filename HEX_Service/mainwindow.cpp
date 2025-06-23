@@ -4,7 +4,7 @@
 #include "fmqualityview.h"
 #include "servoanglemanager.h"
 #include "datasimulator.h"
-#include"fmqualityview.h"
+#include "fmqualityview.h"
 #include <QLabel>
 #include <QPushButton>
 #include <QComboBox>
@@ -16,7 +16,7 @@
 #include <QDirIterator>
 #include <qserialport.h>
 #include <QSerialPortInfo>
-
+#include <qmath.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // ----- 1) Podstawowe połączenia przycisków z zakładkami -----
+    // ----- 1) Basic button connections with tabs -----
     connect(ui->servoAnglesBT, &QPushButton::clicked,
             this, &MainWindow::showServoAngles);
     connect(ui->animationsBT, &QPushButton::clicked,
@@ -34,7 +34,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->settingsBT, &QPushButton::clicked,
             this, &MainWindow::showSettings);
 
-    // ----- 2) Inicjalizacja SideView/TopView/Combo -----
+    // ----- 2) Initialize SideView/TopView/Combo -----
     sideView = ui->sideView;
     topView  = ui->topView;
     connect(ui->comboBoxLegSide, QOverload<int>::of(&QComboBox::currentIndexChanged),
@@ -63,19 +63,13 @@ MainWindow::MainWindow(QWidget *parent)
     connect(simulator, &DataSimulator::disconnectedDueToErrors, this, &MainWindow::onSimDisconnect);
     connect(ui->btnReconnect, &QPushButton::clicked, this, &MainWindow::onReconnectClicked);
 
-
-
-
-
-
-    // ----- 5) Podmień placeholder qualityView na wykres -----
+    // ----- 5) Replace placeholder qualityView with chart -----
     {
         QWidget *ph = ui->qualityView;
         QLayout *lyt = ph->parentWidget()->layout();
         lyt->removeWidget(ph);
         delete ph;
         auto *qualityView = findChild<FmQualityView*>("qualityView");
-
 
         auto *chart = new FmQualityView(this);
         chart->setObjectName("qualityView");
@@ -84,24 +78,21 @@ MainWindow::MainWindow(QWidget *parent)
 
         connect(simulator, &DataSimulator::qualitySample,
                 chart,     &FmQualityView::addMeasurement);
+
+        qDebug() << "Chart connection established";
     }
 
-    // ----- 6) Start symulacji -----
-    // if (!simulator->loadData(QStringLiteral("servo_test_data.txt")))
-    //     qWarning() << "Nie udało się załadować danych!";
-    // simulator->startSimulation(50);
-    // logToTerminal("System uruchomiony.\nGotowy do działania.");
-    // simulator->setSimulateErrors(ui->chkSimulateErrors->isChecked());
-    qDebug() << "🚀 Starting serial device setup...";
+    // ----- 6) Setup serial device -----
+    qDebug() << "Starting serial device setup...";
 
-    QString devicePath = "/dev/pts/3";  // BEZ SPACJI!
-    qDebug() << "📡 Attempting to open device:" << devicePath;
+    QString devicePath = "/dev/pts/3";  // NO SPACES!
+    qDebug() << "Attempting to open device:" << devicePath;
 
-    // UŻYJ QSerialPort zamiast QFile
+    // USE QSerialPort instead of QFile
     QSerialPort *serialPort = new QSerialPort(this);
     serialPort->setPortName(devicePath);
 
-    // Konfiguracja portu szeregowego
+    // Serial port configuration
     serialPort->setBaudRate(QSerialPort::Baud115200);
     serialPort->setDataBits(QSerialPort::Data8);
     serialPort->setParity(QSerialPort::NoParity);
@@ -109,34 +100,33 @@ MainWindow::MainWindow(QWidget *parent)
     serialPort->setFlowControl(QSerialPort::NoFlowControl);
 
     if (serialPort->open(QIODevice::ReadOnly)) {
-        qDebug() << "✅ QSerialPort opened successfully!";
+        qDebug() << "QSerialPort opened successfully!";
         qDebug() << "   - isReadable():" << serialPort->isReadable();
         qDebug() << "   - bytesAvailable():" << serialPort->bytesAvailable();
 
         simulator->setSerialDevice(serialPort);
-        qDebug() << "✅ Serial device set in simulator";
+        qDebug() << "Serial device set in simulator";
 
     } else {
-        qWarning() << "❌ Failed to open QSerialPort:" << devicePath;
+        qWarning() << "Failed to open QSerialPort:" << devicePath;
         qWarning() << "   Error:" << serialPort->errorString();
 
-        // Sprawdź dostępne porty
-        qDebug() << "📋 Available serial ports:";
+        // Check available ports
+        qDebug() << "Available serial ports:";
         for (const QSerialPortInfo &info : QSerialPortInfo::availablePorts()) {
             qDebug() << "   -" << info.portName() << info.description();
         }
     }
 
-
-    // ----- 7) Połączenie translatora -----
+    // ----- 7) Translator connection -----
     translator = new QTranslator(this);
 
-    // Połączenie sygnału zmiany języka
+    // Language change signal connection
     connect(ui->languageComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &MainWindow::onLanguageChanged);
 
-    // Załaduj domyślny język
-    QString path = ":/translations/translations/hex_service_pl.qm"; // Poprawiona ścieżka
+    // Load default language
+    QString path = ":/translations/translations/hex_service_pl.qm"; // Corrected path
     if (translator->load(path)) {
         qDebug() << "Initial translation loaded successfully";
         qApp->installTranslator(translator);
@@ -145,8 +135,6 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
     setupLabels();
-
-
 }
 
 MainWindow::~MainWindow()
@@ -174,11 +162,11 @@ void MainWindow::onLegSelectionChanged(int index)
 
 void MainWindow::updateServoGUI(const ServoFrame &frame)
 {
-    // 1) Aktualizacja tabelki QLabel
+    // 1) Update QLabel table
     for (int i = 0; i < frame.angles.size(); ++i) {
         auto name = QString("servo_%1_%2").arg(i/3).arg(i%3);
         if (auto *lbl = findChild<QLabel*>(name))
-            lbl->setText(QString::number(frame.angles[i], 'f', 1) + u8"°");
+            lbl->setText(QString::number(frame.angles[i], 'f', 1) + "°");
     }
     // 2) TopView
     for (int leg = 0; leg < 6; ++leg) {
@@ -191,35 +179,33 @@ void MainWindow::updateServoGUI(const ServoFrame &frame)
     float ankle = frame.angles[legIdx*3 + 2];
     sideView->setJointAngles(knee, ankle);
 
-
     QString frameText;
-    frameText += QString("Czas: %1 ms\n").arg(frame.timeMs);
-    frameText += "Kąty: [";
+    frameText += QString("Time: %1 ms\n").arg(frame.timeMs);
+    frameText += "Angles: [";
     for (int i = 0; i < frame.angles.size(); ++i) {
         frameText += QString::number(frame.angles[i], 'f', 1);
         if (i < frame.angles.size() - 1)
             frameText += ", ";
     }
     frameText += "]\n";
-    frameText += QString("Prędkość: %1 pkt/s\n").arg(frame.speed, 0, 'f', 1);
-    frameText += QString("Pakiety: %1\n").arg(frame.packetCount);
+    frameText += QString("Speed: %1 pts/s\n").arg(frame.speed, 0, 'f', 1);
+    frameText += QString("Packets: %1\n").arg(frame.packetCount);
     frameText += "---------------------------";
 
     logToTerminal(frameText);
-
-
 }
 
 void MainWindow::logToTerminal(const QString &message) {
     // ui->plainTextEdit->appendPlainText(message);
 }
+
 void MainWindow::logError(const QString &msg) {
     ui->plainTextEdit->appendPlainText("[ERROR] " + msg);
 }
+
 void MainWindow::handleLogError(const QString &msg) {
     ui->plainTextEdit->appendHtml("<span style='color:red;'>" + msg + "</span>");
 }
-
 
 void MainWindow::handleLogMessage(const QString &msg) {
     // Limit the number of messages stored in plainTextEdit
@@ -238,23 +224,22 @@ void MainWindow::handleLogMessage(const QString &msg) {
 
 void MainWindow::onSimDisconnect()
 {
-    ui->plainTextEdit->appendPlainText("### Rozłączono z powodu zbyt wielu błędów CRC ###");
-    ui->btnReconnect->setEnabled(true);  // umożliwiamy ponowne połączenie
+    ui->plainTextEdit->appendPlainText("### Disconnected due to too many CRC errors ###");
+    ui->btnReconnect->setEnabled(true);  // enable reconnection
 }
-
 
 void MainWindow::onReconnectClicked()
 {
     ui->btnReconnect->setEnabled(false);
     ui->plainTextEdit->clear();
 
-    simulator->pauseSimulation();  // Najpierw zatrzymaj symulację
+    simulator->pauseSimulation();  // First stop simulation
 
-    QTimer::singleShot(1000, this, [this]() {  // Zwiększ opóźnienie do 1000ms
+    QTimer::singleShot(1000, this, [this]() {  // Increase delay to 1000ms
         simulator->resetSimulation();
 
-        QTimer::singleShot(500, this, [this]() {  // Dodaj opóźnienie między resetem a startem
-            simulator->startSimulation(50);  // Użyj oryginalnego interwału 50ms
+        QTimer::singleShot(500, this, [this]() {  // Add delay between reset and start
+            simulator->startSimulation(50);  // Use original 50ms interval
             simulator->setSimulateErrors(ui->chkSimulateErrors->isChecked());
         });
     });
@@ -262,10 +247,10 @@ void MainWindow::onReconnectClicked()
 
 void MainWindow::loadLanguage(const QString &language)
 {
-    // Usuń poprzednie tłumaczenie jeśli istnieje
+    // Remove previous translation if exists
     qApp->removeTranslator(translator);
 
-    // Załaduj nowe tłumaczenie
+    // Load new translation
     if (translator->load(":/translations/hex_service_" + language)) {
         qApp->installTranslator(translator);
     }
@@ -280,17 +265,16 @@ void MainWindow::changeEvent(QEvent* event)
     QMainWindow::changeEvent(event);
 }
 
-
 void MainWindow::onLanguageChanged(int index)
 {
     qDebug() << "Language change requested to index:" << index;
 
-    // Usuń poprzedni translator
+    // Remove previous translator
     qApp->removeTranslator(translator);
 
-    // Załaduj nowy język
+    // Load new language
     QString language = index == 0 ? "pl" : "en";
-    QString path = QString(":/translations/translations/hex_service_%1.qm").arg(language); // Poprawiona ścieżka
+    QString path = QString(":/translations/translations/hex_service_%1.qm").arg(language); // Corrected path
 
     qDebug() << "Trying to load translation from:" << path;
 
@@ -301,15 +285,14 @@ void MainWindow::onLanguageChanged(int index)
         qDebug() << "Failed to load translation from" << path;
     }
 
-    // Aktualizuj UI
+    // Update UI
     ui->retranslateUi(this);
     setupLabels();
 }
 
-
 void MainWindow::setupLabels()
 {
-    // Ustaw etykiety z ikonami
+    // Set labels with icons
     ui->noga_1_name->setText(getTranslatedLabelWithIcon(tr("Noga 1"), ":/icons/robot-leg.png"));
     ui->noga_2_name->setText(getTranslatedLabelWithIcon(tr("Noga 2"), ":/icons/robot-leg.png"));
     ui->noga_3_name->setText(getTranslatedLabelWithIcon(tr("Noga 3"), ":/icons/robot-leg.png"));

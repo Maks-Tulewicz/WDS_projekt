@@ -2,6 +2,7 @@
 #include <QtCharts/QChart>
 #include <QPen>
 #include <QPainter>
+#include <qdebug.h>
 
 QT_CHARTS_USE_NAMESPACE
 
@@ -63,6 +64,9 @@ FmQualityView::FmQualityView(QWidget *parent)
 
 void FmQualityView::addMeasurement(float rssi, float per)
 {
+
+    qDebug() << "📊 FmQualityView::addMeasurement() RECEIVED - RSSI:" << rssi << "PER:" << per;
+
     // dopisanie nowego punktu w chwili t
     rssiSeries->append(t, rssi);
     perSeries->append(t, per);
