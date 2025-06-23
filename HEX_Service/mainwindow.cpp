@@ -14,6 +14,9 @@
 #include <QTranslator>
 #include <QApplication>
 #include <QDirIterator>
+#include <qserialport.h>
+#include <QSerialPortInfo>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -89,12 +92,40 @@ MainWindow::MainWindow(QWidget *parent)
     // simulator->startSimulation(50);
     // logToTerminal("System uruchomiony.\nGotowy do działania.");
     // simulator->setSimulateErrors(ui->chkSimulateErrors->isChecked());
+    qDebug() << "🚀 Starting serial device setup...";
 
-    QFile *dev = new QFile("/dev/pts/5", this);
-    if (dev->open(QIODevice::ReadOnly | QIODevice::Text)) {
-        simulator->setSerialDevice(dev);
+    QString devicePath = "/dev/pts/3";  // BEZ SPACJI!
+    qDebug() << "📡 Attempting to open device:" << devicePath;
+
+    // UŻYJ QSerialPort zamiast QFile
+    QSerialPort *serialPort = new QSerialPort(this);
+    serialPort->setPortName(devicePath);
+
+    // Konfiguracja portu szeregowego
+    serialPort->setBaudRate(QSerialPort::Baud115200);
+    serialPort->setDataBits(QSerialPort::Data8);
+    serialPort->setParity(QSerialPort::NoParity);
+    serialPort->setStopBits(QSerialPort::OneStop);
+    serialPort->setFlowControl(QSerialPort::NoFlowControl);
+
+    if (serialPort->open(QIODevice::ReadOnly)) {
+        qDebug() << "✅ QSerialPort opened successfully!";
+        qDebug() << "   - isReadable():" << serialPort->isReadable();
+        qDebug() << "   - bytesAvailable():" << serialPort->bytesAvailable();
+
+        simulator->setSerialDevice(serialPort);
+        qDebug() << "✅ Serial device set in simulator";
+
+    } else {
+        qWarning() << "❌ Failed to open QSerialPort:" << devicePath;
+        qWarning() << "   Error:" << serialPort->errorString();
+
+        // Sprawdź dostępne porty
+        qDebug() << "📋 Available serial ports:";
+        for (const QSerialPortInfo &info : QSerialPortInfo::availablePorts()) {
+            qDebug() << "   -" << info.portName() << info.description();
+        }
     }
-
 
 
     // ----- 7) Połączenie translatora -----

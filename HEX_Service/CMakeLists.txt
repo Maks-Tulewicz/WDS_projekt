@@ -1,18 +1,15 @@
 cmake_minimum_required(VERSION 3.5)
 project(HEX_Service VERSION 0.1 LANGUAGES CXX)
 
-# --- włącz automatyczne UIC/MOC/RCC i ustaw C++17 ---
 set(CMAKE_AUTOUIC    ON)
 set(CMAKE_AUTOMOC    ON)
 set(CMAKE_AUTORCC    ON)
 set(CMAKE_CXX_STANDARD       17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# --- znajdź Qt5 Widgets oraz Charts ---
-find_package(Qt5 REQUIRED COMPONENTS Widgets Charts)
+find_package(Qt5 REQUIRED COMPONENTS Widgets Charts Core SerialPort)
 find_package(Qt5Charts REQUIRED)
 
-# --- lista wszystkich plików źródłowych i nagłówków ---
 set(PROJECT_SOURCES
     main.cpp
     mainwindow.cpp
@@ -30,24 +27,24 @@ set(PROJECT_SOURCES
     topview.h
     icons.qrc
     translations.qrc
-)
-
-# --- tworzony cel wykonywalny ---
-add_executable(HEX_Service
-    ${PROJECT_SOURCES}
     fmqualityview.h
     fmqualityview.cpp
 )
+
+add_executable(HEX_Service
+    ${PROJECT_SOURCES}
+)
+
+target_include_directories(HEX_Service PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(HEX_Service
   PRIVATE
     Qt5::Widgets
     Qt5::Charts
+    Qt5::Core
+    Qt5::SerialPort
 )
 
-target_include_directories(HEX_Service PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
-
-# --- kopiowanie pliku z danymi do katalogu build ---
 configure_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/data/servo_test_data.txt
     ${CMAKE_BINARY_DIR}/servo_test_data.txt

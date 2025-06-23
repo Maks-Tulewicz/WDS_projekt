@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "HEX_Service",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "HEX_Service::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-HEX_Service-Debug-cbb3340e688c898d0470.json",
+					"name" : "HEX_Service",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "HEX_Service_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-HEX_Service_autogen-Debug-eaa497cb8bf8862d7688.json",
+					"name" : "HEX_Service_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "HEX_Service_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-HEX_Service_autogen_timestamp_deps-Debug-d7030c0e406d4d9711b1.json",
+					"name" : "HEX_Service_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "doc::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-doc-Debug-8dd36acb1ef657b57cb8.json",
+					"name" : "doc",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service/build/Desktop-Debug",
+		"source" : "/home/maks/WDS/QT_HEX_SERVICE/HEX_Service"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

@@ -66,9 +66,11 @@ include CMakeFiles/HEX_Service_autogen_timestamp_deps.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/HEX_Service_autogen_timestamp_deps.dir/progress.make
 
-CMakeFiles/HEX_Service_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt5Charts.so.5.15.13
 CMakeFiles/HEX_Service_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.13
 CMakeFiles/HEX_Service_autogen_timestamp_deps: /usr/lib/qt5/bin/uic
+CMakeFiles/HEX_Service_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt5Charts.so.5.15.13
+CMakeFiles/HEX_Service_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt5SerialPort.so.5.15.13
+CMakeFiles/HEX_Service_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.13
 CMakeFiles/HEX_Service_autogen_timestamp_deps: /usr/lib/qt5/bin/moc
 
 HEX_Service_autogen_timestamp_deps: CMakeFiles/HEX_Service_autogen_timestamp_deps

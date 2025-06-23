@@ -8,6 +8,9 @@
 #include <QTextStream>
 #include <QDebug>
 #include <QtGlobal>
+#include <QIODevice>
+
+class QSerialPort;
 
 /**
  * @brief Pojedyncza ramka danych z hexapoda.
@@ -27,7 +30,7 @@ public:
 
     bool loadFromFile(const QString &filePath);
     bool loadFromDevice(QIODevice* device); // starsza metoda do jednorazowego odczytu
-    void setSerialDevice(QIODevice* device); // nowa metoda do nasłuchiwania
+    void setSerialDevice(QIODevice* device); // metoda do nasłuchiwania z portu szeregowego
     const ServoFrame* next();
     void reset();
 

@@ -283,6 +283,7 @@ HEX_Service: CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_icons
 HEX_Service: CMakeFiles/HEX_Service.dir/HEX_Service_autogen/EWIEGA46WW/qrc_translations.cpp.o
 HEX_Service: CMakeFiles/HEX_Service.dir/build.make
 HEX_Service: /usr/lib/x86_64-linux-gnu/libQt5Charts.so.5.15.13
+HEX_Service: /usr/lib/x86_64-linux-gnu/libQt5SerialPort.so.5.15.13
 HEX_Service: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.13
 HEX_Service: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.13
 HEX_Service: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.13
