@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['widget_0',['widget',['../classUi__MainWindow.html#ab676f235c393f334b7c07935d4007925',1,'Ui_MainWindow']]],
-  ['widget_5fsettings_5fleft_1',['widget_settings_left',['../classUi__MainWindow.html#a407e92131ba5e66f28c336a110051939',1,'Ui_MainWindow']]],
-  ['widget_5fsettings_5fright_2',['widget_settings_right',['../classUi__MainWindow.html#ac8d3f67e75d7e9e5ee8316c28494e33a',1,'Ui_MainWindow']]],
-  ['windowsize_3',['windowSize',['../classFmQualityView.html#ae90bbbdf84aef219bdbeebf6ffdcf629',1,'FmQualityView']]],
-  ['workspace_5fdevider_4',['workspace_devider',['../classUi__MainWindow.html#a3d5950867becc417ac4a6255aa98610d',1,'Ui_MainWindow']]]
+  ['verticallayout_0',['verticalLayout',['../classUi__MainWindow.html#aecd96a04789fcfec3f98d80390ad8184',1,'Ui_MainWindow']]],
+  ['verticallayout_5f2_1',['verticalLayout_2',['../classUi__MainWindow.html#a0c01bad60d9f422a1258e710635a2f65',1,'Ui_MainWindow']]],
+  ['verticallayout_5f3_2',['verticalLayout_3',['../classUi__MainWindow.html#a38b8a4b887f3b58e2a49e7905ae6f1f0',1,'Ui_MainWindow']]],
+  ['verticallayout_5f4_3',['verticalLayout_4',['../classUi__MainWindow.html#a6f40fc110b15410c00837a446d57bdbe',1,'Ui_MainWindow']]],
+  ['verticallayout_5f5_4',['verticalLayout_5',['../classUi__MainWindow.html#afcc20a3d5058037a00cdc6122f231848',1,'Ui_MainWindow']]],
+  ['verticallayout_5f6_5',['verticalLayout_6',['../classUi__MainWindow.html#a93c190b085c63a667c535ba0bbcfec7c',1,'Ui_MainWindow']]],
+  ['verticalspacer_6',['verticalSpacer',['../classUi__MainWindow.html#a8384329c3663ff274e926a12024aab52',1,'Ui_MainWindow']]]
 ];

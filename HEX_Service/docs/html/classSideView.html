@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('classSideView.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 
-<p>Klasa do wyświetlania jednej nogi robota w widoku z boku.  
+<p>Widget wizualizacji widoku bocznego dla szczegółowego badania nogi.  
  <a href="classSideView.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="sideview_8h_source.html">sideview.h</a>&gt;</code></p>
@@ -107,51 +107,93 @@ $(document).ready(function(){initNavTree('classSideView.html',''); initResizable
 Inheritance diagram for SideView:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSideView__inherit__graph.png" border="0" usemap="#aSideView_inherit__map" alt="Inheritance graph"/></div>
+<map name="aSideView_inherit__map" id="aSideView_inherit__map">
+<area shape="rect" title="Widget wizualizacji widoku bocznego dla szczegółowego badania nogi." alt="" coords="5,79,88,104"/>
+<area shape="rect" title=" " alt="" coords="7,5,86,31"/>
+<area shape="poly" title=" " alt="" coords="49,44,49,79,44,79,44,44"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for SideView:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSideView__coll__graph.png" border="0" usemap="#aSideView_coll__map" alt="Collaboration graph"/></div>
+<map name="aSideView_coll__map" id="aSideView_coll__map">
+<area shape="rect" title="Widget wizualizacji widoku bocznego dla szczegółowego badania nogi." alt="" coords="5,79,88,104"/>
+<area shape="rect" title=" " alt="" coords="7,5,86,31"/>
+<area shape="poly" title=" " alt="" coords="49,44,49,79,44,79,44,44"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:a26adcc66bd5a474a6d3752ff8d9e9de1" id="r_a26adcc66bd5a474a6d3752ff8d9e9de1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSideView.html#a26adcc66bd5a474a6d3752ff8d9e9de1">setActiveLeg</a> (int leg)</td></tr>
-<tr class="memdesc:a26adcc66bd5a474a6d3752ff8d9e9de1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wybiera, którą nogę rysować  <br /></td></tr>
+<tr class="memdesc:a26adcc66bd5a474a6d3752ff8d9e9de1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wybierz którą nogę wyświetlić  <br /></td></tr>
 <tr class="separator:a26adcc66bd5a474a6d3752ff8d9e9de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a076854ad6805568755987811f7629003" id="r_a076854ad6805568755987811f7629003"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSideView.html#a076854ad6805568755987811f7629003">setJointAngles</a> (float knee, float ankle)</td></tr>
-<tr class="memdesc:a076854ad6805568755987811f7629003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia kąty kolana i kostki dla aktywnej nogi.  <br /></td></tr>
+<tr class="memdesc:a076854ad6805568755987811f7629003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuj kąty stawów dla wizualizacji w czasie rzeczywistym.  <br /></td></tr>
 <tr class="separator:a076854ad6805568755987811f7629003"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a631d528a8d097deefc589fc68c457c98" id="r_a631d528a8d097deefc589fc68c457c98"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSideView.html#a631d528a8d097deefc589fc68c457c98">SideView</a> (QWidget *parent=nullptr)</td></tr>
-<tr class="memdesc:a631d528a8d097deefc589fc68c457c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor widoku bocznego.  <br /></td></tr>
+<tr class="memdesc:a631d528a8d097deefc589fc68c457c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor - Inicjalizuje widget widoku bocznego.  <br /></td></tr>
 <tr class="separator:a631d528a8d097deefc589fc68c457c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a83afef3d90d976cac674bfb43d194c52" id="r_a83afef3d90d976cac674bfb43d194c52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSideView.html#a83afef3d90d976cac674bfb43d194c52">paintEvent</a> (QPaintEvent *event) override</td></tr>
-<tr class="memdesc:a83afef3d90d976cac674bfb43d194c52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zdarzenie rysowania widgetu.  <br /></td></tr>
+<tr class="memdesc:a83afef3d90d976cac674bfb43d194c52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renderuj wizualizację nogi.  <br /></td></tr>
 <tr class="separator:a83afef3d90d976cac674bfb43d194c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a9b811b96c16784ce2dbc5f04522f9c7b" id="r_a9b811b96c16784ce2dbc5f04522f9c7b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSideView.html#a9b811b96c16784ce2dbc5f04522f9c7b">activeLeg</a> = 0</td></tr>
-<tr class="memdesc:a9b811b96c16784ce2dbc5f04522f9c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indeks aktualnie wyświetlanej nogi (0-5)  <br /></td></tr>
 <tr class="separator:a9b811b96c16784ce2dbc5f04522f9c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9538f9a5e658612ff71ef487a11199b" id="r_ae9538f9a5e658612ff71ef487a11199b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSideView.html#ae9538f9a5e658612ff71ef487a11199b">kneeAngle</a> = 0.f</td></tr>
-<tr class="memdesc:ae9538f9a5e658612ff71ef487a11199b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualny kąt kolana w stopniach.  <br /></td></tr>
 <tr class="separator:ae9538f9a5e658612ff71ef487a11199b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4abcc6a7cde672ce74d0ce046c6aa1b8" id="r_a4abcc6a7cde672ce74d0ce046c6aa1b8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSideView.html#a4abcc6a7cde672ce74d0ce046c6aa1b8">ankleAngle</a> = 0.f</td></tr>
-<tr class="memdesc:a4abcc6a7cde672ce74d0ce046c6aa1b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualny kąt kostki w stopniach.  <br /></td></tr>
 <tr class="separator:a4abcc6a7cde672ce74d0ce046c6aa1b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Klasa do wyświetlania jednej nogi robota w widoku z boku. </p>
-<p>Klasa ta rysuje jedną nogę robota, animując ruchy w obrębie kolana i kostki. Umożliwia zmianę aktywnej nogi oraz animowanie jej w zależności od kątów stawów. </p>
-
-<p class="definition">Definition at line <a class="el" href="sideview_8h_source.html#l00013">13</a> of file <a class="el" href="sideview_8h_source.html">sideview.h</a>.</p>
+<div class="textblock"><p>Widget wizualizacji widoku bocznego dla szczegółowego badania nogi. </p>
+<p><a class="el" href="classSideView.html" title="Widget wizualizacji widoku bocznego dla szczegółowego badania nogi.">SideView</a> zapewnia szczegółową wizualizację 2D pojedynczej nogi hexapoda z perspektywy bocznej. Pokazuje łańcuch kinematyczny nogi z dokładnymi pozycjami i orientacjami stawów na podstawie kątów serwomechanizmów.</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Funkcje wizualizacji:</h2>
+<ul>
+<li><b>Anatomicznie poprawne proporcje</b> z realistycznymi długościami segmentów</li>
+<li><b>Animacja stawów w czasie rzeczywistym</b> na podstawie feedbacku serwomechanizmów</li>
+<li><b>Stawy oznaczone kolorami</b> dla łatwej identyfikacji (czerwony=kolano, niebieski=kostka)</li>
+<li><b>Stałe odniesienie ciała</b> pokazujące punkt przyłączenia nogi</li>
+<li><b>Płynne renderowanie</b> z antialiasingiem dla profesjonalnego wyglądu</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Model kinematyczny:</h2>
+<p>Model nogi używa uproszczonej reprezentacji 2-DOF (Stopnie Swobody):</p><ul>
+<li><b>Segment uda</b>: Od biodra do kolana (80 pikseli długości)</li>
+<li><b>Segment goleni</b>: Od kolana do kostki (160 pikseli długości, stosunek 2:1)</li>
+<li><b>Staw biodra</b>: Stały punkt przyłączenia (nie wizualizowany)</li>
+<li><b>Staw kolana</b>: Główny punkt artykulacji (czerwony wskaźnik)</li>
+<li><b>Staw kostki</b>: Orientacja efektora końcowego (niebieski wskaźnik)</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md9"></a>
+System współrzędnych:</h2>
+<ul>
+<li><b>Początek</b>: Punkt przyłączenia biodra (środek-lewa część widgetu)</li>
+<li><b>Zero stopni</b>: Wskazujący w górę (pozycja 12:00)</li>
+<li><b>Dodatni obrót</b>: Zgodnie z ruchem wskazówek zegara od pozycji zerowej</li>
+<li><b>Interpretacja kąta</b>: 90° = poziomo, 180° = w dół</li>
+</ul>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTopView.html" title="Widget wizualizacji z lotu ptaka pokazujący kompletną postawę robota hexapod.">TopView</a> </dd>
+<dd>
+<a class="el" href="classMainWindow.html#a30f79beabf8bb9fdc312d9906c1527bc" title="Obsłuż zmianę wyboru nogi w widoku bocznym.">MainWindow::onLegSelectionChanged()</a></dd></dl>
+<p>Przykład użycia: </p><div class="fragment"><div class="line"><a class="code hl_class" href="classSideView.html">SideView</a> *widokBoczny = <span class="keyword">new</span> <a class="code hl_class" href="classSideView.html">SideView</a>(parent);</div>
+<div class="line">widokBoczny-&gt;<a class="code hl_slot" href="classSideView.html#a26adcc66bd5a474a6d3752ff8d9e9de1">setActiveLeg</a>(2);           <span class="comment">// Wybierz nogę 3 do wyświetlenia</span></div>
+<div class="line">widokBoczny-&gt;<a class="code hl_slot" href="classSideView.html#a076854ad6805568755987811f7629003">setJointAngles</a>(45, 120);   <span class="comment">// Ustaw kolano=45°, kostka=120°</span></div>
+<div class="ttc" id="aclassSideView_html"><div class="ttname"><a href="classSideView.html">SideView</a></div><div class="ttdoc">Widget wizualizacji widoku bocznego dla szczegółowego badania nogi.</div><div class="ttdef"><b>Definition</b> <a href="sideview_8h_source.html#l00053">sideview.h:54</a></div></div>
+<div class="ttc" id="aclassSideView_html_a076854ad6805568755987811f7629003"><div class="ttname"><a href="classSideView.html#a076854ad6805568755987811f7629003">SideView::setJointAngles</a></div><div class="ttdeci">void setJointAngles(float knee, float ankle)</div><div class="ttdoc">Aktualizuj kąty stawów dla wizualizacji w czasie rzeczywistym.</div><div class="ttdef"><b>Definition</b> <a href="sideview_8cpp_source.html#l00069">sideview.cpp:69</a></div></div>
+<div class="ttc" id="aclassSideView_html_a26adcc66bd5a474a6d3752ff8d9e9de1"><div class="ttname"><a href="classSideView.html#a26adcc66bd5a474a6d3752ff8d9e9de1">SideView::setActiveLeg</a></div><div class="ttdeci">void setActiveLeg(int leg)</div><div class="ttdoc">Wybierz którą nogę wyświetlić</div><div class="ttdef"><b>Definition</b> <a href="sideview_8cpp_source.html#l00014">sideview.cpp:14</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="sideview_8h_source.html#l00053">53</a> of file <a class="el" href="sideview_8h_source.html">sideview.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a631d528a8d097deefc589fc68c457c98" name="a631d528a8d097deefc589fc68c457c98"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a631d528a8d097deefc589fc68c457c98">&#9670;&#160;</a></span>SideView()</h2>
@@ -177,10 +219,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Konstruktor widoku bocznego. </p>
+<p>Konstruktor - Inicjalizuje widget widoku bocznego. </p>
+<p>Tworzy widget widoku bocznego z domyślnymi ustawieniami i początkową pozą. Ustawia stały rozmiar widgetu zoptymalizowany dla wizualizacji nogi.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent</td><td>Wskaźnik na widget rodzica </td></tr>
+    <tr><td class="paramname">parent</td><td>Rodzic widget do zarządzania pamięcią </td></tr>
   </table>
   </dd>
 </dl>
@@ -193,9 +236,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   10</span>{</div>
 <div class="line"><span class="lineno">   11</span>    setFixedSize(400, 400);  <span class="comment">// Stały rozmiar widgetu (do testów)</span></div>
 <div class="line"><span class="lineno">   12</span>}</div>
-<div class="ttc" id="aclassSideView_html_a4abcc6a7cde672ce74d0ce046c6aa1b8"><div class="ttname"><a href="classSideView.html#a4abcc6a7cde672ce74d0ce046c6aa1b8">SideView::ankleAngle</a></div><div class="ttdeci">float ankleAngle</div><div class="ttdoc">Aktualny kąt kostki w stopniach.</div><div class="ttdef"><b>Definition</b> <a href="sideview_8h_source.html#l00048">sideview.h:48</a></div></div>
-<div class="ttc" id="aclassSideView_html_a9b811b96c16784ce2dbc5f04522f9c7b"><div class="ttname"><a href="classSideView.html#a9b811b96c16784ce2dbc5f04522f9c7b">SideView::activeLeg</a></div><div class="ttdeci">int activeLeg</div><div class="ttdoc">Indeks aktualnie wyświetlanej nogi (0-5)</div><div class="ttdef"><b>Definition</b> <a href="sideview_8h_source.html#l00046">sideview.h:46</a></div></div>
-<div class="ttc" id="aclassSideView_html_ae9538f9a5e658612ff71ef487a11199b"><div class="ttname"><a href="classSideView.html#ae9538f9a5e658612ff71ef487a11199b">SideView::kneeAngle</a></div><div class="ttdeci">float kneeAngle</div><div class="ttdoc">Aktualny kąt kolana w stopniach.</div><div class="ttdef"><b>Definition</b> <a href="sideview_8h_source.html#l00047">sideview.h:47</a></div></div>
+<div class="ttc" id="aclassSideView_html_a4abcc6a7cde672ce74d0ce046c6aa1b8"><div class="ttname"><a href="classSideView.html#a4abcc6a7cde672ce74d0ce046c6aa1b8">SideView::ankleAngle</a></div><div class="ttdeci">float ankleAngle</div><div class="ttdef"><b>Definition</b> <a href="sideview_8h_source.html#l00120">sideview.h:120</a></div></div>
+<div class="ttc" id="aclassSideView_html_a9b811b96c16784ce2dbc5f04522f9c7b"><div class="ttname"><a href="classSideView.html#a9b811b96c16784ce2dbc5f04522f9c7b">SideView::activeLeg</a></div><div class="ttdeci">int activeLeg</div><div class="ttdef"><b>Definition</b> <a href="sideview_8h_source.html#l00118">sideview.h:118</a></div></div>
+<div class="ttc" id="aclassSideView_html_ae9538f9a5e658612ff71ef487a11199b"><div class="ttname"><a href="classSideView.html#ae9538f9a5e658612ff71ef487a11199b">SideView::kneeAngle</a></div><div class="ttdeci">float kneeAngle</div><div class="ttdef"><b>Definition</b> <a href="sideview_8h_source.html#l00119">sideview.h:119</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -224,13 +267,17 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Obsługuje zdarzenie rysowania widgetu. </p>
+<p>Renderuj wizualizację nogi. </p>
+<p>Niestandardowa implementacja paint która rysuje kompletną strukturę nogi włączając przyłączenie ciała, udo, goleń i wskaźniki stawów. Używa wysokiej jakości renderowania z antyaliasingiem.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>Obiekt zdarzenia </td></tr>
+    <tr><td class="paramname">event</td><td>Zdarzenie paint (nieużywane)</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>Wywoływana automatycznie przez Qt gdy widget potrzebuje przemalowania </dd>
+<dd>
+Rysowanie jest zoptymalizowane dla płynnych aktualizacji w czasie rzeczywistym </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="sideview_8cpp_source.html#l00022">22</a> of file <a class="el" href="sideview_8cpp_source.html">sideview.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   23</span>{</div>
@@ -305,13 +352,19 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Wybiera, którą nogę rysować </p>
+<p>Wybierz którą nogę wyświetlić </p>
+<p>Zmienia aktywną nogę będącą wizualizowaną. To pozwala użytkownikowi badać każdą z 6 nóg indywidualnie dla szczegółowej analizy.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">leg</td><td>Numer nogi (0-5) </td></tr>
+    <tr><td class="paramname">leg</td><td>Indeks nogi (0-5, odpowiadający nogom 1-6)</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>Wybór nogi wpływa tylko na etykietę wyświetlania, nie na wizualizację </dd>
+<dd>
+Kąty stawów pozostają niezmienione przy przełączaniu nóg </dd>
+<dd>
+Nieprawidłowe numery nóg są ignorowane cicho </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="sideview_8cpp_source.html#l00014">14</a> of file <a class="el" href="sideview_8cpp_source.html">sideview.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   15</span>{</div>
@@ -357,14 +410,22 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Ustawia kąty kolana i kostki dla aktywnej nogi. </p>
+<p>Aktualizuj kąty stawów dla wizualizacji w czasie rzeczywistym. </p>
+<p>Ustawia kąty stawów kolana i kostki dla obecnie aktywnej nogi. Wizualizacja jest natychmiast aktualizowana aby odzwierciedlić nową pozę. Kąty stawów są interpretowane zgodnie z konwencjami robota.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">knee</td><td>Kąt kolana [°] </td></tr>
-    <tr><td class="paramname">ankle</td><td>Kąt kostki [°] </td></tr>
+    <tr><td class="paramname">knee</td><td>Kąt stawu kolana w stopniach (0° = prosto w górę, 90° = poziomo) </td></tr>
+    <tr><td class="paramname">ankle</td><td>Kąt stawu kostki w stopniach (względem segmentu goleni)</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>Kąty nie są ograniczane zakresem; ekstremalne wartości mogą produkować niezwykłe pozy </dd>
+<dd>
+Widget automatycznie przemalowuje się gdy kąty się zmieniają</dd></dl>
+<p>Przykładowe typowe zakresy:</p><ul>
+<li>Kolano: 30° do 120° (zgięte do wyprostowane)</li>
+<li>Kostka: 90° do 270° (do przodu do tyłu) </li>
+</ul>
 
 <p class="definition">Definition at line <a class="el" href="sideview_8cpp_source.html#l00069">69</a> of file <a class="el" href="sideview_8cpp_source.html">sideview.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   70</span>{</div>
@@ -395,10 +456,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Obecnie wybrany indeks nogi (0-5) </p>
 
-<p>Indeks aktualnie wyświetlanej nogi (0-5) </p>
-
-<p class="definition">Definition at line <a class="el" href="sideview_8h_source.html#l00046">46</a> of file <a class="el" href="sideview_8h_source.html">sideview.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sideview_8h_source.html#l00118">118</a> of file <a class="el" href="sideview_8h_source.html">sideview.h</a>.</p>
 
 </div>
 </div>
@@ -421,10 +481,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Aktualny kąt stawu kostki w stopniach </p>
 
-<p>Aktualny kąt kostki w stopniach. </p>
-
-<p class="definition">Definition at line <a class="el" href="sideview_8h_source.html#l00048">48</a> of file <a class="el" href="sideview_8h_source.html">sideview.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sideview_8h_source.html#l00120">120</a> of file <a class="el" href="sideview_8h_source.html">sideview.h</a>.</p>
 
 </div>
 </div>
@@ -447,10 +506,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Aktualny kąt stawu kolana w stopniach </p>
 
-<p>Aktualny kąt kolana w stopniach. </p>
-
-<p class="definition">Definition at line <a class="el" href="sideview_8h_source.html#l00047">47</a> of file <a class="el" href="sideview_8h_source.html">sideview.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sideview_8h_source.html#l00119">119</a> of file <a class="el" href="sideview_8h_source.html">sideview.h</a>.</p>
 
 </div>
 </div>

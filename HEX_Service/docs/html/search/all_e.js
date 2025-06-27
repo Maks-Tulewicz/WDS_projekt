@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['packetcount_0',['packetCount',['../structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d',1,'ServoFrame']]],
-  ['packets_1',['packets',['../namespacegenerate__comm__data.html#a78102381336c1e1ebcf487d4cdb51c6b',1,'generate_comm_data']]],
-  ['paintevent_2',['paintevent',['../classSideView.html#a83afef3d90d976cac674bfb43d194c52',1,'SideView::paintEvent()'],['../classTopView.html#a1e9e126c0ee64da5ac11c2833659d5c7',1,'TopView::paintEvent()']]],
-  ['pausesimulation_3',['pauseSimulation',['../classDataSimulator.html#ac0872ead237e22ffc9beb0dc935a07a8',1,'DataSimulator']]],
-  ['payload_4',['payload',['../namespacegenerate__comm__data.html#a69d1fc6ec4d0c532d7a0499e5a788000',1,'generate_comm_data']]],
-  ['perseries_5',['perSeries',['../classFmQualityView.html#a943059ae55d87933950ad32042352c41',1,'FmQualityView']]],
-  ['plaintextedit_6',['plainTextEdit',['../classUi__MainWindow.html#a6e290c2eca03b98b6f379c71910c0ed6',1,'Ui_MainWindow']]],
-  ['platform_5fid_7',['PLATFORM_ID',['../CMakeCXXCompilerId_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'CMakeCXXCompilerId.cpp']]]
+  ['onexternalframe_0',['onExternalFrame',['../classDataSimulator.html#a474aa2730951e1b5734a4c4ce6b9093c',1,'DataSimulator']]],
+  ['onlanguagechanged_1',['onLanguageChanged',['../classMainWindow.html#ab8a6d8ac7e6344219cefbe1f0af6271f',1,'MainWindow']]],
+  ['onlegselectionchanged_2',['onLegSelectionChanged',['../classMainWindow.html#a30f79beabf8bb9fdc312d9906c1527bc',1,'MainWindow']]],
+  ['onreconnectclicked_3',['onReconnectClicked',['../classMainWindow.html#a962064e0a5474d210a24a6fba3f1ecf0',1,'MainWindow']]],
+  ['onsimdisconnect_4',['onSimDisconnect',['../classMainWindow.html#a0ee1a79271e4c7afc5928f2876010559',1,'MainWindow']]],
+  ['ontimertick_5',['onTimerTick',['../classDataSimulator.html#a3d8ebf21315906fae7a75d962adfc6a3',1,'DataSimulator']]],
+  ['organizacja_20serwomechanizmów_3a_6',['Organizacja serwomechanizmów:',['../classServoAngleManager.html#autotoc_md5',1,'']]],
+  ['orientacje_20bazowe_20w_20stopniach_20_3a_7',['Orientacje bazowe (w stopniach):',['../classTopView.html#autotoc_md13',1,'']]]
 ];

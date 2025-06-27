@@ -98,94 +98,322 @@ $(document).ready(function(){initNavTree('datareader_8cpp_source.html',''); init
 </div><!--header-->
 <div class="contents">
 <a href="datareader_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="datareader_8h.html">datareader.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;QtGlobal&gt;</span> <span class="comment">// qChecksum</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="classDataReader.html#afcacc75e63a519608eef8bd152490f30">    4</a></span><a class="code hl_function" href="classDataReader.html#afcacc75e63a519608eef8bd152490f30">DataReader::DataReader</a>(QObject *parent)</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    : QObject(parent)</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{}</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;QtGlobal&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QSerialPort&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QSerialPortInfo&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classDataReader.html#afcacc75e63a519608eef8bd152490f30">    7</a></span><a class="code hl_function" href="classDataReader.html#afcacc75e63a519608eef8bd152490f30">DataReader::DataReader</a>(QObject *parent)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    : QObject(parent)</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{}</div>
 </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classDataReader.html#ae90700be1801c10fae55ac4de0616dcc">    8</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classDataReader.html#ae90700be1801c10fae55ac4de0616dcc">DataReader::loadFromFile</a>(<span class="keyword">const</span> QString &amp;filePath)</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    QFile file(filePath);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">if</span> (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Nie udało się otworzyć pliku:&quot;</span> &lt;&lt; filePath;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.clear();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> = 0;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    QTextStream in(&amp;file);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">while</span> (!in.atEnd()) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        QString line = in.readLine().trimmed();</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">if</span> (!line.startsWith(<span class="charliteral">&#39;&lt;&#39;</span>) || !line.endsWith(<span class="charliteral">&#39;&gt;&#39;</span>)) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        QString core = line.mid(1, line.length() - 2);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        QStringList parts = core.split(<span class="charliteral">&#39;;&#39;</span>);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="comment">// 1 timestamp + 18 angles + speed + packets + crc = 22 elementy</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">if</span> (parts.size() != 22) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="comment">// Weryfikacja CRC: sum bytes mod 256</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        QByteArray raw = core.left(core.lastIndexOf(<span class="charliteral">&#39;;&#39;</span>)).toUtf8();</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">bool</span> okCrc = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">int</span> crc = parts.last().toInt(&amp;okCrc);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">if</span> (!okCrc) {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;CRC nie parsuje:&quot;</span> &lt;&lt; parts.last();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        uint8_t sum = 0;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> b : raw)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            sum = uint8_t(sum + <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(b));</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">if</span> (sum != <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(crc)) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;CRC niezgodne (obliczone=&quot;</span> &lt;&lt; sum &lt;&lt; <span class="stringliteral">&quot;odebrane=&quot;</span> &lt;&lt; crc &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a> frame;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">timeMs</a>     = parts[0].toInt();</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 18; ++i)</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>.append(parts[i].toFloat());</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">speed</a>       = parts[19].toFloat();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">packetCount</a> = parts[20].toInt();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.append(frame);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    file.close();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> !<a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.isEmpty();</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classDataReader.html#ae90700be1801c10fae55ac4de0616dcc">   11</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classDataReader.html#ae90700be1801c10fae55ac4de0616dcc">DataReader::loadFromFile</a>(<span class="keyword">const</span> QString &amp;filePath)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    QFile file(filePath);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">if</span> (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Failed to open file:&quot;</span> &lt;&lt; filePath;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.clear();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> = 0;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    QTextStream in(&amp;file);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">while</span> (!in.atEnd()) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        QString line = in.readLine().trimmed();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">if</span> (!line.startsWith(<span class="charliteral">&#39;&lt;&#39;</span>) || !line.endsWith(<span class="charliteral">&#39;&gt;&#39;</span>)) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        QString core = line.mid(1, line.length() - 2);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        QStringList parts = core.split(<span class="charliteral">&#39;;&#39;</span>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">if</span> (parts.size() != 24) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;Wrong number of parts:&quot;</span> &lt;&lt; parts.size() &lt;&lt; <span class="stringliteral">&quot;(expected 24)&quot;</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="comment">// CRC verification: sum of bytes mod 256</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        QByteArray raw = core.left(core.lastIndexOf(<span class="charliteral">&#39;;&#39;</span>)).toUtf8();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordtype">bool</span> okCrc = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">int</span> crc = parts[23].toInt(&amp;okCrc);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">if</span> (!okCrc) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;CRC parsing failed:&quot;</span> &lt;&lt; parts[23];</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        uint8_t sum = 0;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> b : raw)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            sum = uint8_t(sum + <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(b));</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">if</span> (sum != <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(crc)) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;CRC mismatch (calculated=&quot;</span> &lt;&lt; sum &lt;&lt; <span class="stringliteral">&quot;received=&quot;</span> &lt;&lt; crc &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a> frame;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">timeMs</a> = parts[0].toInt();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 18; ++i)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>.append(parts[i].toFloat());</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">speed</a> = parts[19].toFloat();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">packetCount</a> = parts[20].toInt();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="comment">// Parse FM data</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a080a364fa0e879c7dc0ab2a55fd898cb">rssi</a> = parts[21].toFloat();  <span class="comment">// RSSI in dBm</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a107fa6239efb6e4b71c3bfeda9499918">per</a> = parts[22].toFloat();   <span class="comment">// PER in %</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.append(frame);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    file.close();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> !<a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.isEmpty();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classDataReader.html#a404003dfbe7d988e49bccdea9784c90a">   58</a></span><span class="keyword">const</span> <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a>* <a class="code hl_function" href="classDataReader.html#a404003dfbe7d988e49bccdea9784c90a">DataReader::next</a>()</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.isEmpty()) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a>* f = &amp;<a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>[<a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a>];</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> = (<a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> + 1) % <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.size();</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> f;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classDataReader.html#a404003dfbe7d988e49bccdea9784c90a">   68</a></span><span class="keyword">const</span> <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a>* <a class="code hl_function" href="classDataReader.html#a404003dfbe7d988e49bccdea9784c90a">DataReader::next</a>()</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.isEmpty()) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a>* f = &amp;<a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>[<a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a>];</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> = (<a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> + 1) % <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.size();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">return</span> f;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
 </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classDataReader.html#a998814f9ba73f3773bb3007047ecbcaa">   66</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDataReader.html#a998814f9ba73f3773bb3007047ecbcaa">DataReader::reset</a>()</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> = 0;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classDataReader.html#a998814f9ba73f3773bb3007047ecbcaa">   76</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDataReader.html#a998814f9ba73f3773bb3007047ecbcaa">DataReader::reset</a>()</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>{</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> = 0;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
 </div>
-<div class="ttc" id="aclassDataReader_html_a404003dfbe7d988e49bccdea9784c90a"><div class="ttname"><a href="classDataReader.html#a404003dfbe7d988e49bccdea9784c90a">DataReader::next</a></div><div class="ttdeci">const ServoFrame * next()</div><div class="ttdoc">Zwraca następną ramkę (zawija w pętli).</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00058">datareader.cpp:58</a></div></div>
-<div class="ttc" id="aclassDataReader_html_a535e234fcb0bf665470cc509cd377500"><div class="ttname"><a href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">DataReader::frames</a></div><div class="ttdeci">QVector&lt; ServoFrame &gt; frames</div><div class="ttdoc">Bufor przechowujący wczytane ramki danych.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00052">datareader.h:52</a></div></div>
-<div class="ttc" id="aclassDataReader_html_a653d5079f7a259e0344ea943dde4d977"><div class="ttname"><a href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">DataReader::currentIndex</a></div><div class="ttdeci">int currentIndex</div><div class="ttdoc">Indeks aktualnie przetwarzanej ramki.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00053">datareader.h:53</a></div></div>
-<div class="ttc" id="aclassDataReader_html_a998814f9ba73f3773bb3007047ecbcaa"><div class="ttname"><a href="classDataReader.html#a998814f9ba73f3773bb3007047ecbcaa">DataReader::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Resetuje odczyt do pierwszej ramki.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00066">datareader.cpp:66</a></div></div>
-<div class="ttc" id="aclassDataReader_html_ae90700be1801c10fae55ac4de0616dcc"><div class="ttname"><a href="classDataReader.html#ae90700be1801c10fae55ac4de0616dcc">DataReader::loadFromFile</a></div><div class="ttdeci">bool loadFromFile(const QString &amp;filePath)</div><div class="ttdoc">Wczytuje ramki w formacie &lt;...;CRC&gt; i weryfikuje CRC.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00008">datareader.cpp:8</a></div></div>
-<div class="ttc" id="aclassDataReader_html_afcacc75e63a519608eef8bd152490f30"><div class="ttname"><a href="classDataReader.html#afcacc75e63a519608eef8bd152490f30">DataReader::DataReader</a></div><div class="ttdeci">DataReader(QObject *parent=nullptr)</div><div class="ttdoc">Konstruktor klasy DataReader.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00004">datareader.cpp:4</a></div></div>
-<div class="ttc" id="adatareader_8h_html"><div class="ttname"><a href="datareader_8h.html">datareader.h</a></div></div>
-<div class="ttc" id="astructServoFrame_html"><div class="ttname"><a href="structServoFrame.html">ServoFrame</a></div><div class="ttdoc">Pojedyncza ramka danych z hexapoda.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00015">datareader.h:15</a></div></div>
-<div class="ttc" id="astructServoFrame_html_a9e3f24998bd527d51ad3adff5c695901"><div class="ttname"><a href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">ServoFrame::speed</a></div><div class="ttdeci">float speed</div><div class="ttdoc">Prędkość transmisji.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00018">datareader.h:18</a></div></div>
-<div class="ttc" id="astructServoFrame_html_ab81dd8d7c2efd68078a6abef4d1794f4"><div class="ttname"><a href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">ServoFrame::angles</a></div><div class="ttdeci">QVector&lt; float &gt; angles</div><div class="ttdoc">18 kątów nóg</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00017">datareader.h:17</a></div></div>
-<div class="ttc" id="astructServoFrame_html_ac3ff952b169f223496dcd8e3c8b2b08d"><div class="ttname"><a href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">ServoFrame::packetCount</a></div><div class="ttdeci">int packetCount</div><div class="ttdoc">Liczba przesłanych pakietów.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00019">datareader.h:19</a></div></div>
-<div class="ttc" id="astructServoFrame_html_ad3ed851e57d10a3ea98ee0c7efb15c81"><div class="ttname"><a href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">ServoFrame::timeMs</a></div><div class="ttdeci">int timeMs</div><div class="ttdoc">Czas w ms.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00016">datareader.h:16</a></div></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classDataReader.html#a3aeab5a503c98da3d7a93a8a9c4bef0d">   81</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classDataReader.html#a3aeab5a503c98da3d7a93a8a9c4bef0d">DataReader::loadFromDevice</a>(QIODevice* device)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>{</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.clear();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> = 0;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">while</span> (device-&gt;canReadLine()) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        QString line = QString::fromUtf8(device-&gt;readLine()).trimmed();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">if</span> (!line.startsWith(<span class="charliteral">&#39;&lt;&#39;</span>) || !line.endsWith(<span class="charliteral">&#39;&gt;&#39;</span>)) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        QString core = line.mid(1, line.length() - 2);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        QStringList parts = core.split(<span class="charliteral">&#39;;&#39;</span>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">if</span> (parts.size() != 24) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        QByteArray raw = core.left(core.lastIndexOf(<span class="charliteral">&#39;;&#39;</span>)).toUtf8();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordtype">bool</span> okCrc = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordtype">int</span> crc = parts[23].toInt(&amp;okCrc);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">if</span> (!okCrc) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        uint8_t sum = 0;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> b : raw)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            sum = uint8_t(sum + <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(b));</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordflow">if</span> (sum != <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(crc)) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a> frame;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">timeMs</a> = parts[0].toInt();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 18; ++i)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>.append(parts[i].toFloat());</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">speed</a> = parts[19].toFloat();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">packetCount</a> = parts[20].toInt();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="comment">// Parse FM data</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a080a364fa0e879c7dc0ab2a55fd898cb">rssi</a> = parts[21].toFloat();</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a107fa6239efb6e4b71c3bfeda9499918">per</a> = parts[22].toFloat();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.append(frame);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">return</span> !<a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.isEmpty();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="foldopen" id="foldopen00121" data-start="{" data-end="}">
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classDataReader.html#afee3c3c0fbb915c2aa69a0db7218f661">  121</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDataReader.html#afee3c3c0fbb915c2aa69a0db7218f661">DataReader::setSerialDevice</a>(QIODevice* device)</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>{</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;DataReader::setSerialDevice() called with device:&quot;</span> &lt;&lt; device;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a>) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Disconnecting previous device&quot;</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        disconnect(<a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a>, <span class="keyword">nullptr</span>, <span class="keyword">this</span>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a> = device;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordflow">if</span> (!device) {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Device is nullptr!&quot;</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="comment">// Configure serial port (if it&#39;s QSerialPort)</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">if</span> (QSerialPort* serialPort = qobject_cast&lt;QSerialPort*&gt;(device)) {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Configuring QSerialPort&quot;</span>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        serialPort-&gt;setBaudRate(QSerialPort::Baud115200);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        serialPort-&gt;setDataBits(QSerialPort::Data8);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        serialPort-&gt;setParity(QSerialPort::NoParity);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        serialPort-&gt;setStopBits(QSerialPort::OneStop);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        serialPort-&gt;setFlowControl(QSerialPort::NoFlowControl);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Device is QFile, not QSerialPort&quot;</span>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="comment">// Check if device is open</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordflow">if</span> (!device-&gt;isOpen()) {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Device is not open!&quot;</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Device is open, checking readability...&quot;</span>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;   - isReadable():&quot;</span> &lt;&lt; device-&gt;isReadable();</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;   - bytesAvailable():&quot;</span> &lt;&lt; device-&gt;bytesAvailable();</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a>.clear();</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="comment">// Connect readyRead signal</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    connect(<a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a>, &amp;QIODevice::readyRead, <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classDataReader.html#a782b2a15780cca98eb55cd92a7c574b4">DataReader::handleSerialData</a>, Qt::DirectConnection);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Connected readyRead signal&quot;</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="comment">// For QFile - check if data is already available</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordflow">if</span> (device-&gt;bytesAvailable() &gt; 0) {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Data already available, calling handleSerialData()&quot;</span>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        QTimer::singleShot(100, <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classDataReader.html#a782b2a15780cca98eb55cd92a7c574b4">DataReader::handleSerialData</a>);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    }</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="comment">// Add timer for periodic checking (workaround for QFile)</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    QTimer *checkTimer = <span class="keyword">new</span> QTimer(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    connect(checkTimer, &amp;QTimer::timeout, <span class="keyword">this</span>, [<span class="keyword">this</span>]() {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a> &amp;&amp; <a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a>-&gt;bytesAvailable() &gt; 0) {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            qDebug() &lt;&lt; <span class="stringliteral">&quot;Timer detected data, calling handleSerialData()&quot;</span>;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            handleSerialData();</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        }</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    });</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    checkTimer-&gt;start(100); <span class="comment">// Check every 100ms</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>}</div>
+</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="foldopen" id="foldopen00181" data-start="{" data-end="}">
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="classDataReader.html#a782b2a15780cca98eb55cd92a7c574b4">  181</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="classDataReader.html#a782b2a15780cca98eb55cd92a7c574b4">DataReader::handleSerialData</a>()</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>{</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;handleSerialData() CALLED!&quot;</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a>) {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Serial device is nullptr in handleSerialData()&quot;</span>;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    }</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    QByteArray newData = <a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a>-&gt;readAll();</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Read&quot;</span> &lt;&lt; newData.size() &lt;&lt; <span class="stringliteral">&quot;bytes from device&quot;</span>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordflow">if</span> (newData.isEmpty()) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;No data read from device&quot;</span>;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="comment">// Show first 100 characters of data</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    QString dataPreview = QString::fromUtf8(newData.left(100));</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Data preview:&quot;</span> &lt;&lt; dataPreview;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a> += QString::fromUtf8(newData);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Buffer size after append:&quot;</span> &lt;&lt; <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a>.size();</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordtype">int</span> frameCount = 0;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <span class="keywordtype">int</span> start = <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a>.indexOf(<span class="charliteral">&#39;&lt;&#39;</span>);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordtype">int</span> end   = <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a>.indexOf(<span class="charliteral">&#39;&gt;&#39;</span>, start);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <span class="keywordflow">if</span> (start == -1 || end == -1) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        QString frameStr = <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a>.mid(start + 1, end - start - 1);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a>.remove(0, end + 1);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        frameCount++;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Processing frame #&quot;</span> &lt;&lt; frameCount;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   Content:&quot;</span> &lt;&lt; frameStr.left(50) + <span class="stringliteral">&quot;...&quot;</span>;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        QStringList parts = frameStr.split(<span class="charliteral">&#39;;&#39;</span>);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        <span class="keywordflow">if</span> (parts.size() != 24) {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;Wrong number of parts:&quot;</span> &lt;&lt; parts.size() &lt;&lt; <span class="stringliteral">&quot;(expected 24)&quot;</span>;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            qDebug() &lt;&lt; <span class="stringliteral">&quot;   Parts:&quot;</span> &lt;&lt; parts;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        }</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="comment">// Calculate CRC from parts without last element (which is CRC)</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        QByteArray raw = frameStr.left(frameStr.lastIndexOf(<span class="charliteral">&#39;;&#39;</span>)).toUtf8();</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <span class="keywordtype">bool</span> okCrc = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        <span class="keywordtype">int</span> receivedCrc = parts[23].toInt(&amp;okCrc);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        <span class="keywordflow">if</span> (!okCrc) {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;CRC cannot be parsed:&quot;</span> &lt;&lt; parts[23];</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <span class="comment">// Calculate CRC</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        uint8_t sum = 0;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> b : raw) {</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            sum = uint8_t(sum + <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(b));</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        }</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        uint8_t calculatedCrc = sum;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        <span class="comment">// Debug info for each frame</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;CRC Debug:&quot;</span>;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   Raw data length:&quot;</span> &lt;&lt; raw.size() &lt;&lt; <span class="stringliteral">&quot;bytes&quot;</span>;</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   Calculated CRC:&quot;</span> &lt;&lt; calculatedCrc;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   Received CRC:&quot;</span> &lt;&lt; receivedCrc;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   Match:&quot;</span> &lt;&lt; (calculatedCrc == receivedCrc ? <span class="stringliteral">&quot;YES&quot;</span> : <span class="stringliteral">&quot;NO&quot;</span>);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="keywordflow">if</span> (calculatedCrc != <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(receivedCrc)) {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;CRC mismatch! Calculated:&quot;</span> &lt;&lt; calculatedCrc</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                       &lt;&lt; <span class="stringliteral">&quot;Received:&quot;</span> &lt;&lt; receivedCrc</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                       &lt;&lt; <span class="stringliteral">&quot;Frame:&quot;</span> &lt;&lt; frameStr.left(30) + <span class="stringliteral">&quot;...&quot;</span>;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>            <span class="comment">// TEMPORARILY CONTINUE DESPITE CRC ERROR</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            qDebug() &lt;&lt; <span class="stringliteral">&quot;CONTINUING DESPITE CRC ERROR (temporary debug mode)&quot;</span>;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            <span class="comment">// continue;  // commented out temporarily</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        }</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        <span class="comment">// CRC OK (or ignored) - create frame</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a> frame;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">timeMs</a> = parts[0].toInt();</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 18; ++i)</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>            frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>.append(parts[i].toFloat());</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">speed</a> = parts[19].toFloat();</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">packetCount</a> = parts[20].toInt();</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        <span class="comment">// Parse FM data</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a080a364fa0e879c7dc0ab2a55fd898cb">rssi</a> = parts[21].toFloat();</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a107fa6239efb6e4b71c3bfeda9499918">per</a> = parts[22].toFloat();</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Frame created successfully - emitting newFrameReady&quot;</span>;</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   TimeMs:&quot;</span> &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">timeMs</a>;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   First 3 angles:&quot;</span> &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>[0] &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>[1] &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>[2];</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   Speed:&quot;</span> &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">speed</a>;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   PacketCount:&quot;</span> &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">packetCount</a>;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   FM: RSSI:&quot;</span> &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#a080a364fa0e879c7dc0ab2a55fd898cb">rssi</a> &lt;&lt; <span class="stringliteral">&quot;dBm, PER:&quot;</span> &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#a107fa6239efb6e4b71c3bfeda9499918">per</a> &lt;&lt; <span class="stringliteral">&quot;%&quot;</span>;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        emit <a class="code hl_signal" href="classDataReader.html#afbfc994307c14fe0405d2a2e58d9b00f">newFrameReady</a>(frame);</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Signal newFrameReady emitted!&quot;</span>;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    }</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Processed&quot;</span> &lt;&lt; frameCount &lt;&lt; <span class="stringliteral">&quot;frames in this iteration&quot;</span>;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Remaining buffer size:&quot;</span> &lt;&lt; <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a>.size();</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>}</div>
+</div>
+<div class="ttc" id="aclassDataReader_html_a3aeab5a503c98da3d7a93a8a9c4bef0d"><div class="ttname"><a href="classDataReader.html#a3aeab5a503c98da3d7a93a8a9c4bef0d">DataReader::loadFromDevice</a></div><div class="ttdeci">bool loadFromDevice(QIODevice *device)</div><div class="ttdoc">Wczytaj ramki z QIODevice (jednorazowy odczyt)</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00081">datareader.cpp:81</a></div></div>
+<div class="ttc" id="aclassDataReader_html_a404003dfbe7d988e49bccdea9784c90a"><div class="ttname"><a href="classDataReader.html#a404003dfbe7d988e49bccdea9784c90a">DataReader::next</a></div><div class="ttdeci">const ServoFrame * next()</div><div class="ttdoc">Pobierz następną ramkę z wczytanych danych.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00068">datareader.cpp:68</a></div></div>
+<div class="ttc" id="aclassDataReader_html_a535e234fcb0bf665470cc509cd377500"><div class="ttname"><a href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">DataReader::frames</a></div><div class="ttdeci">QVector&lt; ServoFrame &gt; frames</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00174">datareader.h:174</a></div></div>
+<div class="ttc" id="aclassDataReader_html_a653d5079f7a259e0344ea943dde4d977"><div class="ttname"><a href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">DataReader::currentIndex</a></div><div class="ttdeci">int currentIndex</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00175">datareader.h:175</a></div></div>
+<div class="ttc" id="aclassDataReader_html_a782b2a15780cca98eb55cd92a7c574b4"><div class="ttname"><a href="classDataReader.html#a782b2a15780cca98eb55cd92a7c574b4">DataReader::handleSerialData</a></div><div class="ttdeci">void handleSerialData()</div><div class="ttdoc">Obsłuż przychodzące dane szeregowe.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00181">datareader.cpp:181</a></div></div>
+<div class="ttc" id="aclassDataReader_html_a998814f9ba73f3773bb3007047ecbcaa"><div class="ttname"><a href="classDataReader.html#a998814f9ba73f3773bb3007047ecbcaa">DataReader::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Zresetuj iterator ramek do początku.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00076">datareader.cpp:76</a></div></div>
+<div class="ttc" id="aclassDataReader_html_ab44f4df95e405954a564ff61c97cda9c"><div class="ttname"><a href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">DataReader::serial</a></div><div class="ttdeci">QIODevice * serial</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00176">datareader.h:176</a></div></div>
+<div class="ttc" id="aclassDataReader_html_ae85e24c18e16452e8af88864d2dc1a12"><div class="ttname"><a href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">DataReader::buffer</a></div><div class="ttdeci">QString buffer</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00177">datareader.h:177</a></div></div>
+<div class="ttc" id="aclassDataReader_html_ae90700be1801c10fae55ac4de0616dcc"><div class="ttname"><a href="classDataReader.html#ae90700be1801c10fae55ac4de0616dcc">DataReader::loadFromFile</a></div><div class="ttdeci">bool loadFromFile(const QString &amp;filePath)</div><div class="ttdoc">Wczytaj ramki serwomechanizmów z pliku.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00011">datareader.cpp:11</a></div></div>
+<div class="ttc" id="aclassDataReader_html_afbfc994307c14fe0405d2a2e58d9b00f"><div class="ttname"><a href="classDataReader.html#afbfc994307c14fe0405d2a2e58d9b00f">DataReader::newFrameReady</a></div><div class="ttdeci">void newFrameReady(const ServoFrame &amp;frame)</div><div class="ttdoc">Sygnał emitowany gdy nowa ramka jest odebrana z urządzenia szeregowego.</div><div class="ttdef"><b>Definition</b> <a href="moc__datareader_8cpp_source.html#l00139">moc_datareader.cpp:139</a></div></div>
+<div class="ttc" id="aclassDataReader_html_afcacc75e63a519608eef8bd152490f30"><div class="ttname"><a href="classDataReader.html#afcacc75e63a519608eef8bd152490f30">DataReader::DataReader</a></div><div class="ttdeci">DataReader(QObject *parent=nullptr)</div><div class="ttdoc">Konstruktor.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00007">datareader.cpp:7</a></div></div>
+<div class="ttc" id="aclassDataReader_html_afee3c3c0fbb915c2aa69a0db7218f661"><div class="ttname"><a href="classDataReader.html#afee3c3c0fbb915c2aa69a0db7218f661">DataReader::setSerialDevice</a></div><div class="ttdeci">void setSerialDevice(QIODevice *device)</div><div class="ttdoc">Ustaw urządzenie szeregowe do ciągłego monitorowania danych.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00121">datareader.cpp:121</a></div></div>
+<div class="ttc" id="adatareader_8h_html"><div class="ttname"><a href="datareader_8h.html">datareader.h</a></div><div class="ttdoc">Odczyt i parsowanie danych ramek serwomechanizmów hexapoda.</div></div>
+<div class="ttc" id="astructServoFrame_html"><div class="ttname"><a href="structServoFrame.html">ServoFrame</a></div><div class="ttdoc">Struktura reprezentująca pojedynczą ramkę danych z robota hexapod.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00029">datareader.h:29</a></div></div>
+<div class="ttc" id="astructServoFrame_html_a080a364fa0e879c7dc0ab2a55fd898cb"><div class="ttname"><a href="structServoFrame.html#a080a364fa0e879c7dc0ab2a55fd898cb">ServoFrame::rssi</a></div><div class="ttdeci">float rssi</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00034">datareader.h:34</a></div></div>
+<div class="ttc" id="astructServoFrame_html_a107fa6239efb6e4b71c3bfeda9499918"><div class="ttname"><a href="structServoFrame.html#a107fa6239efb6e4b71c3bfeda9499918">ServoFrame::per</a></div><div class="ttdeci">float per</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00035">datareader.h:35</a></div></div>
+<div class="ttc" id="astructServoFrame_html_a9e3f24998bd527d51ad3adff5c695901"><div class="ttname"><a href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">ServoFrame::speed</a></div><div class="ttdeci">float speed</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00032">datareader.h:32</a></div></div>
+<div class="ttc" id="astructServoFrame_html_ab81dd8d7c2efd68078a6abef4d1794f4"><div class="ttname"><a href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">ServoFrame::angles</a></div><div class="ttdeci">QVector&lt; float &gt; angles</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00031">datareader.h:31</a></div></div>
+<div class="ttc" id="astructServoFrame_html_ac3ff952b169f223496dcd8e3c8b2b08d"><div class="ttname"><a href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">ServoFrame::packetCount</a></div><div class="ttdeci">int packetCount</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00033">datareader.h:33</a></div></div>
+<div class="ttc" id="astructServoFrame_html_ad3ed851e57d10a3ea98ee0c7efb15c81"><div class="ttname"><a href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">ServoFrame::timeMs</a></div><div class="ttdeci">int timeMs</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00030">datareader.h:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

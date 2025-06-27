@@ -466,6 +466,7 @@ var moc__predefs_8h =
     [ "QT_CHARTS_LIB", "moc__predefs_8h.html#a5eb0efb2e5a2488208f03d28381251cf", null ],
     [ "QT_CORE_LIB", "moc__predefs_8h.html#a3fdaeff4a929898125f060b951479a85", null ],
     [ "QT_GUI_LIB", "moc__predefs_8h.html#a20aa38ff6d76d6980b3c6365892110f1", null ],
+    [ "QT_SERIALPORT_LIB", "moc__predefs_8h.html#a4a3e8dc5920f3adc0f3af437a253434d", null ],
     [ "QT_WIDGETS_LIB", "moc__predefs_8h.html#a3764f041b8bf4c5ebd0bf19c071f416c", null ],
     [ "SIZEOF_DPTR", "moc__predefs_8h.html#addad5b57ed33bc5c79361574d9e03c06", null ],
     [ "unix", "moc__predefs_8h.html#a4e65214f450ef6326b96b52e6dd5714b", null ]

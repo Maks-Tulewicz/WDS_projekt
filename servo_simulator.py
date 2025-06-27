@@ -7,8 +7,8 @@ for testing the hexapod control application.
 
 Data format: <timestamp;angle1;angle2;...;angle18;speed;packet_count;rssi;per;crc>
 
-Author: [Your name]
-Date: [Date]
+Author: Maksymilian Tulewicz
+
 """
 
 import serial

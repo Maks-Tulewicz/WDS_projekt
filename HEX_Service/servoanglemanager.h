@@ -1,7 +1,6 @@
-
 /**
  * @file servoanglemanager.h
- * @brief Management system for servo angle display labels
+ * @brief System zarządzania etykietami wyświetlania kątów serwomechanizmów
  * @author Maksymilian Tulewicz
  * @date 2025
  * @version 1.0
@@ -15,39 +14,39 @@
 #include <QMap>
 
 /**
- * @brief Manager for servo angle display and GUI label updates
+ * @brief Manager do wyświetlania kątów serwomechanizmów i aktualizacji etykiet GUI
  *
- * ServoAngleManager provides a centralized system for managing the display
- * of servo angles in the GUI. It maintains mappings between logical servo
- * positions (leg/joint combinations) and their corresponding display labels,
- * enabling efficient updates when new angle data arrives.
+ * ServoAngleManager zapewnia scentralizowany system do zarządzania wyświetlaniem
+ * kątów serwomechanizmów w GUI. Utrzymuje mapowania między logicznymi pozycjami
+ * serwomechanizmów (kombinacje noga/staw) a odpowiadającymi im etykietami wyświetlania,
+ * umożliwiając efektywne aktualizacje gdy przychodzą nowe dane kątów.
  *
- * ## Servo Organization:
- * The hexapod robot has 18 servomotors organized as:
- * - **6 legs** (numbered 0-5, displayed as 1-6)
- * - **3 joints per leg**: Hip (0), Knee (1), Ankle (2)
- * - **Total**: 6 legs × 3 joints = 18 servomotors
+ * ## Organizacja serwomechanizmów:
+ * Robot hexapod ma 18 serwomotorów zorganizowanych jako:
+ * - **6 nóg** (numerowane 0-5, wyświetlane jako 1-6)
+ * - **3 stawy na nogę**: Biodro (0), Kolano (1), Kostka (2)
+ * - **Łącznie**: 6 nóg × 3 stawy = 18 serwomotorów
  *
- * ## Mapping System:
- * Each servo is identified by a unique string key in the format "leg_joint":
- * - "0_0" = Leg 1, Hip joint
- * - "0_1" = Leg 1, Knee joint
- * - "0_2" = Leg 1, Ankle joint
- * - "5_2" = Leg 6, Ankle joint
+ * ## System mapowania:
+ * Każdy serwomechanizm jest identyfikowany przez unikalny klucz łańcuchowy w formacie "noga_staw":
+ * - "0_0" = Noga 1, staw Biodra
+ * - "0_1" = Noga 1, staw Kolana
+ * - "0_2" = Noga 1, staw Kostki
+ * - "5_2" = Noga 6, staw Kostki
  *
  * @see MainWindow::updateServoGUI()
  * @see ServoFrame
  *
- * Example usage:
+ * Przykład użycia:
  * @code
  * ServoAngleManager manager;
  *
- * // Register GUI labels
- * manager.registerLabel(0, 0, ui->servo_0_0_label);  // Leg 1, Hip
- * manager.registerLabel(0, 1, ui->servo_0_1_label);  // Leg 1, Knee
+ * // Zarejestruj etykiety GUI
+ * manager.registerLabel(0, 0, ui->servo_0_0_label);  // Noga 1, Biodro
+ * manager.registerLabel(0, 1, ui->servo_0_1_label);  // Noga 1, Kolano
  *
- * // Update angles
- * manager.setAngle(0, 0, 45.5);  // Set Leg 1 Hip to 45.5°
+ * // Aktualizuj kąty
+ * manager.setAngle(0, 0, 45.5);  // Ustaw Biodro Nogi 1 na 45.5°
  * @endcode
  */
 class ServoAngleManager : public QObject
@@ -56,50 +55,51 @@ class ServoAngleManager : public QObject
 
 public:
     /**
-     * @brief Constructor
-     * @param parent Parent QObject for memory management
+     * @brief Konstruktor
+     * @param parent Rodzic QObject do zarządzania pamięcią
      */
     explicit ServoAngleManager(QObject *parent = nullptr);
 
     /**
-     * @brief Register a GUI label for servo angle display
+     * @brief Zarejestruj etykietę GUI dla wyświetlania kąta serwomechanizmu
      *
-     * Associates a QLabel widget with a specific servo position. The label
-     * will be automatically updated when setAngle() is called for this
-     * servo position.
+     * Kojarzy widget QLabel z określoną pozycją serwomechanizmu. Etykieta
+     * będzie automatycznie aktualizowana gdy setAngle() jest wywoływana dla tej
+     * pozycji serwomechanizmu.
      *
-     * @param leg Leg number (0-5, corresponding to legs 1-6 in GUI)
-     * @param joint Joint number (0=Hip, 1=Knee, 2=Ankle)
-     * @param label Pointer to QLabel widget that will display the angle
+     * @param leg Numer nogi (0-5, odpowiadający nogom 1-6 w GUI)
+     * @param joint Numer stawu (0=Biodro, 1=Kolano, 2=Kostka)
+     * @param label Wskaźnik do widgetu QLabel który będzie wyświetlał kąt
      *
-     * @note Label must remain valid for the lifetime of the manager
-     * @note Registering the same leg/joint combination overwrites previous registration
+     * @note Etykieta musi pozostać ważna przez czas życia managera
+     * @note Rejestracja tej samej kombinacji noga/staw nadpisuje poprzednią rejestrację
      *
      * @see setAngle()
      */
     void registerLabel(int leg, int joint, QLabel *label);
 
     /**
-     * @brief Update servo angle and refresh GUI display
+     * @brief Aktualizuj kąt serwomechanizmu i odśwież wyświetlacz GUI
      *
-     * Sets the angle for a specific servo and immediately updates the
-     * associated GUI label. The angle is displayed with one decimal place
-     * precision followed by the degree symbol (°).
+     * Ustawia kąt dla określonego serwomechanizmu i natychmiast aktualizuje
+     * skojarzoną etykietę GUI. Kąt jest wyświetlany z dokładnością do jednego miejsca po przecinku
+     * z symbolem stopnia (°).
      *
-     * @param leg Leg number (0-5)
-     * @param joint Joint number (0-2)
-     * @param angle Servo angle in degrees
+     * @param leg Numer nogi (0-5)
+     * @param joint Numer stawu (0-2)
+     * @param angle Kąt serwomechanizmu w stopniach
      *
-     * @note If no label is registered for this leg/joint, the call is ignored
-     * @note Angle values are displayed as-is without range validation
+     * @note Jeśli nie zarejestrowano etykiety dla tej kombinacji noga/staw, wywołanie jest ignorowane
+     * @note Wartości kątów są wyświetlane jak są bez walidacji zakresu
      *
-     * Display format: "45.5°", "-12.3°", "0.0°"
+     * Format wyświetlania: "45.5°", "-12.3°", "0.0°"
      *
      * @see registerLabel()
      */
     void setAngle(int leg, int joint, float angle);
 
 private:
-    QMap<QString, QLabel*> servoLabels;  /**< Mapping from "leg_joint" strings to QLabel pointers */
+    QMap<QString, QLabel*> servoLabels;  /**< Mapowanie łańcuchów "noga_staw" do wskaźników QLabel */
 };
-#endif
+
+#endif // SERVOANGLEMANAGER_H

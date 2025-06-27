@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,55,80,80"/>
+<area shape="rect" id="Node000001" href="$classDataReader.html" title="Klasa do odczytu i parsowania danych serwomechanizmów hexapoda." alt="" coords="155,5,254,31"/>
+<area shape="poly" id="edge3_Node000000_Node000001" title=" " alt="" coords="93,49,161,28,163,33,94,55"/>
+<area shape="rect" id="Node000002" href="$classDataSimulator.html" title="Kontroler symulacji i odtwarzania danych ramek serwomechanizmów hexapoda." alt="" coords="147,55,263,80"/>
+<area shape="poly" id="edge4_Node000000_Node000002" title=" " alt="" coords="94,65,146,65,146,70,94,70"/>
+<area shape="rect" id="Node000003" href="$classServoAngleManager.html" title="Manager do wyświetlania kątów serwomechanizmów i aktualizacji etykiet GUI." alt="" coords="128,104,281,129"/>
+<area shape="poly" id="edge5_Node000000_Node000003" title=" " alt="" coords="94,80,163,101,161,106,93,85"/>
+</map>

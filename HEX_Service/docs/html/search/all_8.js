@@ -1,9 +1,13 @@
 var searchData=
 [
-  ['info_5farch_0',['info_arch',['../CMakeCXXCompilerId_8cpp.html#a59647e99d304ed33b15cb284c27ed391',1,'CMakeCXXCompilerId.cpp']]],
-  ['info_5fcompiler_1',['info_compiler',['../CMakeCXXCompilerId_8cpp.html#a4b0efeb7a5d59313986b3a0390f050f6',1,'CMakeCXXCompilerId.cpp']]],
-  ['info_5flanguage_5fextensions_5fdefault_2',['info_language_extensions_default',['../CMakeCXXCompilerId_8cpp.html#a0f46a8a39e09d9b803c4766904fd7e99',1,'CMakeCXXCompilerId.cpp']]],
-  ['info_5flanguage_5fstandard_5fdefault_3',['info_language_standard_default',['../CMakeCXXCompilerId_8cpp.html#a4607cccf070750927b458473ca82c090',1,'CMakeCXXCompilerId.cpp']]],
-  ['info_5fplatform_4',['info_platform',['../CMakeCXXCompilerId_8cpp.html#a2321403dee54ee23f0c2fa849c60f7d4',1,'CMakeCXXCompilerId.cpp']]],
-  ['interval_5',['interval',['../classDataSimulator.html#a797b6f9bc6b20da7c52f188ba8068e42',1,'DataSimulator']]]
+  ['handlelogerror_0',['handleLogError',['../classMainWindow.html#a34d226cc8cf1fd9b33dcbafda0ce09ac',1,'MainWindow']]],
+  ['handlelogmessage_1',['handleLogMessage',['../classMainWindow.html#ab5db55e29324c1f07c4284a0e7c01c95',1,'MainWindow']]],
+  ['handleserialdata_2',['handleSerialData',['../classDataReader.html#a782b2a15780cca98eb55cd92a7c574b4',1,'DataReader']]],
+  ['hex_3',['HEX',['../CMakeCXXCompilerId_8cpp.html#a46d5d95daa1bef867bd0179594310ed5',1,'CMakeCXXCompilerId.cpp']]],
+  ['hipangles_4',['hipAngles',['../classTopView.html#a09e78719f5dd2b1e92c9436202adf370',1,'TopView']]],
+  ['horizontallayout_5',['horizontalLayout',['../classUi__MainWindow.html#acd6fdc9ebacc4b25b834162380d75ce8',1,'Ui_MainWindow']]],
+  ['horizontallayout_5f2_6',['horizontalLayout_2',['../classUi__MainWindow.html#a80867018070156432923d0266cc9fe25',1,'Ui_MainWindow']]],
+  ['horizontallayout_5f3_7',['horizontalLayout_3',['../classUi__MainWindow.html#a03ce63974cc69b067c91bbf285cceca8',1,'Ui_MainWindow']]],
+  ['horizontallayout_5f4_8',['horizontalLayout_4',['../classUi__MainWindow.html#ae183387a7d233b437a637b403ba39ffd',1,'Ui_MainWindow']]],
+  ['horizontallayout_5f6_9',['horizontalLayout_6',['../classUi__MainWindow.html#a1351e317cba7ca711b6b4d2212b6bf36',1,'Ui_MainWindow']]]
 ];

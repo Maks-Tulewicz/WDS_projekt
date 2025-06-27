@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "HEX_Service", "index.html", [
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -58,9 +59,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "CMakeCXXCompilerId_8cpp.html",
-"globals_h.html",
-"moc__predefs_8h.html#a6b5dca178c4ffe879cd624f9b17b9bd1",
-"moc__predefs_8h.html#af8ad1ebe1976b0e31d68f9d223690126"
+"globals_defs_a.html",
+"moc__predefs_8h.html#a6770e92cfa87964cfcf358a6358f5347",
+"moc__predefs_8h.html#af389192f04ad39f046990b2cd38806d9"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

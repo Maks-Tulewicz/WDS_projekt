@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('classFmQualityView.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
-<p>Widget do wizualizacji jakości łącza FM.  
+<p>Widget wykresu czasu rzeczywistego do monitorowania jakości łącza radiowego FM.  
  <a href="classFmQualityView.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>&gt;</code></p>
@@ -106,54 +106,88 @@ $(document).ready(function(){initNavTree('classFmQualityView.html',''); initResi
 Inheritance diagram for FmQualityView:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFmQualityView__inherit__graph.png" border="0" usemap="#aFmQualityView_inherit__map" alt="Inheritance graph"/></div>
+<map name="aFmQualityView_inherit__map" id="aFmQualityView_inherit__map">
+<area shape="rect" title="Widget wykresu czasu rzeczywistego do monitorowania jakości łącza radiowego FM." alt="" coords="5,79,128,104"/>
+<area shape="rect" title=" " alt="" coords="17,5,116,31"/>
+<area shape="poly" title=" " alt="" coords="69,44,69,79,64,79,64,44"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for FmQualityView:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFmQualityView__coll__graph.png" border="0" usemap="#aFmQualityView_coll__map" alt="Collaboration graph"/></div>
+<map name="aFmQualityView_coll__map" id="aFmQualityView_coll__map">
+<area shape="rect" title="Widget wykresu czasu rzeczywistego do monitorowania jakości łącza radiowego FM." alt="" coords="5,79,128,104"/>
+<area shape="rect" title=" " alt="" coords="17,5,116,31"/>
+<area shape="poly" title=" " alt="" coords="69,44,69,79,64,79,64,44"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:af1ae6334bcb5175f587c4a88afd30840" id="r_af1ae6334bcb5175f587c4a88afd30840"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFmQualityView.html#af1ae6334bcb5175f587c4a88afd30840">addMeasurement</a> (float rssi, float per)</td></tr>
-<tr class="memdesc:af1ae6334bcb5175f587c4a88afd30840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dodaje nową próbkę pomiaru do wykresu.  <br /></td></tr>
+<tr class="memdesc:af1ae6334bcb5175f587c4a88afd30840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dodaj nowy pomiar jakości do wykresu.  <br /></td></tr>
 <tr class="separator:af1ae6334bcb5175f587c4a88afd30840"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9cb703f42d4ebeef51c88819c4ae0c24" id="r_a9cb703f42d4ebeef51c88819c4ae0c24"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFmQualityView.html#a9cb703f42d4ebeef51c88819c4ae0c24">FmQualityView</a> (QWidget *parent=nullptr)</td></tr>
-<tr class="memdesc:a9cb703f42d4ebeef51c88819c4ae0c24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor widoku jakości.  <br /></td></tr>
+<tr class="memdesc:a9cb703f42d4ebeef51c88819c4ae0c24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor - Inicjalizuje wykres jakości FM.  <br /></td></tr>
 <tr class="separator:a9cb703f42d4ebeef51c88819c4ae0c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ad98c5eb8780de032b6b8aaaed6c41b0c" id="r_ad98c5eb8780de032b6b8aaaed6c41b0c"><td class="memItemLeft" align="right" valign="top">QSplineSeries *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">rssiSeries</a></td></tr>
-<tr class="memdesc:ad98c5eb8780de032b6b8aaaed6c41b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seria danych RSSI.  <br /></td></tr>
 <tr class="separator:ad98c5eb8780de032b6b8aaaed6c41b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a943059ae55d87933950ad32042352c41" id="r_a943059ae55d87933950ad32042352c41"><td class="memItemLeft" align="right" valign="top">QLineSeries *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">perSeries</a></td></tr>
-<tr class="memdesc:a943059ae55d87933950ad32042352c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seria danych PER.  <br /></td></tr>
 <tr class="separator:a943059ae55d87933950ad32042352c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb37b46b5832a524d478dc54b68a8830" id="r_acb37b46b5832a524d478dc54b68a8830"><td class="memItemLeft" align="right" valign="top">QValueAxis *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a></td></tr>
-<tr class="memdesc:acb37b46b5832a524d478dc54b68a8830"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oś czasu.  <br /></td></tr>
 <tr class="separator:acb37b46b5832a524d478dc54b68a8830"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9c97bdbfa97fb64eacead2ec720efa3" id="r_ae9c97bdbfa97fb64eacead2ec720efa3"><td class="memItemLeft" align="right" valign="top">QValueAxis *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">axisY1</a></td></tr>
-<tr class="memdesc:ae9c97bdbfa97fb64eacead2ec720efa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oś wartości RSSI.  <br /></td></tr>
 <tr class="separator:ae9c97bdbfa97fb64eacead2ec720efa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc49830475e0db8ad80b81c9490529ac" id="r_acc49830475e0db8ad80b81c9490529ac"><td class="memItemLeft" align="right" valign="top">QValueAxis *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">axisY2</a></td></tr>
-<tr class="memdesc:acc49830475e0db8ad80b81c9490529ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oś wartości PER.  <br /></td></tr>
 <tr class="separator:acc49830475e0db8ad80b81c9490529ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f6f6efaa6c4a72d669465294637a59e" id="r_a2f6f6efaa6c4a72d669465294637a59e"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFmQualityView.html#a2f6f6efaa6c4a72d669465294637a59e">t</a> = 0</td></tr>
-<tr class="memdesc:a2f6f6efaa6c4a72d669465294637a59e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualny czas w milisekundach.  <br /></td></tr>
 <tr class="separator:a2f6f6efaa6c4a72d669465294637a59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae90bbbdf84aef219bdbeebf6ffdcf629" id="r_ae90bbbdf84aef219bdbeebf6ffdcf629"><td class="memItemLeft" align="right" valign="top">const qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFmQualityView.html#ae90bbbdf84aef219bdbeebf6ffdcf629">windowSize</a> = 200</td></tr>
-<tr class="memdesc:ae90bbbdf84aef219bdbeebf6ffdcf629"><td class="mdescLeft">&#160;</td><td class="mdescRight">Szerokość okna wyświetlania w próbkach.  <br /></td></tr>
 <tr class="separator:ae90bbbdf84aef219bdbeebf6ffdcf629"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Widget do wizualizacji jakości łącza FM. </p>
-<p>Rysuje dwie serie: RSSI w dBm (jako gładki spline) oraz PER w % (jako przerywana linia) z dwiema osiami Y. </p>
-
-<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00017">17</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
+<div class="textblock"><p>Widget wykresu czasu rzeczywistego do monitorowania jakości łącza radiowego FM. </p>
+<p><a class="el" href="classFmQualityView.html" title="Widget wykresu czasu rzeczywistego do monitorowania jakości łącza radiowego FM.">FmQualityView</a> zapewnia profesjonalny wykres dwuosiowy do monitorowania jakości komunikacji radiowej FM w czasie rzeczywistym. Wyświetla dwie kluczowe metryki:</p><ul>
+<li><b>RSSI</b> (Wskaźnik Siły Sygnału Odbieranego) w dBm jako płynną krzywą</li>
+<li><b>PER</b> (Wskaźnik Błędów Pakietów) w procentach jako linię przerywaną</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md0"></a>
+Funkcje:</h2>
+<ul>
+<li><b>Projekt dwuosiowy</b> z niezależnym skalowaniem dla RSSI i PER</li>
+<li><b>Płynna interpolacja krzywej</b> dla wartości RSSI</li>
+<li><b>Przewijane okno czasowe</b> z konfigurowalną szerokością (domyślnie: 200 próbek)</li>
+<li><b>Profesjonalne stylowanie</b> z motywem Blue Cerulean i antyaliasingiem</li>
+<li><b>Automatyczne dopasowanie zakresu</b> na podstawie typowych wartości RF</li>
+<li><b>Interaktywny wykres</b> z możliwościami powiększania i przesuwania</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Specyfikacje techniczne:</h2>
+<ul>
+<li><b>Zakres RSSI</b>: -100 do 0 dBm (lewa oś Y)</li>
+<li><b>Zakres PER</b>: 0 do 100% (prawa oś Y)</li>
+<li><b>Częstotliwość aktualizacji</b>: Do 1000 Hz (rozdzielczość 1ms)</li>
+<li><b>Rozmiar okna</b>: 200 próbek (konfigurowalne)</li>
+<li><b>Retencja danych</b>: Automatyczne czyszczenie starych punktów danych</li>
+</ul>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classDataSimulator.html#ab349bacdfe864197fb8901335f9ba2c6" title="Sygnał emitowany z pomiarami jakości łącza FM.">DataSimulator::qualitySample()</a> </dd>
+<dd>
+<a class="el" href="structServoFrame.html" title="Struktura reprezentująca pojedynczą ramkę danych z robota hexapod.">ServoFrame</a></dd></dl>
+<p>Przykład użycia: </p><div class="fragment"><div class="line"><a class="code hl_class" href="classFmQualityView.html">FmQualityView</a> *wykres = <span class="keyword">new</span> <a class="code hl_class" href="classFmQualityView.html">FmQualityView</a>(parent);</div>
+<div class="line">connect(zrodloDanych, &amp;ZrodloDanych::aktualizacjaJakosci,</div>
+<div class="line">        wykres, &amp;<a class="code hl_slot" href="classFmQualityView.html#af1ae6334bcb5175f587c4a88afd30840">FmQualityView::addMeasurement</a>);</div>
+<div class="line"><span class="comment">// Wykres automatycznie aktualizuje się z nowymi danymi</span></div>
+<div class="ttc" id="aclassFmQualityView_html"><div class="ttname"><a href="classFmQualityView.html">FmQualityView</a></div><div class="ttdoc">Widget wykresu czasu rzeczywistego do monitorowania jakości łącza radiowego FM.</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00053">fmqualityview.h:54</a></div></div>
+<div class="ttc" id="aclassFmQualityView_html_af1ae6334bcb5175f587c4a88afd30840"><div class="ttname"><a href="classFmQualityView.html#af1ae6334bcb5175f587c4a88afd30840">FmQualityView::addMeasurement</a></div><div class="ttdeci">void addMeasurement(float rssi, float per)</div><div class="ttdoc">Dodaj nowy pomiar jakości do wykresu.</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8cpp_source.html#l00065">fmqualityview.cpp:65</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00053">53</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9cb703f42d4ebeef51c88819c4ae0c24" name="a9cb703f42d4ebeef51c88819c4ae0c24"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9cb703f42d4ebeef51c88819c4ae0c24">&#9670;&#160;</a></span>FmQualityView()</h2>
@@ -179,75 +213,76 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Konstruktor widoku jakości. </p>
+<p>Konstruktor - Inicjalizuje wykres jakości FM. </p>
+<p>Tworzy profesjonalny wykres dwuosiowy z zoptymalizowanymi ustawieniami do monitorowania jakości RF. Konfiguruje serie, osie, stylowanie i optymalizacje wydajności dla wyświetlania danych w czasie rzeczywistym.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent</td><td>Wskaźnik na widget rodzica </td></tr>
+    <tr><td class="paramname">parent</td><td>Rodzic widget do zarządzania pamięcią </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fmqualityview_8cpp_source.html#l00008">8</a> of file <a class="el" href="fmqualityview_8cpp_source.html">fmqualityview.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    9</span>    : QChartView(<span class="keyword">new</span> QChart(), parent),</div>
-<div class="line"><span class="lineno">   10</span>    <a class="code hl_variable" href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">rssiSeries</a>(<span class="keyword">new</span> QSplineSeries(<span class="keyword">this</span>)),</div>
-<div class="line"><span class="lineno">   11</span>    <a class="code hl_variable" href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">perSeries</a>(<span class="keyword">new</span> QLineSeries(<span class="keyword">this</span>)),</div>
-<div class="line"><span class="lineno">   12</span>    <a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>(<span class="keyword">new</span> QValueAxis(<span class="keyword">this</span>)),</div>
-<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">axisY1</a>(<span class="keyword">new</span> QValueAxis(<span class="keyword">this</span>)),</div>
-<div class="line"><span class="lineno">   14</span>    <a class="code hl_variable" href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">axisY2</a>(<span class="keyword">new</span> QValueAxis(<span class="keyword">this</span>))</div>
-<div class="line"><span class="lineno">   15</span>{</div>
-<div class="line"><span class="lineno">   16</span>    setRenderHint(QPainter::Antialiasing);</div>
-<div class="line"><span class="lineno">   17</span>    setInteractive(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>    <span class="keyword">auto</span> *c = chart();</div>
-<div class="line"><span class="lineno">   20</span>  <span class="comment">//  c-&gt;setTitle(&quot;FM Link Quality&quot;);</span></div>
-<div class="line"><span class="lineno">   21</span>    c-&gt;setAnimationOptions(QChart::SeriesAnimations);</div>
-<div class="line"><span class="lineno">   22</span>    c-&gt;setTheme(QChart::ChartThemeBlueCerulean);</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>    <span class="comment">// oś X</span></div>
-<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>-&gt;setTitleText(<span class="stringliteral">&quot;Czas [ms]&quot;</span>);</div>
-<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>-&gt;setLabelFormat(<span class="stringliteral">&quot;%d&quot;</span>);</div>
-<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>-&gt;setRange(0, <a class="code hl_variable" href="classFmQualityView.html#ae90bbbdf84aef219bdbeebf6ffdcf629">windowSize</a>);</div>
-<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>-&gt;setGridLineVisible(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   29</span>    c-&gt;addAxis(<a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>, Qt::AlignBottom);</div>
-<div class="line"><span class="lineno">   30</span> </div>
-<div class="line"><span class="lineno">   31</span>    <span class="comment">// oś Y1 (RSSI)</span></div>
-<div class="line"><span class="lineno">   32</span>    <a class="code hl_variable" href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">axisY1</a>-&gt;setTitleText(<span class="stringliteral">&quot;RSSI [dBm]&quot;</span>);</div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_variable" href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">axisY1</a>-&gt;setLabelFormat(<span class="stringliteral">&quot;%.1f&quot;</span>);</div>
-<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">axisY1</a>-&gt;setRange(-100, 0);</div>
-<div class="line"><span class="lineno">   35</span>    <a class="code hl_variable" href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">axisY1</a>-&gt;setGridLineVisible(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   36</span>    c-&gt;addAxis(<a class="code hl_variable" href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">axisY1</a>, Qt::AlignLeft);</div>
-<div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>    <span class="comment">// oś Y2 (PER)</span></div>
-<div class="line"><span class="lineno">   39</span>    <a class="code hl_variable" href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">axisY2</a>-&gt;setTitleText(<span class="stringliteral">&quot;PER [%]&quot;</span>);</div>
-<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">axisY2</a>-&gt;setLabelFormat(<span class="stringliteral">&quot;%.1f&quot;</span>);</div>
-<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">axisY2</a>-&gt;setRange(0, 100);</div>
-<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">axisY2</a>-&gt;setGridLineVisible(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">   43</span>    c-&gt;addAxis(<a class="code hl_variable" href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">axisY2</a>, Qt::AlignRight);</div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>    <span class="comment">// serii</span></div>
-<div class="line"><span class="lineno">   46</span>    <a class="code hl_variable" href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">rssiSeries</a>-&gt;setName(<span class="stringliteral">&quot;RSSI&quot;</span>);</div>
-<div class="line"><span class="lineno">   47</span>    <a class="code hl_variable" href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">rssiSeries</a>-&gt;setPen(QPen(QColor(<span class="stringliteral">&quot;#65D5C6&quot;</span>), 2));</div>
-<div class="line"><span class="lineno">   48</span>    c-&gt;addSeries(<a class="code hl_variable" href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">rssiSeries</a>);</div>
-<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">rssiSeries</a>-&gt;attachAxis(<a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>);</div>
-<div class="line"><span class="lineno">   50</span>    <a class="code hl_variable" href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">rssiSeries</a>-&gt;attachAxis(<a class="code hl_variable" href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">axisY1</a>);</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>    <a class="code hl_variable" href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">perSeries</a>-&gt;setName(<span class="stringliteral">&quot;PER&quot;</span>);</div>
-<div class="line"><span class="lineno">   53</span>    QPen dashPen(QColor(<span class="stringliteral">&quot;#F0822F&quot;</span>));</div>
-<div class="line"><span class="lineno">   54</span>    dashPen.setStyle(Qt::DashLine);</div>
-<div class="line"><span class="lineno">   55</span>    <a class="code hl_variable" href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">perSeries</a>-&gt;setPen(dashPen);</div>
-<div class="line"><span class="lineno">   56</span>    c-&gt;addSeries(<a class="code hl_variable" href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">perSeries</a>);</div>
-<div class="line"><span class="lineno">   57</span>    <a class="code hl_variable" href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">perSeries</a>-&gt;attachAxis(<a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>);</div>
-<div class="line"><span class="lineno">   58</span>    <a class="code hl_variable" href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">perSeries</a>-&gt;attachAxis(<a class="code hl_variable" href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">axisY2</a>);</div>
-<div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>    c-&gt;legend()-&gt;setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   61</span>    c-&gt;legend()-&gt;setAlignment(Qt::AlignBottom);</div>
-<div class="line"><span class="lineno">   62</span>}</div>
-<div class="ttc" id="aclassFmQualityView_html_a943059ae55d87933950ad32042352c41"><div class="ttname"><a href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">FmQualityView::perSeries</a></div><div class="ttdeci">QLineSeries * perSeries</div><div class="ttdoc">Seria danych PER.</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00039">fmqualityview.h:39</a></div></div>
-<div class="ttc" id="aclassFmQualityView_html_acb37b46b5832a524d478dc54b68a8830"><div class="ttname"><a href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">FmQualityView::axisX</a></div><div class="ttdeci">QValueAxis * axisX</div><div class="ttdoc">Oś czasu.</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00040">fmqualityview.h:40</a></div></div>
-<div class="ttc" id="aclassFmQualityView_html_acc49830475e0db8ad80b81c9490529ac"><div class="ttname"><a href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">FmQualityView::axisY2</a></div><div class="ttdeci">QValueAxis * axisY2</div><div class="ttdoc">Oś wartości PER.</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00042">fmqualityview.h:42</a></div></div>
-<div class="ttc" id="aclassFmQualityView_html_ad98c5eb8780de032b6b8aaaed6c41b0c"><div class="ttname"><a href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">FmQualityView::rssiSeries</a></div><div class="ttdeci">QSplineSeries * rssiSeries</div><div class="ttdoc">Seria danych RSSI.</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00038">fmqualityview.h:38</a></div></div>
-<div class="ttc" id="aclassFmQualityView_html_ae90bbbdf84aef219bdbeebf6ffdcf629"><div class="ttname"><a href="classFmQualityView.html#ae90bbbdf84aef219bdbeebf6ffdcf629">FmQualityView::windowSize</a></div><div class="ttdeci">const qreal windowSize</div><div class="ttdoc">Szerokość okna wyświetlania w próbkach.</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00044">fmqualityview.h:44</a></div></div>
-<div class="ttc" id="aclassFmQualityView_html_ae9c97bdbfa97fb64eacead2ec720efa3"><div class="ttname"><a href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">FmQualityView::axisY1</a></div><div class="ttdeci">QValueAxis * axisY1</div><div class="ttdoc">Oś wartości RSSI.</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00041">fmqualityview.h:41</a></div></div>
+<p class="definition">Definition at line <a class="el" href="fmqualityview_8cpp_source.html#l00009">9</a> of file <a class="el" href="fmqualityview_8cpp_source.html">fmqualityview.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>    : QChartView(<span class="keyword">new</span> QChart(), parent),</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_variable" href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">rssiSeries</a>(<span class="keyword">new</span> QSplineSeries(<span class="keyword">this</span>)),</div>
+<div class="line"><span class="lineno">   12</span>    <a class="code hl_variable" href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">perSeries</a>(<span class="keyword">new</span> QLineSeries(<span class="keyword">this</span>)),</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>(<span class="keyword">new</span> QValueAxis(<span class="keyword">this</span>)),</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_variable" href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">axisY1</a>(<span class="keyword">new</span> QValueAxis(<span class="keyword">this</span>)),</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_variable" href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">axisY2</a>(<span class="keyword">new</span> QValueAxis(<span class="keyword">this</span>))</div>
+<div class="line"><span class="lineno">   16</span>{</div>
+<div class="line"><span class="lineno">   17</span>    setRenderHint(QPainter::Antialiasing);</div>
+<div class="line"><span class="lineno">   18</span>    setInteractive(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>    <span class="keyword">auto</span> *c = chart();</div>
+<div class="line"><span class="lineno">   21</span>  <span class="comment">//  c-&gt;setTitle(&quot;FM Link Quality&quot;);</span></div>
+<div class="line"><span class="lineno">   22</span>    c-&gt;setAnimationOptions(QChart::SeriesAnimations);</div>
+<div class="line"><span class="lineno">   23</span>    c-&gt;setTheme(QChart::ChartThemeBlueCerulean);</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    <span class="comment">// oś X</span></div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>-&gt;setTitleText(<span class="stringliteral">&quot;Czas [ms]&quot;</span>);</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>-&gt;setLabelFormat(<span class="stringliteral">&quot;%d&quot;</span>);</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>-&gt;setRange(0, <a class="code hl_variable" href="classFmQualityView.html#ae90bbbdf84aef219bdbeebf6ffdcf629">windowSize</a>);</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>-&gt;setGridLineVisible(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   30</span>    c-&gt;addAxis(<a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>, Qt::AlignBottom);</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>    <span class="comment">// oś Y1 (RSSI)</span></div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_variable" href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">axisY1</a>-&gt;setTitleText(<span class="stringliteral">&quot;RSSI [dBm]&quot;</span>);</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">axisY1</a>-&gt;setLabelFormat(<span class="stringliteral">&quot;%.1f&quot;</span>);</div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_variable" href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">axisY1</a>-&gt;setRange(-100, 0);</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_variable" href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">axisY1</a>-&gt;setGridLineVisible(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   37</span>    c-&gt;addAxis(<a class="code hl_variable" href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">axisY1</a>, Qt::AlignLeft);</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <span class="comment">// oś Y2 (PER)</span></div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">axisY2</a>-&gt;setTitleText(<span class="stringliteral">&quot;PER [%]&quot;</span>);</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">axisY2</a>-&gt;setLabelFormat(<span class="stringliteral">&quot;%.1f&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">axisY2</a>-&gt;setRange(0, 100);</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_variable" href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">axisY2</a>-&gt;setGridLineVisible(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   44</span>    c-&gt;addAxis(<a class="code hl_variable" href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">axisY2</a>, Qt::AlignRight);</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    <span class="comment">// serii</span></div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_variable" href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">rssiSeries</a>-&gt;setName(<span class="stringliteral">&quot;RSSI&quot;</span>);</div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_variable" href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">rssiSeries</a>-&gt;setPen(QPen(QColor(<span class="stringliteral">&quot;#65D5C6&quot;</span>), 2));</div>
+<div class="line"><span class="lineno">   49</span>    c-&gt;addSeries(<a class="code hl_variable" href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">rssiSeries</a>);</div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_variable" href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">rssiSeries</a>-&gt;attachAxis(<a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>);</div>
+<div class="line"><span class="lineno">   51</span>    <a class="code hl_variable" href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">rssiSeries</a>-&gt;attachAxis(<a class="code hl_variable" href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">axisY1</a>);</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_variable" href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">perSeries</a>-&gt;setName(<span class="stringliteral">&quot;PER&quot;</span>);</div>
+<div class="line"><span class="lineno">   54</span>    QPen dashPen(QColor(<span class="stringliteral">&quot;#F0822F&quot;</span>));</div>
+<div class="line"><span class="lineno">   55</span>    dashPen.setStyle(Qt::DashLine);</div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_variable" href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">perSeries</a>-&gt;setPen(dashPen);</div>
+<div class="line"><span class="lineno">   57</span>    c-&gt;addSeries(<a class="code hl_variable" href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">perSeries</a>);</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_variable" href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">perSeries</a>-&gt;attachAxis(<a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>);</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">perSeries</a>-&gt;attachAxis(<a class="code hl_variable" href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">axisY2</a>);</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    c-&gt;legend()-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   62</span>    c-&gt;legend()-&gt;setAlignment(Qt::AlignBottom);</div>
+<div class="line"><span class="lineno">   63</span>}</div>
+<div class="ttc" id="aclassFmQualityView_html_a943059ae55d87933950ad32042352c41"><div class="ttname"><a href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">FmQualityView::perSeries</a></div><div class="ttdeci">QLineSeries * perSeries</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00093">fmqualityview.h:93</a></div></div>
+<div class="ttc" id="aclassFmQualityView_html_acb37b46b5832a524d478dc54b68a8830"><div class="ttname"><a href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">FmQualityView::axisX</a></div><div class="ttdeci">QValueAxis * axisX</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00094">fmqualityview.h:94</a></div></div>
+<div class="ttc" id="aclassFmQualityView_html_acc49830475e0db8ad80b81c9490529ac"><div class="ttname"><a href="classFmQualityView.html#acc49830475e0db8ad80b81c9490529ac">FmQualityView::axisY2</a></div><div class="ttdeci">QValueAxis * axisY2</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00096">fmqualityview.h:96</a></div></div>
+<div class="ttc" id="aclassFmQualityView_html_ad98c5eb8780de032b6b8aaaed6c41b0c"><div class="ttname"><a href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">FmQualityView::rssiSeries</a></div><div class="ttdeci">QSplineSeries * rssiSeries</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00092">fmqualityview.h:92</a></div></div>
+<div class="ttc" id="aclassFmQualityView_html_ae90bbbdf84aef219bdbeebf6ffdcf629"><div class="ttname"><a href="classFmQualityView.html#ae90bbbdf84aef219bdbeebf6ffdcf629">FmQualityView::windowSize</a></div><div class="ttdeci">const qreal windowSize</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00098">fmqualityview.h:98</a></div></div>
+<div class="ttc" id="aclassFmQualityView_html_ae9c97bdbfa97fb64eacead2ec720efa3"><div class="ttname"><a href="classFmQualityView.html#ae9c97bdbfa97fb64eacead2ec720efa3">FmQualityView::axisY1</a></div><div class="ttdeci">QValueAxis * axisY1</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00095">fmqualityview.h:95</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -286,30 +321,39 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Dodaje nową próbkę pomiaru do wykresu. </p>
+<p>Dodaj nowy pomiar jakości do wykresu. </p>
+<p>Dodaje nowy punkt danych do serii RSSI i PER. Automatycznie zarządza przewijanym oknem czasowym i aktualizuje zakresy osi w razie potrzeby. Zoptymalizowane dla aktualizacji wysokiej częstotliwości (do 1000 Hz).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">rssi</td><td>siła sygnału [dBm] </td></tr>
-    <tr><td class="paramname">per</td><td>packet error rate [%] </td></tr>
+    <tr><td class="paramname">rssi</td><td>Siła sygnału w dBm (typowy zakres: -85 do -25 dBm) </td></tr>
+    <tr><td class="paramname">per</td><td>Wskaźnik błędów pakietów w procentach (typowy zakres: 0 do 50%)</td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="fmqualityview_8cpp_source.html#l00064">64</a> of file <a class="el" href="fmqualityview_8cpp_source.html">fmqualityview.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>{</div>
-<div class="line"><span class="lineno">   66</span>    <span class="comment">// dopisanie nowego punktu w chwili t</span></div>
-<div class="line"><span class="lineno">   67</span>    <a class="code hl_variable" href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">rssiSeries</a>-&gt;append(<a class="code hl_variable" href="classFmQualityView.html#a2f6f6efaa6c4a72d669465294637a59e">t</a>, rssi);</div>
-<div class="line"><span class="lineno">   68</span>    <a class="code hl_variable" href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">perSeries</a>-&gt;append(<a class="code hl_variable" href="classFmQualityView.html#a2f6f6efaa6c4a72d669465294637a59e">t</a>, per);</div>
+<dl class="section note"><dt>Note</dt><dd>Wartości poza typowymi zakresami są akceptowane ale mogą wpłynąć na skalowanie </dd>
+<dd>
+Wykres automatycznie przewija gdy rozmiar okna jest przekroczony</dd></dl>
+<p>Przykład: </p><div class="fragment"><div class="line">wykres-&gt;addMeasurement(-65.5, 2.3);  <span class="comment">// Dobra jakość sygnału</span></div>
+<div class="line">wykres-&gt;addMeasurement(-82.1, 15.7); <span class="comment">// Słaba jakość sygnału</span></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="fmqualityview_8cpp_source.html#l00065">65</a> of file <a class="el" href="fmqualityview_8cpp_source.html">fmqualityview.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;📊 FmQualityView::addMeasurement() RECEIVED - RSSI:&quot;</span> &lt;&lt; rssi &lt;&lt; <span class="stringliteral">&quot;PER:&quot;</span> &lt;&lt; per;</div>
 <div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>    <span class="comment">// przesunięcie okna osi X o jedną próbkę</span></div>
-<div class="line"><span class="lineno">   71</span>    <span class="comment">// utrzymujemy przedział [t-windowSize, t]</span></div>
-<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classFmQualityView.html#a2f6f6efaa6c4a72d669465294637a59e">t</a> &gt; <a class="code hl_variable" href="classFmQualityView.html#ae90bbbdf84aef219bdbeebf6ffdcf629">windowSize</a>) {</div>
-<div class="line"><span class="lineno">   73</span>        <a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>-&gt;setRange(<a class="code hl_variable" href="classFmQualityView.html#a2f6f6efaa6c4a72d669465294637a59e">t</a> - <a class="code hl_variable" href="classFmQualityView.html#ae90bbbdf84aef219bdbeebf6ffdcf629">windowSize</a>, <a class="code hl_variable" href="classFmQualityView.html#a2f6f6efaa6c4a72d669465294637a59e">t</a>);</div>
-<div class="line"><span class="lineno">   74</span>    }</div>
-<div class="line"><span class="lineno">   75</span> </div>
-<div class="line"><span class="lineno">   76</span>    <a class="code hl_variable" href="classFmQualityView.html#a2f6f6efaa6c4a72d669465294637a59e">t</a> += 1;  <span class="comment">// jeśli emitujesz co 1 ms, to t+=1</span></div>
-<div class="line"><span class="lineno">   77</span>}</div>
-<div class="ttc" id="aclassFmQualityView_html_a2f6f6efaa6c4a72d669465294637a59e"><div class="ttname"><a href="classFmQualityView.html#a2f6f6efaa6c4a72d669465294637a59e">FmQualityView::t</a></div><div class="ttdeci">qreal t</div><div class="ttdoc">Aktualny czas w milisekundach.</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00043">fmqualityview.h:43</a></div></div>
+<div class="line"><span class="lineno">   70</span>    <span class="comment">// dopisanie nowego punktu w chwili t</span></div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_variable" href="classFmQualityView.html#ad98c5eb8780de032b6b8aaaed6c41b0c">rssiSeries</a>-&gt;append(<a class="code hl_variable" href="classFmQualityView.html#a2f6f6efaa6c4a72d669465294637a59e">t</a>, rssi);</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_variable" href="classFmQualityView.html#a943059ae55d87933950ad32042352c41">perSeries</a>-&gt;append(<a class="code hl_variable" href="classFmQualityView.html#a2f6f6efaa6c4a72d669465294637a59e">t</a>, per);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <span class="comment">// przesunięcie okna osi X o jedną próbkę</span></div>
+<div class="line"><span class="lineno">   75</span>    <span class="comment">// utrzymujemy przedział [t-windowSize, t]</span></div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classFmQualityView.html#a2f6f6efaa6c4a72d669465294637a59e">t</a> &gt; <a class="code hl_variable" href="classFmQualityView.html#ae90bbbdf84aef219bdbeebf6ffdcf629">windowSize</a>) {</div>
+<div class="line"><span class="lineno">   77</span>        <a class="code hl_variable" href="classFmQualityView.html#acb37b46b5832a524d478dc54b68a8830">axisX</a>-&gt;setRange(<a class="code hl_variable" href="classFmQualityView.html#a2f6f6efaa6c4a72d669465294637a59e">t</a> - <a class="code hl_variable" href="classFmQualityView.html#ae90bbbdf84aef219bdbeebf6ffdcf629">windowSize</a>, <a class="code hl_variable" href="classFmQualityView.html#a2f6f6efaa6c4a72d669465294637a59e">t</a>);</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_variable" href="classFmQualityView.html#a2f6f6efaa6c4a72d669465294637a59e">t</a> += 1;  <span class="comment">// jeśli emitujesz co 1 ms, to t+=1</span></div>
+<div class="line"><span class="lineno">   81</span>}</div>
+<div class="ttc" id="aclassFmQualityView_html_a2f6f6efaa6c4a72d669465294637a59e"><div class="ttname"><a href="classFmQualityView.html#a2f6f6efaa6c4a72d669465294637a59e">FmQualityView::t</a></div><div class="ttdeci">qreal t</div><div class="ttdef"><b>Definition</b> <a href="fmqualityview_8h_source.html#l00097">fmqualityview.h:97</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -333,10 +377,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Oś czasu (dół) </p>
 
-<p>Oś czasu. </p>
-
-<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00040">40</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00094">94</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
 
 </div>
 </div>
@@ -359,10 +402,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Oś wartości RSSI (lewa) </p>
 
-<p>Oś wartości RSSI. </p>
-
-<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00041">41</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00095">95</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
 
 </div>
 </div>
@@ -385,10 +427,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Oś wartości PER (prawa) </p>
 
-<p>Oś wartości PER. </p>
-
-<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00042">42</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00096">96</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
 
 </div>
 </div>
@@ -411,10 +452,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Przerywana seria danych PER (prawa oś) </p>
 
-<p>Seria danych PER. </p>
-
-<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00039">39</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00093">93</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
 
 </div>
 </div>
@@ -437,10 +477,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Płynna seria danych RSSI (lewa oś) </p>
 
-<p>Seria danych RSSI. </p>
-
-<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00038">38</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00092">92</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
 
 </div>
 </div>
@@ -463,10 +502,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Aktualny licznik czasu </p>
 
-<p>Aktualny czas w milisekundach. </p>
-
-<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00043">43</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00097">97</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
 
 </div>
 </div>
@@ -489,10 +527,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Widoczne okno czasowe w próbkach </p>
 
-<p>Szerokość okna wyświetlania w próbkach. </p>
-
-<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00044">44</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fmqualityview_8h_source.html#l00098">98</a> of file <a class="el" href="fmqualityview_8h_source.html">fmqualityview.h</a>.</p>
 
 </div>
 </div>

@@ -90,52 +90,97 @@ $(document).ready(function(){initNavTree('classDataReader.html',''); initResizab
 
 <div class="header">
   <div class="summary">
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classDataReader-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">DataReader Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
+<p>Klasa do odczytu i parsowania danych serwomechanizmów hexapoda.  
+ <a href="classDataReader.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="datareader_8h_source.html">datareader.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for DataReader:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDataReader__inherit__graph.png" border="0" usemap="#aDataReader_inherit__map" alt="Inheritance graph"/></div>
+<map name="aDataReader_inherit__map" id="aDataReader_inherit__map">
+<area shape="rect" title="Klasa do odczytu i parsowania danych serwomechanizmów hexapoda." alt="" coords="5,79,104,104"/>
+<area shape="rect" title=" " alt="" coords="17,5,92,31"/>
+<area shape="poly" title=" " alt="" coords="57,44,57,79,52,79,52,44"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for DataReader:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDataReader__coll__graph.png" border="0" usemap="#aDataReader_coll__map" alt="Collaboration graph"/></div>
+<map name="aDataReader_coll__map" id="aDataReader_coll__map">
+<area shape="rect" title="Klasa do odczytu i parsowania danych serwomechanizmów hexapoda." alt="" coords="5,79,104,104"/>
+<area shape="rect" title=" " alt="" coords="17,5,92,31"/>
+<area shape="poly" title=" " alt="" coords="57,44,57,79,52,79,52,44"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:afbfc994307c14fe0405d2a2e58d9b00f" id="r_afbfc994307c14fe0405d2a2e58d9b00f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataReader.html#afbfc994307c14fe0405d2a2e58d9b00f">newFrameReady</a> (const <a class="el" href="structServoFrame.html">ServoFrame</a> &amp;frame)</td></tr>
+<tr class="memdesc:afbfc994307c14fe0405d2a2e58d9b00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sygnał emitowany gdy nowa ramka jest odebrana z urządzenia szeregowego.  <br /></td></tr>
+<tr class="separator:afbfc994307c14fe0405d2a2e58d9b00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afcacc75e63a519608eef8bd152490f30" id="r_afcacc75e63a519608eef8bd152490f30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataReader.html#afcacc75e63a519608eef8bd152490f30">DataReader</a> (QObject *parent=nullptr)</td></tr>
-<tr class="memdesc:afcacc75e63a519608eef8bd152490f30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor klasy <a class="el" href="classDataReader.html">DataReader</a>.  <br /></td></tr>
+<tr class="memdesc:afcacc75e63a519608eef8bd152490f30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor.  <br /></td></tr>
 <tr class="separator:afcacc75e63a519608eef8bd152490f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae90700be1801c10fae55ac4de0616dcc" id="r_ae90700be1801c10fae55ac4de0616dcc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataReader.html#ae90700be1801c10fae55ac4de0616dcc">loadFromFile</a> (const QString &amp;filePath)</td></tr>
-<tr class="memdesc:ae90700be1801c10fae55ac4de0616dcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wczytuje ramki w formacie &lt;...;CRC&gt; i weryfikuje CRC.  <br /></td></tr>
+<tr class="memdesc:ae90700be1801c10fae55ac4de0616dcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wczytaj ramki serwomechanizmów z pliku.  <br /></td></tr>
 <tr class="separator:ae90700be1801c10fae55ac4de0616dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aeab5a503c98da3d7a93a8a9c4bef0d" id="r_a3aeab5a503c98da3d7a93a8a9c4bef0d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataReader.html#a3aeab5a503c98da3d7a93a8a9c4bef0d">loadFromDevice</a> (QIODevice *device)</td></tr>
+<tr class="memdesc:a3aeab5a503c98da3d7a93a8a9c4bef0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wczytaj ramki z QIODevice (jednorazowy odczyt)  <br /></td></tr>
+<tr class="separator:a3aeab5a503c98da3d7a93a8a9c4bef0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afee3c3c0fbb915c2aa69a0db7218f661" id="r_afee3c3c0fbb915c2aa69a0db7218f661"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataReader.html#afee3c3c0fbb915c2aa69a0db7218f661">setSerialDevice</a> (QIODevice *device)</td></tr>
+<tr class="memdesc:afee3c3c0fbb915c2aa69a0db7218f661"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustaw urządzenie szeregowe do ciągłego monitorowania danych.  <br /></td></tr>
+<tr class="separator:afee3c3c0fbb915c2aa69a0db7218f661"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a404003dfbe7d988e49bccdea9784c90a" id="r_a404003dfbe7d988e49bccdea9784c90a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structServoFrame.html">ServoFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataReader.html#a404003dfbe7d988e49bccdea9784c90a">next</a> ()</td></tr>
-<tr class="memdesc:a404003dfbe7d988e49bccdea9784c90a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca następną ramkę (zawija w pętli).  <br /></td></tr>
+<tr class="memdesc:a404003dfbe7d988e49bccdea9784c90a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobierz następną ramkę z wczytanych danych.  <br /></td></tr>
 <tr class="separator:a404003dfbe7d988e49bccdea9784c90a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a998814f9ba73f3773bb3007047ecbcaa" id="r_a998814f9ba73f3773bb3007047ecbcaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataReader.html#a998814f9ba73f3773bb3007047ecbcaa">reset</a> ()</td></tr>
-<tr class="memdesc:a998814f9ba73f3773bb3007047ecbcaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resetuje odczyt do pierwszej ramki.  <br /></td></tr>
+<tr class="memdesc:a998814f9ba73f3773bb3007047ecbcaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zresetuj iterator ramek do początku.  <br /></td></tr>
 <tr class="separator:a998814f9ba73f3773bb3007047ecbcaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a782b2a15780cca98eb55cd92a7c574b4" id="r_a782b2a15780cca98eb55cd92a7c574b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataReader.html#a782b2a15780cca98eb55cd92a7c574b4">handleSerialData</a> ()</td></tr>
+<tr class="memdesc:a782b2a15780cca98eb55cd92a7c574b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsłuż przychodzące dane szeregowe.  <br /></td></tr>
+<tr class="separator:a782b2a15780cca98eb55cd92a7c574b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a535e234fcb0bf665470cc509cd377500" id="r_a535e234fcb0bf665470cc509cd377500"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="structServoFrame.html">ServoFrame</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a></td></tr>
-<tr class="memdesc:a535e234fcb0bf665470cc509cd377500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bufor przechowujący wczytane ramki danych.  <br /></td></tr>
 <tr class="separator:a535e234fcb0bf665470cc509cd377500"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a653d5079f7a259e0344ea943dde4d977" id="r_a653d5079f7a259e0344ea943dde4d977"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> = 0</td></tr>
-<tr class="memdesc:a653d5079f7a259e0344ea943dde4d977"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indeks aktualnie przetwarzanej ramki.  <br /></td></tr>
 <tr class="separator:a653d5079f7a259e0344ea943dde4d977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab44f4df95e405954a564ff61c97cda9c" id="r_ab44f4df95e405954a564ff61c97cda9c"><td class="memItemLeft" align="right" valign="top">QIODevice *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a> = nullptr</td></tr>
+<tr class="separator:ab44f4df95e405954a564ff61c97cda9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae85e24c18e16452e8af88864d2dc1a12" id="r_ae85e24c18e16452e8af88864d2dc1a12"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a></td></tr>
+<tr class="separator:ae85e24c18e16452e8af88864d2dc1a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="datareader_8h_source.html#l00022">22</a> of file <a class="el" href="datareader_8h_source.html">datareader.h</a>.</p>
+<div class="textblock"><p>Klasa do odczytu i parsowania danych serwomechanizmów hexapoda. </p>
+<p><a class="el" href="classDataReader.html" title="Klasa do odczytu i parsowania danych serwomechanizmów hexapoda.">DataReader</a> obsługuje odczyt danych ramek serwomechanizmów z plików lub urządzeń szeregowych. Obsługuje dwa tryby pracy:</p><ul>
+<li>Odczyt z pliku: Wczytanie kompletnego zestawu danych z pliku do odtwarzania</li>
+<li>Odczyt szeregowy: Odbiór danych w czasie rzeczywistym z portu szeregowego z parsowaniem ramek</li>
+</ul>
+<p>Oczekiwany format danych: <code>&lt;znacznik_czasu;kąt1;kąt2;...;kąt18;prędkość;licznik_pakietów;rssi;per;crc&gt;</code></p>
+<dl class="section note"><dt>Note</dt><dd>Weryfikacja CRC jest wykonywana przy użyciu sumy bajtów modulo 256</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structServoFrame.html" title="Struktura reprezentująca pojedynczą ramkę danych z robota hexapod.">ServoFrame</a> </dd>
+<dd>
+<a class="el" href="classDataSimulator.html" title="Kontroler symulacji i odtwarzania danych ramek serwomechanizmów hexapoda.">DataSimulator</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="datareader_8h_source.html#l00054">54</a> of file <a class="el" href="datareader_8h_source.html">datareader.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afcacc75e63a519608eef8bd152490f30" name="afcacc75e63a519608eef8bd152490f30"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afcacc75e63a519608eef8bd152490f30">&#9670;&#160;</a></span>DataReader()</h2>
@@ -161,21 +206,240 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Konstruktor klasy <a class="el" href="classDataReader.html">DataReader</a>. </p>
+<p>Konstruktor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent</td><td>Wskaźnik na obiekt rodzica </td></tr>
+    <tr><td class="paramname">parent</td><td>Rodzic QObject do zarządzania pamięcią </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="datareader_8cpp_source.html#l00004">4</a> of file <a class="el" href="datareader_8cpp_source.html">datareader.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    5</span>    : QObject(parent)</div>
-<div class="line"><span class="lineno">    6</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="datareader_8cpp_source.html#l00007">7</a> of file <a class="el" href="datareader_8cpp_source.html">datareader.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>    : QObject(parent)</div>
+<div class="line"><span class="lineno">    9</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a782b2a15780cca98eb55cd92a7c574b4" name="a782b2a15780cca98eb55cd92a7c574b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a782b2a15780cca98eb55cd92a7c574b4">&#9670;&#160;</a></span>handleSerialData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataReader::handleSerialData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsłuż przychodzące dane szeregowe. </p>
+<p>Ten slot jest automatycznie połączony z sygnałem readyRead urządzenia szeregowego. Odczytuje przychodzące dane, buforuje je i próbuje sparsować kompletne ramki.</p>
+<dl class="section note"><dt>Note</dt><dd>Wykonuje wykrywanie granic ramek i weryfikację CRC </dd>
+<dd>
+Emituje <a class="el" href="classDataReader.html#afbfc994307c14fe0405d2a2e58d9b00f" title="Sygnał emitowany gdy nowa ramka jest odebrana z urządzenia szeregowego.">newFrameReady()</a> dla każdej prawidłowej ramki </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="datareader_8cpp_source.html#l00181">181</a> of file <a class="el" href="datareader_8cpp_source.html">datareader.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  182</span>{</div>
+<div class="line"><span class="lineno">  183</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;handleSerialData() CALLED!&quot;</span>;</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a>) {</div>
+<div class="line"><span class="lineno">  186</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Serial device is nullptr in handleSerialData()&quot;</span>;</div>
+<div class="line"><span class="lineno">  187</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  188</span>    }</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>    QByteArray newData = <a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a>-&gt;readAll();</div>
+<div class="line"><span class="lineno">  191</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Read&quot;</span> &lt;&lt; newData.size() &lt;&lt; <span class="stringliteral">&quot;bytes from device&quot;</span>;</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>    <span class="keywordflow">if</span> (newData.isEmpty()) {</div>
+<div class="line"><span class="lineno">  194</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;No data read from device&quot;</span>;</div>
+<div class="line"><span class="lineno">  195</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  196</span>    }</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>    <span class="comment">// Show first 100 characters of data</span></div>
+<div class="line"><span class="lineno">  199</span>    QString dataPreview = QString::fromUtf8(newData.left(100));</div>
+<div class="line"><span class="lineno">  200</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Data preview:&quot;</span> &lt;&lt; dataPreview;</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>    <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a> += QString::fromUtf8(newData);</div>
+<div class="line"><span class="lineno">  203</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Buffer size after append:&quot;</span> &lt;&lt; <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a>.size();</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordtype">int</span> frameCount = 0;</div>
+<div class="line"><span class="lineno">  206</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><span class="lineno">  207</span>        <span class="keywordtype">int</span> start = <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a>.indexOf(<span class="charliteral">&#39;&lt;&#39;</span>);</div>
+<div class="line"><span class="lineno">  208</span>        <span class="keywordtype">int</span> end   = <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a>.indexOf(<span class="charliteral">&#39;&gt;&#39;</span>, start);</div>
+<div class="line"><span class="lineno">  209</span>        <span class="keywordflow">if</span> (start == -1 || end == -1) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>        QString frameStr = <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a>.mid(start + 1, end - start - 1);</div>
+<div class="line"><span class="lineno">  212</span>        <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a>.remove(0, end + 1);</div>
+<div class="line"><span class="lineno">  213</span>        frameCount++;</div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Processing frame #&quot;</span> &lt;&lt; frameCount;</div>
+<div class="line"><span class="lineno">  216</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   Content:&quot;</span> &lt;&lt; frameStr.left(50) + <span class="stringliteral">&quot;...&quot;</span>;</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>        QStringList parts = frameStr.split(<span class="charliteral">&#39;;&#39;</span>);</div>
+<div class="line"><span class="lineno">  219</span>        <span class="keywordflow">if</span> (parts.size() != 24) {</div>
+<div class="line"><span class="lineno">  220</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;Wrong number of parts:&quot;</span> &lt;&lt; parts.size() &lt;&lt; <span class="stringliteral">&quot;(expected 24)&quot;</span>;</div>
+<div class="line"><span class="lineno">  221</span>            qDebug() &lt;&lt; <span class="stringliteral">&quot;   Parts:&quot;</span> &lt;&lt; parts;</div>
+<div class="line"><span class="lineno">  222</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  223</span>        }</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>        <span class="comment">// Calculate CRC from parts without last element (which is CRC)</span></div>
+<div class="line"><span class="lineno">  226</span>        QByteArray raw = frameStr.left(frameStr.lastIndexOf(<span class="charliteral">&#39;;&#39;</span>)).toUtf8();</div>
+<div class="line"><span class="lineno">  227</span>        <span class="keywordtype">bool</span> okCrc = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  228</span>        <span class="keywordtype">int</span> receivedCrc = parts[23].toInt(&amp;okCrc);</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>        <span class="keywordflow">if</span> (!okCrc) {</div>
+<div class="line"><span class="lineno">  231</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;CRC cannot be parsed:&quot;</span> &lt;&lt; parts[23];</div>
+<div class="line"><span class="lineno">  232</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  233</span>        }</div>
+<div class="line"><span class="lineno">  234</span> </div>
+<div class="line"><span class="lineno">  235</span>        <span class="comment">// Calculate CRC</span></div>
+<div class="line"><span class="lineno">  236</span>        uint8_t sum = 0;</div>
+<div class="line"><span class="lineno">  237</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> b : raw) {</div>
+<div class="line"><span class="lineno">  238</span>            sum = uint8_t(sum + <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(b));</div>
+<div class="line"><span class="lineno">  239</span>        }</div>
+<div class="line"><span class="lineno">  240</span>        uint8_t calculatedCrc = sum;</div>
+<div class="line"><span class="lineno">  241</span> </div>
+<div class="line"><span class="lineno">  242</span>        <span class="comment">// Debug info for each frame</span></div>
+<div class="line"><span class="lineno">  243</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;CRC Debug:&quot;</span>;</div>
+<div class="line"><span class="lineno">  244</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   Raw data length:&quot;</span> &lt;&lt; raw.size() &lt;&lt; <span class="stringliteral">&quot;bytes&quot;</span>;</div>
+<div class="line"><span class="lineno">  245</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   Calculated CRC:&quot;</span> &lt;&lt; calculatedCrc;</div>
+<div class="line"><span class="lineno">  246</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   Received CRC:&quot;</span> &lt;&lt; receivedCrc;</div>
+<div class="line"><span class="lineno">  247</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   Match:&quot;</span> &lt;&lt; (calculatedCrc == receivedCrc ? <span class="stringliteral">&quot;YES&quot;</span> : <span class="stringliteral">&quot;NO&quot;</span>);</div>
+<div class="line"><span class="lineno">  248</span> </div>
+<div class="line"><span class="lineno">  249</span>        <span class="keywordflow">if</span> (calculatedCrc != <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(receivedCrc)) {</div>
+<div class="line"><span class="lineno">  250</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;CRC mismatch! Calculated:&quot;</span> &lt;&lt; calculatedCrc</div>
+<div class="line"><span class="lineno">  251</span>                       &lt;&lt; <span class="stringliteral">&quot;Received:&quot;</span> &lt;&lt; receivedCrc</div>
+<div class="line"><span class="lineno">  252</span>                       &lt;&lt; <span class="stringliteral">&quot;Frame:&quot;</span> &lt;&lt; frameStr.left(30) + <span class="stringliteral">&quot;...&quot;</span>;</div>
+<div class="line"><span class="lineno">  253</span>            <span class="comment">// TEMPORARILY CONTINUE DESPITE CRC ERROR</span></div>
+<div class="line"><span class="lineno">  254</span>            qDebug() &lt;&lt; <span class="stringliteral">&quot;CONTINUING DESPITE CRC ERROR (temporary debug mode)&quot;</span>;</div>
+<div class="line"><span class="lineno">  255</span>            <span class="comment">// continue;  // commented out temporarily</span></div>
+<div class="line"><span class="lineno">  256</span>        }</div>
+<div class="line"><span class="lineno">  257</span> </div>
+<div class="line"><span class="lineno">  258</span>        <span class="comment">// CRC OK (or ignored) - create frame</span></div>
+<div class="line"><span class="lineno">  259</span>        <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a> frame;</div>
+<div class="line"><span class="lineno">  260</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">timeMs</a> = parts[0].toInt();</div>
+<div class="line"><span class="lineno">  261</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 18; ++i)</div>
+<div class="line"><span class="lineno">  262</span>            frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>.append(parts[i].toFloat());</div>
+<div class="line"><span class="lineno">  263</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">speed</a> = parts[19].toFloat();</div>
+<div class="line"><span class="lineno">  264</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">packetCount</a> = parts[20].toInt();</div>
+<div class="line"><span class="lineno">  265</span> </div>
+<div class="line"><span class="lineno">  266</span>        <span class="comment">// Parse FM data</span></div>
+<div class="line"><span class="lineno">  267</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a080a364fa0e879c7dc0ab2a55fd898cb">rssi</a> = parts[21].toFloat();</div>
+<div class="line"><span class="lineno">  268</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a107fa6239efb6e4b71c3bfeda9499918">per</a> = parts[22].toFloat();</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Frame created successfully - emitting newFrameReady&quot;</span>;</div>
+<div class="line"><span class="lineno">  271</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   TimeMs:&quot;</span> &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">timeMs</a>;</div>
+<div class="line"><span class="lineno">  272</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   First 3 angles:&quot;</span> &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>[0] &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>[1] &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>[2];</div>
+<div class="line"><span class="lineno">  273</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   Speed:&quot;</span> &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">speed</a>;</div>
+<div class="line"><span class="lineno">  274</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   PacketCount:&quot;</span> &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">packetCount</a>;</div>
+<div class="line"><span class="lineno">  275</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;   FM: RSSI:&quot;</span> &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#a080a364fa0e879c7dc0ab2a55fd898cb">rssi</a> &lt;&lt; <span class="stringliteral">&quot;dBm, PER:&quot;</span> &lt;&lt; frame.<a class="code hl_variable" href="structServoFrame.html#a107fa6239efb6e4b71c3bfeda9499918">per</a> &lt;&lt; <span class="stringliteral">&quot;%&quot;</span>;</div>
+<div class="line"><span class="lineno">  276</span> </div>
+<div class="line"><span class="lineno">  277</span>        emit <a class="code hl_signal" href="classDataReader.html#afbfc994307c14fe0405d2a2e58d9b00f">newFrameReady</a>(frame);</div>
+<div class="line"><span class="lineno">  278</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Signal newFrameReady emitted!&quot;</span>;</div>
+<div class="line"><span class="lineno">  279</span>    }</div>
+<div class="line"><span class="lineno">  280</span> </div>
+<div class="line"><span class="lineno">  281</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Processed&quot;</span> &lt;&lt; frameCount &lt;&lt; <span class="stringliteral">&quot;frames in this iteration&quot;</span>;</div>
+<div class="line"><span class="lineno">  282</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Remaining buffer size:&quot;</span> &lt;&lt; <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a>.size();</div>
+<div class="line"><span class="lineno">  283</span>}</div>
+<div class="ttc" id="aclassDataReader_html_ab44f4df95e405954a564ff61c97cda9c"><div class="ttname"><a href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">DataReader::serial</a></div><div class="ttdeci">QIODevice * serial</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00176">datareader.h:176</a></div></div>
+<div class="ttc" id="aclassDataReader_html_ae85e24c18e16452e8af88864d2dc1a12"><div class="ttname"><a href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">DataReader::buffer</a></div><div class="ttdeci">QString buffer</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00177">datareader.h:177</a></div></div>
+<div class="ttc" id="aclassDataReader_html_afbfc994307c14fe0405d2a2e58d9b00f"><div class="ttname"><a href="classDataReader.html#afbfc994307c14fe0405d2a2e58d9b00f">DataReader::newFrameReady</a></div><div class="ttdeci">void newFrameReady(const ServoFrame &amp;frame)</div><div class="ttdoc">Sygnał emitowany gdy nowa ramka jest odebrana z urządzenia szeregowego.</div><div class="ttdef"><b>Definition</b> <a href="moc__datareader_8cpp_source.html#l00139">moc_datareader.cpp:139</a></div></div>
+<div class="ttc" id="astructServoFrame_html"><div class="ttname"><a href="structServoFrame.html">ServoFrame</a></div><div class="ttdoc">Struktura reprezentująca pojedynczą ramkę danych z robota hexapod.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00029">datareader.h:29</a></div></div>
+<div class="ttc" id="astructServoFrame_html_a080a364fa0e879c7dc0ab2a55fd898cb"><div class="ttname"><a href="structServoFrame.html#a080a364fa0e879c7dc0ab2a55fd898cb">ServoFrame::rssi</a></div><div class="ttdeci">float rssi</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00034">datareader.h:34</a></div></div>
+<div class="ttc" id="astructServoFrame_html_a107fa6239efb6e4b71c3bfeda9499918"><div class="ttname"><a href="structServoFrame.html#a107fa6239efb6e4b71c3bfeda9499918">ServoFrame::per</a></div><div class="ttdeci">float per</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00035">datareader.h:35</a></div></div>
+<div class="ttc" id="astructServoFrame_html_a9e3f24998bd527d51ad3adff5c695901"><div class="ttname"><a href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">ServoFrame::speed</a></div><div class="ttdeci">float speed</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00032">datareader.h:32</a></div></div>
+<div class="ttc" id="astructServoFrame_html_ab81dd8d7c2efd68078a6abef4d1794f4"><div class="ttname"><a href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">ServoFrame::angles</a></div><div class="ttdeci">QVector&lt; float &gt; angles</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00031">datareader.h:31</a></div></div>
+<div class="ttc" id="astructServoFrame_html_ac3ff952b169f223496dcd8e3c8b2b08d"><div class="ttname"><a href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">ServoFrame::packetCount</a></div><div class="ttdeci">int packetCount</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00033">datareader.h:33</a></div></div>
+<div class="ttc" id="astructServoFrame_html_ad3ed851e57d10a3ea98ee0c7efb15c81"><div class="ttname"><a href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">ServoFrame::timeMs</a></div><div class="ttdeci">int timeMs</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00030">datareader.h:30</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3aeab5a503c98da3d7a93a8a9c4bef0d" name="a3aeab5a503c98da3d7a93a8a9c4bef0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aeab5a503c98da3d7a93a8a9c4bef0d">&#9670;&#160;</a></span>loadFromDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DataReader::loadFromDevice </td>
+          <td>(</td>
+          <td class="paramtype">QIODevice *&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wczytaj ramki z QIODevice (jednorazowy odczyt) </p>
+<p>Odczytuje wszystkie dostępne dane z urządzenia natychmiast. To jest metoda legacy do jednorazowego odczytu danych. Do ciągłego monitorowania portu szeregowego, użyj <a class="el" href="classDataReader.html#afee3c3c0fbb915c2aa69a0db7218f661" title="Ustaw urządzenie szeregowe do ciągłego monitorowania danych.">setSerialDevice()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>Otwarte QIODevice do odczytu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true jeśli dane zostały pomyślnie odczytane i sparsowane </dd>
+<dd>
+false jeśli nie znaleziono prawidłowych ramek</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>Użyj <a class="el" href="classDataReader.html#afee3c3c0fbb915c2aa69a0db7218f661" title="Ustaw urządzenie szeregowe do ciągłego monitorowania danych.">setSerialDevice()</a> do komunikacji z portem szeregowym </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="datareader_8cpp_source.html#l00081">81</a> of file <a class="el" href="datareader_8cpp_source.html">datareader.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>{</div>
+<div class="line"><span class="lineno">   83</span>    <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.clear();</div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> = 0;</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">while</span> (device-&gt;canReadLine()) {</div>
+<div class="line"><span class="lineno">   87</span>        QString line = QString::fromUtf8(device-&gt;readLine()).trimmed();</div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">if</span> (!line.startsWith(<span class="charliteral">&#39;&lt;&#39;</span>) || !line.endsWith(<span class="charliteral">&#39;&gt;&#39;</span>)) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>        QString core = line.mid(1, line.length() - 2);</div>
+<div class="line"><span class="lineno">   91</span>        QStringList parts = core.split(<span class="charliteral">&#39;;&#39;</span>);</div>
+<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">if</span> (parts.size() != 24) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>        QByteArray raw = core.left(core.lastIndexOf(<span class="charliteral">&#39;;&#39;</span>)).toUtf8();</div>
+<div class="line"><span class="lineno">   95</span>        <span class="keywordtype">bool</span> okCrc = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   96</span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="namespacegenerate__comm__data.html#a55d0cada9bdcb2f1f387e140e72a3b28">crc</a> = parts[23].toInt(&amp;okCrc);</div>
+<div class="line"><span class="lineno">   97</span>        <span class="keywordflow">if</span> (!okCrc) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>        uint8_t sum = 0;</div>
+<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> b : raw)</div>
+<div class="line"><span class="lineno">  101</span>            sum = uint8_t(sum + static_cast&lt;uint8_t&gt;(b));</div>
+<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">if</span> (sum != <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(crc)) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>        <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a> frame;</div>
+<div class="line"><span class="lineno">  105</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">timeMs</a> = parts[0].toInt();</div>
+<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 18; ++i)</div>
+<div class="line"><span class="lineno">  107</span>            frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>.append(parts[i].toFloat());</div>
+<div class="line"><span class="lineno">  108</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">speed</a> = parts[19].toFloat();</div>
+<div class="line"><span class="lineno">  109</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">packetCount</a> = parts[20].toInt();</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>        <span class="comment">// Parse FM data</span></div>
+<div class="line"><span class="lineno">  112</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a080a364fa0e879c7dc0ab2a55fd898cb">rssi</a> = parts[21].toFloat();</div>
+<div class="line"><span class="lineno">  113</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a107fa6239efb6e4b71c3bfeda9499918">per</a> = parts[22].toFloat();</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>        <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.append(frame);</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">return</span> !<a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.isEmpty();</div>
+<div class="line"><span class="lineno">  119</span>}</div>
+<div class="ttc" id="aclassDataReader_html_a535e234fcb0bf665470cc509cd377500"><div class="ttname"><a href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">DataReader::frames</a></div><div class="ttdeci">QVector&lt; ServoFrame &gt; frames</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00174">datareader.h:174</a></div></div>
+<div class="ttc" id="aclassDataReader_html_a653d5079f7a259e0344ea943dde4d977"><div class="ttname"><a href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">DataReader::currentIndex</a></div><div class="ttdeci">int currentIndex</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00175">datareader.h:175</a></div></div>
+<div class="ttc" id="anamespacegenerate__comm__data_html_a55d0cada9bdcb2f1f387e140e72a3b28"><div class="ttname"><a href="namespacegenerate__comm__data.html#a55d0cada9bdcb2f1f387e140e72a3b28">generate_comm_data.crc</a></div><div class="ttdeci">int crc</div><div class="ttdef"><b>Definition</b> <a href="generate__comm__data_8py_source.html#l00022">generate_comm_data.py:22</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ae90700be1801c10fae55ac4de0616dcc" name="ae90700be1801c10fae55ac4de0616dcc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae90700be1801c10fae55ac4de0616dcc">&#9670;&#160;</a></span>loadFromFile()</h2>
 
@@ -192,72 +456,127 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Wczytuje ramki w formacie &lt;...;CRC&gt; i weryfikuje CRC. </p>
+<p>Wczytaj ramki serwomechanizmów z pliku. </p>
+<p>Odczytuje i parsuje wszystkie ramki z pliku tekstowego. Każda linia powinna zawierać kompletną ramkę w oczekiwanym formacie. Nieprawidłowe ramki są pomijane z komunikatami ostrzegawczymi.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filePath</td><td>Ścieżka do pliku </td></tr>
+    <tr><td class="paramname">filePath</td><td>Ścieżka do pliku zawierającego dane ramek serwomechanizmów </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true jeśli wczytanie się powiodło </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true jeśli plik został pomyślnie wczytany i zawiera prawidłowe ramki </dd>
+<dd>
+false jeśli plik nie może zostać otwarty lub nie zawiera prawidłowych ramek</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classDataReader.html#a404003dfbe7d988e49bccdea9784c90a" title="Pobierz następną ramkę z wczytanych danych.">next()</a> </dd>
+<dd>
+<a class="el" href="classDataReader.html#a998814f9ba73f3773bb3007047ecbcaa" title="Zresetuj iterator ramek do początku.">reset()</a></dd></dl>
+<p>Przykład użycia: </p><div class="fragment"><div class="line"><a class="code hl_class" href="classDataReader.html">DataReader</a> reader;</div>
+<div class="line"><span class="keywordflow">if</span> (reader.<a class="code hl_function" href="classDataReader.html#ae90700be1801c10fae55ac4de0616dcc">loadFromFile</a>(<span class="stringliteral">&quot;dane_servo.txt&quot;</span>)) {</div>
+<div class="line">    <span class="keyword">const</span> <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a>* ramka = reader.<a class="code hl_function" href="classDataReader.html#a404003dfbe7d988e49bccdea9784c90a">next</a>();</div>
+<div class="line">    <span class="comment">// Przetwórz ramkę...</span></div>
+<div class="line">}</div>
+<div class="ttc" id="aclassDataReader_html"><div class="ttname"><a href="classDataReader.html">DataReader</a></div><div class="ttdoc">Klasa do odczytu i parsowania danych serwomechanizmów hexapoda.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00054">datareader.h:54</a></div></div>
+<div class="ttc" id="aclassDataReader_html_a404003dfbe7d988e49bccdea9784c90a"><div class="ttname"><a href="classDataReader.html#a404003dfbe7d988e49bccdea9784c90a">DataReader::next</a></div><div class="ttdeci">const ServoFrame * next()</div><div class="ttdoc">Pobierz następną ramkę z wczytanych danych.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00068">datareader.cpp:68</a></div></div>
+<div class="ttc" id="aclassDataReader_html_ae90700be1801c10fae55ac4de0616dcc"><div class="ttname"><a href="classDataReader.html#ae90700be1801c10fae55ac4de0616dcc">DataReader::loadFromFile</a></div><div class="ttdeci">bool loadFromFile(const QString &amp;filePath)</div><div class="ttdoc">Wczytaj ramki serwomechanizmów z pliku.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00011">datareader.cpp:11</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="datareader_8cpp_source.html#l00011">11</a> of file <a class="el" href="datareader_8cpp_source.html">datareader.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>{</div>
+<div class="line"><span class="lineno">   13</span>    QFile file(filePath);</div>
+<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">if</span> (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {</div>
+<div class="line"><span class="lineno">   15</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Failed to open file:&quot;</span> &lt;&lt; filePath;</div>
+<div class="line"><span class="lineno">   16</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   17</span>    }</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.clear();</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> = 0;</div>
+<div class="line"><span class="lineno">   21</span>    QTextStream in(&amp;file);</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">while</span> (!in.atEnd()) {</div>
+<div class="line"><span class="lineno">   24</span>        QString line = in.readLine().trimmed();</div>
+<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">if</span> (!line.startsWith(<span class="charliteral">&#39;&lt;&#39;</span>) || !line.endsWith(<span class="charliteral">&#39;&gt;&#39;</span>)) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>        QString core = line.mid(1, line.length() - 2);</div>
+<div class="line"><span class="lineno">   28</span>        QStringList parts = core.split(<span class="charliteral">&#39;;&#39;</span>);</div>
+<div class="line"><span class="lineno">   29</span>        <span class="keywordflow">if</span> (parts.size() != 24) {</div>
+<div class="line"><span class="lineno">   30</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;Wrong number of parts:&quot;</span> &lt;&lt; parts.size() &lt;&lt; <span class="stringliteral">&quot;(expected 24)&quot;</span>;</div>
+<div class="line"><span class="lineno">   31</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   32</span>        }</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>        <span class="comment">// CRC verification: sum of bytes mod 256</span></div>
+<div class="line"><span class="lineno">   35</span>        QByteArray raw = core.left(core.lastIndexOf(<span class="charliteral">&#39;;&#39;</span>)).toUtf8();</div>
+<div class="line"><span class="lineno">   36</span>        <span class="keywordtype">bool</span> okCrc = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="namespacegenerate__comm__data.html#a55d0cada9bdcb2f1f387e140e72a3b28">crc</a> = parts[23].toInt(&amp;okCrc);</div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (!okCrc) {</div>
+<div class="line"><span class="lineno">   39</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;CRC parsing failed:&quot;</span> &lt;&lt; parts[23];</div>
+<div class="line"><span class="lineno">   40</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   41</span>        }</div>
+<div class="line"><span class="lineno">   42</span>        uint8_t sum = 0;</div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> b : raw)</div>
+<div class="line"><span class="lineno">   44</span>            sum = uint8_t(sum + static_cast&lt;uint8_t&gt;(b));</div>
+<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">if</span> (sum != <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(crc)) {</div>
+<div class="line"><span class="lineno">   46</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;CRC mismatch (calculated=&quot;</span> &lt;&lt; sum &lt;&lt; <span class="stringliteral">&quot;received=&quot;</span> &lt;&lt; <a class="code hl_variable" href="namespacegenerate__comm__data.html#a55d0cada9bdcb2f1f387e140e72a3b28">crc</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   48</span>        }</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>        <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a> frame;</div>
+<div class="line"><span class="lineno">   51</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">timeMs</a> = parts[0].toInt();</div>
+<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 18; ++i)</div>
+<div class="line"><span class="lineno">   53</span>            frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>.append(parts[i].toFloat());</div>
+<div class="line"><span class="lineno">   54</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">speed</a> = parts[19].toFloat();</div>
+<div class="line"><span class="lineno">   55</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">packetCount</a> = parts[20].toInt();</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>        <span class="comment">// Parse FM data</span></div>
+<div class="line"><span class="lineno">   58</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a080a364fa0e879c7dc0ab2a55fd898cb">rssi</a> = parts[21].toFloat();  <span class="comment">// RSSI in dBm</span></div>
+<div class="line"><span class="lineno">   59</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a107fa6239efb6e4b71c3bfeda9499918">per</a> = parts[22].toFloat();   <span class="comment">// PER in %</span></div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>        <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.append(frame);</div>
+<div class="line"><span class="lineno">   62</span>    }</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    file.close();</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> !<a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.isEmpty();</div>
+<div class="line"><span class="lineno">   66</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afbfc994307c14fe0405d2a2e58d9b00f" name="afbfc994307c14fe0405d2a2e58d9b00f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbfc994307c14fe0405d2a2e58d9b00f">&#9670;&#160;</a></span>newFrameReady</h2>
 
-<p class="definition">Definition at line <a class="el" href="datareader_8cpp_source.html#l00008">8</a> of file <a class="el" href="datareader_8cpp_source.html">datareader.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    9</span>{</div>
-<div class="line"><span class="lineno">   10</span>    QFile file(filePath);</div>
-<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">if</span> (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {</div>
-<div class="line"><span class="lineno">   12</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Nie udało się otworzyć pliku:&quot;</span> &lt;&lt; filePath;</div>
-<div class="line"><span class="lineno">   13</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   14</span>    }</div>
-<div class="line"><span class="lineno">   15</span> </div>
-<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.clear();</div>
-<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> = 0;</div>
-<div class="line"><span class="lineno">   18</span>    QTextStream in(&amp;file);</div>
-<div class="line"><span class="lineno">   19</span> </div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">while</span> (!in.atEnd()) {</div>
-<div class="line"><span class="lineno">   21</span>        QString line = in.readLine().trimmed();</div>
-<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">if</span> (!line.startsWith(<span class="charliteral">&#39;&lt;&#39;</span>) || !line.endsWith(<span class="charliteral">&#39;&gt;&#39;</span>)) <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>        QString core = line.mid(1, line.length() - 2);</div>
-<div class="line"><span class="lineno">   25</span>        QStringList parts = core.split(<span class="charliteral">&#39;;&#39;</span>);</div>
-<div class="line"><span class="lineno">   26</span>        <span class="comment">// 1 timestamp + 18 angles + speed + packets + crc = 22 elementy</span></div>
-<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">if</span> (parts.size() != 22) <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   28</span>        <span class="comment">// Weryfikacja CRC: sum bytes mod 256</span></div>
-<div class="line"><span class="lineno">   29</span>        QByteArray raw = core.left(core.lastIndexOf(<span class="charliteral">&#39;;&#39;</span>)).toUtf8();</div>
-<div class="line"><span class="lineno">   30</span>        <span class="keywordtype">bool</span> okCrc = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   31</span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="namespacegenerate__comm__data.html#a55d0cada9bdcb2f1f387e140e72a3b28">crc</a> = parts.last().toInt(&amp;okCrc);</div>
-<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">if</span> (!okCrc) {</div>
-<div class="line"><span class="lineno">   33</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;CRC nie parsuje:&quot;</span> &lt;&lt; parts.last();</div>
-<div class="line"><span class="lineno">   34</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   35</span>        }</div>
-<div class="line"><span class="lineno">   36</span>        uint8_t sum = 0;</div>
-<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> b : raw)</div>
-<div class="line"><span class="lineno">   38</span>            sum = uint8_t(sum + static_cast&lt;uint8_t&gt;(b));</div>
-<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">if</span> (sum != <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(crc)) {</div>
-<div class="line"><span class="lineno">   40</span>            qWarning() &lt;&lt; <span class="stringliteral">&quot;CRC niezgodne (obliczone=&quot;</span> &lt;&lt; sum &lt;&lt; <span class="stringliteral">&quot;odebrane=&quot;</span> &lt;&lt; <a class="code hl_variable" href="namespacegenerate__comm__data.html#a55d0cada9bdcb2f1f387e140e72a3b28">crc</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
-<div class="line"><span class="lineno">   41</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   42</span>        }</div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>        <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a> frame;</div>
-<div class="line"><span class="lineno">   46</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">timeMs</a>     = parts[0].toInt();</div>
-<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 18; ++i)</div>
-<div class="line"><span class="lineno">   48</span>            frame.<a class="code hl_variable" href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">angles</a>.append(parts[i].toFloat());</div>
-<div class="line"><span class="lineno">   49</span>        frame.<a class="code hl_variable" href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">speed</a>       = parts[19].toFloat();</div>
-<div class="line"><span class="lineno">   50</span>        frame.<a class="code hl_variable" href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">packetCount</a> = parts[20].toInt();</div>
-<div class="line"><span class="lineno">   51</span>        <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.append(frame);</div>
-<div class="line"><span class="lineno">   52</span>    }</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>    file.close();</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> !<a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.isEmpty();</div>
-<div class="line"><span class="lineno">   56</span>}</div>
-<div class="ttc" id="aclassDataReader_html_a535e234fcb0bf665470cc509cd377500"><div class="ttname"><a href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">DataReader::frames</a></div><div class="ttdeci">QVector&lt; ServoFrame &gt; frames</div><div class="ttdoc">Bufor przechowujący wczytane ramki danych.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00052">datareader.h:52</a></div></div>
-<div class="ttc" id="aclassDataReader_html_a653d5079f7a259e0344ea943dde4d977"><div class="ttname"><a href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">DataReader::currentIndex</a></div><div class="ttdeci">int currentIndex</div><div class="ttdoc">Indeks aktualnie przetwarzanej ramki.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00053">datareader.h:53</a></div></div>
-<div class="ttc" id="anamespacegenerate__comm__data_html_a55d0cada9bdcb2f1f387e140e72a3b28"><div class="ttname"><a href="namespacegenerate__comm__data.html#a55d0cada9bdcb2f1f387e140e72a3b28">generate_comm_data.crc</a></div><div class="ttdeci">int crc</div><div class="ttdef"><b>Definition</b> <a href="generate__comm__data_8py_source.html#l00022">generate_comm_data.py:22</a></div></div>
-<div class="ttc" id="astructServoFrame_html"><div class="ttname"><a href="structServoFrame.html">ServoFrame</a></div><div class="ttdoc">Pojedyncza ramka danych z hexapoda.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00015">datareader.h:15</a></div></div>
-<div class="ttc" id="astructServoFrame_html_a9e3f24998bd527d51ad3adff5c695901"><div class="ttname"><a href="structServoFrame.html#a9e3f24998bd527d51ad3adff5c695901">ServoFrame::speed</a></div><div class="ttdeci">float speed</div><div class="ttdoc">Prędkość transmisji.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00018">datareader.h:18</a></div></div>
-<div class="ttc" id="astructServoFrame_html_ab81dd8d7c2efd68078a6abef4d1794f4"><div class="ttname"><a href="structServoFrame.html#ab81dd8d7c2efd68078a6abef4d1794f4">ServoFrame::angles</a></div><div class="ttdeci">QVector&lt; float &gt; angles</div><div class="ttdoc">18 kątów nóg</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00017">datareader.h:17</a></div></div>
-<div class="ttc" id="astructServoFrame_html_ac3ff952b169f223496dcd8e3c8b2b08d"><div class="ttname"><a href="structServoFrame.html#ac3ff952b169f223496dcd8e3c8b2b08d">ServoFrame::packetCount</a></div><div class="ttdeci">int packetCount</div><div class="ttdoc">Liczba przesłanych pakietów.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00019">datareader.h:19</a></div></div>
-<div class="ttc" id="astructServoFrame_html_ad3ed851e57d10a3ea98ee0c7efb15c81"><div class="ttname"><a href="structServoFrame.html#ad3ed851e57d10a3ea98ee0c7efb15c81">ServoFrame::timeMs</a></div><div class="ttdeci">int timeMs</div><div class="ttdoc">Czas w ms.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8h_source.html#l00016">datareader.h:16</a></div></div>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataReader::newFrameReady </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structServoFrame.html">ServoFrame</a> &amp;&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sygnał emitowany gdy nowa ramka jest odebrana z urządzenia szeregowego. </p>
+<p>Ten sygnał jest emitowany dla każdej prawidłowej ramki odebranej z urządzenia szeregowego ustawionego przez <a class="el" href="classDataReader.html#afee3c3c0fbb915c2aa69a0db7218f661" title="Ustaw urządzenie szeregowe do ciągłego monitorowania danych.">setSerialDevice()</a>. Ramka została już zweryfikowana pod kątem CRC.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>Kompletne dane ramki serwomechanizmów</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classDataReader.html#afee3c3c0fbb915c2aa69a0db7218f661" title="Ustaw urządzenie szeregowe do ciągłego monitorowania danych.">setSerialDevice()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="moc__datareader_8cpp_source.html#l00139">139</a> of file <a class="el" href="moc__datareader_8cpp_source.html">moc_datareader.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>{</div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordtype">void</span> *_a[] = { <span class="keyword">nullptr</span>, <span class="keyword">const_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(std::addressof(_t1))) };</div>
+<div class="line"><span class="lineno">  142</span>    QMetaObject::activate(<span class="keyword">this</span>, &amp;staticMetaObject, 0, _a);</div>
+<div class="line"><span class="lineno">  143</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -276,16 +595,21 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Zwraca następną ramkę (zawija w pętli). </p>
-<dl class="section return"><dt>Returns</dt><dd>Wskaźnik na aktualną ramkę lub nullptr, jeżeli nie załadowano danych. </dd></dl>
+<p>Pobierz następną ramkę z wczytanych danych. </p>
+<p>Zwraca następną ramkę w sekwencji. Automatycznie przechodzi do początku po osiągnięciu końca wczytanych danych.</p>
+<dl class="section return"><dt>Returns</dt><dd>Wskaźnik do następnej <a class="el" href="structServoFrame.html" title="Struktura reprezentująca pojedynczą ramkę danych z robota hexapod.">ServoFrame</a>, lub nullptr jeśli nie wczytano danych</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Zwrócony wskaźnik jest ważny do następnego wywołania <a class="el" href="classDataReader.html#ae90700be1801c10fae55ac4de0616dcc" title="Wczytaj ramki serwomechanizmów z pliku.">loadFromFile()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classDataReader.html#ae90700be1801c10fae55ac4de0616dcc" title="Wczytaj ramki serwomechanizmów z pliku.">loadFromFile()</a> </dd>
+<dd>
+<a class="el" href="classDataReader.html#a998814f9ba73f3773bb3007047ecbcaa" title="Zresetuj iterator ramek do początku.">reset()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="datareader_8cpp_source.html#l00058">58</a> of file <a class="el" href="datareader_8cpp_source.html">datareader.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>{</div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.isEmpty()) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   61</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a>* f = &amp;<a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>[<a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a>];</div>
-<div class="line"><span class="lineno">   62</span>    <a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> = (<a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> + 1) % <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.size();</div>
-<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">return</span> f;</div>
-<div class="line"><span class="lineno">   64</span>}</div>
+<p class="definition">Definition at line <a class="el" href="datareader_8cpp_source.html#l00068">68</a> of file <a class="el" href="datareader_8cpp_source.html">datareader.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>{</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.isEmpty()) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structServoFrame.html">ServoFrame</a>* f = &amp;<a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>[<a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a>];</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> = (<a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> + 1) % <a class="code hl_variable" href="classDataReader.html#a535e234fcb0bf665470cc509cd377500">frames</a>.size();</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">return</span> f;</div>
+<div class="line"><span class="lineno">   74</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -304,16 +628,139 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Resetuje odczyt do pierwszej ramki. </p>
+<p>Zresetuj iterator ramek do początku. </p>
+<p>Resetuje wewnętrzny licznik ramek aby rozpocząć odczyt od pierwszej ramki ponownie.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classDataReader.html#a404003dfbe7d988e49bccdea9784c90a" title="Pobierz następną ramkę z wczytanych danych.">next()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="datareader_8cpp_source.html#l00066">66</a> of file <a class="el" href="datareader_8cpp_source.html">datareader.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   67</span>{</div>
-<div class="line"><span class="lineno">   68</span>    <a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> = 0;</div>
-<div class="line"><span class="lineno">   69</span>}</div>
+<p class="definition">Definition at line <a class="el" href="datareader_8cpp_source.html#l00076">76</a> of file <a class="el" href="datareader_8cpp_source.html">datareader.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>{</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_variable" href="classDataReader.html#a653d5079f7a259e0344ea943dde4d977">currentIndex</a> = 0;</div>
+<div class="line"><span class="lineno">   79</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afee3c3c0fbb915c2aa69a0db7218f661" name="afee3c3c0fbb915c2aa69a0db7218f661"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afee3c3c0fbb915c2aa69a0db7218f661">&#9670;&#160;</a></span>setSerialDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataReader::setSerialDevice </td>
+          <td>(</td>
+          <td class="paramtype">QIODevice *&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustaw urządzenie szeregowe do ciągłego monitorowania danych. </p>
+<p>Konfiguruje czytnik do monitorowania urządzenia szeregowego dla przychodzących ramek. Urządzenie powinno być już otwarte. Automatycznie konfiguruje parametry portu szeregowego jeśli urządzenie to QSerialPort.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>Otwarte QIODevice (zwykle QSerialPort) do monitorowania</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Urządzenie musi być już otwarte </dd>
+<dd>
+Poprzednie połączenia urządzeń są automatycznie rozłączane </dd>
+<dd>
+Emituje sygnał <a class="el" href="classDataReader.html#afbfc994307c14fe0405d2a2e58d9b00f" title="Sygnał emitowany gdy nowa ramka jest odebrana z urządzenia szeregowego.">newFrameReady()</a> dla każdej prawidłowej odebranej ramki</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classDataReader.html#afbfc994307c14fe0405d2a2e58d9b00f" title="Sygnał emitowany gdy nowa ramka jest odebrana z urządzenia szeregowego.">newFrameReady()</a> </dd>
+<dd>
+<a class="el" href="classDataReader.html#a782b2a15780cca98eb55cd92a7c574b4" title="Obsłuż przychodzące dane szeregowe.">handleSerialData()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="datareader_8cpp_source.html#l00121">121</a> of file <a class="el" href="datareader_8cpp_source.html">datareader.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  122</span>{</div>
+<div class="line"><span class="lineno">  123</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;DataReader::setSerialDevice() called with device:&quot;</span> &lt;&lt; device;</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a>) {</div>
+<div class="line"><span class="lineno">  126</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Disconnecting previous device&quot;</span>;</div>
+<div class="line"><span class="lineno">  127</span>        disconnect(<a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a>, <span class="keyword">nullptr</span>, <span class="keyword">this</span>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  128</span>    }</div>
+<div class="line"><span class="lineno">  129</span>    <a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a> = device;</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">if</span> (!device) {</div>
+<div class="line"><span class="lineno">  132</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Device is nullptr!&quot;</span>;</div>
+<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  134</span>    }</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>    <span class="comment">// Configure serial port (if it&#39;s QSerialPort)</span></div>
+<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">if</span> (QSerialPort* serialPort = qobject_cast&lt;QSerialPort*&gt;(device)) {</div>
+<div class="line"><span class="lineno">  138</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Configuring QSerialPort&quot;</span>;</div>
+<div class="line"><span class="lineno">  139</span>        serialPort-&gt;setBaudRate(QSerialPort::Baud115200);</div>
+<div class="line"><span class="lineno">  140</span>        serialPort-&gt;setDataBits(QSerialPort::Data8);</div>
+<div class="line"><span class="lineno">  141</span>        serialPort-&gt;setParity(QSerialPort::NoParity);</div>
+<div class="line"><span class="lineno">  142</span>        serialPort-&gt;setStopBits(QSerialPort::OneStop);</div>
+<div class="line"><span class="lineno">  143</span>        serialPort-&gt;setFlowControl(QSerialPort::NoFlowControl);</div>
+<div class="line"><span class="lineno">  144</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  145</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Device is QFile, not QSerialPort&quot;</span>;</div>
+<div class="line"><span class="lineno">  146</span>    }</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>    <span class="comment">// Check if device is open</span></div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">if</span> (!device-&gt;isOpen()) {</div>
+<div class="line"><span class="lineno">  150</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Device is not open!&quot;</span>;</div>
+<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  152</span>    }</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Device is open, checking readability...&quot;</span>;</div>
+<div class="line"><span class="lineno">  155</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;   - isReadable():&quot;</span> &lt;&lt; device-&gt;isReadable();</div>
+<div class="line"><span class="lineno">  156</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;   - bytesAvailable():&quot;</span> &lt;&lt; device-&gt;bytesAvailable();</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    <a class="code hl_variable" href="classDataReader.html#ae85e24c18e16452e8af88864d2dc1a12">buffer</a>.clear();</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>    <span class="comment">// Connect readyRead signal</span></div>
+<div class="line"><span class="lineno">  161</span>    connect(<a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a>, &amp;QIODevice::readyRead, <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classDataReader.html#a782b2a15780cca98eb55cd92a7c574b4">DataReader::handleSerialData</a>, Qt::DirectConnection);</div>
+<div class="line"><span class="lineno">  162</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Connected readyRead signal&quot;</span>;</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    <span class="comment">// For QFile - check if data is already available</span></div>
+<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">if</span> (device-&gt;bytesAvailable() &gt; 0) {</div>
+<div class="line"><span class="lineno">  166</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Data already available, calling handleSerialData()&quot;</span>;</div>
+<div class="line"><span class="lineno">  167</span>        QTimer::singleShot(100, <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classDataReader.html#a782b2a15780cca98eb55cd92a7c574b4">DataReader::handleSerialData</a>);</div>
+<div class="line"><span class="lineno">  168</span>    }</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>    <span class="comment">// Add timer for periodic checking (workaround for QFile)</span></div>
+<div class="line"><span class="lineno">  171</span>    QTimer *checkTimer = <span class="keyword">new</span> QTimer(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  172</span>    connect(checkTimer, &amp;QTimer::timeout, <span class="keyword">this</span>, [<span class="keyword">this</span>]() {</div>
+<div class="line"><span class="lineno">  173</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a> &amp;&amp; <a class="code hl_variable" href="classDataReader.html#ab44f4df95e405954a564ff61c97cda9c">serial</a>-&gt;bytesAvailable() &gt; 0) {</div>
+<div class="line"><span class="lineno">  174</span>            qDebug() &lt;&lt; <span class="stringliteral">&quot;Timer detected data, calling handleSerialData()&quot;</span>;</div>
+<div class="line"><span class="lineno">  175</span>            handleSerialData();</div>
+<div class="line"><span class="lineno">  176</span>        }</div>
+<div class="line"><span class="lineno">  177</span>    });</div>
+<div class="line"><span class="lineno">  178</span>    checkTimer-&gt;start(100); <span class="comment">// Check every 100ms</span></div>
+<div class="line"><span class="lineno">  179</span>}</div>
+<div class="ttc" id="aclassDataReader_html_a782b2a15780cca98eb55cd92a7c574b4"><div class="ttname"><a href="classDataReader.html#a782b2a15780cca98eb55cd92a7c574b4">DataReader::handleSerialData</a></div><div class="ttdeci">void handleSerialData()</div><div class="ttdoc">Obsłuż przychodzące dane szeregowe.</div><div class="ttdef"><b>Definition</b> <a href="datareader_8cpp_source.html#l00181">datareader.cpp:181</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae85e24c18e16452e8af88864d2dc1a12" name="ae85e24c18e16452e8af88864d2dc1a12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae85e24c18e16452e8af88864d2dc1a12">&#9670;&#160;</a></span>buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString DataReader::buffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Bufor dla przychodzących danych szeregowych </p>
+
+<p class="definition">Definition at line <a class="el" href="datareader_8h_source.html#l00177">177</a> of file <a class="el" href="datareader_8h_source.html">datareader.h</a>.</p>
+
+</div>
+</div>
 <a id="a653d5079f7a259e0344ea943dde4d977" name="a653d5079f7a259e0344ea943dde4d977"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a653d5079f7a259e0344ea943dde4d977">&#9670;&#160;</a></span>currentIndex</h2>
 
@@ -333,10 +780,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Aktualna pozycja w wektorze ramek </p>
 
-<p>Indeks aktualnie przetwarzanej ramki. </p>
-
-<p class="definition">Definition at line <a class="el" href="datareader_8h_source.html#l00053">53</a> of file <a class="el" href="datareader_8h_source.html">datareader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="datareader_8h_source.html#l00175">175</a> of file <a class="el" href="datareader_8h_source.html">datareader.h</a>.</p>
 
 </div>
 </div>
@@ -359,15 +805,40 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Przechowywanie wczytanych ramek </p>
 
-<p>Bufor przechowujący wczytane ramki danych. </p>
+<p class="definition">Definition at line <a class="el" href="datareader_8h_source.html#l00174">174</a> of file <a class="el" href="datareader_8h_source.html">datareader.h</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="datareader_8h_source.html#l00052">52</a> of file <a class="el" href="datareader_8h_source.html">datareader.h</a>.</p>
+</div>
+</div>
+<a id="ab44f4df95e405954a564ff61c97cda9c" name="ab44f4df95e405954a564ff61c97cda9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab44f4df95e405954a564ff61c97cda9c">&#9670;&#160;</a></span>serial</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QIODevice* DataReader::serial = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Połączone urządzenie szeregowe </p>
+
+<p class="definition">Definition at line <a class="el" href="datareader_8h_source.html#l00176">176</a> of file <a class="el" href="datareader_8h_source.html">datareader.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="datareader_8h_source.html">datareader.h</a></li>
+<li>build/Desktop-Debug/HEX_Service_autogen/EWIEGA46WW/<a class="el" href="moc__datareader_8cpp_source.html">moc_datareader.cpp</a></li>
 <li><a class="el" href="datareader_8cpp_source.html">datareader.cpp</a></li>
 </ul>
 </div><!-- contents -->

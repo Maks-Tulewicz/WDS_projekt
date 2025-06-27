@@ -1,8 +1,13 @@
 var searchData=
 [
-  ['onlanguagechanged_0',['onLanguageChanged',['../classMainWindow.html#ab8a6d8ac7e6344219cefbe1f0af6271f',1,'MainWindow']]],
-  ['onlegselectionchanged_1',['onLegSelectionChanged',['../classMainWindow.html#a30f79beabf8bb9fdc312d9906c1527bc',1,'MainWindow']]],
-  ['onreconnectclicked_2',['onReconnectClicked',['../classMainWindow.html#a962064e0a5474d210a24a6fba3f1ecf0',1,'MainWindow']]],
-  ['onsimdisconnect_3',['onSimDisconnect',['../classMainWindow.html#a0ee1a79271e4c7afc5928f2876010559',1,'MainWindow']]],
-  ['ontimertick_4',['onTimerTick',['../classDataSimulator.html#a3d8ebf21315906fae7a75d962adfc6a3',1,'DataSimulator']]]
+  ['newframeready_0',['newFrameReady',['../classDataReader.html#afbfc994307c14fe0405d2a2e58d9b00f',1,'DataReader']]],
+  ['next_1',['next',['../classDataReader.html#a404003dfbe7d988e49bccdea9784c90a',1,'DataReader']]],
+  ['noga_5f1_5fname_2',['noga_1_name',['../classUi__MainWindow.html#a9b1d3edec3d74c4ba060dc1879b56df2',1,'Ui_MainWindow']]],
+  ['noga_5f2_5fname_3',['noga_2_name',['../classUi__MainWindow.html#add2ef990954e7c3f170870d8bb39291c',1,'Ui_MainWindow']]],
+  ['noga_5f3_5fname_4',['noga_3_name',['../classUi__MainWindow.html#a2a82b5e19f66463067baa3a2d25b11c3',1,'Ui_MainWindow']]],
+  ['noga_5f4_5fname_5',['noga_4_name',['../classUi__MainWindow.html#a141e6c32419046ac9a34c1f28cd2d0ae',1,'Ui_MainWindow']]],
+  ['noga_5f5_5fname_6',['noga_5_name',['../classUi__MainWindow.html#a687a2b6dc7989a630b970e4f497358af',1,'Ui_MainWindow']]],
+  ['noga_5f6_5fname_7',['noga_6_name',['../classUi__MainWindow.html#a0b03002f3c039e3b68dac78ae5bcfd8d',1,'Ui_MainWindow']]],
+  ['num_5fframes_8',['num_frames',['../namespacegenerate__comm__data.html#a27e9a369626ccce0669f157a40728bcb',1,'generate_comm_data']]],
+  ['num_5fservos_9',['num_servos',['../namespacegenerate__comm__data.html#a1a7644804dd60fb182c7c6633e1fdc1e',1,'generate_comm_data']]]
 ];

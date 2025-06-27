@@ -97,43 +97,44 @@ $(document).ready(function(){initNavTree('sideview_8h_source.html',''); initResi
   <div class="headertitle"><div class="title">sideview.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="sideview_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SIDEVIEW_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define SIDEVIEW_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QPainter&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classSideView.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="classSideView.html">SideView</a> : <span class="keyword">public</span> QWidget</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    Q_OBJECT</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classSideView.html">SideView</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classSideView.html#a26adcc66bd5a474a6d3752ff8d9e9de1">setActiveLeg</a>(<span class="keywordtype">int</span> leg);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classSideView.html#a076854ad6805568755987811f7629003">setJointAngles</a>(<span class="keywordtype">float</span> knee, <span class="keywordtype">float</span> ankle);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classSideView.html#a83afef3d90d976cac674bfb43d194c52">paintEvent</a>(QPaintEvent *event) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classSideView.html#a9b811b96c16784ce2dbc5f04522f9c7b">   46</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classSideView.html#a9b811b96c16784ce2dbc5f04522f9c7b">activeLeg</a> = 0;      </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classSideView.html#ae9538f9a5e658612ff71ef487a11199b">   47</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="classSideView.html#ae9538f9a5e658612ff71ef487a11199b">kneeAngle</a> = 0.f;  </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classSideView.html#a4abcc6a7cde672ce74d0ce046c6aa1b8">   48</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="classSideView.html#a4abcc6a7cde672ce74d0ce046c6aa1b8">ankleAngle</a> = 0.f; </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+<a href="sideview_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef SIDEVIEW_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define SIDEVIEW_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QPainter&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="};">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classSideView.html">   53</a></span><span class="keyword">class </span><a class="code hl_class" href="classSideView.html">SideView</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    Q_OBJECT</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classSideView.html">SideView</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classSideView.html#a26adcc66bd5a474a6d3752ff8d9e9de1">setActiveLeg</a>(<span class="keywordtype">int</span> leg);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classSideView.html#a076854ad6805568755987811f7629003">setJointAngles</a>(<span class="keywordtype">float</span> knee, <span class="keywordtype">float</span> ankle);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classSideView.html#a83afef3d90d976cac674bfb43d194c52">paintEvent</a>(QPaintEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classSideView.html#a9b811b96c16784ce2dbc5f04522f9c7b">  118</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classSideView.html#a9b811b96c16784ce2dbc5f04522f9c7b">activeLeg</a> = 0;         </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classSideView.html#ae9538f9a5e658612ff71ef487a11199b">  119</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="classSideView.html#ae9538f9a5e658612ff71ef487a11199b">kneeAngle</a> = 0.f;     </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classSideView.html#a4abcc6a7cde672ce74d0ce046c6aa1b8">  120</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="classSideView.html#a4abcc6a7cde672ce74d0ce046c6aa1b8">ankleAngle</a> = 0.f;    </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>};</div>
 </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#endif </span><span class="comment">// SIDEVIEW_H</span></div>
-<div class="ttc" id="aclassSideView_html"><div class="ttname"><a href="classSideView.html">SideView</a></div><div class="ttdoc">Klasa do wyświetlania jednej nogi robota w widoku z boku.</div><div class="ttdef"><b>Definition</b> <a href="sideview_8h_source.html#l00013">sideview.h:14</a></div></div>
-<div class="ttc" id="aclassSideView_html_a076854ad6805568755987811f7629003"><div class="ttname"><a href="classSideView.html#a076854ad6805568755987811f7629003">SideView::setJointAngles</a></div><div class="ttdeci">void setJointAngles(float knee, float ankle)</div><div class="ttdoc">Ustawia kąty kolana i kostki dla aktywnej nogi.</div><div class="ttdef"><b>Definition</b> <a href="sideview_8cpp_source.html#l00069">sideview.cpp:69</a></div></div>
-<div class="ttc" id="aclassSideView_html_a26adcc66bd5a474a6d3752ff8d9e9de1"><div class="ttname"><a href="classSideView.html#a26adcc66bd5a474a6d3752ff8d9e9de1">SideView::setActiveLeg</a></div><div class="ttdeci">void setActiveLeg(int leg)</div><div class="ttdoc">Wybiera, którą nogę rysować</div><div class="ttdef"><b>Definition</b> <a href="sideview_8cpp_source.html#l00014">sideview.cpp:14</a></div></div>
-<div class="ttc" id="aclassSideView_html_a4abcc6a7cde672ce74d0ce046c6aa1b8"><div class="ttname"><a href="classSideView.html#a4abcc6a7cde672ce74d0ce046c6aa1b8">SideView::ankleAngle</a></div><div class="ttdeci">float ankleAngle</div><div class="ttdoc">Aktualny kąt kostki w stopniach.</div><div class="ttdef"><b>Definition</b> <a href="sideview_8h_source.html#l00048">sideview.h:48</a></div></div>
-<div class="ttc" id="aclassSideView_html_a83afef3d90d976cac674bfb43d194c52"><div class="ttname"><a href="classSideView.html#a83afef3d90d976cac674bfb43d194c52">SideView::paintEvent</a></div><div class="ttdeci">void paintEvent(QPaintEvent *event) override</div><div class="ttdoc">Obsługuje zdarzenie rysowania widgetu.</div><div class="ttdef"><b>Definition</b> <a href="sideview_8cpp_source.html#l00022">sideview.cpp:22</a></div></div>
-<div class="ttc" id="aclassSideView_html_a9b811b96c16784ce2dbc5f04522f9c7b"><div class="ttname"><a href="classSideView.html#a9b811b96c16784ce2dbc5f04522f9c7b">SideView::activeLeg</a></div><div class="ttdeci">int activeLeg</div><div class="ttdoc">Indeks aktualnie wyświetlanej nogi (0-5)</div><div class="ttdef"><b>Definition</b> <a href="sideview_8h_source.html#l00046">sideview.h:46</a></div></div>
-<div class="ttc" id="aclassSideView_html_ae9538f9a5e658612ff71ef487a11199b"><div class="ttname"><a href="classSideView.html#ae9538f9a5e658612ff71ef487a11199b">SideView::kneeAngle</a></div><div class="ttdeci">float kneeAngle</div><div class="ttdoc">Aktualny kąt kolana w stopniach.</div><div class="ttdef"><b>Definition</b> <a href="sideview_8h_source.html#l00047">sideview.h:47</a></div></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#endif </span><span class="comment">// SIDEVIEW_H</span></div>
+<div class="ttc" id="aclassSideView_html"><div class="ttname"><a href="classSideView.html">SideView</a></div><div class="ttdoc">Widget wizualizacji widoku bocznego dla szczegółowego badania nogi.</div><div class="ttdef"><b>Definition</b> <a href="sideview_8h_source.html#l00053">sideview.h:54</a></div></div>
+<div class="ttc" id="aclassSideView_html_a076854ad6805568755987811f7629003"><div class="ttname"><a href="classSideView.html#a076854ad6805568755987811f7629003">SideView::setJointAngles</a></div><div class="ttdeci">void setJointAngles(float knee, float ankle)</div><div class="ttdoc">Aktualizuj kąty stawów dla wizualizacji w czasie rzeczywistym.</div><div class="ttdef"><b>Definition</b> <a href="sideview_8cpp_source.html#l00069">sideview.cpp:69</a></div></div>
+<div class="ttc" id="aclassSideView_html_a26adcc66bd5a474a6d3752ff8d9e9de1"><div class="ttname"><a href="classSideView.html#a26adcc66bd5a474a6d3752ff8d9e9de1">SideView::setActiveLeg</a></div><div class="ttdeci">void setActiveLeg(int leg)</div><div class="ttdoc">Wybierz którą nogę wyświetlić</div><div class="ttdef"><b>Definition</b> <a href="sideview_8cpp_source.html#l00014">sideview.cpp:14</a></div></div>
+<div class="ttc" id="aclassSideView_html_a4abcc6a7cde672ce74d0ce046c6aa1b8"><div class="ttname"><a href="classSideView.html#a4abcc6a7cde672ce74d0ce046c6aa1b8">SideView::ankleAngle</a></div><div class="ttdeci">float ankleAngle</div><div class="ttdef"><b>Definition</b> <a href="sideview_8h_source.html#l00120">sideview.h:120</a></div></div>
+<div class="ttc" id="aclassSideView_html_a83afef3d90d976cac674bfb43d194c52"><div class="ttname"><a href="classSideView.html#a83afef3d90d976cac674bfb43d194c52">SideView::paintEvent</a></div><div class="ttdeci">void paintEvent(QPaintEvent *event) override</div><div class="ttdoc">Renderuj wizualizację nogi.</div><div class="ttdef"><b>Definition</b> <a href="sideview_8cpp_source.html#l00022">sideview.cpp:22</a></div></div>
+<div class="ttc" id="aclassSideView_html_a9b811b96c16784ce2dbc5f04522f9c7b"><div class="ttname"><a href="classSideView.html#a9b811b96c16784ce2dbc5f04522f9c7b">SideView::activeLeg</a></div><div class="ttdeci">int activeLeg</div><div class="ttdef"><b>Definition</b> <a href="sideview_8h_source.html#l00118">sideview.h:118</a></div></div>
+<div class="ttc" id="aclassSideView_html_ae9538f9a5e658612ff71ef487a11199b"><div class="ttname"><a href="classSideView.html#ae9538f9a5e658612ff71ef487a11199b">SideView::kneeAngle</a></div><div class="ttdeci">float kneeAngle</div><div class="ttdef"><b>Definition</b> <a href="sideview_8h_source.html#l00119">sideview.h:119</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,7 +1,6 @@
-
 /**
  * @file sideview.h
- * @brief Side view visualization of individual hexapod leg
+ * @brief Wizualizacja widoku bocznego pojedynczej nogi hexapoda
  * @author Maksymilian Tulewicz
  * @date 2025
  * @version 1.0
@@ -14,41 +13,41 @@
 #include <QPainter>
 
 /**
- * @brief Side view visualization widget for detailed leg examination
+ * @brief Widget wizualizacji widoku bocznego dla szczegółowego badania nogi
  *
- * SideView provides a detailed 2D visualization of a single hexapod leg
- * from the side perspective. It shows the leg's kinematic chain with
- * accurate joint positions and orientations based on servo angles.
+ * SideView zapewnia szczegółową wizualizację 2D pojedynczej nogi hexapoda
+ * z perspektywy bocznej. Pokazuje łańcuch kinematyczny nogi z
+ * dokładnymi pozycjami i orientacjami stawów na podstawie kątów serwomechanizmów.
  *
- * ## Visualization Features:
- * - **Anatomically correct proportions** with realistic segment lengths
- * - **Real-time joint animation** based on servo feedback
- * - **Color-coded joints** for easy identification (red=knee, blue=ankle)
- * - **Fixed body reference** showing leg attachment point
- * - **Smooth rendering** with antialiasing for professional appearance
+ * ## Funkcje wizualizacji:
+ * - **Anatomicznie poprawne proporcje** z realistycznymi długościami segmentów
+ * - **Animacja stawów w czasie rzeczywistym** na podstawie feedbacku serwomechanizmów
+ * - **Stawy oznaczone kolorami** dla łatwej identyfikacji (czerwony=kolano, niebieski=kostka)
+ * - **Stałe odniesienie ciała** pokazujące punkt przyłączenia nogi
+ * - **Płynne renderowanie** z antialiasingiem dla profesjonalnego wyglądu
  *
- * ## Kinematic Model:
- * The leg model uses a simplified 2-DOF (Degree of Freedom) representation:
- * - **Thigh segment**: From hip to knee (80 pixels length)
- * - **Shin segment**: From knee to ankle (160 pixels length, 2:1 ratio)
- * - **Hip joint**: Fixed attachment point (not visualized)
- * - **Knee joint**: Primary articulation point (red indicator)
- * - **Ankle joint**: End effector orientation (blue indicator)
+ * ## Model kinematyczny:
+ * Model nogi używa uproszczonej reprezentacji 2-DOF (Stopnie Swobody):
+ * - **Segment uda**: Od biodra do kolana (80 pikseli długości)
+ * - **Segment goleni**: Od kolana do kostki (160 pikseli długości, stosunek 2:1)
+ * - **Staw biodra**: Stały punkt przyłączenia (nie wizualizowany)
+ * - **Staw kolana**: Główny punkt artykulacji (czerwony wskaźnik)
+ * - **Staw kostki**: Orientacja efektora końcowego (niebieski wskaźnik)
  *
- * ## Coordinate System:
- * - **Origin**: Hip attachment point (center-left of widget)
- * - **Zero degrees**: Pointing upward (12 o'clock position)
- * - **Positive rotation**: Clockwise from zero position
- * - **Angle interpretation**: 90° = horizontal, 180° = downward
+ * ## System współrzędnych:
+ * - **Początek**: Punkt przyłączenia biodra (środek-lewa część widgetu)
+ * - **Zero stopni**: Wskazujący w górę (pozycja 12:00)
+ * - **Dodatni obrót**: Zgodnie z ruchem wskazówek zegara od pozycji zerowej
+ * - **Interpretacja kąta**: 90° = poziomo, 180° = w dół
  *
  * @see TopView
  * @see MainWindow::onLegSelectionChanged()
  *
- * Example usage:
+ * Przykład użycia:
  * @code
- * SideView *sideView = new SideView(parent);
- * sideView->setActiveLeg(2);           // Select leg 3 for display
- * sideView->setJointAngles(45, 120);   // Set knee=45°, ankle=120°
+ * SideView *widokBoczny = new SideView(parent);
+ * widokBoczny->setActiveLeg(2);           // Wybierz nogę 3 do wyświetlenia
+ * widokBoczny->setJointAngles(45, 120);   // Ustaw kolano=45°, kostka=120°
  * @endcode
  */
 class SideView : public QWidget
@@ -57,68 +56,68 @@ class SideView : public QWidget
 
 public:
     /**
-     * @brief Constructor - Initialize side view widget
+     * @brief Konstruktor - Inicjalizuje widget widoku bocznego
      *
-     * Creates the side view widget with default settings and initial
-     * pose. Sets up fixed widget size optimized for leg visualization.
+     * Tworzy widget widoku bocznego z domyślnymi ustawieniami i początkową
+     * pozą. Ustawia stały rozmiar widgetu zoptymalizowany dla wizualizacji nogi.
      *
-     * @param parent Parent widget for memory management
+     * @param parent Rodzic widget do zarządzania pamięcią
      */
     explicit SideView(QWidget *parent = nullptr);
 
 public slots:
     /**
-     * @brief Select which leg to display
+     * @brief Wybierz którą nogę wyświetlić
      *
-     * Changes the active leg being visualized. This allows the user to
-     * examine each of the 6 legs individually for detailed analysis.
+     * Zmienia aktywną nogę będącą wizualizowaną. To pozwala użytkownikowi
+     * badać każdą z 6 nóg indywidualnie dla szczegółowej analizy.
      *
-     * @param leg Leg index (0-5, corresponding to legs 1-6)
+     * @param leg Indeks nogi (0-5, odpowiadający nogom 1-6)
      *
-     * @note Leg selection affects only the display label, not the visualization
-     * @note Joint angles remain unchanged when switching legs
-     * @note Invalid leg numbers are ignored silently
+     * @note Wybór nogi wpływa tylko na etykietę wyświetlania, nie na wizualizację
+     * @note Kąty stawów pozostają niezmienione przy przełączaniu nóg
+     * @note Nieprawidłowe numery nóg są ignorowane cicho
      */
     void setActiveLeg(int leg);
 
     /**
-     * @brief Update joint angles for real-time visualization
+     * @brief Aktualizuj kąty stawów dla wizualizacji w czasie rzeczywistym
      *
-     * Sets the knee and ankle joint angles for the currently active leg.
-     * The visualization is immediately updated to reflect the new pose.
-     * Joint angles are interpreted according to the robot's conventions.
+     * Ustawia kąty stawów kolana i kostki dla obecnie aktywnej nogi.
+     * Wizualizacja jest natychmiast aktualizowana aby odzwierciedlić nową pozę.
+     * Kąty stawów są interpretowane zgodnie z konwencjami robota.
      *
-     * @param knee Knee joint angle in degrees (0° = straight up, 90° = horizontal)
-     * @param ankle Ankle joint angle in degrees (relative to shin segment)
+     * @param knee Kąt stawu kolana w stopniach (0° = prosto w górę, 90° = poziomo)
+     * @param ankle Kąt stawu kostki w stopniach (względem segmentu goleni)
      *
-     * @note Angles are not range-limited; extreme values may produce unusual poses
-     * @note Widget automatically repaints when angles change
+     * @note Kąty nie są ograniczane zakresem; ekstremalne wartości mogą produkować niezwykłe pozy
+     * @note Widget automatycznie przemalowuje się gdy kąty się zmieniają
      *
-     * Example typical ranges:
-     * - Knee: 30° to 120° (bent to extended)
-     * - Ankle: 90° to 270° (forward to backward)
+     * Przykładowe typowe zakresy:
+     * - Kolano: 30° do 120° (zgięte do wyprostowane)
+     * - Kostka: 90° do 270° (do przodu do tyłu)
      */
     void setJointAngles(float knee, float ankle);
 
 protected:
     /**
-     * @brief Render the leg visualization
+     * @brief Renderuj wizualizację nogi
      *
-     * Custom paint implementation that draws the complete leg structure
-     * including body attachment, thigh, shin, and joint indicators.
-     * Uses high-quality rendering with antialiasing.
+     * Niestandardowa implementacja paint która rysuje kompletną strukturę nogi
+     * włączając przyłączenie ciała, udo, goleń i wskaźniki stawów.
+     * Używa wysokiej jakości renderowania z antyaliasingiem.
      *
-     * @param event Paint event (unused)
+     * @param event Zdarzenie paint (nieużywane)
      *
-     * @note Called automatically by Qt when widget needs repainting
-     * @note Drawing is optimized for smooth real-time updates
+     * @note Wywoływana automatycznie przez Qt gdy widget potrzebuje przemalowania
+     * @note Rysowanie jest zoptymalizowane dla płynnych aktualizacji w czasie rzeczywistym
      */
     void paintEvent(QPaintEvent *event) override;
 
 private:
-    int activeLeg = 0;         /**< Currently selected leg index (0-5) */
-    float kneeAngle = 0.f;     /**< Current knee joint angle in degrees */
-    float ankleAngle = 0.f;    /**< Current ankle joint angle in degrees */
+    int activeLeg = 0;         /**< Obecnie wybrany indeks nogi (0-5) */
+    float kneeAngle = 0.f;     /**< Aktualny kąt stawu kolana w stopniach */
+    float ankleAngle = 0.f;    /**< Aktualny kąt stawu kostki w stopniach */
 };
 
-#endif
+#endif // SIDEVIEW_H

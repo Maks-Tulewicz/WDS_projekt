@@ -1,0 +1,21 @@
+<map id="sideview.h" name="sideview.h">
+<area shape="rect" id="Node000001" title="Wizualizacja widoku bocznego pojedynczej nogi hexapoda." alt="" coords="380,5,471,31"/>
+<area shape="rect" id="Node000002" href="$moc__sideview_8cpp.html" title=" " alt="" coords="5,181,248,236"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="367,30,299,48,264,62,231,81,203,104,179,131,143,183,139,180,175,127,199,100,228,76,261,58,297,43,366,25"/>
+<area shape="rect" id="Node000004" href="$ui__mainwindow_8h.html" title=" " alt="" coords="242,79,433,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="406,42,366,81,362,77,402,38"/>
+<area shape="rect" id="Node000006" href="$mainwindow_8h.html" title="Główne okno aplikacji interfejsu sterowania robotem hexapod." alt="" coords="457,93,573,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="449,38,504,91,500,95,445,42"/>
+<area shape="rect" id="Node000009" href="$sideview_8cpp.html" title=" " alt="" coords="597,93,704,119"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="470,33,586,76,623,91,621,96,584,81,468,38"/>
+<area shape="rect" id="Node000003" href="$mocs__compilation_8cpp.html" title=" " alt="" coords="258,284,430,339"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="197,239,288,282,286,286,194,244"/>
+<area shape="rect" id="Node000005" href="$mainwindow_8cpp.html" title=" " alt="" coords="272,196,403,221"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="340,147,340,196,335,196,335,147"/>
+<area shape="poly" id="edge9_Node000006_Node000005" title=" " alt="" coords="484,128,359,198,356,194,481,123"/>
+<area shape="rect" id="Node000007" href="$moc__mainwindow_8cpp.html" title=" " alt="" coords="427,181,695,236"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="528,130,551,180,547,182,523,132"/>
+<area shape="rect" id="Node000008" href="$main_8cpp.html" title=" " alt="" coords="720,196,803,221"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="559,121,709,179,740,193,738,198,707,184,557,126"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="494,244,402,286,400,282,491,239"/>
+</map>

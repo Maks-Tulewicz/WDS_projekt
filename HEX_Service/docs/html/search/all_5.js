@@ -1,12 +1,15 @@
 var searchData=
 [
-  ['fmconnectionwd_0',['fMconnectionWD',['../classUi__MainWindow.html#a1f3885b000b8bc17341e55d908a8835d',1,'Ui_MainWindow']]],
-  ['fmqualityview_1',['fmqualityview',['../classFmQualityView.html',1,'FmQualityView'],['../classFmQualityView.html#a9cb703f42d4ebeef51c88819c4ae0c24',1,'FmQualityView::FmQualityView()']]],
-  ['fmqualityview_2ecpp_2',['fmqualityview.cpp',['../fmqualityview_8cpp.html',1,'']]],
-  ['fmqualityview_2ecpp_2eo_2ed_3',['fmqualityview.cpp.o.d',['../fmqualityview_8cpp_8o_8d.html',1,'']]],
-  ['fmqualityview_2eh_4',['fmqualityview.h',['../fmqualityview_8h.html',1,'']]],
-  ['fmservicebt_5',['fmServiceBT',['../classUi__MainWindow.html#a345be6e3613ee1a369ee31a103a85016',1,'Ui_MainWindow']]],
-  ['framecounter_6',['frameCounter',['../classDataSimulator.html#ac73ed8fd3157ba4ac3dcd3abd60185e7',1,'DataSimulator']]],
-  ['frameready_7',['frameReady',['../classDataSimulator.html#a589133f38a782977dfcd22904dd53a45',1,'DataSimulator']]],
-  ['frames_8',['frames',['../classDataReader.html#a535e234fcb0bf665470cc509cd377500',1,'DataReader']]]
+  ['data_0',['data',['../structqt__meta__stringdata__TopView__t.html#a8bc6213186d2accd68769ab430a9f52a',1,'qt_meta_stringdata_TopView_t::data'],['../structqt__meta__stringdata__DataReader__t.html#a080c750fafefb2105acb3206ed33b1ac',1,'qt_meta_stringdata_DataReader_t::data'],['../structqt__meta__stringdata__DataSimulator__t.html#a998aceb4cdd5062489fd6381d0239e61',1,'qt_meta_stringdata_DataSimulator_t::data'],['../structqt__meta__stringdata__FmQualityView__t.html#a3b85c82f0c1eee04618d76e8924dc5b8',1,'qt_meta_stringdata_FmQualityView_t::data'],['../structqt__meta__stringdata__MainWindow__t.html#ac259c7966282d5ec55e63f7aa7a36ded',1,'qt_meta_stringdata_MainWindow_t::data'],['../structqt__meta__stringdata__ServoAngleManager__t.html#ae32e8d57f5bffa16b51480949f8ea9b6',1,'qt_meta_stringdata_ServoAngleManager_t::data'],['../structqt__meta__stringdata__SideView__t.html#ab82b8454722c90837a7fae9f9f592c2f',1,'qt_meta_stringdata_SideView_t::data']]],
+  ['datareader_1',['datareader',['../classDataReader.html',1,'DataReader'],['../classDataReader.html#afcacc75e63a519608eef8bd152490f30',1,'DataReader::DataReader()']]],
+  ['datareader_2ecpp_2',['datareader.cpp',['../datareader_8cpp.html',1,'']]],
+  ['datareader_2ecpp_2eo_2ed_3',['datareader.cpp.o.d',['../datareader_8cpp_8o_8d.html',1,'']]],
+  ['datareader_2eh_4',['datareader.h',['../datareader_8h.html',1,'']]],
+  ['datasimulator_5',['datasimulator',['../classDataSimulator.html',1,'DataSimulator'],['../classDataSimulator.html#ab9bd1963dcfcd8db5247fa925411428a',1,'DataSimulator::DataSimulator()']]],
+  ['datasimulator_2ecpp_6',['datasimulator.cpp',['../datasimulator_8cpp.html',1,'']]],
+  ['datasimulator_2ecpp_2eo_2ed_7',['datasimulator.cpp.o.d',['../datasimulator_8cpp_8o_8d.html',1,'']]],
+  ['datasimulator_2eh_8',['datasimulator.h',['../datasimulator_8h.html',1,'']]],
+  ['dec_9',['DEC',['../CMakeCXXCompilerId_8cpp.html#ad1280362da42492bbc11aa78cbf776ad',1,'CMakeCXXCompilerId.cpp']]],
+  ['deprecated_20list_10',['Deprecated List',['../deprecated.html',1,'']]],
+  ['disconnectedduetoerrors_11',['disconnectedDueToErrors',['../classDataSimulator.html#a3a1ef3c6c377ffe5cda1c701242b13e3',1,'DataSimulator']]]
 ];

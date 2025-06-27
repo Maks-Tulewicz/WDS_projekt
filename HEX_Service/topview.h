@@ -1,7 +1,6 @@
-
 /**
  * @file topview.h
- * @brief Top-down view visualization of complete hexapod robot
+ * @brief Wizualizacja widoku z góry kompletnego robota hexapod
  * @author Maksymilian Tulewicz
  * @date 2025
  * @version 1.0
@@ -13,58 +12,58 @@
 #include <QWidget>
 
 /**
- * @brief Top-down visualization widget showing complete hexapod robot posture
+ * @brief Widget wizualizacji z lotu ptaka pokazujący kompletną postawę robota hexapod
  *
- * TopView provides a bird's-eye view of the hexapod robot, displaying the
- * orientation of all six legs simultaneously. This visualization is essential
- * for understanding overall robot posture, gait patterns, and coordination
- * between legs during movement.
+ * TopView zapewnia widok z lotu ptaka robota hexapod, wyświetlając
+ * orientację wszystkich sześciu nóg jednocześnie. Ta wizualizacja jest istotna
+ * dla zrozumienia ogólnej postawy robota, wzorców chodu i koordynacji
+ * między nogami podczas ruchu.
  *
- * ## Visualization Features:
- * - **Complete robot overview** with all 6 legs visible
- * - **Proportional body representation** as central circular body
- * - **Individual hip angle display** for each leg
- * - **Realistic leg positioning** based on actual hexapod geometry
- * - **Real-time updates** synchronized with servo feedback
- * - **High-quality rendering** with antialiasing and smooth lines
+ * ## Funkcje wizualizacji:
+ * - **Kompletny przegląd robota** ze wszystkimi 6 nogami widocznymi
+ * - **Proporcjonalna reprezentacja ciała** jako centralne ciało kołowe
+ * - **Indywidualne wyświetlanie kąta biodra** dla każdej nogi
+ * - **Realistyczne pozycjonowanie nóg** na podstawie rzeczywistej geometrii hexapoda
+ * - **Aktualizacje w czasie rzeczywistym** zsynchronizowane z feedbackiem serwomechanizmów
+ * - **Wysokiej jakości renderowanie** z antyaliasingiem i płynnymi liniami
  *
- * ## Robot Geometry:
- * The hexapod uses a standard 6-leg configuration:
+ * ## Geometria robota:
+ * Hexapod używa standardowej konfiguracji 6-nogiej:
  * ```
- *     Front
+ *     Przód
  *   1 ----- 2
  *  /         \
  * 3           4
  *  \         /
  *   5 ----- 6
- *     Rear
+ *     Tył
  * ```
  *
- * ## Hip Angle Conventions:
- * - **Base orientations**: Each leg has a predefined base direction
- * - **Servo angles**: 0° to 180° typical servo range
- * - **Display angles**: Servo angle - 90° to center around base direction
- * - **Rotation**: Positive angles rotate clockwise from base position
+ * ## Konwencje kąta biodra:
+ * - **Orientacje bazowe**: Każda noga ma predefiniowany kierunek bazowy
+ * - **Kąty serwomechanizmów**: 0° do 180° typowy zakres serwomechanizmu
+ * - **Kąty wyświetlania**: Kąt serwomechanizmu - 90° aby wyśrodkować wokół kierunku bazowego
+ * - **Obrót**: Dodatnie kąty obracają zgodnie z ruchem wskazówek zegara od pozycji bazowej
  *
- * ## Base Orientations (in degrees):
- * - Leg 0 (Front-Left): 225° (SW)
- * - Leg 1 (Mid-Left): 270° (W)
- * - Leg 2 (Rear-Left): 315° (NW)
- * - Leg 3 (Rear-Right): 45° (NE)
- * - Leg 4 (Mid-Right): 90° (E)
- * - Leg 5 (Front-Right): 135° (SE)
+ * ## Orientacje bazowe (w stopniach):
+ * - Noga 0 (Przód-Lewa): 225° (SW)
+ * - Noga 1 (Środek-Lewa): 270° (W)
+ * - Noga 2 (Tył-Lewa): 315° (NW)
+ * - Noga 3 (Tył-Prawa): 45° (NE)
+ * - Noga 4 (Środek-Prawa): 90° (E)
+ * - Noga 5 (Przód-Prawa): 135° (SE)
  *
  * @see SideView
  * @see MainWindow::updateServoGUI()
  *
- * Example usage:
+ * Przykład użycia:
  * @code
- * TopView *topView = new TopView(parent);
+ * TopView *widokZGory = new TopView(parent);
  *
- * // Set hip angles for walking gait
- * for (int leg = 0; leg < 6; ++leg) {
- *     float angle = calculateWalkingAngle(leg, time);
- *     topView->setHipAngle(leg, angle);
+ * // Ustaw kąty bioder dla chodu chodzenia
+ * for (int noga = 0; noga < 6; ++noga) {
+ *     float kat = obliczKatChodzenia(noga, czas);
+ *     widokZGory->setHipAngle(noga, kat);
  * }
  * @endcode
  */
@@ -74,56 +73,56 @@ class TopView : public QWidget
 
 public:
     /**
-     * @brief Constructor - Initialize top view widget
+     * @brief Konstruktor - Inicjalizuje widget widoku z góry
      *
-     * Creates the top view widget with all legs initialized to their
-     * base orientations (90° servo position). Sets up the coordinate
-     * system and rendering parameters.
+     * Tworzy widget widoku z góry ze wszystkimi nogami zainicjalizowanymi do ich
+     * orientacji bazowych (pozycja serwomechanizmu 90°). Ustawia system
+     * współrzędnych i parametry renderowania.
      *
-     * @param parent Parent widget for memory management
+     * @param parent Rodzic widget do zarządzania pamięcią
      */
     explicit TopView(QWidget *parent = nullptr);
 
     /**
-     * @brief Set hip angle for individual leg
+     * @brief Ustaw kąt biodra dla indywidualnej nogi
      *
-     * Updates the hip angle for a specific leg and triggers a visual update.
-     * The angle is interpreted as a servo position (0-180°) and converted
-     * to the appropriate display orientation.
+     * Aktualizuje kąt biodra dla określonej nogi i wyzwala aktualizację wizualną.
+     * Kąt jest interpretowany jako pozycja serwomechanizmu (0-180°) i konwertowany
+     * do odpowiedniej orientacji wyświetlania.
      *
-     * @param legIndex Leg number (0-5)
-     * @param angleDeg Hip servo angle in degrees (typical range: 0-180°)
+     * @param legIndex Numer nogi (0-5)
+     * @param angleDeg Kąt serwomechanizmu biodra w stopniach (typowy zakres: 0-180°)
      *
-     * @note Invalid leg indices are ignored silently
-     * @note Angle values outside 0-180° are accepted but may look unusual
-     * @note Widget automatically repaints when angles change
+     * @note Nieprawidłowe indeksy nóg są ignorowane cicho
+     * @note Wartości kątów poza 0-180° są akceptowane ale mogą wyglądać niezwykle
+     * @note Widget automatycznie przemalowuje się gdy kąty się zmieniają
      *
-     * Angle interpretation:
-     * - 0° = Maximum counter-clockwise rotation
-     * - 90° = Neutral position (aligned with base orientation)
-     * - 180° = Maximum clockwise rotation
+     * Interpretacja kąta:
+     * - 0° = Maksymalny obrót przeciwny do ruchu wskazówek zegara
+     * - 90° = Pozycja neutralna (wyrównana z orientacją bazową)
+     * - 180° = Maksymalny obrót zgodny z ruchem wskazówek zegara
      */
     void setHipAngle(int legIndex, float angleDeg);
 
 protected:
     /**
-     * @brief Render the complete robot visualization
+     * @brief Renderuj kompletną wizualizację robota
      *
-     * Custom paint implementation that draws the robot body and all six
-     * legs with their current hip orientations. Uses adaptive sizing
-     * based on widget dimensions.
+     * Niestandardowa implementacja paint która rysuje ciało robota i wszystkie sześć
+     * nóg z ich aktualnymi orientacjami bioder. Używa adaptacyjnego skalowania
+     * na podstawie wymiarów widgetu.
      *
-     * @param e Paint event (unused)
+     * @param e Zdarzenie paint (nieużywane)
      *
-     * @note Called automatically by Qt when widget needs repainting
-     * @note Rendering scales automatically with widget size
-     * @note Uses high-quality antialiased drawing for smooth appearance
+     * @note Wywoływana automatycznie przez Qt gdy widget potrzebuje przemalowania
+     * @note Renderowanie skaluje się automatycznie z rozmiarem widgetu
+     * @note Używa wysokiej jakości rysowania antyaliasowego dla płynnego wyglądu
      */
     void paintEvent(QPaintEvent *e) override;
 
 private:
-    float hipAngles[6];                                           /**< Current hip angles for all 6 legs */
-    static constexpr float kBase[6] = {225, 270, 315, 45, 90, 135}; /**< Base orientations for each leg in degrees */
+    float hipAngles[6];                                           /**< Aktualne kąty bioder dla wszystkich 6 nóg */
+    static constexpr float kBase[6] = {225, 270, 315, 45, 90, 135}; /**< Orientacje bazowe dla każdej nogi w stopniach */
 };
 
-#endif // Multiple header files
+#endif // TOPVIEW_H

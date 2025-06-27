@@ -85,7 +85,7 @@ MainWindow::MainWindow(QWidget *parent)
     // ----- 6) Setup serial device -----
     qDebug() << "Starting serial device setup...";
 
-    QString devicePath = "/dev/pts/3";  // NO SPACES!
+    QString devicePath = "/dev/pts/10";  // NO SPACES!
     qDebug() << "Attempting to open device:" << devicePath;
 
     // USE QSerialPort instead of QFile

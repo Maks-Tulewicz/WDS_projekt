@@ -1,0 +1,28 @@
+<map id="MainWindow" name="MainWindow">
+<area shape="rect" id="Node000001" title="Główne okno aplikacji do sterowania i monitorowania robota hexapod." alt="" coords="297,355,403,380"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,267,121,292"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,298,114,314,142,328,181,341,222,350,297,360,296,366,221,355,180,346,140,333,111,319,87,303"/>
+<area shape="rect" id="Node000003" href="$classUi_1_1MainWindow.html" title=" " alt="" coords="210,267,338,292"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="295,301,341,352,337,356,291,304"/>
+<area shape="rect" id="Node000004" href="$classUi__MainWindow.html" title=" " alt="" coords="211,168,337,193"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="277,207,277,267,271,267,271,207"/>
+<area shape="rect" id="Node000005" href="$classTopView.html" title="Widget wizualizacji z lotu ptaka pokazujący kompletną postawę robota hexapod." alt="" coords="157,80,233,105"/>
+<area shape="poly" id="edge15_Node000001_Node000005" title=" " alt="" coords="191,119,183,155,179,200,183,247,190,270,200,291,219,313,244,330,271,343,297,352,295,358,268,348,241,335,216,317,196,293,185,272,178,248,174,200,178,155,185,118"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="208,117,225,142,255,166,251,170,221,146,204,120"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="207,5,285,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="232,44,206,81,201,78,228,41"/>
+<area shape="rect" id="Node000007" href="$classSideView.html" title="Widget wizualizacji widoku bocznego dla szczegółowego badania nogi." alt="" coords="258,80,341,105"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="265,41,293,78,289,81,261,44"/>
+<area shape="poly" id="edge14_Node000001_Node000007" title=" " alt="" coords="343,111,359,128,372,159,379,191,381,224,379,257,368,315,357,355,352,353,363,314,373,256,375,224,373,192,367,160,354,131,339,114"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="295,119,280,168,275,167,289,118"/>
+<area shape="rect" id="Node000008" href="$classDataSimulator.html" title="Kontroler symulacji i odtwarzania danych ramek serwomechanizmów hexapoda." alt="" coords="413,267,529,292"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="445,302,368,357,365,352,442,298"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="509,80,583,105"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="525,117,504,141,487,169,479,195,475,222,473,267,468,266,469,222,474,194,482,167,500,137,521,113"/>
+<area shape="rect" id="Node000010" href="$classDataReader.html" title="Klasa do odczytu i parsowania danych serwomechanizmów hexapoda." alt="" coords="497,168,595,193"/>
+<area shape="poly" id="edge11_Node000010_Node000009" title=" " alt="" coords="549,119,549,167,543,167,543,119"/>
+<area shape="rect" id="Node000011" href="$classServoAngleManager.html" title="Manager do wyświetlania kątów serwomechanizmów i aktualizacji etykiet GUI." alt="" coords="557,217,711,243"/>
+<area shape="poly" id="edge13_Node000011_Node000009" title=" " alt="" coords="569,114,610,167,632,216,628,218,605,169,565,118"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="517,204,501,219,487,244,477,267,472,265,482,241,497,216,514,200"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="612,254,559,294,491,333,447,349,404,360,403,355,446,344,489,328,556,290,609,250"/>
+</map>
